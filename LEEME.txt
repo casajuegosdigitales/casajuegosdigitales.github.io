@@ -1,0 +1,32 @@
+﻿Casa Juegos Digitales — sitio 100% autocontenido (solo HTML)
+
+ARCHIVOS PARA SUBIR
+- index.html
+- catalogo.html
+- preguntas.html
+
+No hace falta subir carpetas assets/, imágenes sueltas, CSS ni JS externos.
+Cada HTML trae todo incluido: estilos, scripts, logo, catálogo y descripciones
+de Steam con capturas de gameplay (STEAM_ABOUT_CACHE embebido en el HTML).
+
+CÓMO PUBLICAR EN GITHUB PAGES
+1. Creá un repositorio en GitHub.
+2. Subí los 3 archivos HTML en la raíz (branch main).
+3. Settings > Pages > Deploy from branch > main > / (root).
+4. Abrí la URL que te da GitHub Pages.
+
+FUNCIONAMIENTO
+- Navegación entre las 3 páginas (enlaces relativos).
+- Catálogo, filtros, carrito y modal de compra.
+- Carrito guardado en el navegador (localStorage).
+- WhatsApp: +54 11 7237-6736
+
+CONEXIÓN A INTERNET
+- Las portadas y las capturas de gameplay en descripciones se cargan desde
+  Steam/CDN (necesitás internet para ver esas imágenes).
+- Las fuentes Orbitron/Inter se cargan desde Google Fonts si hay conexión;
+  sin internet el sitio igual funciona con fuentes del sistema.
+
+NOTAS
+- Catálogo abre en Ofertas por defecto.
+- Podés abrir los HTML directo desde el disco (doble clic) y también funcionan.

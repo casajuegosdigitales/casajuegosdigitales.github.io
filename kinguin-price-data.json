@@ -1,0 +1,1566 @@
+﻿{
+    "updatedAt":  "2026-06-16T20:46:06.4403492-03:00",
+    "sourceExcel":  "c:\\Users\\Aaron\\Downloads\\GAMES LIST (2).xlsx",
+    "items":  [
+                  {
+                      "fullName":  "007 First Light PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  60999,
+                      "compraArs":  46000,
+                      "linkSteam":  "https://store.steampowered.com/app/3768760/007_First_Light/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/404893/007-first-light-pc-steam-account?o=6a1163b1301aef74c1f93764",
+                      "cuotasPublicada":  87839,
+                      "game":  "007 First Light"
+                  },
+                  {
+                      "fullName":  "ARC Raiders PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  44999,
+                      "compraArs":  27000,
+                      "linkSteam":  "https://store.steampowered.com/app/1808500/ARC_Raiders/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/391303/arc-raiders-pc-steam-account?o=68e60a9f71ca3f0124b840fd",
+                      "cuotasPublicada":  64799,
+                      "game":  "ARC Raiders"
+                  },
+                  {
+                      "fullName":  "ARC Raiders PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  54999,
+                      "compraArs":  35000,
+                      "linkSteam":  "https://store.steampowered.com/app/1808500/ARC_Raiders/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/391296/arc-raiders-pc-steam-cd-key?o=6905108b2ff7961a0a9fdbec",
+                      "cuotasPublicada":  79199,
+                      "game":  "ARC Raiders"
+                  },
+                  {
+                      "fullName":  "ARK: Survival Ascended Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  41999,
+                      "compraArs":  12000,
+                      "linkSteam":  "https://store.steampowered.com/app/2399830/ARK_Survival_Ascended/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/193815/ark-survival-ascended-steam-account?o=6749f13b90564e000151c5ef",
+                      "cuotasPublicada":  60479,
+                      "game":  "ARK: Survival Ascended"
+                  },
+                  {
+                      "fullName":  "Assassin\u0027s Creed Mirage PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  50999,
+                      "compraArs":  36000,
+                      "linkSteam":  "https://store.steampowered.com/app/3035570/Assassins_Creed_Mirage/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/280875/assassin-s-creed-mirage-pc-steam-account?o=6712b031208b1a0001755520",
+                      "cuotasPublicada":  73439,
+                      "game":  "Assassin\u0027s Creed Mirage"
+                  },
+                  {
+                      "fullName":  "Assassin\u0027s Creed Mirage Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  69999,
+                      "compraArs":  54000,
+                      "linkSteam":  "https://store.steampowered.com/app/3035570/Assassins_Creed_Mirage/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/281040/assassin-s-creed-mirage-deluxe-edition-pc-steam-account?o=67149f1fbccf720001e9a503",
+                      "cuotasPublicada":  100799,
+                      "game":  "Assassin\u0027s Creed Mirage"
+                  },
+                  {
+                      "fullName":  "Assassin\u0027s Creed Mirage Master Assassin Edition PC Steam Account",
+                      "variant":  "Master Assassin Edition - Cuenta Steam",
+                      "ventaPublicada":  99999,
+                      "compraArs":  80000,
+                      "linkSteam":  "https://store.steampowered.com/app/3035570/Assassins_Creed_Mirage/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/281038/assassin-s-creed-mirage-master-assassin-edition-pc-steam-account?o=67149ed2bccf720001e9a502",
+                      "cuotasPublicada":  143999,
+                      "game":  "Assassin\u0027s Creed Mirage"
+                  },
+                  {
+                      "fullName":  "Assassin\u0027s Creed Shadows Deluxe Edition PC Ubisoft Connect CD Key",
+                      "variant":  "Deluxe Edition - CD Key (Ubisoft Connect)",
+                      "ventaPublicada":  89999,
+                      "compraArs":  44000,
+                      "linkSteam":  "https://store.steampowered.com/app/3159330/Assassins_Creed_Shadows/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/322501/assassin-s-creed-shadows-deluxe-edition-pc-ubisoft-connect-cd-key?o=67dc5a1fea9a49672d1b09d3",
+                      "cuotasPublicada":  129599,
+                      "game":  "Assassin\u0027s Creed Shadows"
+                  },
+                  {
+                      "fullName":  "Assassin’s Creed Shadows PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  64999,
+                      "compraArs":  29000,
+                      "linkSteam":  "https://store.steampowered.com/app/3159330/Assassins_Creed_Shadows/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/305769/assassins-creed-shadows-pc-steam-account?o=6970d24cdb13077383b24d44",
+                      "cuotasPublicada":  93599,
+                      "game":  "Assassin\u0027s Creed Shadows"
+                  },
+                  {
+                      "fullName":  "Assassin’s Creed Shadows PC Ubisoft Connect CD Key",
+                      "variant":  "Edicion estandar - CD Key (Ubisoft Connect)",
+                      "ventaPublicada":  74999,
+                      "compraArs":  37000,
+                      "linkSteam":  "https://store.steampowered.com/app/3159330/Assassins_Creed_Shadows/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/248505/assassins-creed-shadows-pc-ubisoft-connect-cd-key?o=6865d04161ade42159392b36",
+                      "cuotasPublicada":  107999,
+                      "game":  "Assassin\u0027s Creed Shadows"
+                  },
+                  {
+                      "fullName":  "Assassin\u0027s Creed Shadows Premium Edition PC Ubisoft Connect CD Key",
+                      "variant":  "Premium Edition - CD Key (Ubisoft Connect)",
+                      "ventaPublicada":  99999,
+                      "compraArs":  58000,
+                      "linkSteam":  "https://store.steampowered.com/app/3159330/Assassins_Creed_Shadows/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/435333/assassin-s-creed-shadows-premium-edition-pc-ubisoft-connect-cd-key?o=697205b0db13077383b24f54",
+                      "cuotasPublicada":  143999,
+                      "game":  "Assassin\u0027s Creed Shadows"
+                  },
+                  {
+                      "fullName":  "Baldur\u0027s Gate 3 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  39999,
+                      "compraArs":  20000,
+                      "linkSteam":  "https://store.steampowered.com/app/1086940/Baldurs_Gate_3/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/137430/baldur-s-gate-3-pc-steam-account?o=66f961a2849c2b0001358ea1",
+                      "cuotasPublicada":  57599,
+                      "game":  "Baldur\u0027s Gate 3"
+                  },
+                  {
+                      "fullName":  "Battlefield 6 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  89999,
+                      "compraArs":  54000,
+                      "linkSteam":  "https://store.steampowered.com/app/2807960/Battlefield_6/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/371748/battlefield-6-pc-steam-account?o=689f56a63a1c630c6d45b106",
+                      "cuotasPublicada":  129599,
+                      "game":  "Battlefield 6"
+                  },
+                  {
+                      "fullName":  "Battlefield 6 Phantom Edition PC Steam Account",
+                      "variant":  "Phantom Edition - Cuenta Steam",
+                      "ventaPublicada":  99999,
+                      "compraArs":  76000,
+                      "linkSteam":  "https://store.steampowered.com/app/2807960/Battlefield_6/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/371752/battlefield-6-phantom-edition-pc-steam-account?o=691f4a17db13077383b1cf7d",
+                      "cuotasPublicada":  143999,
+                      "game":  "Battlefield 6"
+                  },
+                  {
+                      "fullName":  "Black Myth: Wukong LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  81999,
+                      "compraArs":  66000,
+                      "linkSteam":  "https://store.steampowered.com/app/2358720/Black_Myth_Wukong/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/263403/black-myth-wukong-pc-steam-cd-key?o=66cc8421ec357b0001b91939",
+                      "cuotasPublicada":  118079,
+                      "game":  "Black Myth: Wukong"
+                  },
+                  {
+                      "fullName":  "Black Myth: Wukong PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  62999,
+                      "compraArs":  46000,
+                      "linkSteam":  "https://store.steampowered.com/app/2358720/Black_Myth_Wukong/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/243305/black-myth-wukong-pc-steam-account?o=6925890edb13077383b1d80a",
+                      "cuotasPublicada":  90719,
+                      "game":  "Black Myth: Wukong"
+                  },
+                  {
+                      "fullName":  "Borderlands 4 Deluxe Edition PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key (Steam)",
+                      "ventaPublicada":  109999,
+                      "compraArs":  82000,
+                      "linkSteam":  "https://store.steampowered.com/app/1285190/Borderlands_4/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/352522/borderlands-4-deluxe-edition-pc-steam-account?o=695c6d7edb13077383b22ac2",
+                      "cuotasPublicada":  158399,
+                      "game":  "Borderlands 4"
+                  },
+                  {
+                      "fullName":  "Borderlands 4 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  59999,
+                      "compraArs":  35000,
+                      "linkSteam":  "https://store.steampowered.com/app/1285190/Borderlands_4/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/352519/borderlands-4-pc-steam-account?o=68a5e636c5e2ce36ff7b411d",
+                      "cuotasPublicada":  86399,
+                      "game":  "Borderlands 4"
+                  },
+                  {
+                      "fullName":  "Borderlands 4 PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  89999,
+                      "compraArs":  54000,
+                      "linkSteam":  "https://store.steampowered.com/app/1285190/Borderlands_4/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/373366/borderlands-4-pc-steam-cd-key?o=69207b8e22918f779983008e",
+                      "cuotasPublicada":  129599,
+                      "game":  "Borderlands 4"
+                  },
+                  {
+                      "fullName":  "Borderlands 4 Deluxe Edition PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key (Steam)",
+                      "ventaPublicada":  148999,
+                      "compraArs":  134000,
+                      "linkSteam":  "https://store.steampowered.com/app/1285190/Borderlands_4/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/377653/borderlands-4-deluxe-edition-pc-steam-cd-key?o=68c64307c5e2ce36ff7b6704",
+                      "cuotasPublicada":  214559,
+                      "game":  "Borderlands 4"
+                  },
+                  {
+                      "fullName":  "Call of Duty: Black Ops 7 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  59999,
+                      "compraArs":  35000,
+                      "linkSteam":  "https://store.steampowered.com/app/3606480/Call_of_Duty_Black_Ops_7/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/379298/call-of-duty-black-ops-7-vault-edition-pc-steam-account?o=68af33b5c5e2ce36ff7b4a4e",
+                      "cuotasPublicada":  86399,
+                      "game":  "Call of Duty: Black Ops 7"
+                  },
+                  {
+                      "fullName":  "Call of Duty: Black Ops 7 Vault Edition PC Steam Account",
+                      "variant":  "Vault Edition - Cuenta Steam",
+                      "ventaPublicada":  119999,
+                      "compraArs":  72000,
+                      "linkSteam":  "https://store.steampowered.com/app/3606480/Call_of_Duty_Black_Ops_7/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/379298/call-of-duty-black-ops-7-vault-edition-pc-steam-account?o=68af33b5c5e2ce36ff7b4a4e",
+                      "cuotasPublicada":  172799,
+                      "game":  "Call of Duty: Black Ops 7"
+                  },
+                  {
+                      "fullName":  "Call of Duty: Black Ops III Zombies Chronicles Edition Steam Account",
+                      "variant":  "Zombies Chronicles Edition - Cuenta Steam",
+                      "ventaPublicada":  52999,
+                      "compraArs":  27000,
+                      "linkSteam":  "https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/150106/call-of-duty-black-ops-iii-zombies-chronicles-edition-steam-account?o=672d16392a091a0001be3c75",
+                      "cuotasPublicada":  76319,
+                      "game":  "Call of Duty: Black Ops III"
+                  },
+                  {
+                      "fullName":  "Call of Duty: Black Ops III Zombies Deluxe Steam Account",
+                      "variant":  "Zombies Deluxe - Cuenta Steam",
+                      "ventaPublicada":  89999,
+                      "compraArs":  51000,
+                      "linkSteam":  "https://store.steampowered.com/app/311210/Call_of_Duty_Black_Ops_III/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/153580/call-of-duty-black-ops-iii-zombies-deluxe-steam-account",
+                      "cuotasPublicada":  129599,
+                      "game":  "Call of Duty: Black Ops III"
+                  },
+                  {
+                      "fullName":  "Clair Obscur: Expedition 33 Deluxe Edition LATAM PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  59999,
+                      "compraArs":  45000,
+                      "linkSteam":  "https://store.steampowered.com/app/1903340/Clair_Obscur_Expedition_33/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/336302/clair-obscur-expedition-33-deluxe-edition-asia-pc-steam-cd-key?o=69722b098d7cd67d55b57646",
+                      "cuotasPublicada":  86399,
+                      "game":  "Clair Obscur: Expedition 33"
+                  },
+                  {
+                      "fullName":  "Clair Obscur: Expedition 33 LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  51999,
+                      "compraArs":  36000,
+                      "linkSteam":  "https://store.steampowered.com/app/1903340/Clair_Obscur_Expedition_33/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/330348/clair-obscur-expedition-33-latam-pc-steam-cd-key?o=693c3753db13077383b20501",
+                      "cuotasPublicada":  74879,
+                      "game":  "Clair Obscur: Expedition 33"
+                  },
+                  {
+                      "fullName":  "Clair Obscur: Expedition 33 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  45999,
+                      "compraArs":  31000,
+                      "linkSteam":  "https://store.steampowered.com/app/1903340/Clair_Obscur_Expedition_33/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/320789/clair-obscur-expedition-33-pc-steam-account?o=680a1258ce3912014318c408",
+                      "cuotasPublicada":  66239,
+                      "game":  "Clair Obscur: Expedition 33"
+                  },
+                  {
+                      "fullName":  "Crimson Desert LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  89999,
+                      "compraArs":  53000,
+                      "linkSteam":  "https://store.steampowered.com/app/3321460/Crimson_Desert/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/451625/crimson-desert-latam-pc-steam-cd-key?o=69d191c7d906c05a77833837",
+                      "cuotasPublicada":  129599,
+                      "game":  "Crimson Desert"
+                  },
+                  {
+                      "fullName":  "Crimson Desert PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  79999,
+                      "compraArs":  47000,
+                      "linkSteam":  "https://store.steampowered.com/app/3321460/Crimson_Desert/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/394217/crimson-desert-pc-steam-account?o=698700748d7cd67d55b59823",
+                      "cuotasPublicada":  115199,
+                      "game":  "Crimson Desert"
+                  },
+                  {
+                      "fullName":  "Cuphead Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  21999,
+                      "compraArs":  7000,
+                      "linkSteam":  "https://store.steampowered.com/app/268910/Cuphead/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/137553/cuphead-steam-account?o=6975c2c722918f77998380d4",
+                      "cuotasPublicada":  31679,
+                      "game":  "Cuphead"
+                  },
+                  {
+                      "fullName":  "Cuphead \u0026 The Delicious Last Course Bundle Steam Account",
+                      "variant":  "\u0026 The Delicious Last Course Bundle - Cuenta Steam",
+                      "ventaPublicada":  29999,
+                      "compraArs":  15000,
+                      "linkSteam":  "https://store.steampowered.com/app/268910/Cuphead/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/234698/cuphead-the-delicious-last-course-bundle-steam-account?o=663902dfa1659c00010a2caa",
+                      "cuotasPublicada":  43199,
+                      "game":  "Cuphead"
+                  },
+                  {
+                      "fullName":  "Cuphead \u0026 The Delicious Last Course Bundle Steam CD Key",
+                      "variant":  "\u0026 The Delicious Last Course Bundle - CD Key (Steam)",
+                      "ventaPublicada":  37999,
+                      "compraArs":  23000,
+                      "linkSteam":  "https://store.steampowered.com/app/268910/Cuphead/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/149808/cuphead-the-delicious-last-course-bundle-steam-cd-key?o=6a243fca621b8c76a1189728",
+                      "cuotasPublicada":  54719,
+                      "game":  "Cuphead"
+                  },
+                  {
+                      "fullName":  "Cyberpunk 2077 Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  39999,
+                      "compraArs":  13000,
+                      "linkSteam":  "https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/137554/cyberpunk-2077-steam-account?o=67dc6804ce39120143188fbd",
+                      "cuotasPublicada":  57599,
+                      "game":  "Cyberpunk 2077"
+                  },
+                  {
+                      "fullName":  "Cyberpunk 2077 Ultimate Edition PC Steam Account",
+                      "variant":  "Ultimate Edition - Cuenta Steam",
+                      "ventaPublicada":  69999,
+                      "compraArs":  28000,
+                      "linkSteam":  "https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/253210/cyberpunk-2077-ultimate-edition-pc-steam-account?o=6898cb5e61ade42159396bf0",
+                      "cuotasPublicada":  100799,
+                      "game":  "Cyberpunk 2077"
+                  },
+                  {
+                      "fullName":  "DayZ Cool Edition PC Steam Account",
+                      "variant":  "Cool Edition - Cuenta Steam",
+                      "ventaPublicada":  89999,
+                      "compraArs":  46000,
+                      "linkSteam":  "https://store.steampowered.com/app/221100/DayZ/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/344471/dayz-cool-edition-pc-steam-account?o=6989d317db13077383b27466",
+                      "cuotasPublicada":  129599,
+                      "game":  "DayZ"
+                  },
+                  {
+                      "fullName":  "DayZ Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  59999,
+                      "compraArs":  27000,
+                      "linkSteam":  "https://store.steampowered.com/app/221100/DayZ/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/249044/dayz-deluxe-edition-pc-steam-account?o=6989d35222918f7799839ff1",
+                      "cuotasPublicada":  86399,
+                      "game":  "DayZ"
+                  },
+                  {
+                      "fullName":  "DayZ Deluxe Edition PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key (Steam)",
+                      "ventaPublicada":  82999,
+                      "compraArs":  61000,
+                      "linkSteam":  "https://store.steampowered.com/app/221100/DayZ/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/246388/dayz-deluxe-edition-pc-steam-cd-key?o=670bc4935dc9110001886a6b",
+                      "cuotasPublicada":  119519,
+                      "game":  "DayZ"
+                  },
+                  {
+                      "fullName":  "DayZ LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  59999,
+                      "compraArs":  29000,
+                      "linkSteam":  "https://store.steampowered.com/app/221100/DayZ/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/170955/dayz-latam-pc-steam-cd-key?o=674de83d2a091a0001be5ce2",
+                      "cuotasPublicada":  86399,
+                      "game":  "DayZ"
+                  },
+                  {
+                      "fullName":  "DayZ PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  39999,
+                      "compraArs":  20000,
+                      "linkSteam":  "https://store.steampowered.com/app/221100/DayZ/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/133282/dayz-pc-steam-account?o=64786abc1956f3000156b39e",
+                      "cuotasPublicada":  57599,
+                      "game":  "DayZ"
+                  },
+                  {
+                      "fullName":  "Dead by Daylight Gold Edition PC Steam Account",
+                      "variant":  "Gold Edition - Cuenta Steam",
+                      "ventaPublicada":  78999,
+                      "compraArs":  64000,
+                      "linkSteam":  "https://store.steampowered.com/app/381210/Dead_by_Daylight/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/350413/dead-by-daylight-gold-edition-pc-steam-account?o=68d409b5e2ce9e733dbe322e",
+                      "cuotasPublicada":  113759,
+                      "game":  "Dead by Daylight"
+                  },
+                  {
+                      "fullName":  "Dead by Daylight Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  20999,
+                      "compraArs":  6000,
+                      "linkSteam":  "https://store.steampowered.com/app/381210/Dead_by_Daylight/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/158643/dead-by-daylight-steam-account?o=6865358053a94f4fc4090334",
+                      "cuotasPublicada":  30239,
+                      "game":  "Dead by Daylight"
+                  },
+                  {
+                      "fullName":  "Death Stranding 2: On the Beach Digital Deluxe Edition LATAM PC Steam CD Key",
+                      "variant":  "Digital Deluxe Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  128999,
+                      "compraArs":  114000,
+                      "linkSteam":  "https://store.steampowered.com/app/3280350/DEATH_STRANDING_2_ON_THE_BEACH/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/452489/death-stranding-2-on-the-beach-digital-deluxe-edition-latam-pc-steam-cd-key?o=69bc2492db13077383b2ce5d",
+                      "cuotasPublicada":  185759,
+                      "game":  "Death Stranding 2: On the Beach"
+                  },
+                  {
+                      "fullName":  "Death Stranding 2: On the Beach Digital Deluxe Edition PC Steam Account",
+                      "variant":  "Digital Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  98999,
+                      "compraArs":  69000,
+                      "linkSteam":  "https://store.steampowered.com/app/3280350/DEATH_STRANDING_2_ON_THE_BEACH/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/459738/death-stranding-2-on-the-beach-digital-deluxe-edition-pc-steam-account?o=69b91bf9db13077383b2c9dc",
+                      "cuotasPublicada":  142559,
+                      "game":  "Death Stranding 2: On the Beach"
+                  },
+                  {
+                      "fullName":  "Death Stranding 2: On the Beach LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  114999,
+                      "compraArs":  100000,
+                      "linkSteam":  "https://store.steampowered.com/app/3280350/DEATH_STRANDING_2_ON_THE_BEACH/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/452496/death-stranding-2-on-the-beach-latam-pc-steam-cd-key?o=69bc245fdb13077383b2ce5b",
+                      "cuotasPublicada":  165599,
+                      "game":  "Death Stranding 2: On the Beach"
+                  },
+                  {
+                      "fullName":  "Diablo IV Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  56999,
+                      "compraArs":  28000,
+                      "linkSteam":  "https://store.steampowered.com/app/2344520/Diablo_IV/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/191664/diablo-iv-steam-account?o=670085d02815c40001eb01a2",
+                      "cuotasPublicada":  82079,
+                      "game":  "Diablo IV"
+                  },
+                  {
+                      "fullName":  "DRAGON BALL: Sparking! ZERO PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  55999,
+                      "compraArs":  32000,
+                      "linkSteam":  "https://store.steampowered.com/app/1790600/DRAGON_BALL_Sparking_ZERO/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/267255/dragon-ball-sparking-zero-pc-steam-account?o=66f18d4f15e92a0001747d68",
+                      "cuotasPublicada":  80639,
+                      "game":  "DRAGON BALL: Sparking! ZERO"
+                  },
+                  {
+                      "fullName":  "DRAGON BALL: Sparking! ZERO Ultimate Edition PC Steam Account",
+                      "variant":  "Ultimate Edition - Cuenta Steam",
+                      "ventaPublicada":  89999,
+                      "compraArs":  58000,
+                      "linkSteam":  "https://store.steampowered.com/app/1790600/DRAGON_BALL_Sparking_ZERO/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/273309/dragon-ball-sparking-zero-ultimate-edition-pc-steam-account?o=66f4ae33208b1a0001753ba0",
+                      "cuotasPublicada":  129599,
+                      "game":  "DRAGON BALL: Sparking! ZERO"
+                  },
+                  {
+                      "fullName":  "Dying Light: The Beast PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  59999,
+                      "compraArs":  35000,
+                      "linkSteam":  "https://store.steampowered.com/app/3008130/Dying_Light_The_Beast/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/356849/dying-light-the-beast-pc-steam-account?o=68c46140e2ce9e733dbe16e6",
+                      "cuotasPublicada":  86399,
+                      "game":  "Dying Light: The Beast"
+                  },
+                  {
+                      "fullName":  "Dynasty Warriors: Origins Digital Deluxe Edition PC Steam Account",
+                      "variant":  "Digital Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  99999,
+                      "compraArs":  82000,
+                      "linkSteam":  "https://store.steampowered.com/app/2384580/DYNASTY_WARRIORS_ORIGINS/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/308194/dynasty-warriors-origins-digital-deluxe-edition-pc-steam-account?o=67a2b1c467b26b39c378d193",
+                      "cuotasPublicada":  143999,
+                      "game":  "Dynasty Warriors: Origins"
+                  },
+                  {
+                      "fullName":  "Dynasty Warriors: Origins PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  72999,
+                      "compraArs":  58000,
+                      "linkSteam":  "https://store.steampowered.com/app/2384580/DYNASTY_WARRIORS_ORIGINS/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/308192/dynasty-warriors-origins-pc-steam-account?o=699f0f2b22918f779983c0aa",
+                      "cuotasPublicada":  105119,
+                      "game":  "Dynasty Warriors: Origins"
+                  },
+                  {
+                      "fullName":  "Dynasty Warriors: Origins PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  79999,
+                      "compraArs":  60000,
+                      "linkSteam":  "https://store.steampowered.com/app/2384580/DYNASTY_WARRIORS_ORIGINS/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/304555/dynasty-warriors-origins-pc-steam-cd-key?o=68878c603a1c630c6d458dba",
+                      "cuotasPublicada":  115199,
+                      "game":  "Dynasty Warriors: Origins"
+                  },
+                  {
+                      "fullName":  "EA SPORTS FC 26 ICONS Edition Steam Account",
+                      "variant":  "ICONS Edition - Cuenta Steam",
+                      "ventaPublicada":  37999,
+                      "compraArs":  22000,
+                      "linkSteam":  "https://store.steampowered.com/app/3405690/EA_SPORTS_FC_26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/490334/ea-sports-fc-26-icons-edition-pc-steam-account?o=69dd161bd906c05a77834b1d",
+                      "cuotasPublicada":  54719,
+                      "game":  "EA SPORTS FC 26"
+                  },
+                  {
+                      "fullName":  "EA SPORTS FC 26 TOTY Edition PC Steam Account",
+                      "variant":  "TOTY Edition - Cuenta Steam",
+                      "ventaPublicada":  52999,
+                      "compraArs":  23000,
+                      "linkSteam":  "https://store.steampowered.com/app/3405690/EA_SPORTS_FC_26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/462295/ea-sports-fc-26-toty-edition-pc-steam-account?o=69aaa08622918f779983db9b",
+                      "cuotasPublicada":  76319,
+                      "game":  "EA SPORTS FC 26"
+                  },
+                  {
+                      "fullName":  "EA SPORTS FC 26 Ultimate Edition Steam Account",
+                      "variant":  "Ultimate Edition - Cuenta Steam",
+                      "ventaPublicada":  65999,
+                      "compraArs":  41000,
+                      "linkSteam":  "https://store.steampowered.com/app/3405690/EA_SPORTS_FC_26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/365713/ea-sports-fc-26-ultimate-edition-pc-steam-account?o=687a2f7453a94f4fc40920f6",
+                      "cuotasPublicada":  95039,
+                      "game":  "EA SPORTS FC 26"
+                  },
+                  {
+                      "fullName":  "EA SPORTS FC™ 26 Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  24999,
+                      "compraArs":  4000,
+                      "linkSteam":  "https://store.steampowered.com/app/3405690/EA_SPORTS_FC_26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/365634/ea-sports-fc-26-pc-steam-account?o=6878a16d61ade4215939441a",
+                      "cuotasPublicada":  35999,
+                      "game":  "EA SPORTS FC 26"
+                  },
+                  {
+                      "fullName":  "EA SPORTS FC 26 The World\u0027s Game Edition PC Steam Account",
+                      "variant":  "The World\u0027s Game Edition - Cuenta Steam",
+                      "ventaPublicada":  39999,
+                      "compraArs":  14000,
+                      "linkSteam":  "https://store.steampowered.com/app/3405690/EA_SPORTS_FC_26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/541854/ea-sports-fc-26-the-world-s-game-edition-pc-steam-account?o=6a2b3f73621b8c76a118a417",
+                      "cuotasPublicada":  57599,
+                      "game":  "EA SPORTS FC 26"
+                  },
+                  {
+                      "fullName":  "ELDEN RING NIGHTREIGN Deluxe Edition PC Steam Account",
+                      "variant":  "NIGHTREIGN Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  63999,
+                      "compraArs":  49000,
+                      "linkSteam":  "https://store.steampowered.com/app/2622380/ELDEN_RING_NIGHTREIGN/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/311954/elden-ring-nightreign-deluxe-edition-pc-steam-account?o=6838ded9ea9a49672d1b8062",
+                      "cuotasPublicada":  92159,
+                      "game":  "ELDEN RING"
+                  },
+                  {
+                      "fullName":  "ELDEN RING NIGHTREIGN PC Steam Account",
+                      "variant":  "NIGHTREIGN - Cuenta Steam",
+                      "ventaPublicada":  47999,
+                      "compraArs":  33000,
+                      "linkSteam":  "https://store.steampowered.com/app/2622380/ELDEN_RING_NIGHTREIGN/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/312067/elden-ring-nightreign-pc-steam-account?o=6a2bb3f4301aef74c1f97e81",
+                      "cuotasPublicada":  69119,
+                      "game":  "ELDEN RING"
+                  },
+                  {
+                      "fullName":  "Elden Ring: Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  61999,
+                      "compraArs":  42000,
+                      "linkSteam":  "https://store.steampowered.com/app/1245620/ELDEN_RING/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/133264/elden-ring-steam-account?o=667ec3fdd112bc0001db0c9c",
+                      "cuotasPublicada":  89279,
+                      "game":  "ELDEN RING"
+                  },
+                  {
+                      "fullName":  "ELDEN RING - Shadow of the Erdtree LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  79999,
+                      "compraArs":  55000,
+                      "linkSteam":  "https://store.steampowered.com/app/1245620/ELDEN_RING/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/246437/elden-ring-shadow-of-the-erdtree-dlc-latam-pc-steam-cd-key?o=6a076735d906c05a77840341",
+                      "cuotasPublicada":  115199,
+                      "game":  "ELDEN RING - Shadow of the Erdtree"
+                  },
+                  {
+                      "fullName":  "F1 25 PC EA App CD Key",
+                      "variant":  "Edicion estandar - CD Key (EA App)",
+                      "ventaPublicada":  74999,
+                      "compraArs":  55000,
+                      "linkSteam":  "https://store.steampowered.com/app/3059520/F1_25/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/396767/f1-25-pc-ea-app-cd-key?o=68e7b9741c9ba16f3fecb20c",
+                      "cuotasPublicada":  107999,
+                      "game":  "F1 25"
+                  },
+                  {
+                      "fullName":  "F1 25 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  49999,
+                      "compraArs":  24000,
+                      "linkSteam":  "https://store.steampowered.com/app/3059520/F1_25/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/327250/f1-25-pc-steam-account?o=683888ebce391201431909d2",
+                      "cuotasPublicada":  71999,
+                      "game":  "F1 25"
+                  },
+                  {
+                      "fullName":  "F1 25: 2026 Season Edition PC Steam Account",
+                      "variant":  "2026 Season Edition - Cuenta Steam",
+                      "ventaPublicada":  69999,
+                      "compraArs":  54000,
+                      "linkSteam":  "https://store.steampowered.com/app/3059520/F1_25/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/541795/f1-25-2026-season-edition-pc-steam-account?o=6a26ac8d621b8c76a11899c8",
+                      "cuotasPublicada":  100799,
+                      "game":  "F1 25"
+                  },
+                  {
+                      "fullName":  "Fallout 76 PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  29999,
+                      "compraArs":  14000,
+                      "linkSteam":  "https://store.steampowered.com/app/1151340/Fallout_76/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/80127/fallout-76-pc-steam-cd-key?o=62b4a8fa164346000195c932",
+                      "cuotasPublicada":  43199,
+                      "game":  "Fallout 76"
+                  },
+                  {
+                      "fullName":  "FINAL FANTASY VII REMAKE INTERGRADE Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  39999,
+                      "compraArs":  24000,
+                      "linkSteam":  "https://store.steampowered.com/app/1462040/FINAL_FANTASY_VII_REMAKE_INTERGRADE/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/156198/final-fantasy-vii-remake-intergrade-epic-games-account?o=664fa15cefa6710001513a2e",
+                      "cuotasPublicada":  57599,
+                      "game":  "FINAL FANTASY VII REMAKE INTERGRADE"
+                  },
+                  {
+                      "fullName":  "Forza Horizon 5 Deluxe Edition Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  49999,
+                      "compraArs":  27000,
+                      "linkSteam":  "https://store.steampowered.com/app/1551360/Forza_Horizon_5/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/153247/forza-horizon-5-deluxe-edition-steam-account?o=6975a5d6db13077383b2540a",
+                      "cuotasPublicada":  71999,
+                      "game":  "Forza Horizon 5"
+                  },
+                  {
+                      "fullName":  "Forza Horizon 5 Premium Edition Steam Account",
+                      "variant":  "Premium Edition - Cuenta Steam",
+                      "ventaPublicada":  64999,
+                      "compraArs":  32000,
+                      "linkSteam":  "https://store.steampowered.com/app/1551360/Forza_Horizon_5/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/153246/forza-horizon-5-premium-edition-steam-account?o=6975a6048d7cd67d55b57a60",
+                      "cuotasPublicada":  93599,
+                      "game":  "Forza Horizon 5"
+                  },
+                  {
+                      "fullName":  "Forza Horizon 5 Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  39999,
+                      "compraArs":  20000,
+                      "linkSteam":  "https://store.steampowered.com/app/1551360/Forza_Horizon_5/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/151135/forza-horizon-5-steam-account?o=6975c18922918f77998380d3",
+                      "cuotasPublicada":  57599,
+                      "game":  "Forza Horizon 5"
+                  },
+                  {
+                      "fullName":  "Forza Horizon 6 Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  89999,
+                      "compraArs":  71000,
+                      "linkSteam":  "https://store.steampowered.com/app/2483190/Forza_Horizon_6/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/440711/forza-horizon-6-deluxe-edition-pc-steam-account?o=697369528d7cd67d55b5780d",
+                      "cuotasPublicada":  129599,
+                      "game":  "Forza Horizon 6"
+                  },
+                  {
+                      "fullName":  "Forza Horizon 6 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  69999,
+                      "compraArs":  53000,
+                      "linkSteam":  "https://store.steampowered.com/app/2483190/Forza_Horizon_6/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/440716/forza-horizon-6-pc-steam-account?o=6a27e22585a6fe1580940674",
+                      "cuotasPublicada":  100799,
+                      "game":  "Forza Horizon 6"
+                  },
+                  {
+                      "fullName":  "Forza Horizon 6 Premium Edition PC Steam Account",
+                      "variant":  "Premium Edition - Cuenta Steam",
+                      "ventaPublicada":  109999,
+                      "compraArs":  90000,
+                      "linkSteam":  "https://store.steampowered.com/app/2483190/Forza_Horizon_6/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/440707/forza-horizon-6-premium-edition-pc-steam-account?o=6980a2e58d7cd67d55b58ce2",
+                      "cuotasPublicada":  158399,
+                      "game":  "Forza Horizon 6"
+                  },
+                  {
+                      "fullName":  "Ghost of Tsushima Director\u0027s Cut LATAM PC Steam CD Key",
+                      "variant":  "Director\u0027s Cut - CD Key LATAM (Steam)",
+                      "ventaPublicada":  67999,
+                      "compraArs":  53000,
+                      "linkSteam":  "https://store.steampowered.com/app/2215430/Ghost_of_Tsushima_VERSIN_DEL_DIRECTOR/?l=spanish",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/305975/ghost-of-tsushima-director-s-cut-latam-pc-steam-cd-key?o=685e74573a1c630c6d45610e",
+                      "cuotasPublicada":  97919,
+                      "game":  "Ghost of Tsushima"
+                  },
+                  {
+                      "fullName":  "God of War Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  69999,
+                      "compraArs":  51000,
+                      "linkSteam":  "https://store.steampowered.com/app/1593500/God_of_War/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/152417/god-of-war-steam-account?o=640f34ad574c250001a5b6ff",
+                      "cuotasPublicada":  100799,
+                      "game":  "God of War"
+                  },
+                  {
+                      "fullName":  "God Of War Ragnarök Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  78999,
+                      "compraArs":  64000,
+                      "linkSteam":  "https://store.steampowered.com/app/2322010/God_of_War_Ragnark/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/261894/god-of-war-ragnaroek-steam-account?o=66ed915d208b1a00017536a6",
+                      "cuotasPublicada":  113759,
+                      "game":  "God Of War Ragnarök"
+                  },
+                  {
+                      "fullName":  "God Of War Ragnarök Deluxe Edition PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key (Steam)",
+                      "ventaPublicada":  89999,
+                      "compraArs":  69000,
+                      "linkSteam":  "https://store.steampowered.com/app/2322010/God_of_War_Ragnark/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/276582/god-of-war-ragnaroek-deluxe-edition-row-pc-steam-cd-key?o=69d4bd2ed906c05a77833c7a",
+                      "cuotasPublicada":  129599,
+                      "game":  "God Of War Ragnarök"
+                  },
+                  {
+                      "fullName":  "Grand Theft Auto V Enhanced PC Rockstar Digital Download CD Key",
+                      "variant":  "Enhanced - CD Key (Rockstar)",
+                      "ventaPublicada":  39999,
+                      "compraArs":  17000,
+                      "linkSteam":  "https://store.steampowered.com/app/3240220/Grand_Theft_Auto_V_Enhanced/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/325430/grand-theft-auto-v-enhanced-pc-rockstar-digital-download-cd-key?o=693c4a15db13077383b20524",
+                      "cuotasPublicada":  57599,
+                      "game":  "Grand Theft Auto V"
+                  },
+                  {
+                      "fullName":  "Grand Theft Auto V Enhanced PC Steam Account",
+                      "variant":  "Enhanced - Cuenta Steam",
+                      "ventaPublicada":  31999,
+                      "compraArs":  14000,
+                      "linkSteam":  "https://store.steampowered.com/app/3240220/Grand_Theft_Auto_V_Enhanced/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/320974/grand-theft-auto-v-enhanced-pc-steam-account?o=67d01668ea9a49672d1aef68",
+                      "cuotasPublicada":  46079,
+                      "game":  "Grand Theft Auto V"
+                  },
+                  {
+                      "fullName":  "HELLDIVERS 2 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  49999,
+                      "compraArs":  35000,
+                      "linkSteam":  "https://store.steampowered.com/app/553850/HELLDIVERS_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/208502/helldivers-2-steam-account?o=65d1cef8ef223100014b4fc4",
+                      "cuotasPublicada":  71999,
+                      "game":  "HELLDIVERS 2"
+                  },
+                  {
+                      "fullName":  "HELLDIVERS 2 LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  65999,
+                      "compraArs":  51000,
+                      "linkSteam":  "https://store.steampowered.com/app/553850/HELLDIVERS_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/323104/helldivers-2-latam-pc-steam-cd-key?o=67eb04d5ea9a49672d1b1760",
+                      "cuotasPublicada":  95039,
+                      "game":  "HELLDIVERS 2"
+                  },
+                  {
+                      "fullName":  "HELLDIVERS 2 Super Citizen Edition LATAM PC Steam CD Key",
+                      "variant":  "Super Citizen Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  79999,
+                      "compraArs":  62000,
+                      "linkSteam":  "https://store.steampowered.com/app/553850/HELLDIVERS_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/322569/helldivers-2-super-citizen-edition-latam-pc-steam-cd-key?o=682e4a3cce3912014318fcf3",
+                      "cuotasPublicada":  115199,
+                      "game":  "HELLDIVERS 2"
+                  },
+                  {
+                      "fullName":  "Hogwarts Legacy Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  29999,
+                      "compraArs":  7400,
+                      "linkSteam":  "https://store.steampowered.com/app/990080/Hogwarts_Legacy/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/148232/hogwarts-legacy-steam-account?o=699f136b22918f779983c0c7",
+                      "cuotasPublicada":  43199,
+                      "game":  "Hogwarts Legacy"
+                  },
+                  {
+                      "fullName":  "Hogwarts Legacy Deluxe Edition Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  36999,
+                      "compraArs":  9000,
+                      "linkSteam":  "https://store.steampowered.com/app/990080/Hogwarts_Legacy/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/148234/hogwarts-legacy-deluxe-edition-steam-account?o=640c290c16c1990001fb93e4",
+                      "cuotasPublicada":  53279,
+                      "game":  "Hogwarts Legacy"
+                  },
+                  {
+                      "fullName":  "Hogwarts Legacy LATAM Steam CD Key",
+                      "variant":  "LATAM - CD Key LATAM (Steam)",
+                      "ventaPublicada":  39999,
+                      "compraArs":  6000,
+                      "linkSteam":  "https://store.steampowered.com/app/990080/Hogwarts_Legacy/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/149507/hogwarts-legacy-latam-steam-cd-key?o=69b92de522918f779983fa43",
+                      "cuotasPublicada":  57599,
+                      "game":  "Hogwarts Legacy"
+                  },
+                  {
+                      "fullName":  "Hogwarts Legacy Deluxe Edition PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key (Steam)",
+                      "ventaPublicada":  49999,
+                      "compraArs":  15000,
+                      "linkSteam":  "https://store.steampowered.com/app/990080/Hogwarts_Legacy/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/148055/hogwarts-legacy-deluxe-edition-pc-steam-cd-key?o=63e371f35f45c000018c69cc",
+                      "cuotasPublicada":  71999,
+                      "game":  "Hogwarts Legacy"
+                  },
+                  {
+                      "fullName":  "Invincible VS Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  69999,
+                      "compraArs":  40000,
+                      "linkSteam":  "https://store.steampowered.com/app/2353060/Invincible_VS/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/440609/invincible-vs-deluxe-edition-pc-steam-account?o=69f4171eb13b6b626592605a",
+                      "cuotasPublicada":  100799,
+                      "game":  "Invincible VS"
+                  },
+                  {
+                      "fullName":  "Invincible VS PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  43999,
+                      "compraArs":  23000,
+                      "linkSteam":  "https://store.steampowered.com/app/2353060/Invincible_VS/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/440606/invincible-vs-pc-steam-account?o=69f35ca6b13b6b6265925f96",
+                      "cuotasPublicada":  63359,
+                      "game":  "Invincible VS"
+                  },
+                  {
+                      "fullName":  "LEGO Batman: Legacy of the Dark Knight Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  109999,
+                      "compraArs":  71000,
+                      "linkSteam":  "https://store.steampowered.com/app/2215200/LEGO_Batman_El_Legado_del_Caballero_Oscuro/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/439223/lego-batman-legacy-of-the-dark-knight-deluxe-edition-pc-steam-account?o=6a1158b8621b8c76a118586c",
+                      "cuotasPublicada":  158399,
+                      "game":  "LEGO Batman: Legacy of the Dark Knight"
+                  },
+                  {
+                      "fullName":  "LEGO Batman: Legacy of the Dark Knight PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  83999,
+                      "compraArs":  53000,
+                      "linkSteam":  "https://store.steampowered.com/app/2215200/LEGO_Batman_El_Legado_del_Caballero_Oscuro/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/439222/lego-batman-legacy-of-the-dark-knight-pc-steam-account?o=6a0b5d70b13b6b626592bceb",
+                      "cuotasPublicada":  120959,
+                      "game":  "LEGO Batman: Legacy of the Dark Knight"
+                  },
+                  {
+                      "fullName":  "Marvel\u0027s Spider-Man 2 Deluxe Edition PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key (Steam)",
+                      "ventaPublicada":  87999,
+                      "compraArs":  68000,
+                      "linkSteam":  "https://store.steampowered.com/app/2651280/Marvels_SpiderMan_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/307361/marvel-s-spider-man-2-deluxe-edition-row-pc-steam-cd-key?o=68c464a1368ded6fdbbe424a",
+                      "cuotasPublicada":  126719,
+                      "game":  "Marvel\u0027s Spider-Man 2"
+                  },
+                  {
+                      "fullName":  "Marvel\u0027s Spider-Man Remastered LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  79999,
+                      "compraArs":  47000,
+                      "linkSteam":  "https://store.steampowered.com/app/1817070/Marvels_SpiderMan_Remastered/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/322545/marvel-s-spider-man-remastered-latam-pc-steam-cd-key?o=67dd418fea9a49672d1b0a48",
+                      "cuotasPublicada":  115199,
+                      "game":  "Marvel\u0027s Spider-Man Remastered"
+                  },
+                  {
+                      "fullName":  "Marvel\u0027s Spider-Man: Miles Morales PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  49999,
+                      "compraArs":  25000,
+                      "linkSteam":  "https://store.steampowered.com/app/1817190/Marvels_SpiderMan_Miles_Morales/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/136099/marvel-s-spider-man-miles-morales-pc-steam-cd-key?o=63a61c79e8e7f500017ce51f",
+                      "cuotasPublicada":  71999,
+                      "game":  "Marvel\u0027s Spider-Man: Miles Morales"
+                  },
+                  {
+                      "fullName":  "Microsoft Flight Simulator 2024 Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  139999,
+                      "compraArs":  103000,
+                      "linkSteam":  "https://store.steampowered.com/app/2537590/Microsoft_Flight_Simulator_2024/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/274086/microsoft-flight-simulator-2024-deluxe-edition-pc-steam-account?o=66f699cbbccf720001e9899f",
+                      "cuotasPublicada":  201599,
+                      "game":  "Microsoft Flight Simulator 2024"
+                  },
+                  {
+                      "fullName":  "Microsoft Flight Simulator 2024 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  96999,
+                      "compraArs":  67000,
+                      "linkSteam":  "https://store.steampowered.com/app/2537590/Microsoft_Flight_Simulator_2024/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/274084/microsoft-flight-simulator-2024-pc-steam-account?o=69fc8aa33d137911417e3b05",
+                      "cuotasPublicada":  139679,
+                      "game":  "Microsoft Flight Simulator 2024"
+                  },
+                  {
+                      "fullName":  "Microsoft Flight Simulator 2024 Premium Deluxe Edition PC Steam Account",
+                      "variant":  "Premium Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  169999,
+                      "compraArs":  132000,
+                      "linkSteam":  "https://store.steampowered.com/app/2537590/Microsoft_Flight_Simulator_2024/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/274118/microsoft-flight-simulator-2024-premium-deluxe-edition-pc-steam-account?o=66f80ac95dc91100018859b4",
+                      "cuotasPublicada":  244799,
+                      "game":  "Microsoft Flight Simulator 2024"
+                  },
+                  {
+                      "fullName":  "Microsoft Flight Simulator 2024 Aviator Edition PC Steam Account",
+                      "variant":  "Aviator Edition - Cuenta Steam",
+                      "ventaPublicada":  249999,
+                      "compraArs":  203000,
+                      "linkSteam":  "https://store.steampowered.com/app/2537590/Microsoft_Flight_Simulator_2024/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/274088/microsoft-flight-simulator-2024-aviator-edition-pc-steam-account?o=66f69b09208b1a0001753d00",
+                      "cuotasPublicada":  359999,
+                      "game":  "Microsoft Flight Simulator 2024"
+                  },
+                  {
+                      "fullName":  "Monster Hunter Wilds LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  58999,
+                      "compraArs":  34000,
+                      "linkSteam":  "https://store.steampowered.com/app/2246340/Monster_Hunter_Wilds/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/320762/monster-hunter-wilds-latam-pc-steam-cd-key?o=6899fc2553a94f4fc409471c",
+                      "cuotasPublicada":  84959,
+                      "game":  "Monster Hunter Wilds"
+                  },
+                  {
+                      "fullName":  "Monster Hunter Wilds Deluxe Edition LATAM PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  99999,
+                      "compraArs":  76000,
+                      "linkSteam":  "https://store.steampowered.com/app/2246340/Monster_Hunter_Wilds/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/320759/monster-hunter-wilds-deluxe-edition-latam-pc-steam-cd-key?o=67e51bcfce391201431898d7",
+                      "cuotasPublicada":  143999,
+                      "game":  "Monster Hunter Wilds"
+                  },
+                  {
+                      "fullName":  "NBA 2K26 SLAM Edition PC Steam Account",
+                      "variant":  "SLAM Edition - Cuenta Steam",
+                      "ventaPublicada":  79999,
+                      "compraArs":  21000,
+                      "linkSteam":  "https://store.steampowered.com/app/3472040/NBA_2K26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/426616/nba-2k26-slam-edition-pc-steam-account?o=693a9c3722918f7799832e8d",
+                      "cuotasPublicada":  115199,
+                      "game":  "NBA 2K26"
+                  },
+                  {
+                      "fullName":  "NBA 2K26 Standard Edition PC Steam Account",
+                      "variant":  "Standard Edition - Cuenta Steam",
+                      "ventaPublicada":  49999,
+                      "compraArs":  16000,
+                      "linkSteam":  "https://store.steampowered.com/app/3472040/NBA_2K26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/371701/nba-2k26-standard-edition-pc-steam-account?o=688cb7c261ade42159395a8b",
+                      "cuotasPublicada":  71999,
+                      "game":  "NBA 2K26"
+                  },
+                  {
+                      "fullName":  "NBA 2K26 Standard Edition PC Steam CD Key",
+                      "variant":  "Standard Edition - CD Key (Steam)",
+                      "ventaPublicada":  69999,
+                      "compraArs":  17000,
+                      "linkSteam":  "https://store.steampowered.com/app/3472040/NBA_2K26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/369993/nba-2k26-standard-edition-pc-steam-cd-key?o=6a2ed9ed301aef74c1f981c1",
+                      "cuotasPublicada":  100799,
+                      "game":  "NBA 2K26"
+                  },
+                  {
+                      "fullName":  "NBA 2K26 Superstar Edition PC Steam CD Key",
+                      "variant":  "Superstar Edition - CD Key (Steam)",
+                      "ventaPublicada":  99999,
+                      "compraArs":  51000,
+                      "linkSteam":  "https://store.steampowered.com/app/3472040/NBA_2K26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/372374/nba-2k26-superstar-edition-pc-steam-cd-key?o=6a203cd3621b8c76a11877b0",
+                      "cuotasPublicada":  143999,
+                      "game":  "NBA 2K26"
+                  },
+                  {
+                      "fullName":  "PRAGMATA LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  69999,
+                      "compraArs":  55000,
+                      "linkSteam":  "https://store.steampowered.com/app/3357650/PRAGMATA/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/475522/pragmata-latam-pc-steam-cd-key?o=69ef7ea0b13b6b6265925896",
+                      "cuotasPublicada":  100799,
+                      "game":  "PRAGMATA"
+                  },
+                  {
+                      "fullName":  "PRAGMATA PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  60999,
+                      "compraArs":  46000,
+                      "linkSteam":  "https://store.steampowered.com/app/3357650/PRAGMATA/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/428363/pragmata-pc-steam-account?o=699814828d7cd67d55b5b024",
+                      "cuotasPublicada":  87839,
+                      "game":  "PRAGMATA"
+                  },
+                  {
+                      "fullName":  "PRAGMATA Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  77999,
+                      "compraArs":  58000,
+                      "linkSteam":  "https://store.steampowered.com/app/3357650/PRAGMATA/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/431201/pragmata-deluxe-edition-pc-steam-account?o=6998144522918f779983b594",
+                      "cuotasPublicada":  112319,
+                      "game":  "PRAGMATA"
+                  },
+                  {
+                      "fullName":  "Ready Or Not LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  42999,
+                      "compraArs":  17000,
+                      "linkSteam":  "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/146495/ready-or-not-latam-pc-steam-cd-key?o=6719413490564e0001518c82",
+                      "cuotasPublicada":  61919,
+                      "game":  "Ready Or Not"
+                  },
+                  {
+                      "fullName":  "Ready Or Not PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  30999,
+                      "compraArs":  11000,
+                      "linkSteam":  "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/133263/ready-or-not-pc-steam-account?o=66f966a6ff64310001facad8",
+                      "cuotasPublicada":  44639,
+                      "game":  "Ready Or Not"
+                  },
+                  {
+                      "fullName":  "Ready or Not: Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  42999,
+                      "compraArs":  24000,
+                      "linkSteam":  "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/505409/ready-or-not-deluxe-edition-pc-steam-account?o=69f86ec7b13b6b6265926682",
+                      "cuotasPublicada":  61919,
+                      "game":  "Ready Or Not"
+                  },
+                  {
+                      "fullName":  "Ready or Not: Deluxe Edition LATAM PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  63999,
+                      "compraArs":  49000,
+                      "linkSteam":  "https://store.steampowered.com/app/1144200/Ready_or_Not/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/476489/ready-or-not-deluxe-edition-latam-pc-steam-cd-key?o=69f064a5d906c05a7783bca6",
+                      "cuotasPublicada":  92159,
+                      "game":  "Ready Or Not"
+                  },
+                  {
+                      "fullName":  "Red Dead Redemption 2 Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  39999,
+                      "compraArs":  13000,
+                      "linkSteam":  "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/133287/red-dead-redemption-2-steam-account?o=63b2a724e8e7f500017ce7a7",
+                      "cuotasPublicada":  57599,
+                      "game":  "Red Dead Redemption 2"
+                  },
+                  {
+                      "fullName":  "Red Dead Redemption 2 Ultimate Edition LATAM PC Rockstar Digital Download CD Key",
+                      "variant":  "Ultimate Edition - CD Key LATAM (Rockstar)",
+                      "ventaPublicada":  88999,
+                      "compraArs":  39000,
+                      "linkSteam":  "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/190871/red-dead-redemption-2-ultimate-edition-latam-pc-rockstar-digital-download-cd-key?o=67acb39e3af4333987f54bea",
+                      "cuotasPublicada":  128159,
+                      "game":  "Red Dead Redemption 2"
+                  },
+                  {
+                      "fullName":  "Red Dead Redemption 2 Ultimate Edition Steam Account",
+                      "variant":  "Ultimate Edition - Cuenta Steam",
+                      "ventaPublicada":  67999,
+                      "compraArs":  18000,
+                      "linkSteam":  "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/156115/red-dead-redemption-2-ultimate-edition-steam-account?o=6975973f22918f7799838099",
+                      "cuotasPublicada":  97919,
+                      "game":  "Red Dead Redemption 2"
+                  },
+                  {
+                      "fullName":  "RESIDENT EVIL 2 / BIOHAZARD RE:2 Deluxe Edition LATAM Steam CD Key",
+                      "variant":  "Deluxe Edition LATAM - CD Key LATAM (Steam)",
+                      "ventaPublicada":  42999,
+                      "compraArs":  13000,
+                      "linkSteam":  "https://store.steampowered.com/app/883710/Resident_Evil_2/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/170954/resident-evil-2-biohazard-re-2-deluxe-edition-latam-steam-cd-key?o=6929947c8d7cd67d55b50b03",
+                      "cuotasPublicada":  61919,
+                      "game":  "RESIDENT EVIL 2 / BIOHAZARD RE:2"
+                  },
+                  {
+                      "fullName":  "Resident Evil 3 LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  34999,
+                      "compraArs":  16000,
+                      "linkSteam":  "https://store.steampowered.com/app/952060/Resident_Evil_3/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/326629/resident-evil-3-latam-pc-steam-cd-key?o=688916b43a1c630c6d459086",
+                      "cuotasPublicada":  50399,
+                      "game":  "Resident Evil 3"
+                  },
+                  {
+                      "fullName":  "Resident Evil 3 Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  22999,
+                      "compraArs":  3100,
+                      "linkSteam":  "https://store.steampowered.com/app/952060/Resident_Evil_3/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/165389/resident-evil-3-steam-account?o=699ef9a822918f779983c03f",
+                      "cuotasPublicada":  33119,
+                      "game":  "Resident Evil 3"
+                  },
+                  {
+                      "fullName":  "Resident Evil 4 (2023) Gold Edition LATAM PC Steam CD Key",
+                      "variant":  "Gold Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  49999,
+                      "compraArs":  35000,
+                      "linkSteam":  "https://store.steampowered.com/app/2050650/Resident_Evil_4/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/325062/resident-evil-4-2023-gold-edition-latam-pc-steam-cd-key?o=683debb6ce39120143190ee7",
+                      "cuotasPublicada":  71999,
+                      "game":  "Resident Evil 4 (2023)"
+                  },
+                  {
+                      "fullName":  "Resident Evil 4 (2023) LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  34999,
+                      "compraArs":  12000,
+                      "linkSteam":  "https://store.steampowered.com/app/2050650/Resident_Evil_4/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/286215/resident-evil-4-2023-latam-pc-steam-cd-key?o=68e55c2f71ca3f0124b84069",
+                      "cuotasPublicada":  50399,
+                      "game":  "Resident Evil 4 (2023)"
+                  },
+                  {
+                      "fullName":  "Resident Evil 7 Gold Edition \u0026 Village Gold Edition Bundle Steam Account",
+                      "variant":  "Gold Edition Bundle - Cuenta Steam",
+                      "ventaPublicada":  59999,
+                      "compraArs":  25000,
+                      "linkSteam":  "https://store.steampowered.com/app/1196590/Resident_Evil_Village/?l=spanish",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/159039/resident-evil-7-gold-edition-village-gold-edition-bundle-steam-account?o=6448e38517c75d00013e41ad",
+                      "cuotasPublicada":  86399,
+                      "game":  "Resident Evil 7 Gold Edition \u0026 Village"
+                  },
+                  {
+                      "fullName":  "Resident Evil 7 Gold Edition \u0026 Village Gold Edition Bundle PC Steam CD Key",
+                      "variant":  "Gold Edition Bundle - CD Key (Steam)",
+                      "ventaPublicada":  79999,
+                      "compraArs":  39000,
+                      "linkSteam":  "https://store.steampowered.com/app/1196590/Resident_Evil_Village/?l=spanish",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/154024/resident-evil-7-gold-edition-village-gold-edition-bundle-pc-steam-cd-key?o=6a05b8d4b13b6b626592890e",
+                      "cuotasPublicada":  115199,
+                      "game":  "Resident Evil 7 Gold Edition \u0026 Village"
+                  },
+                  {
+                      "fullName":  "Resident Evil 7: Biohazard Gold Edition LATAM PC Steam CD Key",
+                      "variant":  "Gold Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  40999,
+                      "compraArs":  23000,
+                      "linkSteam":  "https://store.steampowered.com/app/418370/Resident_Evil_7_Biohazard/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/326593/resident-evil-7-biohazard-gold-edition-latam-pc-steam-cd-key?o=67f003d0ea9a49672d1b2134",
+                      "cuotasPublicada":  59039,
+                      "game":  "Resident Evil 7: Biohazard"
+                  },
+                  {
+                      "fullName":  "Resident Evil 7: Biohazard Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  24999,
+                      "compraArs":  10000,
+                      "linkSteam":  "https://store.steampowered.com/app/418370/Resident_Evil_7_Biohazard/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/33369/resident-evil-7-biohazard-row-steam-cd-key?o=5fc0b4da4a5a0d000194a3bc",
+                      "cuotasPublicada":  35999,
+                      "game":  "Resident Evil 7: Biohazard"
+                  },
+                  {
+                      "fullName":  "Resident Evil Requiem Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  84999,
+                      "compraArs":  68000,
+                      "linkSteam":  "https://store.steampowered.com/app/3764200/Resident_Evil_Requiem/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/406014/resident-evil-requiem-deluxe-edition-pc-steam-account?o=690372b91c9ba16f3fece14a",
+                      "cuotasPublicada":  122399,
+                      "game":  "Resident Evil Requiem"
+                  },
+                  {
+                      "fullName":  "Resident Evil Requiem PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  59999,
+                      "compraArs":  43000,
+                      "linkSteam":  "https://store.steampowered.com/app/3764200/Resident_Evil_Requiem/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/405998/resident-evil-requiem-pc-steam-account?o=69f3437ad906c05a7783c190",
+                      "cuotasPublicada":  86399,
+                      "game":  "Resident Evil Requiem"
+                  },
+                  {
+                      "fullName":  "Resident Evil Requiem LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  77999,
+                      "compraArs":  61000,
+                      "linkSteam":  "https://store.steampowered.com/app/3764200/Resident_Evil_Requiem/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/428086/resident-evil-requiem-latam-pc-steam-cd-key?o=69a17230db13077383b29b4f",
+                      "cuotasPublicada":  112319,
+                      "game":  "Resident Evil Requiem"
+                  },
+                  {
+                      "fullName":  "Resident Evil Requiem Deluxe Edition LATAM PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  89999,
+                      "compraArs":  69000,
+                      "linkSteam":  "https://store.steampowered.com/app/3764200/Resident_Evil_Requiem/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/428464/resident-evil-requiem-deluxe-edition-latam-pc-steam-cd-key?o=69a17239db13077383b29b52",
+                      "cuotasPublicada":  129599,
+                      "game":  "Resident Evil Requiem"
+                  },
+                  {
+                      "fullName":  "Resident Evil Village Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  27999,
+                      "compraArs":  9000,
+                      "linkSteam":  "https://store.steampowered.com/app/1196590/Resident_Evil_Village/?l=spanish",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/159606/resident-evil-village-steam-account?o=69943170db13077383b2843c",
+                      "cuotasPublicada":  40319,
+                      "game":  "Resident Evil Village"
+                  },
+                  {
+                      "fullName":  "Resident Evil: Village Gold Edition Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  38999,
+                      "compraArs":  20000,
+                      "linkSteam":  "https://store.steampowered.com/app/1196590/Resident_Evil_Village/?l=spanish",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/159038/resident-evil-village-gold-edition-steam-account?o=6448e25e17c75d00013e41aa",
+                      "cuotasPublicada":  56159,
+                      "game":  "Resident Evil Village"
+                  },
+                  {
+                      "fullName":  "Resident Evil Village LATAM Steam CD Key",
+                      "variant":  "LATAM - CD Key LATAM (Steam)",
+                      "ventaPublicada":  37999,
+                      "compraArs":  11000,
+                      "linkSteam":  "https://store.steampowered.com/app/1196590/Resident_Evil_Village/?l=spanish",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/136552/resident-evil-village-latam-steam-cd-key?o=675a3ae7e130382d54f14d6c",
+                      "cuotasPublicada":  54719,
+                      "game":  "Resident Evil Village"
+                  },
+                  {
+                      "fullName":  "Resident Evil: Village Gold Edition LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  51999,
+                      "compraArs":  32000,
+                      "linkSteam":  "https://store.steampowered.com/app/1196590/Resident_Evil_Village/?l=spanish",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/326599/resident-evil-village-gold-edition-latam-pc-steam-cd-key?o=68e67ecd2ff7961a0a9faa6a",
+                      "cuotasPublicada":  74879,
+                      "game":  "Resident Evil Village"
+                  },
+                  {
+                      "fullName":  "Resident Evil: Raccoon City Edition PC Steam CD Key (Resident Evil 2, Resident Evil 3, RESIDENT EVIL RESISTANCE)",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  52999,
+                      "compraArs":  13000,
+                      "linkSteam":  "https://store.steampowered.com/app/883710/Resident_Evil_2/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/80572/resident-evil-raccoon-city-edition-pc-steam-cd-key?o=69ae4ce522918f779983e06e",
+                      "cuotasPublicada":  76319,
+                      "game":  "Resident Evil: Raccoon City Edition PC Steam CD Key (Resident Evil 2, Resident Evil 3, RESIDENT EVIL RESISTANCE)"
+                  },
+                  {
+                      "fullName":  "Sea of Thieves: 2026 Edition PC Steam Account",
+                      "variant":  "2026 Edition - Cuenta Steam",
+                      "ventaPublicada":  35999,
+                      "compraArs":  20000,
+                      "linkSteam":  "https://store.steampowered.com/app/1172620/Sea_of_Thieves_2026_Edition/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/491050/sea-of-thieves-2026-edition-pc-steam-account?o=69d9adf6b13b6b626591e6bf",
+                      "cuotasPublicada":  51839,
+                      "game":  "Sea of Thieves"
+                  },
+                  {
+                      "fullName":  "Sea of Thieves: 2026 Deluxe Edition PC Steam Account",
+                      "variant":  "2026 Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  45999,
+                      "compraArs":  21000,
+                      "linkSteam":  "https://store.steampowered.com/app/1172620/Sea_of_Thieves_2026_Edition/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/491052/sea-of-thieves-2026-deluxe-edition-pc-steam-account?o=69d8b5fbd906c05a7783454f",
+                      "cuotasPublicada":  66239,
+                      "game":  "Sea of Thieves"
+                  },
+                  {
+                      "fullName":  "Sea of Thieves: 2026 Premium Edition PC Steam Account",
+                      "variant":  "2026 Premium Edition - Cuenta Steam",
+                      "ventaPublicada":  54999,
+                      "compraArs":  25000,
+                      "linkSteam":  "https://store.steampowered.com/app/1172620/Sea_of_Thieves_2026_Edition/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/491059/sea-of-thieves-2026-premium-edition-pc-steam-account?o=69d8b6483d137911417dac9b",
+                      "cuotasPublicada":  79199,
+                      "game":  "Sea of Thieves"
+                  },
+                  {
+                      "fullName":  "SILENT HILL 2 Digital Deluxe Edition LATAM PC Steam CD Key",
+                      "variant":  "Digital Deluxe Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  64999,
+                      "compraArs":  50000,
+                      "linkSteam":  "https://store.steampowered.com/app/2124490/SILENT_HILL_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/278946/silent-hill-2-digital-deluxe-edition-latam-pc-steam-cd-key?o=6877e6d853a94f4fc4091e2f",
+                      "cuotasPublicada":  93599,
+                      "game":  "SILENT HILL 2"
+                  },
+                  {
+                      "fullName":  "SILENT HILL 2 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  42999,
+                      "compraArs":  28000,
+                      "linkSteam":  "https://store.steampowered.com/app/2124490/SILENT_HILL_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/272532/silent-hill-2-pc-steam-account?o=6985fc7222918f7799839c0f",
+                      "cuotasPublicada":  61919,
+                      "game":  "SILENT HILL 2"
+                  },
+                  {
+                      "fullName":  "SILENT HILL f Deluxe Edition LATAM PC Steam CD Key",
+                      "variant":  "Deluxe Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  54999,
+                      "compraArs":  36000,
+                      "linkSteam":  "https://store.steampowered.com/app/2947440/SILENT_HILL_f/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/390829/silent-hill-f-deluxe-edition-latam-pc-steam-cd-key?o=695fe85adb13077383b2308c",
+                      "cuotasPublicada":  79199,
+                      "game":  "SILENT HILL f"
+                  },
+                  {
+                      "fullName":  "SILENT HILL f Deluxe Edition PC Steam Account",
+                      "variant":  "Deluxe Edition - Cuenta Steam",
+                      "ventaPublicada":  47999,
+                      "compraArs":  27000,
+                      "linkSteam":  "https://store.steampowered.com/app/2947440/SILENT_HILL_f/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/347325/silent-hill-f-deluxe-edition-pc-steam-account?o=68d3fccec5e2ce36ff7b7e5a",
+                      "cuotasPublicada":  69119,
+                      "game":  "SILENT HILL f"
+                  },
+                  {
+                      "fullName":  "SILENT HILL f LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  50999,
+                      "compraArs":  36000,
+                      "linkSteam":  "https://store.steampowered.com/app/2947440/SILENT_HILL_f/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/392619/silent-hill-f-latam-pc-steam-cd-key?o=695fe8528d7cd67d55b55680",
+                      "cuotasPublicada":  73439,
+                      "game":  "SILENT HILL f"
+                  },
+                  {
+                      "fullName":  "SILENT HILL f PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  37999,
+                      "compraArs":  19000,
+                      "linkSteam":  "https://store.steampowered.com/app/2947440/SILENT_HILL_f/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/347319/silent-hill-f-pc-steam-account?o=68d3fca0368ded6fdbbe5ff3",
+                      "cuotasPublicada":  54719,
+                      "game":  "SILENT HILL f"
+                  },
+                  {
+                      "fullName":  "Stellar Blade Complete Edition PC Steam Account",
+                      "variant":  "Complete Edition - Cuenta Steam",
+                      "ventaPublicada":  89999,
+                      "compraArs":  72000,
+                      "linkSteam":  "https://store.steampowered.com/app/3489700/Stellar_Blade/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/340981/stellar-blade-complete-edition-pc-steam-account?o=68281620b1bb8f04c9b7842c",
+                      "cuotasPublicada":  129599,
+                      "game":  "Stellar Blade"
+                  },
+                  {
+                      "fullName":  "Street Fighter 6 PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  43999,
+                      "compraArs":  29000,
+                      "linkSteam":  "https://store.steampowered.com/app/1364780/Street_Fighter_6/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/164647/street-fighter-6-pc-steam-cd-key?o=68f3a77b2ff7961a0a9fba9b",
+                      "cuotasPublicada":  63359,
+                      "game":  "Street Fighter 6"
+                  },
+                  {
+                      "fullName":  "Street Fighter 6 Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  35999,
+                      "compraArs":  20000,
+                      "linkSteam":  "https://store.steampowered.com/app/1364780/Street_Fighter_6/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/153297/street-fighter-6-steam-account?o=689b404c61ade42159396fa0",
+                      "cuotasPublicada":  51839,
+                      "game":  "Street Fighter 6"
+                  },
+                  {
+                      "fullName":  "Subnautica 2 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  34999,
+                      "compraArs":  20000,
+                      "linkSteam":  "https://store.steampowered.com/app/1962700/Subnautica_2/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/492108/subnautica-2-pc-steam-account?o=6a020796b13b6b6265927c19",
+                      "cuotasPublicada":  50399,
+                      "game":  "Subnautica 2"
+                  },
+                  {
+                      "fullName":  "TEKKEN 8 Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  42999,
+                      "compraArs":  28000,
+                      "linkSteam":  "https://store.steampowered.com/app/1778820/TEKKEN_8/?curator_clanid=4777282",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/180122/tekken-8-steam-account?o=678a71390ff5b7665e22e265",
+                      "cuotasPublicada":  61919,
+                      "game":  "TEKKEN 8"
+                  },
+                  {
+                      "fullName":  "The Elder Scrolls V: Skyrim Special Edition LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  33999,
+                      "compraArs":  12000,
+                      "linkSteam":  "https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/133092/the-elder-scrolls-v-skyrim-special-edition-latam-pc-steam-cd-key?o=6a16f5e585a6fe158093d414",
+                      "cuotasPublicada":  48959,
+                      "game":  "The Elder Scrolls V: Skyrim Special Edition"
+                  },
+                  {
+                      "fullName":  "The Elder Scrolls V: Skyrim Special Edition PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  31999,
+                      "compraArs":  17000,
+                      "linkSteam":  "https://store.steampowered.com/app/489830/The_Elder_Scrolls_V_Skyrim_Special_Edition/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/206801/the-elder-scrolls-v-skyrim-special-edition-pc-steam-account?o=69c256963d137911417d88bf",
+                      "cuotasPublicada":  46079,
+                      "game":  "The Elder Scrolls V: Skyrim Special Edition"
+                  },
+                  {
+                      "fullName":  "The Last of Us Part 1 LATAM Steam CD Key",
+                      "variant":  "LATAM - CD Key LATAM (Steam)",
+                      "ventaPublicada":  79999,
+                      "compraArs":  44000,
+                      "linkSteam":  "https://store.steampowered.com/app/1888930/The_Last_of_Us_Parte_I/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/160275/the-last-of-us-part-1-latam-steam-cd-key?o=649f6dab3697030001ba21ef",
+                      "cuotasPublicada":  115199,
+                      "game":  "The Last of Us Part 1"
+                  },
+                  {
+                      "fullName":  "The Last of Us Part 1 Digital Deluxe Edition LATAM PC Steam CD Key",
+                      "variant":  "Digital Deluxe Edition - CD Key LATAM (Steam)",
+                      "ventaPublicada":  89999,
+                      "compraArs":  51000,
+                      "linkSteam":  "https://store.steampowered.com/app/1888930/The_Last_of_Us_Parte_I/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/325061/the-last-of-us-part-1-digital-deluxe-edition-latam-pc-steam-cd-key?o=684da4531d774306ec1a4778",
+                      "cuotasPublicada":  129599,
+                      "game":  "The Last of Us Part 1"
+                  },
+                  {
+                      "fullName":  "The Last of Us Part 2 Remastered LATAM PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key LATAM (Steam)",
+                      "ventaPublicada":  72999,
+                      "compraArs":  58000,
+                      "linkSteam":  "https://store.steampowered.com/app/2531310/The_Last_of_Us_Parte_II_Remastered/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/326607/the-last-of-us-part-2-remastered-latam-pc-steam-cd-key?o=68fb9cc971ca3f0124b85dbe",
+                      "cuotasPublicada":  105119,
+                      "game":  "The Last of Us Part 2 Remastered"
+                  },
+                  {
+                      "fullName":  "The Last of Us Part 2 Remastered PC Epic Games Account",
+                      "variant":  "Edicion estandar - Cuenta Epic Games",
+                      "ventaPublicada":  67999,
+                      "compraArs":  53000,
+                      "linkSteam":  "https://store.steampowered.com/app/2531310/The_Last_of_Us_Parte_II_Remastered/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/325530/the-last-of-us-part-2-remastered-pc-epic-games-account?o=67f679eeb1bb8f04c9b73f6c",
+                      "cuotasPublicada":  97919,
+                      "game":  "The Last of Us Part 2 Remastered"
+                  },
+                  {
+                      "fullName":  "The Witcher 3: Wild Hunt Complete Edition PC Steam Account",
+                      "variant":  "Complete Edition - Cuenta Steam",
+                      "ventaPublicada":  33999,
+                      "compraArs":  14000,
+                      "linkSteam":  "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/246280/the-witcher-3-wild-hunt-complete-edition-pc-steam-account?o=692de66622918f7799831781",
+                      "cuotasPublicada":  48959,
+                      "game":  "The Witcher 3: Wild Hunt"
+                  },
+                  {
+                      "fullName":  "The Witcher 3: Wild Hunt GOTY Edition Steam Account",
+                      "variant":  "GOTY Edition - Cuenta Steam",
+                      "ventaPublicada":  29999,
+                      "compraArs":  7000,
+                      "linkSteam":  "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/151141/the-witcher-3-wild-hunt-goty-edition-steam-account?o=6436c3ddf2d002000159759f",
+                      "cuotasPublicada":  43199,
+                      "game":  "The Witcher 3: Wild Hunt"
+                  },
+                  {
+                      "fullName":  "The Witcher 3: Wild Hunt Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  26999,
+                      "compraArs":  6000,
+                      "linkSteam":  "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/150064/the-witcher-3-wild-hunt-steam-account?o=64cb959620ddd30001d258cd",
+                      "cuotasPublicada":  38879,
+                      "game":  "The Witcher 3: Wild Hunt"
+                  },
+                  {
+                      "fullName":  "WWE 2K25 PC Steam CD Key",
+                      "variant":  "Edicion estandar - CD Key (Steam)",
+                      "ventaPublicada":  59999,
+                      "compraArs":  23000,
+                      "linkSteam":  "https://store.steampowered.com/app/2878960/WWE_2K25/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/315139/wwe-2k25-pc-steam-cd-key",
+                      "cuotasPublicada":  86399,
+                      "game":  "WWE 2K25"
+                  },
+                  {
+                      "fullName":  "WWE 2k26 Attitude Era Edition PC Steam Account",
+                      "variant":  "Attitude Era Edition - Cuenta Steam",
+                      "ventaPublicada":  169999,
+                      "compraArs":  131000,
+                      "linkSteam":  "https://store.steampowered.com/app/3717070/WWE_2K26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/464750/advanced-access-wwe-2k26-attitude-era-edition-bundle-pc-steam-account",
+                      "cuotasPublicada":  244799,
+                      "game":  "WWE 2K26"
+                  },
+                  {
+                      "fullName":  "WWE 2K26 King of Kings Edition PC Steam Account",
+                      "variant":  "King of Kings Edition - Cuenta Steam",
+                      "ventaPublicada":  139999,
+                      "compraArs":  107000,
+                      "linkSteam":  "https://store.steampowered.com/app/3717070/WWE_2K26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/476574/wwe-2k26-king-of-kings-edition-pc-steam-account",
+                      "cuotasPublicada":  201599,
+                      "game":  "WWE 2K26"
+                  },
+                  {
+                      "fullName":  "WWE 2k26 PC Steam Account",
+                      "variant":  "Edicion estandar - Cuenta Steam",
+                      "ventaPublicada":  89999,
+                      "compraArs":  58000,
+                      "linkSteam":  "https://store.steampowered.com/app/3717070/WWE_2K26/",
+                      "linkKinguin":  "https://www.kinguin.net/es/category/464749/wwe-2k26-pc-steam-account",
+                      "cuotasPublicada":  129599,
+                      "game":  "WWE 2K26"
+                  }
+              ]
+}

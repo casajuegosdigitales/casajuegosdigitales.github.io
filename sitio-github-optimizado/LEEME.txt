@@ -1,0 +1,18 @@
+Casa Juegos Digitales - version optimizada para GitHub Pages
+
+Subi TODA esta carpeta al repositorio de GitHub.
+
+Estructura:
+  index.html, catalogo.html, preguntas.html
+  assets/bg.jpg, assets/logo.png
+  js/catalog.js, js/app.js
+  js/steam-about-cache.js  (carga al abrir un juego)
+  js/steam-details-cache.js  (carga al ver requisitos)
+
+Optimizaciones:
+  - HTML livianos (~200 KB vs ~4 MB antes)
+  - Imagenes en archivos (no base64 en RAM)
+  - Cache Steam bajo demanda
+  - Catalogo paginado: 24 juegos por pagina
+
+GitHub Pages: Settings > Pages > main > / (root)
