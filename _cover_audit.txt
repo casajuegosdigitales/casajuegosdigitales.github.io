@@ -1,0 +1,40 @@
+﻿=== Game Cover URL Audit ===
+CUR: c:\Users\Aaron\Downloads\Nueva carpeta (2)\sitio-optimizado-ventas\catalogo.html
+REF: c:\Users\Aaron\Downloads\WEB\sitio-optimizado-ventas\catalogo.html
+Generated: 2026-06-17 13:55:34
+
+Total games: 68
+Games with missing img: 0
+Games with broken primary img (fallback OK): 0
+Games where primary + all Steam fallbacks fail: 9
+Unique img URLs HEAD-checked: 93
+
+--- Primary + all Steam fallbacks FAIL ---
+- NBA 2K26 (steamId: 3472040) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3472040/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/grid/f18403b352e777fe53f70caec9993a88.png
+- PRAGMATA (steamId: 3357650) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3357650/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/grid/2c655140a81f8a27d57576e3bf76fb90.png
+- Invincible VS (steamId: 2353060) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2353060/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/grid/65879e2839b4c288cb517596424968db.png
+- LEGO Batman: Legacy of the Dark Knight (steamId: 2215200) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215200/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/grid/e154fe98c470195b99092d884dcf71f5.jpg
+- WWE 2K26 (steamId: 3717070) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3717070/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/grid/1fd4a42f792db220caddf9f1113c6d3e.png
+- Resident Evil Requiem (steamId: 3764200) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3764200/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/thumb/956adefb0eb473d0cd054107659ab6fd.jpg
+- 007 First Light (steamId: 3768760) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/thumb/9cd0f2a7c17876d6721916f09bce496c.jpg
+- F1 25 (steamId: 3059520) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3059520/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/grid/fb9d97ffedbaa16cae0906034a254afd.png
+- EA SPORTS FC 26 (steamId: 3405690) [FAIL]
+    current: https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3405690/library_600x900_2x.jpg
+    REF working img: https://cdn2.steamgriddb.com/thumb/f781bbe464dbc0fae27290d123f1170a.jpg
+
