@@ -1,0 +1,29 @@
+# Casa Juegos Digitales - Final Ventas
+
+Sitio + actualizacion automatica desde 4 tiendas: Kinguin, Eneba, Driffle, Loaded.
+
+## Subir a GitHub
+
+1. Copia todo al repo casajuegosdigitales.github.io
+2. Pages: branch main, folder root
+3. Actions actualiza cada 6 horas
+
+## PC (primera vez)
+
+  npm install
+  npx playwright install chromium
+  generar.bat
+
+Archivos clave:
+- js/catalog.js = precios web
+- guia-compras.json = donde comprar (sube a GitHub)
+- Downloads\CJD-operaciones\ = copia privada PC
+
+## Cuando te compran
+
+Abri guia-compras.csv, busca juego, mira tienda y linkCompra.
+Despues de git pull: sync-guia-local.bat
+
+## Si compra baja, venta baja
+
+Cada corrida recalcula: venta = compra + 15000 (max debajo Steam).

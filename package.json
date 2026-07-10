@@ -1,0 +1,24 @@
+{
+  "name": "sitio-optimizado-ventas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "steam-about-cache.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/casajuegosdigitales/casajuegosdigitales.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/casajuegosdigitales/casajuegosdigitales.github.io/issues"
+  },
+  "homepage": "https://github.com/casajuegosdigitales/casajuegosdigitales.github.io#readme",
+  "dependencies": {
+    "playwright": "^1.61.1"
+  }
+}
