@@ -44,6 +44,21 @@ const SAVE_EVERY = Number(process.env.SAVE_EVERY_N || 10);
 const DELAY_MS = Number(process.env.SUPPLY_DELAY_MS || process.env.KINGUIN_DELAY_MS || 150);
 const IS_CI = Boolean(process.env.GITHUB_ACTIONS);
 
+function autoExcelWriteTargets(excelPath) {
+  const targets = [path.join(SITE_DIR, "GAMES LIST - AUTO.xlsx"), excelPath];
+  if (!IS_CI && process.env.USERPROFILE) {
+    targets.push(path.join(process.env.USERPROFILE, "Desktop", "GAMES LIST - AUTO.xlsx"));
+  }
+  return [...new Set(targets.filter(Boolean))];
+}
+
+function autoExcelSourcePath(excelPath) {
+  const desktop = path.join(process.env.USERPROFILE || "", "Desktop", "GAMES LIST - AUTO.xlsx");
+  if (!IS_CI && fs.existsSync(desktop)) return desktop;
+  if (excelPath && fs.existsSync(excelPath)) return excelPath;
+  return path.join(SITE_DIR, "GAMES LIST - AUTO.xlsx");
+}
+
 function variantGroupKey(item) {
   return `${item.game}|${editionBase(item.variant)}|${platformFromItem(item)}`;
 }
@@ -332,7 +347,9 @@ async function fetchOneItemLinksOnly(item, rates, fetchLog, label, fx) {
     item.bestStore = "";
     item.bestLink = "";
     item.supplyQuotes = [];
-    fetchLog.push(label + " | sin_links_excel | PENDIENTE");
+    item.hidden = true;
+    item.hiddenReason = "sin_links_excel";
+    fetchLog.push(label + " | sin_links_excel | reservado (sin publicar)");
     return { ok: false, changed: false, attempts: [], noLinks: true, recheck: false };
   }
 
@@ -411,17 +428,8 @@ async function main() {
       path.join(path.dirname(XL_PATH), "GAMES LIST - AUTO.xlsx");
     const lista = writeListaComprasExcel(data, listaPath);
     console.log("Lista compras Excel (" + lista.count + " filas):", lista.path);
-    const autoExcelTargets = [
-      path.join(SITE_DIR, "GAMES LIST - AUTO.xlsx"),
-      XL_PATH,
-      path.join(process.env.USERPROFILE || "", "Desktop", "GAMES LIST - AUTO.xlsx"),
-    ];
-    const autoSource = fs.existsSync(path.join(process.env.USERPROFILE || "", "Desktop", "GAMES LIST - AUTO.xlsx"))
-      ? path.join(process.env.USERPROFILE || "", "Desktop", "GAMES LIST - AUTO.xlsx")
-      : fs.existsSync(XL_PATH)
-        ? XL_PATH
-        : path.join(SITE_DIR, "GAMES LIST - AUTO.xlsx");
-    for (const autoPath of [...new Set(autoExcelTargets.filter(Boolean))]) {
+    const autoSource = autoExcelSourcePath(XL_PATH);
+    for (const autoPath of autoExcelWriteTargets(XL_PATH)) {
       try {
         const auto = writeGamesListAutoExcel(autoPath, data, autoSource);
         if (auto.skipped) {
@@ -574,6 +582,7 @@ async function main() {
   let updated = 0;
   let unchanged = 0;
   let errors = 0;
+  let skippedNoLinks = 0;
   let rechecked = 0;
   const forceFullSearch = REAPPLY_FILTERS || REFETCH_MISSING;
 
@@ -587,9 +596,9 @@ async function main() {
       process.stdout.write("[" + (i + 1) + "/" + labelTotal + "] " + label + " ... ");
       const res = await fetchOneItemLinksOnly(item, rates, fetchLog, label, fx);
       if (res.noLinks) {
-        errors++;
+        skippedNoLinks++;
         pendientes.push({ fullName: label, reason: "sin_links_excel" });
-        console.log("PENDIENTE (sin links Excel)");
+        console.log("SIN LINK (reservado en Excel, no publicado)");
       } else if (res.changed) {
         updated++;
         console.log(item.bestStore, item.compraArs);
@@ -706,7 +715,9 @@ async function main() {
     unchanged,
     "| Recheck rapido:",
     rechecked,
-    "| Pendientes:",
+    "| Sin link (reservado):",
+    skippedNoLinks,
+    "| Errores:",
     errors
   );
 
@@ -720,7 +731,9 @@ async function main() {
       unchanged +
       " | Recheck rapido: " +
       rechecked +
-      " | Pendientes: " +
+      " | Sin link (reservado): " +
+      skippedNoLinks +
+      " | Errores: " +
       errors,
     "Opciones visibles: " + pricing.visible + " | Ocultas: " + pricing.hidden,
     "",
@@ -778,17 +791,8 @@ async function main() {
         console.warn("No se pudo escribir lista Excel:", err.message);
       }
 
-      const autoExcelTargets = [
-        path.join(SITE_DIR, "GAMES LIST - AUTO.xlsx"),
-        excelPath,
-        path.join(process.env.USERPROFILE || "", "Desktop", "GAMES LIST - AUTO.xlsx"),
-      ];
-      const autoSource = fs.existsSync(path.join(process.env.USERPROFILE || "", "Desktop", "GAMES LIST - AUTO.xlsx"))
-        ? path.join(process.env.USERPROFILE || "", "Desktop", "GAMES LIST - AUTO.xlsx")
-        : fs.existsSync(excelPath)
-          ? excelPath
-          : path.join(SITE_DIR, "GAMES LIST - AUTO.xlsx");
-      for (const autoPath of [...new Set(autoExcelTargets.filter(Boolean))]) {
+      const autoSource = autoExcelSourcePath(excelPath);
+      for (const autoPath of autoExcelWriteTargets(excelPath)) {
         try {
           const auto = writeGamesListAutoExcel(autoPath, data, autoSource);
           if (auto.skipped) {
@@ -808,7 +812,14 @@ async function main() {
           pendientes.map((p) => p.fullName).join("\n"),
           "utf8"
         );
-        console.warn("AVISO:", pendientes.length, "items pendientes ->", pendPath);
+        const reserved = pendientes.filter((p) => p.reason === "sin_links_excel").length;
+        const realPending = pendientes.length - reserved;
+        if (reserved) {
+          console.log("Info:", reserved, "filas sin link en Excel (reservadas para despues) ->", pendPath);
+        }
+        if (realPending) {
+          console.warn("AVISO:", realPending, "items con error real ->", pendPath);
+        }
       }
     } catch (err) {
       console.warn("No se pudo escribir guia-compras:", err.message);
@@ -833,7 +844,11 @@ async function main() {
     await closeBrowser();
   } catch (_) {}
 
-  if (errors > 0) process.exitCode = 1;
+  // Filas sin link en Excel no son error fatal: el usuario las deja vacias a proposito.
+  if (errors > 0) {
+    console.warn("AVISO: hubo", errors, "errores reales (no incluye filas sin link reservadas).");
+    process.exitCode = 1;
+  }
 }
 
 main().catch(async (err) => {
