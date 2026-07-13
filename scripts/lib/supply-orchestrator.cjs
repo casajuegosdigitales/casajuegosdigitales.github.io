@@ -377,7 +377,7 @@ async function verifyDriffleQuote(candidate, item, rates) {
     };
   } else {
     try {
-      page = await verifyDriffleProductPage(candidate.link || slug, rates);
+      page = await verifyDriffleProductPage(candidate.link || slug, rates, item);
     } catch (_) {
       page = null;
     }
@@ -482,7 +482,7 @@ async function verifyLoadedQuote(candidate, item, rates) {
     };
   } else {
     try {
-      verified = await verifyLoadedProduct(candidate.link, rates);
+      verified = await verifyLoadedProduct(candidate.link, rates, item);
     } catch (_) {
       return null;
     }
@@ -663,7 +663,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
       return await quoteFromLink({ ...item, linkKinguin: clean }, rates);
     }
     if (store === "driffle") {
-      const page = await verifyDriffleProductPage(clean, rates);
+      const page = await verifyDriffleProductPage(clean, rates, item);
       if (!page?.inStock || !page.priceArs || !isPlausibleStoreCompraArs(page.priceArs, item, rates)) return null;
       return {
         store: "driffle",
@@ -688,7 +688,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
       };
     }
     if (store === "loaded") {
-      const page = await verifyLoadedProduct(clean, rates);
+      const page = await verifyLoadedProduct(clean, rates, item);
       if (!page?.inStock || !page.priceArs || !isPlausibleStoreCompraArs(page.priceArs, item, rates)) return null;
       return {
         store: "loaded",

@@ -1,11 +1,24 @@
 "use strict";
 
 const MIN_GAME_USD = 20;
+const MIN_ANCHORED_USD = 2.5;
+const MIN_ACCOUNT_USD = 2.5;
+const MIN_KEY_USD = 15;
+const MIN_JSON_USD = 2.5;
 const MIN_COMPRA_ARS_FALLBACK = 35000;
 const PLUS_PAIR_RATIO_MIN = 0.8;
 const PLUS_PAIR_RATIO_MAX = 0.97;
 
-function parseUsdToken(raw) {
+function isAccountItem(item) {
+  const t = String(item?.tipo || item?.deliveryType || "").toLowerCase();
+  return t === "cuenta" || t === "account";
+}
+
+function usdParseOptions(item) {
+  return { minUsd: isAccountItem(item) ? MIN_ACCOUNT_USD : MIN_KEY_USD };
+}
+
+function parseUsdToken(raw, minUsd = MIN_KEY_USD) {
   const cleaned = String(raw || "")
     .trim()
     .replace(/\s/g, "");
@@ -20,23 +33,24 @@ function parseUsdToken(raw) {
   } else {
     n = Number(cleaned);
   }
-  if (!n || Number.isNaN(n) || n < MIN_GAME_USD || n >= 5000) return null;
+  const floor = Number(minUsd) || MIN_KEY_USD;
+  if (!n || Number.isNaN(n) || n < floor || n >= 5000) return null;
   return n;
 }
 
-function extractUsdPricesFromLine(line) {
+function extractUsdPricesFromLine(line, minUsd = MIN_KEY_USD) {
   const prices = [];
   const text = String(line || "");
   for (const m of text.matchAll(/([\d]{1,4}(?:[.,]\d{1,2})?)\s*US\$/gi)) {
-    const n = parseUsdToken(m[1]);
+    const n = parseUsdToken(m[1], minUsd);
     if (n) prices.push(n);
   }
   for (const m of text.matchAll(/US\$\s*([\d]{1,4}(?:[.,]\d{1,2})?)/gi)) {
-    const n = parseUsdToken(m[1]);
+    const n = parseUsdToken(m[1], minUsd);
     if (n) prices.push(n);
   }
   for (const m of text.matchAll(/(?:^|[^\d])\$\s*([\d]{1,4}(?:[.,]\d{1,2})?)/g)) {
-    const n = parseUsdToken(m[1]);
+    const n = parseUsdToken(m[1], minUsd);
     if (n) prices.push(n);
   }
   return [...new Set(prices)].sort((a, b) => a - b);
@@ -48,9 +62,10 @@ function looksLikePlusPair(low, high) {
   return ratio >= PLUS_PAIR_RATIO_MIN && ratio <= PLUS_PAIR_RATIO_MAX && high - low <= 20;
 }
 
-/** En filas con precio Plus + precio publico, quedarse con el publico (el mayor del par). */
-function publicUsdFromPriceGroup(prices) {
-  const sorted = [...new Set((prices || []).map((p) => parseUsdToken(p)).filter(Boolean))].sort((a, b) => a - b);
+function publicUsdFromPriceGroup(prices, minUsd = MIN_KEY_USD) {
+  const sorted = [...new Set((prices || []).map((p) => (typeof p === "number" ? p : parseUsdToken(p, minUsd))).filter(Boolean))].sort(
+    (a, b) => a - b
+  );
   if (!sorted.length) return null;
   if (sorted.length === 1) return sorted[0];
 
@@ -84,7 +99,7 @@ function isPlusDiscountLine(line) {
 }
 
 function pickPublicMinUsdFromText(text, options = {}) {
-  const minUsd = options.minUsd ?? MIN_GAME_USD;
+  const minUsd = options.minUsd ?? MIN_KEY_USD;
   const perLine = [];
 
   for (const line of String(text || "").split("\n")) {
@@ -93,9 +108,9 @@ function pickPublicMinUsdFromText(text, options = {}) {
     if (isSubscriptionBannerLine(line)) continue;
     if (isPlusDiscountLine(line)) continue;
 
-    const prices = extractUsdPricesFromLine(line).filter((p) => p >= minUsd);
+    const prices = extractUsdPricesFromLine(line, minUsd);
     if (!prices.length) continue;
-    const pub = publicUsdFromPriceGroup(prices);
+    const pub = publicUsdFromPriceGroup(prices, minUsd);
     if (pub) perLine.push(pub);
   }
 
@@ -122,7 +137,7 @@ function pickAnchoredPublicUsd(text) {
   for (const re of patterns) {
     const m = body.match(re);
     if (!m) continue;
-    const n = parseUsdToken(m[1]);
+    const n = parseUsdToken(m[1], MIN_ANCHORED_USD);
     if (n) found.push(n);
   }
   return found.length ? Math.min(...found) : null;
@@ -220,10 +235,13 @@ function driffleBestPublicArs(offers, rates) {
 
 function minPlausibleCompraArs(rates, item) {
   const fx = Number(rates?.dolarDigitalVenta) || 0;
-  const fromUsd = fx ? Math.round(MIN_GAME_USD * fx) : MIN_COMPRA_ARS_FALLBACK;
+  const account = isAccountItem(item);
+  const minUsd = account ? MIN_ACCOUNT_USD : MIN_KEY_USD;
+  const fromUsd = fx ? Math.round(minUsd * fx) : account ? 4000 : MIN_COMPRA_ARS_FALLBACK;
   const steam = Number(item?.precioSteamArs) || 0;
   if (steam > 0) {
-    return Math.max(fromUsd, Math.round(steam * 0.22));
+    const ratio = account ? 0.02 : 0.22;
+    return Math.max(fromUsd, Math.round(steam * ratio));
   }
   return fromUsd;
 }
@@ -236,7 +254,8 @@ function isPlausibleStoreCompraArs(priceArs, item, rates) {
   return true;
 }
 
-function enebaAuctionPricesArs(edges, rates) {
+function enebaAuctionPricesArs(edges, rates, item) {
+  const minUsd = item && isAccountItem(item) ? MIN_ACCOUNT_USD : MIN_KEY_USD;
   const prices = (edges || [])
     .map((e) => e?.node)
     .filter((n) => {
@@ -246,7 +265,7 @@ function enebaAuctionPricesArs(edges, rates) {
     })
     .map((n) => {
       const usd = Number(n.price.amount) / 100;
-      if (usd < MIN_GAME_USD) return null;
+      if (usd < minUsd) return null;
       return toArsFromUsd(usd, rates);
     })
     .filter((p) => p > 0);
@@ -270,7 +289,13 @@ module.exports = {
   parseUsdToken,
   minPlausibleCompraArs,
   isPlausibleStoreCompraArs,
+  isAccountItem,
+  usdParseOptions,
   MIN_GAME_USD,
+  MIN_ANCHORED_USD,
+  MIN_ACCOUNT_USD,
+  MIN_KEY_USD,
+  MIN_JSON_USD,
   driffleBestPublicArs,
   enebaAuctionPricesArs,
 };

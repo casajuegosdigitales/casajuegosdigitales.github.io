@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, isSubscriptionListing } = require("./match-product.cjs");
-const { parseLoadedRawPrice, toArsFromUsd, pickPublicMinUsd, pickAnchoredPublicUsd, isPlausibleStoreCompraArs } = require("./fx-ars.cjs");
+const { parseLoadedRawPrice, toArsFromUsd, pickPublicMinUsd, pickAnchoredPublicUsd, isPlausibleStoreCompraArs, usdParseOptions } = require("./fx-ars.cjs");
 const { stripSubscriptionSections } = require("./match-product.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
@@ -47,11 +47,11 @@ function hitToCandidate(hit) {
   };
 }
 
-function parseLoadedUsdPrices(text) {
+function parseLoadedUsdPrices(text, item) {
   const raw = String(text || "");
   const anchored = pickAnchoredPublicUsd(raw);
   if (anchored != null) return anchored;
-  return pickPublicMinUsd(stripSubscriptionSections(raw));
+  return pickPublicMinUsd(stripSubscriptionSections(raw), item ? usdParseOptions(item) : undefined);
 }
 
 function parseLoadedUsdFromMeta(html) {
@@ -154,13 +154,13 @@ async function switchLoadedToUsd(page) {
   return false;
 }
 
-function loadedPriceArsFromDom(dom, rates) {
+function loadedPriceArsFromDom(dom, rates, item) {
   const text = [dom.body, dom.html].join("\n");
   const usd =
     parseLoadedUsdFromMeta(text) ||
     parseLoadedUsdFromScript(text, dom.metaCur?.toUpperCase() === "USD") ||
-    (dom.metaCur?.toUpperCase() === "USD" ? parseLoadedUsdPrices(text) : null) ||
-    parseLoadedUsdPrices(text);
+    (dom.metaCur?.toUpperCase() === "USD" ? parseLoadedUsdPrices(text, item) : null) ||
+    parseLoadedUsdPrices(text, item);
   if (usd && rates) {
     return { priceArs: toArsFromUsd(usd, rates), source: "page_usd", usd };
   }
@@ -199,11 +199,11 @@ async function scrapeLoadedDom(page, link) {
   });
 }
 
-function buildLoadedVerifyResult(dom, rates) {
-  const priced = loadedPriceArsFromDom(dom, rates);
+function buildLoadedVerifyResult(dom, rates, item) {
+  const priced = loadedPriceArsFromDom(dom, rates, item);
   const priceArs = priced?.priceArs || null;
   const source = priced?.source || null;
-  const plausible = priceArs && isPlausibleStoreCompraArs(priceArs, { precioSteamArs: 0 }, rates);
+  const plausible = priceArs && isPlausibleStoreCompraArs(priceArs, item || { precioSteamArs: 0 }, rates);
   const usdOk = source === "page_usd" && dom.metaCur?.toUpperCase() === "USD";
   const inStock =
     !dom.soldOut &&
@@ -218,24 +218,24 @@ function buildLoadedVerifyResult(dom, rates) {
   };
 }
 
-async function verifyLoadedProductOnce(link, rates) {
+async function verifyLoadedProductOnce(link, rates, item) {
   const result = await withPage(
     async (page) => {
       const dom = await scrapeLoadedDom(page, link);
-      return buildLoadedVerifyResult(dom, rates);
+      return buildLoadedVerifyResult(dom, rates, item);
     },
     { cookies: LOADED_USD_COOKIES }
   );
   return result || null;
 }
 
-async function verifyLoadedProduct(link, rates) {
+async function verifyLoadedProduct(link, rates, item) {
   for (let attempt = 0; attempt < 3; attempt++) {
-    const result = await verifyLoadedProductOnce(link, rates);
+    const result = await verifyLoadedProductOnce(link, rates, item);
     if (result?.inStock && result?.priceArs) return result;
     if (attempt < 2) await new Promise((r) => setTimeout(r, 800 + attempt * 600));
   }
-  return verifyLoadedProductOnce(link, rates);
+  return verifyLoadedProductOnce(link, rates, item);
 }
 
 async function getLoadedQuotes(item, rates, options) {

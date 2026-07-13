@@ -12,7 +12,7 @@ const {
   isSubscriptionListing,
 } = require("./match-product.cjs");
 const { fetchOffer } = require("./kinguin-api.cjs");
-const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromUsd, pickPublicMinUsd, pickAnchoredPublicUsd } = require("./fx-ars.cjs");
+const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromUsd, pickPublicMinUsd, pickAnchoredPublicUsd, usdParseOptions } = require("./fx-ars.cjs");
 const { withPage, waitCloudflare, browserAllowed } = require("./browser-supply.cjs");
 const {
   parseKinguinOfferId,
@@ -110,22 +110,22 @@ function parseKinguinArsPrices(text, minArs = 3000) {
   return [...new Set(prices)].sort((a, b) => a - b);
 }
 
-function parseKinguinUsdPrices(text) {
+function parseKinguinUsdPrices(text, item) {
   const anchored = pickAnchoredPublicUsd(text);
   if (anchored != null) return anchored;
-  return pickPublicMinUsd(stripSubscriptionSections(text));
+  return pickPublicMinUsd(stripSubscriptionSections(text), item ? usdParseOptions(item) : undefined);
 }
 
-function pickKinguinPublicBuyPrice(heroText, rates) {
-  const usd = parseKinguinUsdPrices(heroText);
+function pickKinguinPublicBuyPrice(heroText, rates, item) {
+  const usd = parseKinguinUsdPrices(heroText, item);
   if (usd && rates) {
     return toArsFromUsd(usd, rates);
   }
   return null;
 }
 
-function pickKinguinDisplayedPrice(arsPrices, apiPriceArs, heroText, rates) {
-  const pub = pickKinguinPublicBuyPrice(heroText, rates);
+function pickKinguinDisplayedPrice(arsPrices, apiPriceArs, heroText, rates, item) {
+  const pub = pickKinguinPublicBuyPrice(heroText, rates, item);
   if (pub) return pub;
   if (apiPriceArs) return apiPriceArs;
   return null;
@@ -237,7 +237,7 @@ async function ensureKinguinUsdCurrency(page) {
   return after.hasUsd || !after.hasEur;
 }
 
-async function scrapeKinguinHeroPage(url, rates) {
+async function scrapeKinguinHeroPage(url, rates, item) {
   const target = kinguinUrlWithUsd(url);
   if (!target) return null;
   const raw = await withPage(
@@ -289,7 +289,7 @@ async function scrapeKinguinHeroPage(url, rates) {
     }
   );
   if (!raw) return null;
-  let priceArs = pickKinguinPublicBuyPrice(raw.heroText, rates);
+  let priceArs = pickKinguinPublicBuyPrice(raw.heroText, rates, item);
   return {
     ...raw,
     arsPrices: [],
@@ -318,7 +318,7 @@ async function quoteFromLink(item, rates) {
   let hero = null;
   if (catBase) {
     try {
-      hero = await scrapeKinguinHeroPage(link, rates);
+      hero = await scrapeKinguinHeroPage(link, rates, item);
     } catch (_) {}
   }
 
@@ -368,7 +368,7 @@ async function offersFromKinguinCategory(item, rates, categoryUrl) {
   if (!base) return [];
   let hero = null;
   try {
-    hero = await scrapeKinguinHeroPage(base, rates);
+    hero = await scrapeKinguinHeroPage(base, rates, item);
   } catch (_) {}
 
   const hits = hero?.offerLinks?.length

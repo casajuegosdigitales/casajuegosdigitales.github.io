@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, wantsLatam, stripSubscriptionSections, isPaidExtraOfferLine } = require("./match-product.cjs");
-const { toArsFromForeign, pickPublicMinPrice, enebaAuctionPricesArs, pickPublicMinUsd, publicUsdFromPriceGroup, pickAnchoredPublicUsd, isPlausibleStoreCompraArs, MIN_GAME_USD } = require("./fx-ars.cjs");
+const { toArsFromForeign, pickPublicMinPrice, enebaAuctionPricesArs, pickPublicMinUsd, publicUsdFromPriceGroup, pickAnchoredPublicUsd, isPlausibleStoreCompraArs, usdParseOptions, MIN_JSON_USD, parseUsdToken } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
@@ -82,26 +82,27 @@ function minPriceFromPublicOfferLines(auctionText, parseLinePrices) {
   return prices.length ? Math.min(...prices) : null;
 }
 
-function resolveEnebaPriceUsd(text, auctionText) {
+function resolveEnebaPriceUsd(text, auctionText, item) {
   const body = stripSubscriptionSections(text);
   const anchored = pickAnchoredPublicUsd(body);
   if (anchored) return anchored;
 
+  const minUsd = item ? usdParseOptions(item).minUsd : MIN_JSON_USD;
   const usdFromOffers = minPriceFromPublicOfferLines(auctionText, (line) => {
     const found = [];
     for (const m of line.matchAll(/([\d.,]+)\s*US\$/gi)) {
-      const n = parseArNumber(m[1]);
-      if (n >= MIN_GAME_USD && n < 5000) found.push(n);
+      const n = parseUsdToken(m[1], minUsd);
+      if (n) found.push(n);
     }
     for (const m of line.matchAll(/US\$\s*([\d.,]+)/gi)) {
-      const n = parseArNumber(m[1]);
-      if (n >= MIN_GAME_USD && n < 5000) found.push(n);
+      const n = parseUsdToken(m[1], minUsd);
+      if (n) found.push(n);
     }
     return found;
   });
   if (usdFromOffers) return usdFromOffers;
 
-  return pickPublicMinUsd(body);
+  return pickPublicMinUsd(body, item ? usdParseOptions(item) : undefined);
 }
 
 function pickEnebaPublicUsd(text) {
@@ -143,17 +144,19 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
   let priceArs = null;
   let source = "page_usd";
 
-  let priceUsd = resolveEnebaPriceUsd(text, dom.auctionText);
+  let priceUsd = resolveEnebaPriceUsd(text, dom.auctionText, item);
 
   if (!priceUsd && dom.ld?.length) {
+    const minUsd = usdParseOptions(item).minUsd;
     for (const block of dom.ld) {
       const offers = block?.offers;
       const list = Array.isArray(offers) ? offers : offers ? [offers] : [];
       for (const o of list) {
         const cur = String(o?.priceCurrency || o?.priceSpecification?.priceCurrency || "").toUpperCase();
         const amt = Number(o?.price || o?.lowPrice || o?.priceSpecification?.price);
-        if (cur === "USD" && amt >= MIN_GAME_USD && amt < 5000) {
-          priceUsd = priceUsd == null ? amt : Math.min(priceUsd, amt);
+        const n = parseUsdToken(String(amt), minUsd);
+        if (cur === "USD" && n) {
+          priceUsd = priceUsd == null ? n : Math.min(priceUsd, n);
         }
       }
     }
@@ -235,7 +238,7 @@ async function tryGraphqlSlug(slug, item, rates) {
     const product = await fetchEnebaProduct(slug, wantsLatam(item));
     if (!product) return null;
     const name = product.name || item.fullName;
-    const priceArs = enebaAuctionPricesArs(product.auctions?.edges || [], rates);
+    const priceArs = enebaAuctionPricesArs(product.auctions?.edges || [], rates, item);
     if (!priceArs) return null;
     const locale = enebaLocaleForItem(item);
     return {
