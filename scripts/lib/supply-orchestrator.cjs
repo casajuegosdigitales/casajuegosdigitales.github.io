@@ -369,6 +369,7 @@ async function verifyDriffleQuote(candidate, item, rates) {
     page = null;
   }
   if (!page?.inStock || !page.priceArs) return null;
+  if (page.priceArs < 3000) return null;
   const title = page.name || candidate.name || "";
   if (!listingMatchesItem(item, title, page.link || candidate.link)) return null;
   const regionCheck = regionPass(item, page.activationText || title);
@@ -639,7 +640,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
     }
     if (store === "driffle") {
       const page = await verifyDriffleProductPage(clean, rates);
-      if (!page?.inStock || !page.priceArs) return null;
+      if (!page?.inStock || !page.priceArs || page.priceArs < 3000) return null;
       return {
         store: "driffle",
         name: page.name || item.fullName,
@@ -650,7 +651,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
     }
     if (store === "eneba") {
       const page = await verifyEnebaProductPage(clean, item, rates);
-      if (!page?.inStock || !page.priceArs) return null;
+      if (!page?.inStock || !page.priceArs || page.priceArs < 3000) return null;
       return {
         store: "eneba",
         name: page.name || item.fullName,
@@ -662,7 +663,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
     }
     if (store === "loaded") {
       const page = await verifyLoadedProduct(clean, rates);
-      if (!page?.inStock || !page.priceArs) return null;
+      if (!page?.inStock || !page.priceArs || page.priceArs < 3000) return null;
       return {
         store: "loaded",
         name: page.name || item.fullName,

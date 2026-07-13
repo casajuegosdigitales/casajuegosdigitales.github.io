@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, isSubscriptionListing } = require("./match-product.cjs");
-const { parseLoadedRawPrice, toArsFromUsd } = require("./fx-ars.cjs");
+const { parseLoadedRawPrice, toArsFromUsd, pickPublicMinUsd } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { stripSubscriptionSections } = require("./match-product.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
@@ -45,17 +45,7 @@ function hitToCandidate(hit) {
 }
 
 function parseLoadedUsdPrices(text) {
-  const body = stripSubscriptionSections(text);
-  const prices = [];
-  for (const m of body.matchAll(/([\d.,]+)\s*US\$/gi)) {
-    const n = parseArNumber(m[1]);
-    if (n >= 0.5 && n < 5000) prices.push(n);
-  }
-  for (const m of body.matchAll(/US\$\s*([\d.,]+)/gi)) {
-    const n = parseArNumber(m[1]);
-    if (n >= 0.5 && n < 5000) prices.push(n);
-  }
-  return prices.length ? Math.min(...prices) : null;
+  return pickPublicMinUsd(stripSubscriptionSections(text));
 }
 
 function loadedPriceArsFromBody(body, rates, rawAttr) {

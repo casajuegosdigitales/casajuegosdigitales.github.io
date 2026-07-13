@@ -12,7 +12,7 @@ const {
   isSubscriptionListing,
 } = require("./match-product.cjs");
 const { fetchOffer } = require("./kinguin-api.cjs");
-const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromUsd } = require("./fx-ars.cjs");
+const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromUsd, pickPublicMinUsd } = require("./fx-ars.cjs");
 const { withPage, waitCloudflare, browserAllowed } = require("./browser-supply.cjs");
 const {
   parseKinguinOfferId,
@@ -111,23 +111,13 @@ function parseKinguinArsPrices(text, minArs = 3000) {
 }
 
 function parseKinguinUsdPrices(text) {
-  const preSub = stripSubscriptionSections(text);
-  const prices = [];
-  for (const m of preSub.matchAll(/([\d.,]+)\s*US\$/gi)) {
-    const n = Number(String(m[1]).replace(",", "."));
-    if (n >= 0.5 && n < 5000) prices.push(n);
-  }
-  for (const m of preSub.matchAll(/US\$\s*([\d.,]+)/gi)) {
-    const n = Number(String(m[1]).replace(",", "."));
-    if (n >= 0.5 && n < 5000) prices.push(n);
-  }
-  return [...new Set(prices)].sort((a, b) => a - b);
+  return pickPublicMinUsd(stripSubscriptionSections(text));
 }
 
 function pickKinguinPublicBuyPrice(heroText, rates, apiPriceArs) {
-  const usdList = parseKinguinUsdPrices(heroText);
-  if (usdList.length && rates) {
-    return toArsFromUsd(Math.min(...usdList), rates);
+  const usd = parseKinguinUsdPrices(heroText);
+  if (usd && rates) {
+    return toArsFromUsd(usd, rates);
   }
   if (apiPriceArs) return apiPriceArs;
   return null;
@@ -198,7 +188,10 @@ function mergeKinguinVerifiedPrice(apiPriceArs, pagePriceArs) {
   const p = Number(pagePriceArs) || 0;
   if (!a) return p || null;
   if (!p) return a || null;
-  return Math.min(a, p);
+  const low = Math.min(a, p);
+  const high = Math.max(a, p);
+  if (high > 0 && low / high >= 0.8 && low / high <= 0.97) return high;
+  return low;
 }
 
 async function quoteFromLink(item, rates) {

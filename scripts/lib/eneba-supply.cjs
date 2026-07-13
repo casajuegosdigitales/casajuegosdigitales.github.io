@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, wantsLatam, stripSubscriptionSections, isPaidExtraOfferLine } = require("./match-product.cjs");
-const { toArsFromForeign, pickPublicMinPrice, enebaAuctionPricesArs } = require("./fx-ars.cjs");
+const { toArsFromForeign, pickPublicMinPrice, enebaAuctionPricesArs, pickPublicMinUsd, publicUsdFromPriceGroup, pickAnchoredPublicUsd } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
@@ -66,51 +66,24 @@ function minPriceFromPublicOfferLines(auctionText, parseLinePrices) {
   const prices = [];
   for (const line of String(auctionText || "").split("\n")) {
     if (!line.trim() || isPaidExtraOfferLine(line)) continue;
-    for (const p of parseLinePrices(line)) {
-      if (p > 0) prices.push(p);
-    }
+    const linePrices = parseLinePrices(line);
+    const pub = publicUsdFromPriceGroup(linePrices);
+    if (pub) prices.push(pub);
   }
   return prices.length ? Math.min(...prices) : null;
 }
 
 function pickEnebaPublicUsd(text) {
   const body = stripSubscriptionSections(text);
-  const low = body.match(/Precio m[aá]s bajo[\s\S]{0,120}?([\d.,]+)\s*US\$/i);
-  if (low) {
-    const n = parseArNumber(low[1]);
-    if (n >= 1 && n < 5000) return n;
-  }
-
-  const offerLine = body.match(/\+\d+\s+oferta\s+de\s+([\d.,]+)\s*US\$/i);
-  if (offerLine) {
-    const n = parseArNumber(offerLine[1]);
-    if (n >= 1 && n < 5000) return n;
-  }
-
-  const prices = parseVisibleUsdPrices(body);
-  if (!prices.length) return null;
-  return pickPublicMinPrice(prices);
+  const anchored = pickAnchoredPublicUsd(body);
+  if (anchored) return anchored;
+  return pickPublicMinUsd(body);
 }
 
 async function verifyEnebaProductPage(linkOrSlug, item, rates) {
   const slug = parseEnebaSlug(linkOrSlug) || String(linkOrSlug || "").replace(/^\/+/, "");
   if (!slug) return null;
   const url = String(linkOrSlug || "").startsWith("http") ? linkOrSlug : enebaProductUrl(slug, item);
-
-  if (rates) {
-    const gql = await tryGraphqlSlug(slug, item, rates);
-    if (gql?.priceArs) {
-      return {
-        priceArs: gql.priceArs,
-        name: gql.name || item.game,
-        activationText: gql.name || "",
-        link: gql.link || url,
-        slug,
-        inStock: true,
-        source: "graphql",
-      };
-    }
-  }
 
   const dom = await withPage(async (page) => {
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
@@ -146,11 +119,11 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
     const found = [];
     for (const m of line.matchAll(/([\d.,]+)\s*US\$/gi)) {
       const n = parseArNumber(m[1]);
-      if (n >= 0.5 && n < 5000) found.push(n);
+      if (n >= 5 && n < 5000) found.push(n);
     }
     for (const m of line.matchAll(/US\$\s*([\d.,]+)/gi)) {
       const n = parseArNumber(m[1]);
-      if (n >= 0.5 && n < 5000) found.push(n);
+      if (n >= 5 && n < 5000) found.push(n);
     }
     return found;
   });
@@ -163,7 +136,7 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
       for (const o of list) {
         const cur = String(o?.priceCurrency || o?.priceSpecification?.priceCurrency || "").toUpperCase();
         const amt = Number(o?.price || o?.lowPrice || o?.priceSpecification?.price);
-        if (cur === "USD" && amt >= 0.5 && amt < 5000) {
+        if (cur === "USD" && amt >= 5 && amt < 5000) {
           priceUsd = priceUsd == null ? amt : Math.min(priceUsd, amt);
         }
       }
@@ -172,6 +145,21 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
 
   if (priceUsd && rates) {
     priceArs = toArsFromForeign(priceUsd, "USD", rates);
+  }
+
+  if (!priceArs && rates) {
+    const gql = await tryGraphqlSlug(slug, item, rates);
+    if (gql?.priceArs) {
+      return {
+        priceArs: gql.priceArs,
+        name: gql.name || dom.title,
+        activationText: gql.name || text,
+        link: gql.link || url,
+        slug,
+        inStock: true,
+        source: "graphql",
+      };
+    }
   }
 
   if (!priceArs) return null;

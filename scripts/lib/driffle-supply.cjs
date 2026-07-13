@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, stripSubscriptionSections, isSubscriptionListing } = require("./match-product.cjs");
-const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice } = require("./fx-ars.cjs");
+const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice, pickPublicMinUsd } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
@@ -94,14 +94,16 @@ function parseArsAmount(raw, minArs) {
 
 function parseUsdAmount(raw) {
   const n = parseArNumber(raw);
-  if (!n || n < 0.5 || n > 5000) return null;
+  if (!n || n < 5 || n > 5000) return null;
   return n;
 }
 
 function parseDriffleUsdFromHtml(html) {
   const text = stripSubscriptionSections(html);
-  const prices = new Set();
+  const anchored = pickPublicMinUsd(text);
+  if (anchored) return anchored;
 
+  const prices = new Set();
   for (const m of text.matchAll(
     /"priceCurrency"\s*:\s*"USD"[\s\S]*?"lowPrice"\s*:\s*"([\d.]+)"/gi
   )) {
@@ -111,14 +113,6 @@ function parseDriffleUsdFromHtml(html) {
   for (const m of text.matchAll(
     /"@type"\s*:\s*"AggregateOffer"[\s\S]*?"lowPrice"\s*:\s*"([\d.]+)"[\s\S]*?"priceCurrency"\s*:\s*"USD"/gi
   )) {
-    const p = parseUsdAmount(m[1]);
-    if (p) prices.add(p);
-  }
-  for (const m of text.matchAll(/(?:US\$|\$)\s*([\d.,]+)/g)) {
-    const p = parseUsdAmount(m[1]);
-    if (p) prices.add(p);
-  }
-  for (const m of text.matchAll(/([\d.,]+)\s*US\$/gi)) {
     const p = parseUsdAmount(m[1]);
     if (p) prices.add(p);
   }
@@ -255,7 +249,7 @@ async function verifyDriffleProductPage(linkOrSlug, rates) {
     priceArs = parseDriffleArsFromHtml(html);
     source = "page_ars";
   }
-  if (!priceArs) return null;
+  if (!priceArs || priceArs < 3000) return null;
 
   const soldOut =
     /\b(no sellers available|currently unavailable)\b/i.test(html) ||

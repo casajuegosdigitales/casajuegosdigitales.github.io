@@ -5,7 +5,7 @@ const REGION_BAD = /\b(eu|europe|european|turkey|turkish|\btr\b|russia|\bru\b|ci
 const NOISE = /\b(dlc|season pass|soundtrack|artbook|wallpaper|coin|points|subscription|gift card|top.?up|robux|nitro|separate ways|upgrade|expansion pass)\b/i;
 const JUNK_LISTING = /\b(try to get|try-to-get|random\s+\d*\s*key|random\s*steam\s*key|loot\s*box|mystery\s*box|gamble|50\/50)\b/i;
 const SUBSCRIPTION_LISTING =
-  /\beneba plus\b|\bdriffle plus\b|\bkinguin smart\b|\bsmart price\b|\bmembers?\s*only\b|\bsubscribers?\s*only\b|\bwith\s+(?:an?\s+)?subscription\b|\bplus\s*exclusive\b|\brequires?\s+plus\b/i;
+  /\beneba plus\b|\bdriffle plus\b|\bkinguin smart\b|\bking'?s pass\b|\bk plus\b|\bsmart price\b|\bmembers?\s*only\b|\bsubscribers?\s*only\b|\bwith\s+(?:an?\s+)?subscription\b|\bplus\s*exclusive\b|\brequires?\s+plus\b/i;
 const ADDON_LISTING = /\b(upgrade\s*dlc|upgrade\s*pack|upgrade\s*only|requires?\s+(the\s+)?base|base\s+game\s+required|season\s*pass|character\s*pass|year\s*\d+\s*(character\s*)?pass|starter\s*pack|expansion\s*pass|separate\s*ways|dlc\s*pack|dlc\s*only|add[\s-]?on\s*pack)\b/i;
 const TOKEN_STOP = /^(pc|steam|the|and|for|edition|key|account|latam|global|digital|download|cd|edicion|estandar|standard|cuenta|rockstar|ubisoft|connect|app|games|bundle|pack)$/;
 const ACTIVATION_BLOCK =
@@ -60,14 +60,19 @@ function isSubscriptionListing(name, link) {
 }
 
 const SUBSCRIPTION_SECTION_SPLIT =
-  /\b(Ahorra con|Save with|Eneba Plus|Driffle Plus|Kinguin Smart|smart price|members? only|subscribers? only|plus exclusive|requires? plus|con suscripci[oó]n|with subscription)/i;
+  /\b(Ahorra con|Save with|Save \d+% with plus|Eneba Plus|Driffle Plus|Kinguin Smart|King'?s Pass|K PLUS|smart price|members? only|subscribers? only|plus exclusive|requires? plus|con suscripci[oó]n|with subscription)/i;
 
 function stripSubscriptionSections(text) {
   return String(text || "").split(SUBSCRIPTION_SECTION_SPLIT)[0] || "";
 }
 
 function isPaidExtraOfferLine(line) {
-  return isSubscriptionListing(line, "") || /\b(plus exclusive|smart price|members? only|subscribers? only)\b/i.test(String(line || ""));
+  return (
+    isSubscriptionListing(line, "") ||
+    /\b(plus exclusive|smart price|king'?s pass|k plus|members? only|subscribers? only|save \d+% with plus)\b/i.test(
+      String(line || "")
+    )
+  );
 }
 
 function itemTargetText(item) {
