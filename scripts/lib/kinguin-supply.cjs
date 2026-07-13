@@ -8,6 +8,8 @@ const {
   deliveryTypeFromItem,
   editionFromVariant,
   normalizeForStoreQuery,
+  stripSubscriptionSections,
+  isSubscriptionListing,
 } = require("./match-product.cjs");
 const { fetchOffer } = require("./kinguin-api.cjs");
 const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromEur } = require("./fx-ars.cjs");
@@ -58,10 +60,13 @@ async function searchKinguinOffers(query, rates) {
   const res = await fetch(url, { signal: AbortSignal.timeout(25000), headers: { "User-Agent": "Mozilla/5.0" } });
   if (!res.ok) return [];
   const data = await res.json();
-  return (data.content || []).filter((o) => o.status === "ACTIVE" && kinguinInStock(o));
+  return (data.content || []).filter(
+    (o) => o.status === "ACTIVE" && kinguinInStock(o) && !isSubscriptionListing(o.name, o.url)
+  );
 }
 
 function offerToCandidate(offer, rates, linkOverride) {
+  if (isSubscriptionListing(offer.name, offer.url || linkOverride)) return null;
   const priceArs = kinguinPublicPriceArs(offer, rates);
   if (!priceArs) return null;
   const offerId = offer.id || offer.offerId;
@@ -106,16 +111,17 @@ function parseKinguinArsPrices(text, minArs = 3000) {
 }
 
 function pickKinguinPublicBuyPrice(heroText, arsPrices, apiPriceArs) {
-  const preSub = String(heroText || "").split(/Ahorra con|Save with|Kinguin Smart|smart price|members? only/i)[0];
+  const preSub = stripSubscriptionSections(heroText);
   const firstArs = [...preSub.matchAll(/AR\$\s*([\d.,]+)/gi)][0];
   if (firstArs) {
     const first = parseKinguinArsToken(firstArs[1]);
     if (first) return first;
   }
   const early = parseKinguinArsPrices(preSub);
-  if (early.length) return Math.max(...early.slice(0, 2));
+  if (early.length) return Math.min(...early);
   if (apiPriceArs) return apiPriceArs;
-  if (arsPrices?.length) return Math.max(...arsPrices.slice(0, 2));
+  const publicPrices = parseKinguinArsPrices(stripSubscriptionSections(heroText));
+  if (publicPrices.length) return Math.min(...publicPrices);
   return null;
 }
 
@@ -123,7 +129,8 @@ function pickKinguinDisplayedPrice(arsPrices, apiPriceArs, heroText) {
   const pub = pickKinguinPublicBuyPrice(heroText, arsPrices, apiPriceArs);
   if (pub) return pub;
   if (apiPriceArs) return apiPriceArs;
-  return arsPrices?.length ? Math.max(...arsPrices.slice(0, 2)) : null;
+  const publicPrices = (arsPrices || []).filter(Boolean);
+  return publicPrices.length ? Math.min(...publicPrices) : null;
 }
 
 async function scrapeKinguinHeroPage(url, rates, apiPriceArs) {
@@ -189,13 +196,11 @@ async function scrapeKinguinHeroPage(url, rates, apiPriceArs) {
 }
 
 function mergeKinguinVerifiedPrice(apiPriceArs, pagePriceArs) {
-  if (!pagePriceArs) return apiPriceArs || null;
-  if (!apiPriceArs) return pagePriceArs;
-  if (pagePriceArs > apiPriceArs * 1.25) return apiPriceArs;
-  // Precio con suscripcion/smart suele ser ~10% menor: usar precio publico (API o mayor)
-  if (pagePriceArs < apiPriceArs && pagePriceArs >= apiPriceArs * 0.84) return apiPriceArs;
-  if (apiPriceArs < pagePriceArs && apiPriceArs >= pagePriceArs * 0.84) return pagePriceArs;
-  return Math.max(apiPriceArs, pagePriceArs);
+  const a = Number(apiPriceArs) || 0;
+  const p = Number(pagePriceArs) || 0;
+  if (!a) return p || null;
+  if (!p) return a || null;
+  return Math.min(a, p);
 }
 
 async function quoteFromLink(item, rates) {
@@ -329,7 +334,9 @@ async function searchKinguinOffersPaged(query, rates) {
     const res = await fetch(url, { signal: AbortSignal.timeout(25000), headers: { "User-Agent": "Mozilla/5.0" } });
     if (!res.ok) break;
     const data = await res.json();
-    const batch = (data.content || []).filter((o) => o.status === "ACTIVE" && kinguinInStock(o));
+    const batch = (data.content || []).filter(
+      (o) => o.status === "ACTIVE" && kinguinInStock(o) && !isSubscriptionListing(o.name, o.url)
+    );
     if (!batch.length) break;
     all.push(...batch);
     if (batch.length < 50) break;

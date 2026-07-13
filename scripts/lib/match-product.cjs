@@ -59,6 +59,17 @@ function isSubscriptionListing(name, link) {
   return SUBSCRIPTION_LISTING.test(`${name || ""} ${link || ""}`);
 }
 
+const SUBSCRIPTION_SECTION_SPLIT =
+  /\b(Ahorra con|Save with|Eneba Plus|Driffle Plus|Kinguin Smart|smart price|members? only|subscribers? only|plus exclusive|requires? plus|con suscripci[oó]n|with subscription)/i;
+
+function stripSubscriptionSections(text) {
+  return String(text || "").split(SUBSCRIPTION_SECTION_SPLIT)[0] || "";
+}
+
+function isPaidExtraOfferLine(line) {
+  return isSubscriptionListing(line, "") || /\b(plus exclusive|smart price|members? only|subscribers? only)\b/i.test(String(line || ""));
+}
+
 function itemTargetText(item) {
   return `${item.game || ""} ${item.edition || ""} ${item.tipo || ""} ${item.fullName || ""} ${item.variant || ""}`.toLowerCase();
 }
@@ -700,6 +711,8 @@ module.exports = {
   isCodeName,
   isJunkListing,
   isSubscriptionListing,
+  stripSubscriptionSections,
+  isPaidExtraOfferLine,
   isAddonOnlyListing,
   isDisallowedAddonMatch,
   itemWantsAddonProduct,

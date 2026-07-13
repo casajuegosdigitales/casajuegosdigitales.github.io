@@ -45,14 +45,18 @@ function kinguinInStock(offer) {
   return Number(stock) > 0;
 }
 
-function pickPublicMinPrice(priceList, gapRatio = 0.12) {
+function pickPublicMinPrice(priceList) {
   const prices = [...new Set(priceList.map((p) => Math.round(Number(p))).filter((p) => p > 0))].sort(
     (a, b) => a - b
   );
-  if (!prices.length) return null;
-  if (prices.length === 1) return prices[0];
-  if (prices[1] > 0 && prices[0] < prices[1] * (1 - gapRatio)) return prices[1];
-  return prices[0];
+  return prices[0] ?? null;
+}
+
+function isPaidExtraMerchant(name) {
+  const merchant = String(name || "").toLowerCase();
+  return /plus exclusive|eneba plus|driffle plus|kinguin smart|smart price|members? only|subscribers? only|subscription|requires? plus/.test(
+    merchant
+  );
 }
 
 function driffleBestPublicArs(offers, rates) {
@@ -74,8 +78,7 @@ function enebaAuctionPricesArs(edges, rates) {
     .map((e) => e?.node)
     .filter((n) => {
       if (!n || n.isInStock === false || !n.price) return false;
-      const merchant = String(n.merchant?.name || "").toLowerCase();
-      if (/plus exclusive|eneba plus|subscription/i.test(merchant)) return false;
+      if (isPaidExtraMerchant(n.merchant?.name)) return false;
       return true;
     })
     .map((n) => toArsFromForeign(n.price.amount / 100, n.price.currency, rates))

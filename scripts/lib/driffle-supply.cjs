@@ -1,6 +1,6 @@
 "use strict";
 
-const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk } = require("./match-product.cjs");
+const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, stripSubscriptionSections, isSubscriptionListing } = require("./match-product.cjs");
 const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice } = require("./fx-ars.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
@@ -21,6 +21,8 @@ function driffleRegionOk(product) {
 }
 
 function productToCandidate(product, rates) {
+  const title = product.title || "";
+  if (isSubscriptionListing(title, product.slug || "")) return null;
   const priceUsd = Number(product.price ?? product.mrp);
   if (!priceUsd || Number.isNaN(priceUsd)) return null;
   const priceArs = toArsFromUsd(priceUsd, rates);
@@ -90,7 +92,7 @@ function parseArsAmount(raw, minArs) {
 }
 
 function parseDriffleArsFromHtml(html) {
-  const text = String(html || "");
+  const text = stripSubscriptionSections(html);
 
   for (const m of text.matchAll(
     /"@type"\s*:\s*"AggregateOffer"[\s\S]*?"lowPrice"\s*:\s*"([\d.]+)"[\s\S]*?"priceCurrency"\s*:\s*"ARS"/gi
@@ -121,7 +123,7 @@ function parseDriffleArsFromHtml(html) {
 
   const list = [...prices].sort((a, b) => a - b);
   if (!list.length) return null;
-  return pickPublicMinPrice(list) || list[0];
+  return pickPublicMinPrice(list);
 }
 
 function parseDriffleMetaFromHtml(html) {

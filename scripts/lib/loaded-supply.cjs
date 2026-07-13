@@ -1,6 +1,6 @@
 "use strict";
 
-const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk } = require("./match-product.cjs");
+const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, isSubscriptionListing } = require("./match-product.cjs");
 const { parseLoadedRawPrice } = require("./fx-ars.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
@@ -28,6 +28,7 @@ async function searchLoadedBrowser(query, attempt) {
 }
 
 function hitToCandidate(hit) {
+  if (isSubscriptionListing(hit.name, hit.href)) return null;
   const priceArs = parseLoadedRawPrice(hit.raw);
   if (!priceArs) return null;
   const name = hit.name || "";

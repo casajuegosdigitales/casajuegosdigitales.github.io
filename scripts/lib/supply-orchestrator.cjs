@@ -21,6 +21,7 @@ const {
   deliveryTypeFromItem,
   checkActivationRegion,
   isSteamGiftOffer,
+  isSubscriptionListing,
 } = require("./match-product.cjs");
 const { fetchOffer, isPlaceholderKinguinLink } = require("./kinguin-api.cjs");
 const { searchKinguinOffers } = require("./kinguin-supply.cjs");
@@ -288,7 +289,7 @@ async function verifyKinguinQuote(candidate, item, rates) {
       }
     } catch (_) {}
   }
-  offers = offers.filter((o) => kinguinInStock(o));
+  offers = offers.filter((o) => kinguinInStock(o) && !isSubscriptionListing(o.name, o.url));
   if (!offers.length) return null;
   let priceArs;
   let best;

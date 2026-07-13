@@ -1,6 +1,6 @@
 "use strict";
 
-const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, wantsLatam } = require("./match-product.cjs");
+const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, wantsLatam, stripSubscriptionSections, isPaidExtraOfferLine } = require("./match-product.cjs");
 const { toArsFromForeign, pickPublicMinPrice, enebaAuctionPricesArs } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
@@ -36,7 +36,7 @@ function enebaProductUrl(slug, item) {
 
 function parseVisibleArsPrices(text) {
   const prices = new Set();
-  const body = String(text || "");
+  const body = stripSubscriptionSections(text);
   for (const m of body.matchAll(/(?:ARS|AR\$)\s*([\d.,]+)/gi)) {
     const raw = String(m[1]).replace(/\./g, "").replace(",", ".");
     const n = Number(raw);
@@ -47,7 +47,7 @@ function parseVisibleArsPrices(text) {
 
 function parseVisibleUsdPrices(text) {
   const prices = new Set();
-  const body = String(text || "");
+  const body = stripSubscriptionSections(text);
 
   for (const m of body.matchAll(/([\d]{1,4}(?:[.,]\d{1,2})?)\s*US\$/gi)) {
     const n = parseArNumber(m[1]);
@@ -62,8 +62,19 @@ function parseVisibleUsdPrices(text) {
   return [...prices].sort((a, b) => a - b);
 }
 
+function minPriceFromPublicOfferLines(auctionText, parseLinePrices) {
+  const prices = [];
+  for (const line of String(auctionText || "").split("\n")) {
+    if (!line.trim() || isPaidExtraOfferLine(line)) continue;
+    for (const p of parseLinePrices(line)) {
+      if (p > 0) prices.push(p);
+    }
+  }
+  return prices.length ? Math.min(...prices) : null;
+}
+
 function pickEnebaPublicUsd(text) {
-  const body = String(text || "");
+  const body = stripSubscriptionSections(text);
   const low = body.match(/Precio m[aá]s bajo[\s\S]{0,120}?([\d.,]+)\s*US\$/i);
   if (low) {
     const n = parseArNumber(low[1]);
@@ -78,7 +89,7 @@ function pickEnebaPublicUsd(text) {
 
   const prices = parseVisibleUsdPrices(body);
   if (!prices.length) return null;
-  return pickPublicMinPrice(prices) || prices[0];
+  return pickPublicMinPrice(prices);
 }
 
 async function verifyEnebaProductPage(linkOrSlug, item, rates) {
@@ -129,8 +140,20 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
 
   const text = [dom.title, dom.body, dom.auctionText].join("\n");
   let priceArs = null;
+
+  const arsFromOffers = minPriceFromPublicOfferLines(dom.auctionText, (line) => {
+    const found = [];
+    for (const m of line.matchAll(/(?:ARS|AR\$)\s*([\d.,]+)/gi)) {
+      const raw = String(m[1]).replace(/\./g, "").replace(",", ".");
+      const n = Number(raw);
+      if (n >= 8000 && n < 5000000) found.push(Math.round(n));
+    }
+    return found;
+  });
+  if (arsFromOffers) priceArs = arsFromOffers;
+
   const arsList = parseVisibleArsPrices(text);
-  if (arsList.length) priceArs = pickPublicMinPrice(arsList) || arsList[0];
+  if (!priceArs && arsList.length) priceArs = pickPublicMinPrice(arsList);
 
   if (!priceArs && dom.ld?.length) {
     for (const block of dom.ld) {
