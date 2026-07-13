@@ -624,7 +624,7 @@ async function main() {
     );
   }
 
-  console.log("Cotizacion ARS/EUR Kinguin:", rates.arsPerEur);
+  console.log("Kinguin EUR→USD (solo conversion API):", rates.usdPerEur, "USD/EUR");
   console.log("Ganancia minima:", MIN_PROFIT_ARS, "| Ganancia maxima:", MAX_PROFIT_ARS, "| Cuotas:", CUOTAS_FACTOR);
   const { STEAM_MULT_ACCOUNT, STEAM_MULT_CODE, CAPTURE_RATE } = require("./lib/pricing.cjs");
   console.log(

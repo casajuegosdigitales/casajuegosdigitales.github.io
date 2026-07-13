@@ -37,9 +37,16 @@ async function getRatesWithFallback(fallback) {
 function toKinguinArs(price, rates) {
   if (!price || price.amount == null) return null;
   const amount = Number(price.amount) / 100;
+  const cur = String(price.currency || "EUR").toUpperCase();
+  if (rates?.dolarDigitalVenta) {
+    if (cur === "USD") return Math.round(amount * Number(rates.dolarDigitalVenta));
+    if (cur === "EUR" && rates?.usdPerEur) {
+      return Math.round(amount * Number(rates.usdPerEur) * Number(rates.dolarDigitalVenta));
+    }
+  }
   let eur = amount;
-  if (price.currency === "USD") eur = amount / rates.usdPerEur;
-  else if (price.currency !== "EUR") eur = amount;
+  if (cur === "USD") eur = amount / rates.usdPerEur;
+  else if (cur !== "EUR") eur = amount;
   return Math.round(eur * rates.arsPerEur);
 }
 

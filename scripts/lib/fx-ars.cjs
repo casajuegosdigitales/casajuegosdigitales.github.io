@@ -147,13 +147,24 @@ function parseLoadedRawPrice(raw) {
   return Math.round(n);
 }
 
+function kinguinEurToUsd(amountEur, rates) {
+  const eur = Number(amountEur);
+  const usdPerEur = Number(rates?.usdPerEur) || 0;
+  if (!eur || !usdPerEur) return null;
+  return eur * usdPerEur;
+}
+
 function kinguinPublicPriceArs(offer, rates) {
   if (!offer?.price) return null;
   const amount = Number(offer.price.amount) / 100;
   const cur = String(offer.price.currency || "EUR").toUpperCase();
   if (cur === "USD") return toArsFromUsd(amount, rates);
   if (cur === "ARS") return Math.round(amount);
-  return Math.round(amount * rates.arsPerEur);
+  if (cur === "EUR") {
+    const usd = kinguinEurToUsd(amount, rates);
+    return usd ? toArsFromUsd(usd, rates) : null;
+  }
+  return null;
 }
 
 function kinguinInStock(offer) {
@@ -239,6 +250,7 @@ module.exports = {
   toArsFromForeign,
   parseLoadedRawPrice,
   kinguinPublicPriceArs,
+  kinguinEurToUsd,
   kinguinInStock,
   pickPublicMinPrice,
   pickPublicMinUsd,

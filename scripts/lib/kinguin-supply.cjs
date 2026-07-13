@@ -114,23 +114,22 @@ function parseKinguinUsdPrices(text) {
   return pickPublicMinUsd(stripSubscriptionSections(text));
 }
 
-function pickKinguinPublicBuyPrice(heroText, rates, apiPriceArs) {
+function pickKinguinPublicBuyPrice(heroText, rates) {
   const usd = parseKinguinUsdPrices(heroText);
   if (usd && rates) {
     return toArsFromUsd(usd, rates);
   }
-  if (apiPriceArs) return apiPriceArs;
   return null;
 }
 
 function pickKinguinDisplayedPrice(arsPrices, apiPriceArs, heroText, rates) {
-  const pub = pickKinguinPublicBuyPrice(heroText, rates, apiPriceArs);
+  const pub = pickKinguinPublicBuyPrice(heroText, rates);
   if (pub) return pub;
   if (apiPriceArs) return apiPriceArs;
   return null;
 }
 
-async function scrapeKinguinHeroPage(url, rates, apiPriceArs) {
+async function scrapeKinguinHeroPage(url, rates) {
   const target = kinguinCategoryBaseUrl(url) || String(url || "").split("?")[0].split("#")[0];
   if (!target) return null;
   const raw = await withPage(async (page) => {
@@ -175,7 +174,7 @@ async function scrapeKinguinHeroPage(url, rates, apiPriceArs) {
     });
   });
   if (!raw) return null;
-  let priceArs = pickKinguinPublicBuyPrice(raw.heroText, rates, apiPriceArs);
+  let priceArs = pickKinguinPublicBuyPrice(raw.heroText, rates);
   return {
     ...raw,
     arsPrices: [],
@@ -184,14 +183,10 @@ async function scrapeKinguinHeroPage(url, rates, apiPriceArs) {
 }
 
 function mergeKinguinVerifiedPrice(apiPriceArs, pagePriceArs) {
-  const a = Number(apiPriceArs) || 0;
   const p = Number(pagePriceArs) || 0;
-  if (!a) return p || null;
-  if (!p) return a || null;
-  const low = Math.min(a, p);
-  const high = Math.max(a, p);
-  if (high > 0 && low / high >= 0.8 && low / high <= 0.97) return high;
-  return low;
+  const a = Number(apiPriceArs) || 0;
+  if (p) return p;
+  return a || null;
 }
 
 async function quoteFromLink(item, rates) {
@@ -208,7 +203,7 @@ async function quoteFromLink(item, rates) {
   let hero = null;
   if (catBase) {
     try {
-      hero = await scrapeKinguinHeroPage(link, rates, kinguinPublicPriceArs(offer, rates));
+      hero = await scrapeKinguinHeroPage(link, rates);
     } catch (_) {}
   }
 
@@ -242,7 +237,7 @@ async function quoteFromLink(item, rates) {
     priceArs,
     link: cleanLink,
     offerId: offerId || "",
-    source: hero?.priceArs ? "category_hero" : "link",
+    source: hero?.priceArs ? "page_usd" : "api_usd",
     categoryLink: catBase || "",
   };
 }
