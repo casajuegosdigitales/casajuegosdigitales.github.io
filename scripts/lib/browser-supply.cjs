@@ -39,7 +39,7 @@ async function getBrowser() {
 
 let browserQueue = Promise.resolve();
 
-async function runWithPage(fn) {
+async function runWithPage(fn, options = {}) {
   const browser = await getBrowser();
   if (!browser) return null;
   const context = await browser.newContext({
@@ -47,10 +47,17 @@ async function runWithPage(fn) {
       "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
     locale: "en-US",
     viewport: { width: 1366, height: 768 },
+    ...(options.context || {}),
   });
   await context.addInitScript(() => {
     Object.defineProperty(navigator, "webdriver", { get: () => undefined });
   });
+  if (options.initScript) {
+    await context.addInitScript(options.initScript);
+  }
+  if (options.cookies?.length) {
+    await context.addCookies(options.cookies);
+  }
   const page = await context.newPage();
   try {
     return await fn(page);
@@ -59,8 +66,8 @@ async function runWithPage(fn) {
   }
 }
 
-async function withPage(fn) {
-  const job = browserQueue.then(() => runWithPage(fn));
+async function withPage(fn, options) {
+  const job = browserQueue.then(() => runWithPage(fn, options));
   browserQueue = job.catch(() => {});
   return job;
 }

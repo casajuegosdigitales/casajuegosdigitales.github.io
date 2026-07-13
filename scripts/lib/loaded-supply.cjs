@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, isSubscriptionListing } = require("./match-product.cjs");
-const { parseLoadedRawPrice, toArsFromUsd, pickPublicMinUsd, isPlausibleStoreCompraArs } = require("./fx-ars.cjs");
+const { parseLoadedRawPrice, toArsFromUsd, pickPublicMinUsd, pickAnchoredPublicUsd, isPlausibleStoreCompraArs } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { stripSubscriptionSections } = require("./match-product.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
@@ -45,11 +45,50 @@ function hitToCandidate(hit) {
 }
 
 function parseLoadedUsdPrices(text) {
-  return pickPublicMinUsd(stripSubscriptionSections(text));
+  const raw = String(text || "");
+  const anchored = pickAnchoredPublicUsd(raw);
+  if (anchored != null) return anchored;
+  return pickPublicMinUsd(stripSubscriptionSections(raw));
+}
+
+function parseLoadedUsdFromMeta(html) {
+  const text = String(html || "");
+  const cur = text.match(/<meta\s+property="product:price:currency"\s+content="([^"]+)"/i)?.[1] || "";
+  const amt = text.match(/<meta\s+property="product:price:amount"\s+content="([\d.]+)"/i)?.[1] || "";
+  if (String(cur).toUpperCase() !== "USD" || !amt) return null;
+  const n = Number(amt);
+  if (!n || n < 5 || n >= 5000) return null;
+  return n;
+}
+
+function parseLoadedUsdFromScript(html) {
+  const m = String(html || "").match(/initialFinalPrice:\s*([\d.]+)/);
+  if (!m) return null;
+  const n = Number(m[1]);
+  if (!n || n < 5 || n >= 5000) return null;
+  return n;
+}
+
+async function switchLoadedToUsd(page) {
+  try {
+    const trigger = await page.$("#switcher-currency-trigger, .currency-switcher button");
+    if (trigger) {
+      await trigger.click();
+      await page.waitForTimeout(700);
+    }
+    const usd = await page.$('a[data-post*="\\"currency\\":\\"USD\\""]');
+    if (usd) {
+      await usd.click();
+      await page.waitForTimeout(2500);
+      return true;
+    }
+  } catch (_) {}
+  return false;
 }
 
 function loadedPriceArsFromBody(body, rates, rawAttr) {
-  const usd = parseLoadedUsdPrices(body);
+  const text = String(body || "");
+  const usd = parseLoadedUsdPrices(text) || parseLoadedUsdFromMeta(text) || parseLoadedUsdFromScript(text);
   if (usd && rates) {
     return { priceArs: toArsFromUsd(usd, rates), source: "page_usd" };
   }
@@ -65,9 +104,11 @@ async function verifyLoadedProduct(link, rates) {
     await page.goto(link, { waitUntil: "domcontentloaded", timeout: 60000 });
     await waitCloudflare(page, 25);
     await page.waitForTimeout(2500);
+    await switchLoadedToUsd(page);
     const dom = await page.evaluate(() => {
       const title = document.querySelector("h1.page-title span, h1.product-name, h1")?.textContent?.trim() || "";
       const body = document.body?.innerText || "";
+      const html = document.documentElement?.outerHTML || "";
       const regionBits = [];
       for (const el of document.querySelectorAll(
         ".product.attribute, .product-info-main, .product-details, [class*='region'], [class*='activation'], table.data.table"
@@ -82,13 +123,18 @@ async function verifyLoadedProduct(link, rates) {
         document.querySelector(".product-info-price [data-raw-price]") ||
         document.querySelector("[data-raw-price]");
       const raw = priceBox?.getAttribute("data-raw-price") || "";
+      const initMatch = html.match(/initialFinalPrice:\s*([\d.]+)/);
+      const scriptPrice = initMatch ? Number(initMatch[1]) : null;
+      const metaAmt = document.querySelector('meta[property="product:price:amount"]')?.content || "";
+      const metaCur = document.querySelector('meta[property="product:price:currency"]')?.content || "";
       const addBtn = document.querySelector("#product-addtocart-button, button.tocart");
       const btnOk = addBtn && !addBtn.disabled && !/stock|unavailable|sold/i.test(addBtn.textContent || "");
-      const available = /\bdisponible\b|\bañadir al carrito\b|\bcomprar ahora\b/i.test(body);
-      return { title, body, activationText, soldOut, raw, btnOk, available, hasAddBtn: Boolean(addBtn) };
+      const available = /\bdisponible\b|\bañadir al carrito\b|\bcomprar ahora\b|\badd to cart\b|\bbuy now\b/i.test(body);
+      return { title, body, html, activationText, soldOut, raw, scriptPrice, metaAmt, metaCur, btnOk, available, hasAddBtn: Boolean(addBtn) };
     });
-    const priced = loadedPriceArsFromBody(dom.body, rates, dom.raw);
-    const priceArs = priced?.priceArs || null;
+    const priced = loadedPriceArsFromBody([dom.body, dom.html].join("\n"), rates, dom.raw);
+    let priceArs = priced?.priceArs || null;
+    let source = priced?.source || "page_usd";
     const plausible = priceArs && isPlausibleStoreCompraArs(priceArs, { precioSteamArs: 0 }, rates);
     const inStock =
       !dom.soldOut && plausible && (dom.btnOk || dom.available || !dom.hasAddBtn);
@@ -97,7 +143,7 @@ async function verifyLoadedProduct(link, rates) {
       priceArs: inStock ? priceArs : null,
       name: dom.title,
       activationText: dom.activationText,
-      source: priced?.source || "page_usd",
+      source,
     };
   });
 }

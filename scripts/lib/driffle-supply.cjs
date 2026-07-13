@@ -1,11 +1,15 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, stripSubscriptionSections, isSubscriptionListing } = require("./match-product.cjs");
-const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice, pickPublicMinUsd, minPlausibleCompraArs } = require("./fx-ars.cjs");
+const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice, pickPublicMinUsd, pickAnchoredPublicUsd, minPlausibleCompraArs } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
 const SEARCH_API = "https://search.driffle.com/products/v3/list";
+const DRIFFLE_USD_COOKIES = [
+  { name: "currency", value: "USD", domain: ".driffle.com", path: "/" },
+  { name: "selectedCurrency", value: "USD", domain: ".driffle.com", path: "/" },
+];
 const HDR = {
   "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0",
   Accept: "application/json",
@@ -99,9 +103,13 @@ function parseUsdAmount(raw) {
 }
 
 function parseDriffleUsdFromHtml(html) {
-  const text = stripSubscriptionSections(html);
-  const anchored = pickPublicMinUsd(text);
-  if (anchored) return anchored;
+  const raw = String(html || "");
+  const anchored = pickAnchoredPublicUsd(raw);
+  if (anchored != null) return anchored;
+
+  const text = stripSubscriptionSections(raw);
+  const fromText = pickPublicMinUsd(text);
+  if (fromText != null) return fromText;
 
   const prices = new Set();
   for (const m of text.matchAll(
@@ -215,10 +223,12 @@ async function verifyDriffleProductPage(linkOrSlug, rates) {
   } catch (_) {}
 
   let dom = null;
-  if (!html) {
+  let priceUsd = html ? parseDriffleUsdFromHtml(html) : null;
+  if (!priceUsd) {
     try {
       dom = await withPage(async (page) => {
-        const resp = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+        const target = url.includes("currency=") ? url : url + (url.includes("?") ? "&" : "?") + "currency=USD";
+        const resp = await page.goto(target, { waitUntil: "domcontentloaded", timeout: 90000 });
         httpStatus = resp?.status() || httpStatus;
         await waitCloudflare(page, 20);
         await page.waitForTimeout(3500);
@@ -228,7 +238,8 @@ async function verifyDriffleProductPage(linkOrSlug, rates) {
           const body = document.body?.innerText || "";
           return { title, body: body.slice(0, 12000) };
         });
-      });
+      }, { cookies: DRIFFLE_USD_COOKIES });
+      priceUsd = parseDriffleUsdFromHtml([html, dom?.body || ""].join("\n"));
     } catch (_) {}
   }
 
@@ -241,7 +252,6 @@ async function verifyDriffleProductPage(linkOrSlug, rates) {
   const meta = parseDriffleMetaFromHtml(html);
   let priceArs = null;
   let source = "page_usd";
-  const priceUsd = parseDriffleUsdFromHtml(html);
   if (priceUsd && rates) {
     priceArs = toArsFromUsd(priceUsd, rates);
   }

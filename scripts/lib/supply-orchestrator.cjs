@@ -387,7 +387,7 @@ async function verifyDriffleQuote(candidate, item, rates) {
       name: title,
       priceArs: page.priceArs,
       link: page.link || candidate.link,
-      source: "page_ars",
+      source: page.source || "page_usd",
     },
     regionCheck
   );

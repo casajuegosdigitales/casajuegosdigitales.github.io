@@ -12,7 +12,7 @@ const {
   isSubscriptionListing,
 } = require("./match-product.cjs");
 const { fetchOffer } = require("./kinguin-api.cjs");
-const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromUsd, pickPublicMinUsd } = require("./fx-ars.cjs");
+const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromUsd, pickPublicMinUsd, pickAnchoredPublicUsd } = require("./fx-ars.cjs");
 const { withPage, waitCloudflare, browserAllowed } = require("./browser-supply.cjs");
 const {
   parseKinguinOfferId,
@@ -111,6 +111,8 @@ function parseKinguinArsPrices(text, minArs = 3000) {
 }
 
 function parseKinguinUsdPrices(text) {
+  const anchored = pickAnchoredPublicUsd(text);
+  if (anchored != null) return anchored;
   return pickPublicMinUsd(stripSubscriptionSections(text));
 }
 
@@ -129,12 +131,120 @@ function pickKinguinDisplayedPrice(arsPrices, apiPriceArs, heroText, rates) {
   return null;
 }
 
+const KINGUIN_USD_COOKIES = [
+  { name: "currency", value: "USD", domain: ".kinguin.net", path: "/" },
+  { name: "currencyCode", value: "USD", domain: ".kinguin.net", path: "/" },
+  { name: "selectedCurrency", value: "USD", domain: ".kinguin.net", path: "/" },
+];
+
+const KINGUIN_USD_INIT = () => {
+  const keys = ["currency", "currencyCode", "selectedCurrency", "preferredCurrency", "userCurrency"];
+  for (const k of keys) {
+    try {
+      localStorage.setItem(k, "USD");
+      sessionStorage.setItem(k, "USD");
+    } catch (_) {}
+  }
+};
+
+function kinguinUrlWithUsd(url) {
+  const base = kinguinCategoryBaseUrl(url) || String(url || "").split("?")[0].split("#")[0];
+  if (!base) return "";
+  const u = new URL(base);
+  u.searchParams.set("currency", "USD");
+  return u.toString();
+}
+
+async function ensureKinguinUsdCurrency(page) {
+  const before = await page.evaluate(() => {
+    const hero = document.body?.innerText?.slice(0, 4000) || "";
+    const hasUsd =
+      /\bUS\$\s*[\d.,]+\b/i.test(hero) ||
+      /\bUSD\s*[\d.,]+\b/i.test(hero) ||
+      /Moneda:\s*USD/i.test(hero);
+    const hasEur = /\b€\s*[\d.,]+\b/.test(hero) || /\bEUR\s*[\d.,]+\b/i.test(hero);
+    return { hasUsd, hasEur, hero: hero.slice(0, 800) };
+  });
+  if (before.hasUsd && !before.hasEur) return true;
+
+  const settingsSelectors = [
+    "button[aria-label*='currency' i]",
+    "button[aria-label*='moneda' i]",
+    "[data-test*='currency' i]",
+    "[class*='currency' i] button",
+    "button:has-text('Moneda')",
+    "button:has-text('Currency')",
+  ];
+  for (const sel of settingsSelectors) {
+    try {
+      const btn = page.locator(sel).first();
+      if ((await btn.count()) > 0) {
+        await btn.click({ timeout: 2500 });
+        await page.waitForTimeout(800);
+        break;
+      }
+    } catch (_) {}
+  }
+
+  const usdSelectors = [
+    "button:has-text('USD')",
+    "[role='button']:has-text('USD')",
+    "a:has-text('USD')",
+    "li:has-text('USD')",
+    "[data-currency='USD']",
+    "[data-value='USD']",
+  ];
+  for (const sel of usdSelectors) {
+    try {
+      const opt = page.locator(sel).first();
+      if ((await opt.count()) > 0) {
+        await opt.click({ timeout: 2500 });
+        await page.waitForTimeout(1200);
+        break;
+      }
+    } catch (_) {}
+  }
+
+  await page.evaluate(() => {
+    const keys = ["currency", "currencyCode", "selectedCurrency", "preferredCurrency", "userCurrency"];
+    for (const k of keys) {
+      try {
+        localStorage.setItem(k, "USD");
+        sessionStorage.setItem(k, "USD");
+      } catch (_) {}
+    }
+  });
+
+  try {
+    const url = new URL(page.url());
+    if (url.searchParams.get("currency") !== "USD") {
+      url.searchParams.set("currency", "USD");
+      await page.goto(url.toString(), { waitUntil: "domcontentloaded", timeout: 90000 });
+      await waitCloudflare(page, 15);
+      await page.waitForTimeout(2000);
+    }
+  } catch (_) {}
+
+  const after = await page.evaluate(() => {
+    const hero = document.body?.innerText?.slice(0, 4000) || "";
+    const hasUsd =
+      /\bUS\$\s*[\d.,]+\b/i.test(hero) ||
+      /\bUSD\s*[\d.,]+\b/i.test(hero) ||
+      /Moneda:\s*USD/i.test(hero);
+    const hasEur = /\b€\s*[\d.,]+\b/.test(hero) || /\bEUR\s*[\d.,]+\b/i.test(hero);
+    return { hasUsd, hasEur };
+  });
+  return after.hasUsd || !after.hasEur;
+}
+
 async function scrapeKinguinHeroPage(url, rates) {
-  const target = kinguinCategoryBaseUrl(url) || String(url || "").split("?")[0].split("#")[0];
+  const target = kinguinUrlWithUsd(url);
   if (!target) return null;
-  const raw = await withPage(async (page) => {
+  const raw = await withPage(
+    async (page) => {
     await page.goto(target, { waitUntil: "domcontentloaded", timeout: 90000 });
     await waitCloudflare(page, 25);
+    await ensureKinguinUsdCurrency(page);
     await page.waitForTimeout(3000);
     return page.evaluate(() => {
       const title =
@@ -172,7 +282,12 @@ async function scrapeKinguinHeroPage(url, rates) {
         pageUrl: location.href.split("#")[0],
       };
     });
-  });
+    },
+    {
+      cookies: KINGUIN_USD_COOKIES,
+      initScript: KINGUIN_USD_INIT,
+    }
+  );
   if (!raw) return null;
   let priceArs = pickKinguinPublicBuyPrice(raw.heroText, rates);
   return {

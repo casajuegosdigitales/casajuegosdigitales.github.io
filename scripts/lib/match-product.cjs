@@ -60,7 +60,7 @@ function isSubscriptionListing(name, link) {
 }
 
 const SUBSCRIPTION_SECTION_SPLIT =
-  /\b(Ahorra con|Save with|Save \d+% with plus|Eneba Plus|Driffle Plus|Kinguin Smart|King'?s Pass|K PLUS|smart price|members? only|subscribers? only|plus exclusive|requires? plus|con suscripci[oó]n|with subscription)/i;
+  /\b(Ahorra con\s+(?:Plus|Kinguin|King'?s|Smart|Eneba|Driffle|suscripci[oó]n)|Save with(?:\s+Plus)?|Save \d+% with plus|Eneba Plus|Driffle Plus|Kinguin Smart|King'?s Pass|K PLUS|smart price|members? only|subscribers? only|plus exclusive|requires? plus|con suscripci[oó]n|with subscription)/i;
 
 function stripSubscriptionSections(text) {
   return String(text || "").split(SUBSCRIPTION_SECTION_SPLIT)[0] || "";

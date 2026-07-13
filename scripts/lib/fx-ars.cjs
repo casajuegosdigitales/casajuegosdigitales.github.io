@@ -77,6 +77,12 @@ function isSubscriptionBannerLine(line) {
   return /el precio m[aá]s bajo|lowest price|king'?s pass|k plus|save \d+% with plus|ahorra con/i.test(t);
 }
 
+function isPlusDiscountLine(line) {
+  const t = String(line || "");
+  if (!/\$|US\$/i.test(t)) return false;
+  return /king'?s pass|k plus|with plus|save.*plus|ahorra.*plus|-\s*\$[\d.,]+/i.test(t);
+}
+
 function pickPublicMinUsdFromText(text, options = {}) {
   const minUsd = options.minUsd ?? MIN_GAME_USD;
   const perLine = [];
@@ -85,6 +91,7 @@ function pickPublicMinUsdFromText(text, options = {}) {
     if (!line.trim()) continue;
     if (options.skipLine?.(line)) continue;
     if (isSubscriptionBannerLine(line)) continue;
+    if (isPlusDiscountLine(line)) continue;
 
     const prices = extractUsdPricesFromLine(line).filter((p) => p >= minUsd);
     if (!prices.length) continue;
@@ -105,6 +112,9 @@ function pickAnchoredPublicUsd(text) {
     /\+\d+\s+other\s+offers?\s+from\s+([\d.,]+)\s*US\$/i,
     /offers?\s+starting\s+at\s+US\$\s*([\d.,]+)/i,
     /starting\s+at\s+US\$\s*([\d.,]+)/i,
+    /\d+\s+m[aá]s\s+ofertas?[\s\S]{0,120}?a\s+partir\s+de\s*\$\s*([\d.,]+)/i,
+    /ofertas?\s+disponibles?\s+a\s+partir\s+de\s*\$\s*([\d.,]+)/i,
+    /a\s+partir\s+de\s*\$\s*([\d.,]+)/i,
     /precio m[aá]s bajo[\s\S]{0,160}?([\d.,]+)\s*US\$/i,
     /lowest price[\s\S]{0,160}?US\$\s*([\d.,]+)/i,
   ];
@@ -183,9 +193,8 @@ function pickPublicMinPrice(priceList) {
 
 function pickPublicMinUsd(text, options = {}) {
   const anchored = pickAnchoredPublicUsd(text);
-  const fromLines = pickPublicMinUsdFromText(text, options);
-  if (anchored != null && fromLines != null) return Math.min(anchored, fromLines);
-  return anchored ?? fromLines ?? null;
+  if (anchored != null) return anchored;
+  return pickPublicMinUsdFromText(text, options);
 }
 
 function isPaidExtraMerchant(name) {
