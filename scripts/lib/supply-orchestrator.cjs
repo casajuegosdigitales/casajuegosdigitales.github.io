@@ -40,6 +40,7 @@ const {
   driffleBestPublicArs,
   enebaAuctionPricesArs,
   toArsFromEur,
+  isPlausibleStoreCompraArs,
 } = require("./fx-ars.cjs");
 
 const STORES = ["kinguin", "eneba", "driffle", "loaded"];
@@ -74,10 +75,12 @@ async function verifyKinguinPageRegion(linkOrOfferId, opts) {
   return { ...check, page, pageUrl: hero.pageUrl || url };
 }
 
-function pickBestFromQuotes(item, quotes) {
+function pickBestFromQuotes(item, quotes, rates) {
   const filtered = filterCandidates(item, quotes || []);
   if (!filtered.length) return { best: null, quotes: [] };
-  const ranked = [...filtered].sort((a, b) => (a.priceArs || 0) - (b.priceArs || 0));
+  const ranked = [...filtered]
+    .filter((q) => isPlausibleStoreCompraArs(q.priceArs, item, rates))
+    .sort((a, b) => (a.priceArs || 0) - (b.priceArs || 0));
   for (const best of ranked) {
     if (best.store === "kinguin" && isPlaceholderKinguinLink(best.link)) continue;
     if (!best.link) continue;
@@ -86,7 +89,7 @@ function pickBestFromQuotes(item, quotes) {
     return { best, quotes: filtered };
   }
   const best = ranked[0];
-  if (!listingMatchesItem(item, best.name, best.link)) return { best: null, quotes: filtered };
+  if (!best || !listingMatchesItem(item, best.name, best.link)) return { best: null, quotes: filtered };
   return { best, quotes: filtered };
 }
 
@@ -131,8 +134,8 @@ function attachRegion(quote, regionCheck) {
 
 function reapplyBestFromStoredQuotes(item, rates, options) {
   const raw = item.supplyQuotes || [];
-  if (options?.filterOnly || !rates) return Promise.resolve(pickBestFromQuotes(item, raw));
-  return verifyQuotes(raw, item, rates).then((verified) => pickBestFromQuotes(item, verified));
+  if (options?.filterOnly || !rates) return Promise.resolve(pickBestFromQuotes(item, raw, rates));
+  return verifyQuotes(raw, item, rates).then((verified) => pickBestFromQuotes(item, verified, rates));
 }
 
 async function getStoreQuotes(store, item, rates, options) {
@@ -203,7 +206,7 @@ async function getBestSupplyQuote(item, rates, options) {
   }
 
   const verified = options?.skipVerify ? sanitizeQuotesForSave(all) : await verifyQuotesPerStore(all, item, rates);
-  const picked = pickBestFromQuotes(item, verified);
+  const picked = pickBestFromQuotes(item, verified, rates);
   picked.storeStatus = storeStatus;
   return picked;
 }
@@ -369,7 +372,7 @@ async function verifyDriffleQuote(candidate, item, rates) {
     page = null;
   }
   if (!page?.inStock || !page.priceArs) return null;
-  if (page.priceArs < 3000) return null;
+  if (!isPlausibleStoreCompraArs(page.priceArs, item, rates)) return null;
   const title = page.name || candidate.name || "";
   if (!listingMatchesItem(item, title, page.link || candidate.link)) return null;
   const regionCheck = regionPass(item, page.activationText || title);
@@ -455,7 +458,7 @@ async function verifyEnebaQuote(candidate, item, rates) {
   );
 }
 
-async function verifyLoadedQuote(candidate, item) {
+async function verifyLoadedQuote(candidate, item, rates) {
   if (!candidate.link) return null;
   let verified;
   try {
@@ -466,7 +469,7 @@ async function verifyLoadedQuote(candidate, item) {
   if (!verified?.inStock || !verified.priceArs) return null;
   const name = verified.name || candidate.name;
   if (!listingMatchesItem(item, name, candidate.link)) return null;
-  if (!verified.priceArs || verified.priceArs < 3000) return null;
+  if (!isPlausibleStoreCompraArs(verified.priceArs, item, rates)) return null;
   const regionText = verified.activationText || name;
   const regionCheck = regionPass(item, regionText);
   if (regionCheck.ok !== true) return null;
@@ -576,7 +579,7 @@ async function fetchItemSupply(item, rates, options) {
         const newPrice = winner.priceArs || 0;
         if (newPrice <= oldPrice + 50) {
           const merged = mergeStoreQuotes(item.supplyQuotes || [], [winner]);
-          const picked = pickBestFromQuotes(item, merged);
+          const picked = pickBestFromQuotes(item, merged, rates);
           const applied = applyBestToItem(item, { best: picked.best, quotes: merged });
           attempts.push({
             attempt: "recheck",
@@ -640,7 +643,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
     }
     if (store === "driffle") {
       const page = await verifyDriffleProductPage(clean, rates);
-      if (!page?.inStock || !page.priceArs || page.priceArs < 3000) return null;
+      if (!page?.inStock || !page.priceArs || !isPlausibleStoreCompraArs(page.priceArs, item, rates)) return null;
       return {
         store: "driffle",
         name: page.name || item.fullName,
@@ -651,7 +654,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
     }
     if (store === "eneba") {
       const page = await verifyEnebaProductPage(clean, item, rates);
-      if (!page?.inStock || !page.priceArs || page.priceArs < 3000) return null;
+      if (!page?.inStock || !page.priceArs || !isPlausibleStoreCompraArs(page.priceArs, item, rates)) return null;
       return {
         store: "eneba",
         name: page.name || item.fullName,
@@ -663,7 +666,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
     }
     if (store === "loaded") {
       const page = await verifyLoadedProduct(clean, rates);
-      if (!page?.inStock || !page.priceArs || page.priceArs < 3000) return null;
+      if (!page?.inStock || !page.priceArs || !isPlausibleStoreCompraArs(page.priceArs, item, rates)) return null;
       return {
         store: "loaded",
         name: page.name || item.fullName,
@@ -689,7 +692,7 @@ async function getBestFromExcelLinks(item, rates) {
     if (q) candidates.push(q);
   }
   const verified = await verifyQuotesPerStore(candidates, item, rates);
-  const picked = pickBestFromQuotes(item, verified);
+  const picked = pickBestFromQuotes(item, verified, rates);
   picked.storeStatus = Object.fromEntries(
     STORES.map((s) => [s, candidates.some((c) => c.store === s) ? "link" : "sin_link"])
   );

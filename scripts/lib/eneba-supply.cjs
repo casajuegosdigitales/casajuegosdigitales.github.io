@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, wantsLatam, stripSubscriptionSections, isPaidExtraOfferLine } = require("./match-product.cjs");
-const { toArsFromForeign, pickPublicMinPrice, enebaAuctionPricesArs, pickPublicMinUsd, publicUsdFromPriceGroup, pickAnchoredPublicUsd } = require("./fx-ars.cjs");
+const { toArsFromForeign, pickPublicMinPrice, enebaAuctionPricesArs, pickPublicMinUsd, publicUsdFromPriceGroup, pickAnchoredPublicUsd, isPlausibleStoreCompraArs, MIN_GAME_USD } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
@@ -62,10 +62,19 @@ function parseVisibleUsdPrices(text) {
   return [...prices].sort((a, b) => a - b);
 }
 
+function isSellerOfferLine(line) {
+  const t = String(line || "");
+  if (!/US\$|\$/.test(t)) return false;
+  if (/service fee|commission|tax|iva|fee|cargo|comisi|not the final|no es el precio final/i.test(t)) return false;
+  if (/oferta destacada|featured offer|buy now|comprar ahora|recommended offer/i.test(t)) return false;
+  return /safe_purchase|game zone|venus|portal|shop|seller|vendedor|merchant|a-z game/i.test(t);
+}
+
 function minPriceFromPublicOfferLines(auctionText, parseLinePrices) {
   const prices = [];
   for (const line of String(auctionText || "").split("\n")) {
     if (!line.trim() || isPaidExtraOfferLine(line)) continue;
+    if (!isSellerOfferLine(line)) continue;
     const linePrices = parseLinePrices(line);
     const pub = publicUsdFromPriceGroup(linePrices);
     if (pub) prices.push(pub);
@@ -73,11 +82,30 @@ function minPriceFromPublicOfferLines(auctionText, parseLinePrices) {
   return prices.length ? Math.min(...prices) : null;
 }
 
-function pickEnebaPublicUsd(text) {
+function resolveEnebaPriceUsd(text, auctionText) {
   const body = stripSubscriptionSections(text);
   const anchored = pickAnchoredPublicUsd(body);
   if (anchored) return anchored;
+
+  const usdFromOffers = minPriceFromPublicOfferLines(auctionText, (line) => {
+    const found = [];
+    for (const m of line.matchAll(/([\d.,]+)\s*US\$/gi)) {
+      const n = parseArNumber(m[1]);
+      if (n >= MIN_GAME_USD && n < 5000) found.push(n);
+    }
+    for (const m of line.matchAll(/US\$\s*([\d.,]+)/gi)) {
+      const n = parseArNumber(m[1]);
+      if (n >= MIN_GAME_USD && n < 5000) found.push(n);
+    }
+    return found;
+  });
+  if (usdFromOffers) return usdFromOffers;
+
   return pickPublicMinUsd(body);
+}
+
+function pickEnebaPublicUsd(text) {
+  return resolveEnebaPriceUsd(text, "");
 }
 
 async function verifyEnebaProductPage(linkOrSlug, item, rates) {
@@ -115,19 +143,7 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
   let priceArs = null;
   let source = "page_usd";
 
-  const usdFromOffers = minPriceFromPublicOfferLines(dom.auctionText, (line) => {
-    const found = [];
-    for (const m of line.matchAll(/([\d.,]+)\s*US\$/gi)) {
-      const n = parseArNumber(m[1]);
-      if (n >= 5 && n < 5000) found.push(n);
-    }
-    for (const m of line.matchAll(/US\$\s*([\d.,]+)/gi)) {
-      const n = parseArNumber(m[1]);
-      if (n >= 5 && n < 5000) found.push(n);
-    }
-    return found;
-  });
-  let priceUsd = usdFromOffers || pickEnebaPublicUsd(text);
+  let priceUsd = resolveEnebaPriceUsd(text, dom.auctionText);
 
   if (!priceUsd && dom.ld?.length) {
     for (const block of dom.ld) {
@@ -136,7 +152,7 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
       for (const o of list) {
         const cur = String(o?.priceCurrency || o?.priceSpecification?.priceCurrency || "").toUpperCase();
         const amt = Number(o?.price || o?.lowPrice || o?.priceSpecification?.price);
-        if (cur === "USD" && amt >= 5 && amt < 5000) {
+        if (cur === "USD" && amt >= MIN_GAME_USD && amt < 5000) {
           priceUsd = priceUsd == null ? amt : Math.min(priceUsd, amt);
         }
       }
@@ -147,9 +163,14 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
     priceArs = toArsFromForeign(priceUsd, "USD", rates);
   }
 
+  if (priceArs && !isPlausibleStoreCompraArs(priceArs, item, rates)) {
+    priceArs = null;
+    priceUsd = null;
+  }
+
   if (!priceArs && rates) {
     const gql = await tryGraphqlSlug(slug, item, rates);
-    if (gql?.priceArs) {
+    if (gql?.priceArs && isPlausibleStoreCompraArs(gql.priceArs, item, rates)) {
       return {
         priceArs: gql.priceArs,
         name: gql.name || dom.title,
@@ -163,6 +184,7 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
   }
 
   if (!priceArs) return null;
+  if (!isPlausibleStoreCompraArs(priceArs, item, rates)) return null;
 
   const soldOut = /\bout of stock\b|\bsold out\b|\bno offers\b|\bagotado\b|\bno disponible\b/i.test(text);
   return {

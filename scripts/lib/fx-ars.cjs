@@ -1,6 +1,7 @@
 "use strict";
 
-const MIN_GAME_USD = 5;
+const MIN_GAME_USD = 20;
+const MIN_COMPRA_ARS_FALLBACK = 35000;
 const PLUS_PAIR_RATIO_MIN = 0.8;
 const PLUS_PAIR_RATIO_MAX = 0.97;
 
@@ -100,6 +101,8 @@ function pickAnchoredPublicUsd(text) {
   const patterns = [
     /\+\d+\s+ofertas?\s+(?:starting at|desde)\s+US\$\s*([\d.,]+)/i,
     /\+\d+\s+oferta\s+de\s+([\d.,]+)\s*US\$/i,
+    /\+\d+\s+offers?\s+(?:from|starting at)\s+([\d.,]+)\s*US\$/i,
+    /\+\d+\s+other\s+offers?\s+from\s+([\d.,]+)\s*US\$/i,
     /offers?\s+starting\s+at\s+US\$\s*([\d.,]+)/i,
     /starting\s+at\s+US\$\s*([\d.,]+)/i,
     /precio m[aá]s bajo[\s\S]{0,160}?([\d.,]+)\s*US\$/i,
@@ -195,6 +198,24 @@ function driffleBestPublicArs(offers, rates) {
   return pickPublicMinPrice(ars);
 }
 
+function minPlausibleCompraArs(rates, item) {
+  const fx = Number(rates?.dolarDigitalVenta) || 0;
+  const fromUsd = fx ? Math.round(MIN_GAME_USD * fx) : MIN_COMPRA_ARS_FALLBACK;
+  const steam = Number(item?.precioSteamArs) || 0;
+  if (steam > 0) {
+    return Math.max(fromUsd, Math.round(steam * 0.22));
+  }
+  return fromUsd;
+}
+
+function isPlausibleStoreCompraArs(priceArs, item, rates) {
+  const n = Math.round(Number(priceArs) || 0);
+  if (n < minPlausibleCompraArs(rates, item)) return false;
+  const steam = Number(item?.precioSteamArs) || 0;
+  if (steam > 0 && n > steam * 1.05) return false;
+  return true;
+}
+
 function enebaAuctionPricesArs(edges, rates) {
   const prices = (edges || [])
     .map((e) => e?.node)
@@ -203,7 +224,11 @@ function enebaAuctionPricesArs(edges, rates) {
       if (isPaidExtraMerchant(n.merchant?.name)) return false;
       return String(n.price.currency || "USD").toUpperCase() === "USD";
     })
-    .map((n) => toArsFromUsd(n.price.amount / 100, rates))
+    .map((n) => {
+      const usd = Number(n.price.amount) / 100;
+      if (usd < MIN_GAME_USD) return null;
+      return toArsFromUsd(usd, rates);
+    })
     .filter((p) => p > 0);
   return pickPublicMinPrice(prices);
 }
@@ -222,6 +247,9 @@ module.exports = {
   publicUsdFromPriceGroup,
   extractUsdPricesFromLine,
   parseUsdToken,
+  minPlausibleCompraArs,
+  isPlausibleStoreCompraArs,
+  MIN_GAME_USD,
   driffleBestPublicArs,
   enebaAuctionPricesArs,
 };

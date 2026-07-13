@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, stripSubscriptionSections, isSubscriptionListing } = require("./match-product.cjs");
-const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice, pickPublicMinUsd } = require("./fx-ars.cjs");
+const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice, pickPublicMinUsd, minPlausibleCompraArs } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
@@ -249,7 +249,7 @@ async function verifyDriffleProductPage(linkOrSlug, rates) {
     priceArs = parseDriffleArsFromHtml(html);
     source = "page_ars";
   }
-  if (!priceArs || priceArs < 3000) return null;
+  if (!priceArs || priceArs < minPlausibleCompraArs(rates, null)) return null;
 
   const soldOut =
     /\b(no sellers available|currently unavailable)\b/i.test(html) ||

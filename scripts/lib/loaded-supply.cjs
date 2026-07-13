@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, isSubscriptionListing } = require("./match-product.cjs");
-const { parseLoadedRawPrice, toArsFromUsd, pickPublicMinUsd } = require("./fx-ars.cjs");
+const { parseLoadedRawPrice, toArsFromUsd, pickPublicMinUsd, isPlausibleStoreCompraArs } = require("./fx-ars.cjs");
 const { parseArNumber } = require("./fx-rates.cjs");
 const { stripSubscriptionSections } = require("./match-product.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
@@ -89,8 +89,9 @@ async function verifyLoadedProduct(link, rates) {
     });
     const priced = loadedPriceArsFromBody(dom.body, rates, dom.raw);
     const priceArs = priced?.priceArs || null;
+    const plausible = priceArs && isPlausibleStoreCompraArs(priceArs, { precioSteamArs: 0 }, rates);
     const inStock =
-      !dom.soldOut && priceArs && priceArs >= 3000 && (dom.btnOk || dom.available || !dom.hasAddBtn);
+      !dom.soldOut && plausible && (dom.btnOk || dom.available || !dom.hasAddBtn);
     return {
       inStock,
       priceArs: inStock ? priceArs : null,
