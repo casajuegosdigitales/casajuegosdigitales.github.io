@@ -1,7 +1,9 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, isSubscriptionListing } = require("./match-product.cjs");
-const { parseLoadedRawPrice } = require("./fx-ars.cjs");
+const { parseLoadedRawPrice, toArsFromUsd } = require("./fx-ars.cjs");
+const { parseArNumber } = require("./fx-rates.cjs");
+const { stripSubscriptionSections } = require("./match-product.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
 function parseLoadedSlug(link) {
@@ -42,13 +44,38 @@ function hitToCandidate(hit) {
   };
 }
 
-async function verifyLoadedProduct(link) {
+function parseLoadedUsdPrices(text) {
+  const body = stripSubscriptionSections(text);
+  const prices = [];
+  for (const m of body.matchAll(/([\d.,]+)\s*US\$/gi)) {
+    const n = parseArNumber(m[1]);
+    if (n >= 0.5 && n < 5000) prices.push(n);
+  }
+  for (const m of body.matchAll(/US\$\s*([\d.,]+)/gi)) {
+    const n = parseArNumber(m[1]);
+    if (n >= 0.5 && n < 5000) prices.push(n);
+  }
+  return prices.length ? Math.min(...prices) : null;
+}
+
+function loadedPriceArsFromBody(body, rates, rawAttr) {
+  const usd = parseLoadedUsdPrices(body);
+  if (usd && rates) {
+    return { priceArs: toArsFromUsd(usd, rates), source: "page_usd" };
+  }
+  if (rawAttr) {
+    const n = parseLoadedRawPrice(rawAttr);
+    if (n >= 3000) return { priceArs: n, source: "page_ars" };
+  }
+  return null;
+}
+
+async function verifyLoadedProduct(link, rates) {
   return withPage(async (page) => {
     await page.goto(link, { waitUntil: "domcontentloaded", timeout: 60000 });
     await waitCloudflare(page, 25);
     await page.waitForTimeout(2500);
-    const html = await page.content();
-    return page.evaluate((pageHtml) => {
+    const dom = await page.evaluate(() => {
       const title = document.querySelector("h1.page-title span, h1.product-name, h1")?.textContent?.trim() || "";
       const body = document.body?.innerText || "";
       const regionBits = [];
@@ -64,34 +91,23 @@ async function verifyLoadedProduct(link) {
         document.querySelector(".product-info-main [data-raw-price]") ||
         document.querySelector(".product-info-price [data-raw-price]") ||
         document.querySelector("[data-raw-price]");
-      const raw = priceBox?.getAttribute("data-raw-price");
-      let priceArs = null;
-      if (raw) {
-        const n = Number(String(raw).replace(/,/g, ""));
-        if (n > 0) priceArs = Math.round(n);
-      }
-      if (!priceArs) {
-        const init = pageHtml.match(/initialFinalPrice\s*:\s*([\d.]+)/);
-        if (init) {
-          const n = Number(init[1]);
-          if (n >= 3000) priceArs = Math.round(n);
-        }
-      }
-      if (!priceArs) {
-        const prices = [];
-        for (const m of body.matchAll(/([\d]{1,3}(?:\.\d{3})*,\d{2}|[\d]{4,7}(?:[.,]\d{1,2})?)\s*AR\$/gi)) {
-          const rawPrice = String(m[1]).replace(/\./g, "").replace(",", ".");
-          const n = Number(rawPrice);
-          if (n >= 3000 && n < 5000000) prices.push(Math.round(n));
-        }
-        if (prices.length) priceArs = Math.min(...prices);
-      }
+      const raw = priceBox?.getAttribute("data-raw-price") || "";
       const addBtn = document.querySelector("#product-addtocart-button, button.tocart");
       const btnOk = addBtn && !addBtn.disabled && !/stock|unavailable|sold/i.test(addBtn.textContent || "");
       const available = /\bdisponible\b|\bañadir al carrito\b|\bcomprar ahora\b/i.test(body);
-      const inStock = !soldOut && priceArs >= 3000 && (btnOk || available || !addBtn);
-      return { inStock, priceArs: inStock ? priceArs : null, name: title, activationText };
-    }, html);
+      return { title, body, activationText, soldOut, raw, btnOk, available, hasAddBtn: Boolean(addBtn) };
+    });
+    const priced = loadedPriceArsFromBody(dom.body, rates, dom.raw);
+    const priceArs = priced?.priceArs || null;
+    const inStock =
+      !dom.soldOut && priceArs && priceArs >= 3000 && (dom.btnOk || dom.available || !dom.hasAddBtn);
+    return {
+      inStock,
+      priceArs: inStock ? priceArs : null,
+      name: dom.title,
+      activationText: dom.activationText,
+      source: priced?.source || "page_usd",
+    };
   });
 }
 

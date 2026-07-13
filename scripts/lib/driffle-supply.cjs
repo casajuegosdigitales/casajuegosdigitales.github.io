@@ -2,6 +2,7 @@
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, stripSubscriptionSections, isSubscriptionListing } = require("./match-product.cjs");
 const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice } = require("./fx-ars.cjs");
+const { parseArNumber } = require("./fx-rates.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
 const SEARCH_API = "https://search.driffle.com/products/v3/list";
@@ -57,7 +58,7 @@ async function searchDriffle(query, rates) {
 
 async function quoteFromSlug(slug, item, rates) {
   if (!slug) return null;
-  const page = await verifyDriffleProductPage(slug);
+  const page = await verifyDriffleProductPage(slug, rates);
   if (!page?.inStock || !page.priceArs) return null;
   const title = page.name || item.fullName;
   if (!regionOk(title) && !driffleRegionOk({ title, regionName: "" })) return null;
@@ -66,7 +67,7 @@ async function quoteFromSlug(slug, item, rates) {
     name: title,
     priceArs: page.priceArs,
     link: page.link,
-    source: "page_ars",
+    source: page.source || "page_usd",
   };
 }
 
@@ -89,6 +90,42 @@ function parseArsAmount(raw, minArs) {
   const n = Number(String(raw || "").replace(/,/g, ""));
   if (!n || Number.isNaN(n) || n < floor || n > 5000000) return null;
   return Math.round(n);
+}
+
+function parseUsdAmount(raw) {
+  const n = parseArNumber(raw);
+  if (!n || n < 0.5 || n > 5000) return null;
+  return n;
+}
+
+function parseDriffleUsdFromHtml(html) {
+  const text = stripSubscriptionSections(html);
+  const prices = new Set();
+
+  for (const m of text.matchAll(
+    /"priceCurrency"\s*:\s*"USD"[\s\S]*?"lowPrice"\s*:\s*"([\d.]+)"/gi
+  )) {
+    const p = parseUsdAmount(m[1]);
+    if (p) prices.add(p);
+  }
+  for (const m of text.matchAll(
+    /"@type"\s*:\s*"AggregateOffer"[\s\S]*?"lowPrice"\s*:\s*"([\d.]+)"[\s\S]*?"priceCurrency"\s*:\s*"USD"/gi
+  )) {
+    const p = parseUsdAmount(m[1]);
+    if (p) prices.add(p);
+  }
+  for (const m of text.matchAll(/(?:US\$|\$)\s*([\d.,]+)/g)) {
+    const p = parseUsdAmount(m[1]);
+    if (p) prices.add(p);
+  }
+  for (const m of text.matchAll(/([\d.,]+)\s*US\$/gi)) {
+    const p = parseUsdAmount(m[1]);
+    if (p) prices.add(p);
+  }
+
+  const list = [...prices].sort((a, b) => a - b);
+  if (!list.length) return null;
+  return pickPublicMinPrice(list);
 }
 
 function parseDriffleArsFromHtml(html) {
@@ -167,7 +204,7 @@ async function fetchDriffleHtml(linkOrSlug) {
   return res.text();
 }
 
-async function verifyDriffleProductPage(linkOrSlug) {
+async function verifyDriffleProductPage(linkOrSlug, rates) {
   const url = driffleUrl(linkOrSlug);
   if (!url) return null;
 
@@ -208,7 +245,16 @@ async function verifyDriffleProductPage(linkOrSlug) {
   }
 
   const meta = parseDriffleMetaFromHtml(html);
-  const priceArs = parseDriffleArsFromHtml(html);
+  let priceArs = null;
+  let source = "page_usd";
+  const priceUsd = parseDriffleUsdFromHtml(html);
+  if (priceUsd && rates) {
+    priceArs = toArsFromUsd(priceUsd, rates);
+  }
+  if (!priceArs) {
+    priceArs = parseDriffleArsFromHtml(html);
+    source = "page_ars";
+  }
   if (!priceArs) return null;
 
   const soldOut =
@@ -221,7 +267,7 @@ async function verifyDriffleProductPage(linkOrSlug) {
     activationText: [dom?.title || meta.title, dom?.body || "", meta.regionText].filter(Boolean).join("\n"),
     link: url,
     inStock: !soldOut,
-    source: "page_ars",
+    source,
   };
 }
 

@@ -32,10 +32,10 @@ function parseLoadedRawPrice(raw) {
 function kinguinPublicPriceArs(offer, rates) {
   if (!offer?.price) return null;
   const amount = Number(offer.price.amount) / 100;
-  let eur = amount;
-  if (offer.price.currency === "USD") eur = amount / (rates.usdPerEur || 1.08);
-  else if (offer.price.currency !== "EUR") eur = amount;
-  return Math.round(eur * rates.arsPerEur);
+  const cur = String(offer.price.currency || "EUR").toUpperCase();
+  if (cur === "USD") return toArsFromUsd(amount, rates);
+  if (cur === "ARS") return Math.round(amount);
+  return Math.round(amount * rates.arsPerEur);
 }
 
 function kinguinInStock(offer) {
@@ -79,9 +79,9 @@ function enebaAuctionPricesArs(edges, rates) {
     .filter((n) => {
       if (!n || n.isInStock === false || !n.price) return false;
       if (isPaidExtraMerchant(n.merchant?.name)) return false;
-      return true;
+      return String(n.price.currency || "USD").toUpperCase() === "USD";
     })
-    .map((n) => toArsFromForeign(n.price.amount / 100, n.price.currency, rates))
+    .map((n) => toArsFromUsd(n.price.amount / 100, rates))
     .filter((p) => p > 0);
   return pickPublicMinPrice(prices);
 }

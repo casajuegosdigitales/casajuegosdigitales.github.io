@@ -364,7 +364,7 @@ async function verifyDriffleQuote(candidate, item, rates) {
   if (!slug) return null;
   let page;
   try {
-    page = await verifyDriffleProductPage(candidate.link || slug);
+    page = await verifyDriffleProductPage(candidate.link || slug, rates);
   } catch (_) {
     page = null;
   }
@@ -458,7 +458,7 @@ async function verifyLoadedQuote(candidate, item) {
   if (!candidate.link) return null;
   let verified;
   try {
-    verified = await verifyLoadedProduct(candidate.link);
+    verified = await verifyLoadedProduct(candidate.link, rates);
   } catch (_) {
     return null;
   }
@@ -638,7 +638,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
       return await quoteFromLink({ ...item, linkKinguin: clean }, rates);
     }
     if (store === "driffle") {
-      const page = await verifyDriffleProductPage(clean);
+      const page = await verifyDriffleProductPage(clean, rates);
       if (!page?.inStock || !page.priceArs) return null;
       return {
         store: "driffle",
@@ -661,7 +661,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
       };
     }
     if (store === "loaded") {
-      const page = await verifyLoadedProduct(clean);
+      const page = await verifyLoadedProduct(clean, rates);
       if (!page?.inStock || !page.priceArs) return null;
       return {
         store: "loaded",

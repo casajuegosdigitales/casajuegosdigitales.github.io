@@ -589,7 +589,7 @@ async function main() {
     fx.steamSource
   );
   console.log(
-    "FX Tiendas (dolar digital dolarhoy venta):",
+    "FX Tiendas (USDT Binance P2P ask x CriptoYa):",
     fx.dolarDigitalVenta,
     "ARS/USD | Fuente:",
     fx.digitalSource

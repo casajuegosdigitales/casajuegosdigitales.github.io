@@ -12,7 +12,7 @@ const {
   isSubscriptionListing,
 } = require("./match-product.cjs");
 const { fetchOffer } = require("./kinguin-api.cjs");
-const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromEur } = require("./fx-ars.cjs");
+const { kinguinPublicPriceArs, kinguinInStock, pickPublicMinPrice, toArsFromUsd } = require("./fx-ars.cjs");
 const { withPage, waitCloudflare, browserAllowed } = require("./browser-supply.cjs");
 const {
   parseKinguinOfferId,
@@ -110,27 +110,34 @@ function parseKinguinArsPrices(text, minArs = 3000) {
   return [...new Set(prices)].sort((a, b) => a - b);
 }
 
-function pickKinguinPublicBuyPrice(heroText, arsPrices, apiPriceArs) {
-  const preSub = stripSubscriptionSections(heroText);
-  const firstArs = [...preSub.matchAll(/AR\$\s*([\d.,]+)/gi)][0];
-  if (firstArs) {
-    const first = parseKinguinArsToken(firstArs[1]);
-    if (first) return first;
+function parseKinguinUsdPrices(text) {
+  const preSub = stripSubscriptionSections(text);
+  const prices = [];
+  for (const m of preSub.matchAll(/([\d.,]+)\s*US\$/gi)) {
+    const n = Number(String(m[1]).replace(",", "."));
+    if (n >= 0.5 && n < 5000) prices.push(n);
   }
-  const early = parseKinguinArsPrices(preSub);
-  if (early.length) return Math.min(...early);
+  for (const m of preSub.matchAll(/US\$\s*([\d.,]+)/gi)) {
+    const n = Number(String(m[1]).replace(",", "."));
+    if (n >= 0.5 && n < 5000) prices.push(n);
+  }
+  return [...new Set(prices)].sort((a, b) => a - b);
+}
+
+function pickKinguinPublicBuyPrice(heroText, rates, apiPriceArs) {
+  const usdList = parseKinguinUsdPrices(heroText);
+  if (usdList.length && rates) {
+    return toArsFromUsd(Math.min(...usdList), rates);
+  }
   if (apiPriceArs) return apiPriceArs;
-  const publicPrices = parseKinguinArsPrices(stripSubscriptionSections(heroText));
-  if (publicPrices.length) return Math.min(...publicPrices);
   return null;
 }
 
-function pickKinguinDisplayedPrice(arsPrices, apiPriceArs, heroText) {
-  const pub = pickKinguinPublicBuyPrice(heroText, arsPrices, apiPriceArs);
+function pickKinguinDisplayedPrice(arsPrices, apiPriceArs, heroText, rates) {
+  const pub = pickKinguinPublicBuyPrice(heroText, rates, apiPriceArs);
   if (pub) return pub;
   if (apiPriceArs) return apiPriceArs;
-  const publicPrices = (arsPrices || []).filter(Boolean);
-  return publicPrices.length ? Math.min(...publicPrices) : null;
+  return null;
 }
 
 async function scrapeKinguinHeroPage(url, rates, apiPriceArs) {
@@ -178,19 +185,10 @@ async function scrapeKinguinHeroPage(url, rates, apiPriceArs) {
     });
   });
   if (!raw) return null;
-  const arsPrices = parseKinguinArsPrices(raw.heroText);
-  const eurPrices = [];
-  for (const m of String(raw.heroText || "").matchAll(/€\s*([\d.,]+)/g)) {
-    const n = Number(String(m[1]).replace(",", "."));
-    if (n >= 0.5 && n < 5000) eurPrices.push(n);
-  }
-  let priceArs = pickKinguinPublicBuyPrice(raw.heroText, arsPrices, apiPriceArs);
-  if (!priceArs && eurPrices.length && rates) {
-    priceArs = toArsFromEur(Math.min(...eurPrices), rates);
-  }
+  let priceArs = pickKinguinPublicBuyPrice(raw.heroText, rates, apiPriceArs);
   return {
     ...raw,
-    arsPrices,
+    arsPrices: [],
     priceArs: priceArs || null,
   };
 }

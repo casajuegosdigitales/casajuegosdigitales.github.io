@@ -140,40 +140,38 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
 
   const text = [dom.title, dom.body, dom.auctionText].join("\n");
   let priceArs = null;
+  let source = "page_usd";
 
-  const arsFromOffers = minPriceFromPublicOfferLines(dom.auctionText, (line) => {
+  const usdFromOffers = minPriceFromPublicOfferLines(dom.auctionText, (line) => {
     const found = [];
-    for (const m of line.matchAll(/(?:ARS|AR\$)\s*([\d.,]+)/gi)) {
-      const raw = String(m[1]).replace(/\./g, "").replace(",", ".");
-      const n = Number(raw);
-      if (n >= 8000 && n < 5000000) found.push(Math.round(n));
+    for (const m of line.matchAll(/([\d.,]+)\s*US\$/gi)) {
+      const n = parseArNumber(m[1]);
+      if (n >= 0.5 && n < 5000) found.push(n);
+    }
+    for (const m of line.matchAll(/US\$\s*([\d.,]+)/gi)) {
+      const n = parseArNumber(m[1]);
+      if (n >= 0.5 && n < 5000) found.push(n);
     }
     return found;
   });
-  if (arsFromOffers) priceArs = arsFromOffers;
+  let priceUsd = usdFromOffers || pickEnebaPublicUsd(text);
 
-  const arsList = parseVisibleArsPrices(text);
-  if (!priceArs && arsList.length) priceArs = pickPublicMinPrice(arsList);
-
-  if (!priceArs && dom.ld?.length) {
+  if (!priceUsd && dom.ld?.length) {
     for (const block of dom.ld) {
       const offers = block?.offers;
       const list = Array.isArray(offers) ? offers : offers ? [offers] : [];
       for (const o of list) {
-        const cur = o?.priceCurrency || o?.priceSpecification?.priceCurrency || "";
+        const cur = String(o?.priceCurrency || o?.priceSpecification?.priceCurrency || "").toUpperCase();
         const amt = Number(o?.price || o?.lowPrice || o?.priceSpecification?.price);
-        if (cur === "ARS" && amt >= 8000) {
-          priceArs = priceArs == null ? Math.round(amt) : Math.min(priceArs, Math.round(amt));
+        if (cur === "USD" && amt >= 0.5 && amt < 5000) {
+          priceUsd = priceUsd == null ? amt : Math.min(priceUsd, amt);
         }
       }
     }
   }
 
-  if (!priceArs && rates) {
-    const usd = pickEnebaPublicUsd(text);
-    if (usd) {
-      priceArs = toArsFromForeign(usd, "USD", rates);
-    }
+  if (priceUsd && rates) {
+    priceArs = toArsFromForeign(priceUsd, "USD", rates);
   }
 
   if (!priceArs) return null;
@@ -186,7 +184,7 @@ async function verifyEnebaProductPage(linkOrSlug, item, rates) {
     link: url,
     slug,
     inStock: !soldOut,
-    source: arsList.length ? "page_ars" : "page_usd",
+    source,
   };
 }
 

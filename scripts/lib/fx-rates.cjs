@@ -3,7 +3,8 @@
 const STEAM_CURATOR =
   "https://store.steampowered.com/curator/45349538/ajaxgetfilteredrecommendations/?query&start=0&count=10";
 const STEAMCITO_URL = "https://steamcito.com.ar/";
-const DOLARHOY_DIGITAL_URL = "https://dolarhoy.com/cotizacion-dolar-digital";
+const CRIPTOYA_USDT_ARS_URL = "https://criptoya.com/api/usdt/ars";
+const CRIPTOYA_BINANCEP2P_USDT_URL = "https://criptoya.com/api/binancep2p/usdt/ars/1";
 
 let cache = null;
 
@@ -54,79 +55,67 @@ async function fetchSteamcitoMetodoNormal() {
   return null;
 }
 
-async function fetchDolarDigitalVentaPlaywright() {
-  try {
-    const { chromium } = require("playwright");
-    const browser = await chromium.launch({ headless: true });
-    const page = await browser.newPage();
-    await page.goto(DOLARHOY_DIGITAL_URL, { waitUntil: "domcontentloaded", timeout: 60000 });
-    await page.waitForTimeout(12000);
-    const parsed = await page.evaluate(() => {
-      const text = document.body.innerText || "";
-      const lines = text.split(/\n/).map((s) => s.trim()).filter(Boolean);
-
-      const rowIdx = lines.findIndex((l) => /d[oó]lar\s+digital/i.test(l));
-      if (rowIdx >= 0) {
-        const nums = lines.slice(rowIdx, rowIdx + 6).map((l) => l.replace(/\$/g, "").trim())
-          .filter((l) => /^[0-9]{3,4}(?:[.,][0-9]{1,2})?$/.test(l));
-        if (nums.length >= 2) {
-          return { compra: nums[0], venta: nums[1], method: "digital_row" };
-        }
+async function fetchCriptoyaBinanceP2pUsdtAsk() {
+  const attempts = [
+    { url: CRIPTOYA_BINANCEP2P_USDT_URL, mode: "exchange_api" },
+    { url: CRIPTOYA_USDT_ARS_URL, mode: "usdt_ars_api" },
+  ];
+  for (const { url, mode } of attempts) {
+    try {
+      const res = await fetch(url, {
+        headers: { "User-Agent": "Mozilla/5.0", Accept: "application/json" },
+        signal: AbortSignal.timeout(25000),
+      });
+      if (!res.ok) continue;
+      const data = await res.json();
+      let ask = null;
+      let bid = null;
+      if (data.binancep2p) {
+        ask = data.binancep2p.totalAsk ?? data.binancep2p.ask;
+        bid = data.binancep2p.totalBid ?? data.binancep2p.bid;
+      } else if (data.ask != null) {
+        ask = data.totalAsk ?? data.ask;
+        bid = data.totalBid ?? data.bid;
       }
-
-      const digitalBlock = text.match(
-        /D[oó]lar\s+Digital[\s\S]{0,120}?([0-9]{3,4}(?:[.,][0-9]{1,2})?)[\s\S]{0,60}?([0-9]{3,4}(?:[.,][0-9]{1,2})?)/i
-      );
-      if (digitalBlock) {
-        return { compra: digitalBlock[1], venta: digitalBlock[2], method: "digital_block" };
+      ask = parseArNumber(ask);
+      bid = parseArNumber(bid);
+      if (ask && ask > 500 && ask < 5000) {
+        return {
+          venta: Math.round(ask),
+          compra: bid && bid > 500 ? Math.round(bid) : Math.round(ask),
+          source: "criptoya.com/binancep2p/usdt/ask",
+          method: mode,
+        };
       }
-
-      const pairs = [];
-      for (let i = 0; i < lines.length - 2; i++) {
-        if (!/compra/i.test(lines[i]) || !/venta/i.test(lines[i + 1])) continue;
-        const compra = lines[i + 2];
-        const venta = lines[i + 3];
-        if (/^[0-9]{3,4}(?:[.,][0-9]{1,2})?$/.test(compra) && /^[0-9]{3,4}(?:[.,][0-9]{1,2})?$/.test(venta)) {
-          pairs.push({ compra, venta });
-        }
-      }
-      if (pairs.length) return { ...pairs[0], method: "first_pair" };
-
-      const venta = text.match(/Venta[\s\n]*\$?\s*([0-9]{3,4}(?:[.,][0-9]{1,2})?)/i);
-      const compra = text.match(/Compra[\s\n]*\$?\s*([0-9]{3,4}(?:[.,][0-9]{1,2})?)/i);
-      return { compra: compra ? compra[1] : null, venta: venta ? venta[1] : null, method: "generic" };
-    });
-    await browser.close();
-    const venta = parseArNumber(parsed.venta);
-    if (venta && venta > 500 && venta < 5000) {
-      return { venta, compra: parseArNumber(parsed.compra), source: "dolarhoy.com", raw: parsed };
-    }
-  } catch (_) {}
+    } catch (_) {}
+  }
   return null;
 }
 
 async function fetchDolarDigitalVenta() {
-  const pw = await fetchDolarDigitalVentaPlaywright();
-  if (pw?.venta) return pw;
-  return null;
+  return fetchCriptoyaBinanceP2pUsdtAsk();
 }
 
 async function getFxRates(fallback) {
   if (cache) return cache;
   const fb = fallback || {};
   const steam = await fetchSteamcitoMetodoNormal();
-  const digital = await fetchDolarDigitalVenta();
+  const digital = await fetchCriptoyaBinanceP2pUsdtAsk();
 
   const steamMetodoNormal = steam?.rate || fb.steamMetodoNormal || 1827.1;
-  const dolarDigitalVenta = digital?.venta || fb.dolarDigitalVenta || Number(process.env.DOLAR_DIGITAL_VENTA) || 1561;
+  const dolarDigitalVenta =
+    digital?.venta || fb.dolarDigitalVenta || Number(process.env.DOLAR_DIGITAL_VENTA) || 1561;
   const dolarDigitalCompra = digital?.compra || fb.dolarDigitalCompra || dolarDigitalVenta;
 
   cache = {
     steamMetodoNormal,
     dolarDigitalVenta,
     dolarDigitalCompra,
+    usdtBinanceP2pAsk: dolarDigitalVenta,
     steamSource: steam?.source || (fb.steamMetodoNormal ? "fallback" : "default"),
-    digitalSource: digital?.source || (fb.dolarDigitalVenta ? "fallback" : process.env.DOLAR_DIGITAL_VENTA ? "env" : "default"),
+    digitalSource:
+      digital?.source ||
+      (fb.dolarDigitalVenta ? "fallback_json" : process.env.DOLAR_DIGITAL_VENTA ? "env" : "default"),
     fetchedAt: new Date().toISOString(),
   };
   return cache;
@@ -532,6 +521,7 @@ module.exports = {
   getFxRates,
   clearFxCache,
   fetchSteamcitoMetodoNormal,
+  fetchCriptoyaBinanceP2pUsdtAsk,
   fetchDolarDigitalVenta,
   steamUsdToArs,
   storeUsdToArs,
