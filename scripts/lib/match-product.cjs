@@ -610,14 +610,23 @@ function purgeRedundantAltPlatforms(data) {
 }
 
 function pruneCatalogForSteamFirst(catalog, data) {
-  const variantSet = new Set((data.items || []).map((i) => `${i.game}|${i.variant}`));
+  const hiddenVariants = new Set();
+  for (const item of data.items || []) {
+    if (item.hiddenReason === "sin_links_excel") {
+      hiddenVariants.add(`${item.game}|${item.variant}`);
+    }
+  }
   for (const game of catalog) {
-    game.versions = (game.versions || []).filter((v) => variantSet.has(`${game.name}|${v.name}`));
+    for (const v of game.versions || []) {
+      if (hiddenVariants.has(`${game.name}|${v.name}`)) {
+        v.hidden = true;
+      }
+    }
     const visibleSteam = (game.versions || []).filter(
-      (v) => !v.hidden && /steam/i.test(v.name)
+      (v) => !v.hidden && /steam/i.test(v.name) && (v.priceTransfer || 0) > 0
     );
     if (visibleSteam.length) game.platform = "Steam - PC";
-    const vis = (game.versions || []).filter((v) => !v.hidden);
+    const vis = (game.versions || []).filter((v) => !v.hidden && (v.priceTransfer || 0) > 0);
     game.hidden = vis.length === 0;
   }
 }

@@ -213,11 +213,78 @@ function hasExcelSupplyLinks(item) {
   );
 }
 
-function syncItemsFromExcel(data, excel) {
+function supplyLinksKey(item) {
+  return [item.linkKinguin, item.linkEneba, item.linkDriffle, item.linkLoaded]
+    .map((link) => String(link || "").trim())
+    .join("|");
+}
+
+function supplyLinksMatch(a, b) {
+  return supplyLinksKey(a) === supplyLinksKey(b);
+}
+
+function snapshotSupplyFields(items) {
+  return (items || []).map((item) => ({
+    excelKey: item.excelKey || `${item.game}|${item.edition || ""}|${item.tipo || ""}`,
+    game: item.game,
+    edition: item.edition,
+    tipo: item.tipo,
+    variant: item.variant,
+    linkKinguin: item.linkKinguin,
+    linkEneba: item.linkEneba,
+    linkDriffle: item.linkDriffle,
+    linkLoaded: item.linkLoaded,
+    compraArs: item.compraArs,
+    ventaPublicada: item.ventaPublicada,
+    cuotasPublicada: item.cuotasPublicada,
+    bestStore: item.bestStore,
+    bestLink: item.bestLink,
+    supplyVerified: item.supplyVerified,
+    supplyQuotes: item.supplyQuotes,
+    hidden: item.hidden,
+    hiddenReason: item.hiddenReason,
+  }));
+}
+
+function copySupplyFields(target, source) {
+  target.compraArs = source.compraArs;
+  target.ventaPublicada = source.ventaPublicada;
+  target.cuotasPublicada = source.cuotasPublicada;
+  target.bestStore = source.bestStore;
+  target.bestLink = source.bestLink;
+  target.supplyVerified = source.supplyVerified !== false;
+  target.supplyQuotes = source.supplyQuotes ? [...source.supplyQuotes] : [];
+  target.hidden = false;
+  target.hiddenReason = "";
+}
+
+function restoreStaleSupply(items, prevSnapshot) {
+  const prevByKey = new Map((prevSnapshot || []).map((p) => [p.excelKey, p]));
+  let restored = 0;
+  for (const item of items) {
+    if (item.hiddenReason === "sin_links_excel") continue;
+    if (hasValidPublishedSupply(item)) continue;
+    const prev = prevByKey.get(item.excelKey);
+    if (!prev || !prev.bestStore || (prev.compraArs || 0) <= 0) continue;
+    if (!supplyLinksMatch(item, prev)) continue;
+    copySupplyFields(item, prev);
+    item._staleSupply = true;
+    restored++;
+  }
+  return restored;
+}
+
+function syncItemsFromExcel(data, excel, prevSnapshot) {
+  const prevByKey = new Map((prevSnapshot || []).map((p) => [p.excelKey, p]));
   const items = [];
   for (const row of excel.rows) {
     if (!row.game || !row.tipo) continue;
-    items.push(itemFromExcelRow(row));
+    const item = itemFromExcelRow(row);
+    const prev = prevByKey.get(item.excelKey);
+    if (prev && supplyLinksMatch(item, prev) && prev.bestStore && (prev.compraArs || 0) > 0) {
+      copySupplyFields(item, prev);
+    }
+    items.push(item);
   }
   data.items = items;
   return items.length;
@@ -473,12 +540,13 @@ async function main() {
   }
 
   const data = loadData();
+  const prevSupplySnapshot = snapshotSupplyFields(data.items);
   if (LINKS_ONLY && excelLoaded) {
     if (!excelLoaded.rows.length) {
       console.error("ERROR: Excel sin filas validas. No se sobrescribe kinguin-price-data.json.");
       process.exit(1);
     }
-    const n = syncItemsFromExcel(data, excelLoaded);
+    const n = syncItemsFromExcel(data, excelLoaded, prevSupplySnapshot);
     console.log("Catalogo sincronizado desde Excel:", n, "variantes");
   }
   const steamLinksFilled = propagateSteamLinks(data.items || []);
@@ -682,6 +750,11 @@ async function main() {
     for (const item of data.items) {
       item._oldCompra = item.compraArs || 0;
     }
+  }
+
+  const restoredStale = restoreStaleSupply(data.items, prevSupplySnapshot);
+  if (restoredStale) {
+    console.log("Precios anteriores restaurados (fetch fallo, mismos links):", restoredStale);
   }
 
   const steamRefresh = await refreshAllSteamPrices(data.items, fx);

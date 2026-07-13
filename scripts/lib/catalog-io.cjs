@@ -228,9 +228,12 @@ function trimDeliveryOptions(game) {
 
 function finalizeCatalogGames(catalog) {
   for (const game of catalog || []) {
-    game.versions = (game.versions || []).filter((v) => !v.hidden);
+    for (const v of game.versions || []) {
+      if ((v.priceTransfer || 0) > 0) v.hidden = false;
+    }
+    game.versions = (game.versions || []).filter((v) => !v.hidden || (v.priceTransfer || 0) > 0);
     trimDeliveryOptions(game);
-    const vis = game.versions || [];
+    const vis = (game.versions || []).filter((v) => !v.hidden && (v.priceTransfer || 0) > 0);
     game.hidden = vis.length === 0;
   }
 }

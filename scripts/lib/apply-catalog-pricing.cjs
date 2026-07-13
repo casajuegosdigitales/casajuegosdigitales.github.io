@@ -4,6 +4,12 @@ const { applyGroupPricing, mergeExcelSteamPrices, isProfitableVenta, priceFloor 
 const { findCatalogVersion, ensureCatalogVersion, finalizeCatalogGames } = require("./catalog-io.cjs");
 const { platformFromItem, isSteamItem, isPublishableAltPlatform, hasValidPublishedSupply } = require("./match-product.cjs");
 
+function hasExcelSupplyLinks(item) {
+  return [item.linkKinguin, item.linkEneba, item.linkDriffle, item.linkLoaded].some((link) =>
+    /^https?:\/\//i.test(String(link || "").trim())
+  );
+}
+
 function applyVentaToItem(item, result) {
   item.ventaPublicada = result.venta;
   item.cuotasPublicada = result.cuotas;
@@ -38,11 +44,49 @@ function applyPricingToCatalog(data, catalog, excelByFullName) {
     if (!result) continue;
 
     if (item.supplyVerified === false || !hasValidPublishedSupply(item)) {
+      if (item.hiddenReason === "sin_links_excel") {
+        item.ventaPublicada = 0;
+        item.cuotasPublicada = 0;
+        item.hidden = true;
+        const match = findCatalogVersion(catalog, item);
+        if (match.version) {
+          match.version.hidden = true;
+          hidden++;
+        }
+        log.push(`${item.fullName} | OCULTO sin link Excel (reservado)`);
+        continue;
+      }
+
+      const match = findCatalogVersion(catalog, item);
+      const staleVenta = match.version ? Number(match.version.priceTransfer) || 0 : 0;
+      if (staleVenta > 0) {
+        const compra = Number(item.compraArs) || 0;
+        if (compra > 0 && isProfitableVenta(compra, staleVenta)) {
+          item.ventaPublicada = staleVenta;
+          item.cuotasPublicada = Number(match.version.basePrice) || staleVenta;
+          item.hidden = false;
+          item.hiddenReason = item._staleSupply ? "precio_anterior" : "catalogo_anterior";
+          match.version.hidden = false;
+          visible++;
+          log.push(`${item.fullName} | MANTIENE precio anterior | venta ${staleVenta}`);
+          continue;
+        }
+        if (hasExcelSupplyLinks(item)) {
+          match.version.hidden = false;
+          visible++;
+          log.push(`${item.fullName} | MANTIENE catalogo (fetch fallo) | venta ${staleVenta}`);
+          item.hidden = true;
+          item.hiddenReason = "fetch_fallo_catalogo";
+          item.ventaPublicada = 0;
+          item.cuotasPublicada = 0;
+          continue;
+        }
+      }
+
       item.hiddenReason = item.hiddenReason || "sin_compra_verificada";
       item.ventaPublicada = 0;
       item.cuotasPublicada = 0;
       item.hidden = true;
-      const match = findCatalogVersion(catalog, item);
       if (match.version) {
         match.version.hidden = true;
         hidden++;
@@ -105,11 +149,6 @@ function applyPricingToCatalog(data, catalog, excelByFullName) {
     }
   }
 
-  for (const game of catalog) {
-    game.versions = (game.versions || []).filter((v) => !v.hidden);
-    const vis = game.versions;
-    game.hidden = vis.length === 0;
-  }
   finalizeCatalogGames(catalog);
 
   return { visible, hidden, catalogAdded, log };
