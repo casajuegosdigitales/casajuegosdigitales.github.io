@@ -38,7 +38,6 @@ jobs:
           PLAYWRIGHT_CHANNEL: "none"
           SUPPLY_DELAY_MS: "120"
           GAMES_EXCEL: "GAMES LIST - AUTO.xlsx"
-          DOLAR_DIGITAL_VENTA: "1561"
         run: node scripts/actualizar-precios.cjs --links-only
 
       - name: Commit y push si hubo cambios
