@@ -366,10 +366,21 @@ async function verifyDriffleQuote(candidate, item, rates) {
   const slug = parseDriffleSlug(candidate.link || "");
   if (!slug) return null;
   let page;
-  try {
-    page = await verifyDriffleProductPage(candidate.link || slug, rates);
-  } catch (_) {
-    page = null;
+  if (candidate.linkVerified && candidate.priceArs && candidate.activationText) {
+    page = {
+      inStock: true,
+      priceArs: candidate.priceArs,
+      name: candidate.name,
+      activationText: candidate.activationText,
+      link: candidate.link,
+      source: candidate.source || "page_usd",
+    };
+  } else {
+    try {
+      page = await verifyDriffleProductPage(candidate.link || slug, rates);
+    } catch (_) {
+      page = null;
+    }
   }
   if (!page?.inStock || !page.priceArs) return null;
   if (!isPlausibleStoreCompraArs(page.priceArs, item, rates)) return null;
@@ -461,10 +472,20 @@ async function verifyEnebaQuote(candidate, item, rates) {
 async function verifyLoadedQuote(candidate, item, rates) {
   if (!candidate.link) return null;
   let verified;
-  try {
-    verified = await verifyLoadedProduct(candidate.link, rates);
-  } catch (_) {
-    return null;
+  if (candidate.linkVerified && candidate.priceArs && candidate.activationText) {
+    verified = {
+      inStock: true,
+      priceArs: candidate.priceArs,
+      name: candidate.name,
+      activationText: candidate.activationText,
+      source: candidate.source || "page_usd",
+    };
+  } else {
+    try {
+      verified = await verifyLoadedProduct(candidate.link, rates);
+    } catch (_) {
+      return null;
+    }
   }
   if (!verified?.inStock || !verified.priceArs) return null;
   const name = verified.name || candidate.name;
@@ -649,7 +670,9 @@ async function candidateFromExcelLink(store, link, item, rates) {
         name: page.name || item.fullName,
         priceArs: page.priceArs,
         link: page.link || clean,
-        source: "link",
+        activationText: page.activationText || page.name || item.fullName,
+        source: page.source || "page_usd",
+        linkVerified: true,
       };
     }
     if (store === "eneba") {
@@ -672,7 +695,9 @@ async function candidateFromExcelLink(store, link, item, rates) {
         name: page.name || item.fullName,
         priceArs: page.priceArs,
         link: clean,
-        source: "link",
+        activationText: page.activationText || page.name || item.fullName,
+        source: page.source || "page_usd",
+        linkVerified: true,
       };
     }
   } catch (_) {}

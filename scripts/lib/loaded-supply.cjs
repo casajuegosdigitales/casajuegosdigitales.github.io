@@ -2,9 +2,12 @@
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, isSubscriptionListing } = require("./match-product.cjs");
 const { parseLoadedRawPrice, toArsFromUsd, pickPublicMinUsd, pickAnchoredPublicUsd, isPlausibleStoreCompraArs } = require("./fx-ars.cjs");
-const { parseArNumber } = require("./fx-rates.cjs");
 const { stripSubscriptionSections } = require("./match-product.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
+
+const LOADED_USD_COOKIES = [
+  { name: "currency", value: "USD", domain: ".loaded.com", path: "/" },
+];
 
 function parseLoadedSlug(link) {
   const m = String(link || "").match(/loaded\.com\/([^/?#]+)/i);
@@ -61,91 +64,178 @@ function parseLoadedUsdFromMeta(html) {
   return n;
 }
 
-function parseLoadedUsdFromScript(html) {
-  const m = String(html || "").match(/initialFinalPrice:\s*([\d.]+)/);
+function parseLoadedUsdFromScript(html, requireUsdMeta) {
+  const text = String(html || "");
+  if (requireUsdMeta) {
+    const cur = text.match(/<meta\s+property="product:price:currency"\s+content="([^"]+)"/i)?.[1] || "";
+    if (String(cur).toUpperCase() !== "USD") return null;
+  }
+  const m = text.match(/initialFinalPrice:\s*([\d.]+)/);
   if (!m) return null;
   const n = Number(m[1]);
   if (!n || n < 5 || n >= 5000) return null;
   return n;
 }
 
+async function postLoadedCurrencyUsd(page) {
+  return page.evaluate(async () => {
+    const anchors = [...document.querySelectorAll("a[data-post]")];
+    for (const a of anchors) {
+      try {
+        const raw = a.getAttribute("data-post");
+        if (!raw || !/USD/i.test(raw)) continue;
+        const payload = JSON.parse(raw);
+        const action = payload?.action;
+        const currency = payload?.data?.currency;
+        const uenc = payload?.data?.uenc;
+        if (!action || currency !== "USD") continue;
+        const body = new URLSearchParams();
+        body.set("currency", "USD");
+        if (uenc) body.set("uenc", uenc);
+        await fetch(action, {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
+        });
+        return true;
+      } catch (_) {}
+    }
+    return false;
+  });
+}
+
 async function switchLoadedToUsd(page) {
-  try {
-    const trigger = await page.$("#switcher-currency-trigger, .currency-switcher button");
-    if (trigger) {
+  if (await postLoadedCurrencyUsd(page)) {
+    await page.waitForTimeout(1200);
+    await page.reload({ waitUntil: "domcontentloaded", timeout: 60000 });
+    await page.waitForTimeout(2000);
+    const cur = await page.evaluate(
+      () => document.querySelector('meta[property="product:price:currency"]')?.content || ""
+    );
+    if (String(cur).toUpperCase() === "USD") return true;
+  }
+
+  const selectors = [
+    "#switcher-currency-trigger",
+    ".currency-switcher button",
+    "button[aria-label*='currency' i]",
+    ".switcher-currency .switcher-trigger",
+  ];
+  for (const sel of selectors) {
+    try {
+      const trigger = await page.$(sel);
+      if (!trigger) continue;
       await trigger.click();
       await page.waitForTimeout(700);
-    }
-    const usd = await page.$('a[data-post*="\\"currency\\":\\"USD\\""]');
-    if (usd) {
-      await usd.click();
+      break;
+    } catch (_) {}
+  }
+
+  const usdSelectors = [
+    'a[data-post*="\\"currency\\":\\"USD\\""]',
+    'a[data-post*="currency\\":\\"USD\\""]',
+    ".switcher-dropdown a:has-text('USD')",
+    "li a:has-text('USD')",
+  ];
+  for (const sel of usdSelectors) {
+    try {
+      const opt = await page.$(sel);
+      if (!opt) continue;
+      await opt.click();
       await page.waitForTimeout(2500);
-      return true;
-    }
-  } catch (_) {}
+      const cur = await page.evaluate(
+        () => document.querySelector('meta[property="product:price:currency"]')?.content || ""
+      );
+      if (String(cur).toUpperCase() === "USD") return true;
+    } catch (_) {}
+  }
+
   return false;
 }
 
-function loadedPriceArsFromBody(body, rates, rawAttr) {
-  const text = String(body || "");
-  const usd = parseLoadedUsdPrices(text) || parseLoadedUsdFromMeta(text) || parseLoadedUsdFromScript(text);
+function loadedPriceArsFromDom(dom, rates) {
+  const text = [dom.body, dom.html].join("\n");
+  const usd =
+    parseLoadedUsdFromMeta(text) ||
+    parseLoadedUsdFromScript(text, dom.metaCur?.toUpperCase() === "USD") ||
+    (dom.metaCur?.toUpperCase() === "USD" ? parseLoadedUsdPrices(text) : null) ||
+    parseLoadedUsdPrices(text);
   if (usd && rates) {
-    return { priceArs: toArsFromUsd(usd, rates), source: "page_usd" };
-  }
-  if (rawAttr) {
-    const n = parseLoadedRawPrice(rawAttr);
-    if (n >= 3000) return { priceArs: n, source: "page_ars" };
+    return { priceArs: toArsFromUsd(usd, rates), source: "page_usd", usd };
   }
   return null;
 }
 
-async function verifyLoadedProduct(link, rates) {
-  return withPage(async (page) => {
-    await page.goto(link, { waitUntil: "domcontentloaded", timeout: 60000 });
-    await waitCloudflare(page, 25);
-    await page.waitForTimeout(2500);
-    await switchLoadedToUsd(page);
-    const dom = await page.evaluate(() => {
-      const title = document.querySelector("h1.page-title span, h1.product-name, h1")?.textContent?.trim() || "";
-      const body = document.body?.innerText || "";
-      const html = document.documentElement?.outerHTML || "";
-      const regionBits = [];
-      for (const el of document.querySelectorAll(
-        ".product.attribute, .product-info-main, .product-details, [class*='region'], [class*='activation'], table.data.table"
-      )) {
-        const t = el.textContent?.trim();
-        if (t && /activ|region|latam|argentin|country|global|worldwide/i.test(t)) regionBits.push(t);
-      }
-      const activationText = [title, regionBits.join(" "), body.slice(0, 12000)].join("\n");
-      const soldOut = /\bsold out\b|\bout of stock\b|\bagotado\b/i.test(body);
-      const priceBox =
-        document.querySelector(".product-info-main [data-raw-price]") ||
-        document.querySelector(".product-info-price [data-raw-price]") ||
-        document.querySelector("[data-raw-price]");
-      const raw = priceBox?.getAttribute("data-raw-price") || "";
-      const initMatch = html.match(/initialFinalPrice:\s*([\d.]+)/);
-      const scriptPrice = initMatch ? Number(initMatch[1]) : null;
-      const metaAmt = document.querySelector('meta[property="product:price:amount"]')?.content || "";
-      const metaCur = document.querySelector('meta[property="product:price:currency"]')?.content || "";
-      const addBtn = document.querySelector("#product-addtocart-button, button.tocart");
-      const btnOk = addBtn && !addBtn.disabled && !/stock|unavailable|sold/i.test(addBtn.textContent || "");
-      const available = /\bdisponible\b|\bañadir al carrito\b|\bcomprar ahora\b|\badd to cart\b|\bbuy now\b/i.test(body);
-      return { title, body, html, activationText, soldOut, raw, scriptPrice, metaAmt, metaCur, btnOk, available, hasAddBtn: Boolean(addBtn) };
-    });
-    const priced = loadedPriceArsFromBody([dom.body, dom.html].join("\n"), rates, dom.raw);
-    let priceArs = priced?.priceArs || null;
-    let source = priced?.source || "page_usd";
-    const plausible = priceArs && isPlausibleStoreCompraArs(priceArs, { precioSteamArs: 0 }, rates);
-    const inStock =
-      !dom.soldOut && plausible && (dom.btnOk || dom.available || !dom.hasAddBtn);
-    return {
-      inStock,
-      priceArs: inStock ? priceArs : null,
-      name: dom.title,
-      activationText: dom.activationText,
-      source,
-    };
+async function scrapeLoadedDom(page, link) {
+  await page.goto(link, { waitUntil: "domcontentloaded", timeout: 60000 });
+  await waitCloudflare(page, 25);
+  await page.waitForTimeout(2000);
+  await switchLoadedToUsd(page);
+  return page.evaluate(() => {
+    const title = document.querySelector("h1.page-title span, h1.product-name, h1")?.textContent?.trim() || "";
+    const body = document.body?.innerText || "";
+    const html = document.documentElement?.outerHTML || "";
+    const regionBits = [];
+    for (const el of document.querySelectorAll(
+      ".product.attribute, .product-info-main, .product-details, [class*='region'], [class*='activation'], table.data.table"
+    )) {
+      const t = el.textContent?.trim();
+      if (t && /activ|region|latam|argentin|country|global|worldwide/i.test(t)) regionBits.push(t);
+    }
+    const activationText = [title, regionBits.join(" "), body.slice(0, 12000)].join("\n");
+    const soldOut = /\bsold out\b|\bout of stock\b|\bagotado\b/i.test(body);
+    const priceBox =
+      document.querySelector(".product-info-main [data-raw-price]") ||
+      document.querySelector(".product-info-price [data-raw-price]") ||
+      document.querySelector("[data-raw-price]");
+    const raw = priceBox?.getAttribute("data-raw-price") || "";
+    const metaAmt = document.querySelector('meta[property="product:price:amount"]')?.content || "";
+    const metaCur = document.querySelector('meta[property="product:price:currency"]')?.content || "";
+    const addBtn = document.querySelector("#product-addtocart-button, button.tocart");
+    const btnOk = addBtn && !addBtn.disabled && !/stock|unavailable|sold/i.test(addBtn.textContent || "");
+    const available = /\bdisponible\b|\bañadir al carrito\b|\bcomprar ahora\b|\badd to cart\b|\bbuy now\b/i.test(body);
+    return { title, body, html, activationText, soldOut, raw, metaAmt, metaCur, btnOk, available, hasAddBtn: Boolean(addBtn) };
   });
+}
+
+function buildLoadedVerifyResult(dom, rates) {
+  const priced = loadedPriceArsFromDom(dom, rates);
+  const priceArs = priced?.priceArs || null;
+  const source = priced?.source || null;
+  const plausible = priceArs && isPlausibleStoreCompraArs(priceArs, { precioSteamArs: 0 }, rates);
+  const usdOk = source === "page_usd" && dom.metaCur?.toUpperCase() === "USD";
+  const inStock =
+    !dom.soldOut &&
+    plausible &&
+    (usdOk || dom.btnOk || dom.available || !dom.hasAddBtn);
+  return {
+    inStock,
+    priceArs: inStock ? priceArs : null,
+    name: dom.title,
+    activationText: dom.activationText,
+    source: source || "page_usd",
+  };
+}
+
+async function verifyLoadedProductOnce(link, rates) {
+  const result = await withPage(
+    async (page) => {
+      const dom = await scrapeLoadedDom(page, link);
+      return buildLoadedVerifyResult(dom, rates);
+    },
+    { cookies: LOADED_USD_COOKIES }
+  );
+  return result || null;
+}
+
+async function verifyLoadedProduct(link, rates) {
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const result = await verifyLoadedProductOnce(link, rates);
+    if (result?.inStock && result?.priceArs) return result;
+    if (attempt < 2) await new Promise((r) => setTimeout(r, 800 + attempt * 600));
+  }
+  return verifyLoadedProductOnce(link, rates);
 }
 
 async function getLoadedQuotes(item, rates, options) {

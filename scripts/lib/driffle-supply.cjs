@@ -212,34 +212,42 @@ async function verifyDriffleProductPage(linkOrSlug, rates) {
 
   let html = null;
   let httpStatus = 0;
+  let dom = null;
+  let priceUsd = null;
+
   try {
-    const res = await fetch(url, {
-      headers: { "User-Agent": "Mozilla/5.0 Chrome/120", Accept: "text/html" },
-      signal: AbortSignal.timeout(35000),
-      redirect: "follow",
-    });
-    httpStatus = res.status;
-    if (res.ok) html = await res.text();
+    dom = await withPage(async (page) => {
+      const target = url.includes("currency=") ? url : url + (url.includes("?") ? "&" : "?") + "currency=USD";
+      const resp = await page.goto(target, { waitUntil: "domcontentloaded", timeout: 90000 });
+      httpStatus = resp?.status() || 0;
+      await waitCloudflare(page, 20);
+      await page.waitForTimeout(3500);
+      html = await page.content();
+      return page.evaluate(() => {
+        const title = document.querySelector("h1")?.textContent?.trim() || document.title || "";
+        const body = document.body?.innerText || "";
+        return { title, body: body.slice(0, 12000) };
+      });
+    }, { cookies: DRIFFLE_USD_COOKIES });
+    priceUsd = parseDriffleUsdFromHtml([html, dom?.body || ""].join("\n"));
   } catch (_) {}
 
-  let dom = null;
-  let priceUsd = html ? parseDriffleUsdFromHtml(html) : null;
   if (!priceUsd) {
     try {
-      dom = await withPage(async (page) => {
-        const target = url.includes("currency=") ? url : url + (url.includes("?") ? "&" : "?") + "currency=USD";
-        const resp = await page.goto(target, { waitUntil: "domcontentloaded", timeout: 90000 });
-        httpStatus = resp?.status() || httpStatus;
-        await waitCloudflare(page, 20);
-        await page.waitForTimeout(3500);
-        html = await page.content();
-        return page.evaluate(() => {
-          const title = document.querySelector("h1")?.textContent?.trim() || document.title || "";
-          const body = document.body?.innerText || "";
-          return { title, body: body.slice(0, 12000) };
-        });
-      }, { cookies: DRIFFLE_USD_COOKIES });
-      priceUsd = parseDriffleUsdFromHtml([html, dom?.body || ""].join("\n"));
+      const res = await fetch(url + (url.includes("?") ? "&" : "?") + "currency=USD", {
+        headers: {
+          "User-Agent": "Mozilla/5.0 Chrome/120",
+          Accept: "text/html",
+          Cookie: "currency=USD; selectedCurrency=USD",
+        },
+        signal: AbortSignal.timeout(35000),
+        redirect: "follow",
+      });
+      httpStatus = res.status;
+      if (res.ok) {
+        html = await res.text();
+        priceUsd = parseDriffleUsdFromHtml(html);
+      }
     } catch (_) {}
   }
 
@@ -255,11 +263,7 @@ async function verifyDriffleProductPage(linkOrSlug, rates) {
   if (priceUsd && rates) {
     priceArs = toArsFromUsd(priceUsd, rates);
   }
-  if (!priceArs) {
-    priceArs = parseDriffleArsFromHtml(html);
-    source = "page_ars";
-  }
-  if (!priceArs || priceArs < minPlausibleCompraArs(rates, null)) return null;
+  if (!priceArs) return null;
 
   const soldOut =
     /\b(no sellers available|currently unavailable)\b/i.test(html) ||
