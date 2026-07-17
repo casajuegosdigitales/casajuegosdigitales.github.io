@@ -752,7 +752,7 @@ async function main() {
     }
   }
 
-  const restoredStale = restoreStaleSupply(data.items, prevSupplySnapshot);
+  const restoredStale = LINKS_ONLY ? 0 : restoreStaleSupply(data.items, prevSupplySnapshot);
   if (restoredStale) {
     console.log("Precios anteriores restaurados (fetch fallo, mismos links):", restoredStale);
   }

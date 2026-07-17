@@ -41,6 +41,7 @@ const {
   enebaAuctionPricesArs,
   toArsFromEur,
   isPlausibleStoreCompraArs,
+  isUsdDerivedSource,
 } = require("./fx-ars.cjs");
 
 const STORES = ["kinguin", "eneba", "driffle", "loaded"];
@@ -60,7 +61,7 @@ async function verifyKinguinPageRegion(linkOrOfferId, opts) {
 
   let hero = null;
   try {
-    hero = await scrapeKinguinHeroPage(url, opts?.rates);
+    hero = await scrapeKinguinHeroPage(url, opts?.rates, opts?.item);
   } catch (_) {}
   if (!hero) return { ok: null, label: "sin_pagina", unknown: true, page: null, pageUrl: "" };
 
@@ -79,7 +80,7 @@ function pickBestFromQuotes(item, quotes, rates) {
   const filtered = filterCandidates(item, quotes || []);
   if (!filtered.length) return { best: null, quotes: [] };
   const ranked = [...filtered]
-    .filter((q) => isPlausibleStoreCompraArs(q.priceArs, item, rates))
+    .filter((q) => isUsdDerivedSource(q.source) && isPlausibleStoreCompraArs(q.priceArs, item, rates))
     .sort((a, b) => (a.priceArs || 0) - (b.priceArs || 0));
   for (const best of ranked) {
     if (best.store === "kinguin" && isPlaceholderKinguinLink(best.link)) continue;
@@ -172,7 +173,13 @@ function mergeStoreQuotes(existing, incoming) {
 
 function sanitizeQuotesForSave(quotes) {
   return (quotes || [])
-    .filter((q) => q?.store && q?.link && !(q.store === "kinguin" && isPlaceholderKinguinLink(q.link)))
+    .filter(
+      (q) =>
+        q?.store &&
+        q?.link &&
+        isUsdDerivedSource(q.source) &&
+        !(q.store === "kinguin" && isPlaceholderKinguinLink(q.link))
+    )
     .map((q) => ({
       store: q.store,
       priceArs: q.priceArs,
@@ -240,6 +247,14 @@ function applyBestToItem(item, result) {
     return false;
   }
   if (!listingMatchesItem(item, best.name, best.link)) {
+    item.bestStore = "";
+    item.bestLink = "";
+    item.supplyVerified = false;
+    item.regionLabel = "";
+    item.compraArs = 0;
+    return false;
+  }
+  if (!isUsdDerivedSource(best.source)) {
     item.bestStore = "";
     item.bestLink = "";
     item.supplyVerified = false;
@@ -316,6 +331,7 @@ async function verifyKinguinQuote(candidate, item, rates) {
   const pageCheck = await verifyKinguinPageRegion(candidate.link || offerId, {
     isAccount: deliveryTypeFromItem(item) === "account",
     rates,
+    item,
   });
   if (
     pageCheck.page?.title &&
@@ -356,7 +372,7 @@ async function verifyKinguinQuote(candidate, item, rates) {
       priceArs,
       link,
       offerId: oid || "",
-      source: pageCheck?.page?.priceArs ? "page_ars" : candidate.source,
+      source: "page_usd",
     },
     regionCheck
   );
@@ -432,7 +448,7 @@ async function verifyEnebaQuote(candidate, item, rates) {
         priceArs: page.priceArs,
         link: page.link,
         slug: page.slug || slug,
-        source: page.source || "page_ars",
+        source: page.source || "page_usd",
       },
       regionCheck
     );
@@ -464,6 +480,7 @@ async function verifyEnebaQuote(candidate, item, rates) {
       priceArs,
       link: "https://www.eneba.com/" + locale + "/" + slug,
       slug,
+      source: "graphql",
     },
     regionCheck
   );
@@ -684,7 +701,7 @@ async function candidateFromExcelLink(store, link, item, rates) {
         priceArs: page.priceArs,
         link: page.link || clean,
         slug: parseEnebaSlug(clean),
-        source: "link",
+        source: page.source || "page_usd",
       };
     }
     if (store === "loaded") {

@@ -298,10 +298,8 @@ async function scrapeKinguinHeroPage(url, rates, item) {
 }
 
 function mergeKinguinVerifiedPrice(apiPriceArs, pagePriceArs) {
-  const p = Number(pagePriceArs) || 0;
-  const a = Number(apiPriceArs) || 0;
-  if (p) return p;
-  return a || null;
+  const prices = [Number(pagePriceArs) || 0, Number(apiPriceArs) || 0].filter((p) => p > 0);
+  return prices.length ? Math.min(...prices) : null;
 }
 
 async function quoteFromLink(item, rates) {

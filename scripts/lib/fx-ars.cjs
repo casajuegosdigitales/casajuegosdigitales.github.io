@@ -184,12 +184,18 @@ function kinguinPublicPriceArs(offer, rates) {
   const amount = Number(offer.price.amount) / 100;
   const cur = String(offer.price.currency || "EUR").toUpperCase();
   if (cur === "USD") return toArsFromUsd(amount, rates);
-  if (cur === "ARS") return Math.round(amount);
+  if (cur === "ARS") return null;
   if (cur === "EUR") {
     const usd = kinguinEurToUsd(amount, rates);
     return usd ? toArsFromUsd(usd, rates) : null;
   }
   return null;
+}
+
+/** Compra valida solo si viene de USD publico x CriptoYa (no ARS de la pagina). */
+function isUsdDerivedSource(source) {
+  const s = String(source || "").toLowerCase();
+  return s === "page_usd" || s === "api_usd" || s === "search" || s === "graphql";
 }
 
 function kinguinInStock(offer) {
@@ -280,6 +286,7 @@ module.exports = {
   kinguinPublicPriceArs,
   kinguinEurToUsd,
   kinguinInStock,
+  isUsdDerivedSource,
   pickPublicMinPrice,
   pickPublicMinUsd,
   pickPublicMinUsdFromText,

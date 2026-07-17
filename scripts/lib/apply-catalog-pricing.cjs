@@ -58,41 +58,17 @@ function applyPricingToCatalog(data, catalog, excelByFullName) {
       }
 
       const match = findCatalogVersion(catalog, item);
-      const staleVenta = match.version ? Number(match.version.priceTransfer) || 0 : 0;
-      if (staleVenta > 0) {
-        const compra = Number(item.compraArs) || 0;
-        if (compra > 0 && isProfitableVenta(compra, staleVenta)) {
-          item.ventaPublicada = staleVenta;
-          item.cuotasPublicada = Number(match.version.basePrice) || staleVenta;
-          item.hidden = false;
-          item.hiddenReason = item._staleSupply ? "precio_anterior" : "catalogo_anterior";
-          match.version.hidden = false;
-          visible++;
-          log.push(`${item.fullName} | MANTIENE precio anterior | venta ${staleVenta}`);
-          continue;
-        }
-        if (hasExcelSupplyLinks(item)) {
-          match.version.hidden = false;
-          visible++;
-          log.push(`${item.fullName} | MANTIENE catalogo (fetch fallo) | venta ${staleVenta}`);
-          item.hidden = true;
-          item.hiddenReason = "fetch_fallo_catalogo";
-          item.ventaPublicada = 0;
-          item.cuotasPublicada = 0;
-          continue;
-        }
+      if (match.version) {
+        match.version.hidden = true;
+        hidden++;
       }
 
       item.hiddenReason = item.hiddenReason || "sin_compra_verificada";
       item.ventaPublicada = 0;
       item.cuotasPublicada = 0;
       item.hidden = true;
-      if (match.version) {
-        match.version.hidden = true;
-        hidden++;
-      }
       log.push(
-        `${item.fullName} | OCULTO sin compra | ${isSteamItem(item) ? "Steam" : platformFromItem(item)}`
+        `${item.fullName} | OCULTO sin compra verificada | ${isSteamItem(item) ? "Steam" : platformFromItem(item)}`
       );
       continue;
     }

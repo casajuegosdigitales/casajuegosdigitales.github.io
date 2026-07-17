@@ -176,17 +176,40 @@ function parseDriffleMetaFromHtml(html) {
       pageProps = JSON.parse(m[1])?.props?.pageProps || null;
     } catch (_) {}
   }
-  const product = pageProps?.product || {};
+  const productData = pageProps?.product?.data || pageProps?.product || {};
   const regionText = [
     title,
-    product.title,
-    product.regionName,
-    product.description,
+    productData.name,
+    productData.title,
+    productData.regionName,
+    productData.description,
     pageProps?.description,
   ]
     .filter(Boolean)
     .join("\n");
-  return { title: product.title || title, regionText, pageProps };
+  return { title: productData.name || productData.title || title, regionText, pageProps, productData };
+}
+
+/** Precio publico USD del producto actual (no variaciones ni ARS de pagina). */
+function parseDriffleUsdFromNextData(pageProps) {
+  if (!pageProps) return null;
+  const prices = [];
+  const add = (raw) => {
+    const n = parseUsdAmount(raw, MIN_JSON_USD);
+    if (n) prices.push(n);
+  };
+
+  add(pageProps.lowestOfferSeller?.price);
+  add(pageProps.mcPdpData?.lowestOfferValue);
+
+  const offers = pageProps.product?.data?.offers || pageProps.mcPdpData?.offers || [];
+  for (const offer of offers) {
+    if (offer?.price == null) continue;
+    add(offer.price);
+  }
+
+  if (!prices.length) return null;
+  return pickPublicMinPrice(prices);
 }
 
 async function fetchDriffleHtml(linkOrSlug) {
@@ -227,10 +250,14 @@ async function verifyDriffleProductPage(linkOrSlug, rates, item) {
         return { title, body: body.slice(0, 12000) };
       });
     }, { cookies: DRIFFLE_USD_COOKIES });
-    priceUsd = parseDriffleUsdFromHtml([html, dom?.body || ""].join("\n"), item);
+    const metaFromBrowser = parseDriffleMetaFromHtml(html);
+    priceUsd = parseDriffleUsdFromNextData(metaFromBrowser.pageProps);
+    if (!priceUsd) {
+      priceUsd = parseDriffleUsdFromHtml([html, dom?.body || ""].join("\n"), item);
+    }
   } catch (_) {}
 
-  if (!priceUsd) {
+  if (!html) {
     try {
       const res = await fetch(url + (url.includes("?") ? "&" : "?") + "currency=USD", {
         headers: {
@@ -244,7 +271,6 @@ async function verifyDriffleProductPage(linkOrSlug, rates, item) {
       httpStatus = res.status;
       if (res.ok) {
         html = await res.text();
-        priceUsd = parseDriffleUsdFromHtml(html, item);
       }
     } catch (_) {}
   }
@@ -256,6 +282,13 @@ async function verifyDriffleProductPage(linkOrSlug, rates, item) {
   }
 
   const meta = parseDriffleMetaFromHtml(html);
+  if (!priceUsd) {
+    priceUsd = parseDriffleUsdFromNextData(meta.pageProps);
+  }
+  if (!priceUsd) {
+    priceUsd = parseDriffleUsdFromHtml(html, item);
+  }
+
   let priceArs = null;
   let source = "page_usd";
   if (priceUsd && rates) {
