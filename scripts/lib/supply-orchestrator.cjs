@@ -791,8 +791,19 @@ async function getBestFromExcelLinks(item, rates) {
   }
   const verified = await verifyQuotesPerStore(candidates, item, rates);
   const picked = pickBestFromQuotes(item, verified, rates);
+  const storeLink = {
+    kinguin: item.linkKinguin,
+    eneba: item.linkEneba,
+    driffle: item.linkDriffle,
+    loaded: item.linkLoaded,
+  };
   picked.storeStatus = Object.fromEntries(
-    STORES.map((s) => [s, candidates.some((c) => c.store === s) ? "link" : "sin_link"])
+    STORES.map((s) => {
+      const hasUrl = /^https?:\/\//i.test(String(storeLink[s] || "").trim());
+      if (!hasUrl) return [s, "sin_link"];
+      if (candidates.some((c) => c.store === s)) return [s, "link"];
+      return [s, "fetch_fallo"];
+    })
   );
   return picked;
 }
