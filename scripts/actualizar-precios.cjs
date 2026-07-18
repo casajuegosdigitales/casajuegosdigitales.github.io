@@ -672,7 +672,12 @@ async function main() {
         console.log(item.bestStore, item.compraArs);
       } else {
         unchanged++;
-        console.log(item.bestStore, item.compraArs, "sin cambio");
+        const cotiz = (item.supplyQuotes || []).length;
+        if ((item.compraArs || 0) <= 0) {
+          console.log("SIN PRECIO (" + cotiz + " cotiz.)");
+        } else {
+          console.log(item.bestStore, item.compraArs, "sin cambio (" + cotiz + " cotiz.)");
+        }
       }
       if (!DRY_RUN && (i + 1) % SAVE_EVERY === 0) {
         saveData(data);
