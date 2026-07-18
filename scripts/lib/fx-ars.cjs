@@ -118,29 +118,52 @@ function pickPublicMinUsdFromText(text, options = {}) {
   return Math.min(...perLine);
 }
 
-function pickAnchoredPublicUsd(text) {
+const ANCHORED_PUBLIC_USD_PATTERNS = [
+  /\+\d+\s+ofertas?\s+(?:starting at|desde)\s+US\$\s*([\d.,]+)/gi,
+  /\+\d+\s+oferta\s+de\s+([\d.,]+)\s*US\$/gi,
+  /\+\d+\s+offers?\s+(?:from|starting at)\s+([\d.,]+)\s*US\$/gi,
+  /\+\d+\s+other\s+offers?\s+from\s+([\d.,]+)\s*US\$/gi,
+  /offers?\s+starting\s+at\s+US\$\s*([\d.,]+)/gi,
+  /starting\s+at\s+US\$\s*([\d.,]+)/gi,
+  /(?:desde|from)\s+US\$\s*([\d.,]+)/gi,
+  /\d+\s+m[aá]s\s+ofertas?[\s\S]{0,120}?a\s+partir\s+de\s*\$\s*([\d.,]+)/gi,
+  /ofertas?\s+disponibles?\s+a\s+partir\s+de\s*\$\s*([\d.,]+)/gi,
+  /a\s+partir\s+de\s*\$\s*([\d.,]+)/gi,
+  /precio m[aá]s bajo[\s\S]{0,160}?([\d.,]+)\s*US\$/gi,
+  /lowest price[\s\S]{0,160}?US\$\s*([\d.,]+)/gi,
+];
+
+function collectAnchoredPublicUsd(text) {
   const body = String(text || "");
-  const patterns = [
-    /\+\d+\s+ofertas?\s+(?:starting at|desde)\s+US\$\s*([\d.,]+)/i,
-    /\+\d+\s+oferta\s+de\s+([\d.,]+)\s*US\$/i,
-    /\+\d+\s+offers?\s+(?:from|starting at)\s+([\d.,]+)\s*US\$/i,
-    /\+\d+\s+other\s+offers?\s+from\s+([\d.,]+)\s*US\$/i,
-    /offers?\s+starting\s+at\s+US\$\s*([\d.,]+)/i,
-    /starting\s+at\s+US\$\s*([\d.,]+)/i,
-    /\d+\s+m[aá]s\s+ofertas?[\s\S]{0,120}?a\s+partir\s+de\s*\$\s*([\d.,]+)/i,
-    /ofertas?\s+disponibles?\s+a\s+partir\s+de\s*\$\s*([\d.,]+)/i,
-    /a\s+partir\s+de\s*\$\s*([\d.,]+)/i,
-    /precio m[aá]s bajo[\s\S]{0,160}?([\d.,]+)\s*US\$/i,
-    /lowest price[\s\S]{0,160}?US\$\s*([\d.,]+)/i,
-  ];
   const found = [];
-  for (const re of patterns) {
-    const m = body.match(re);
-    if (!m) continue;
-    const n = parseUsdToken(m[1], MIN_ANCHORED_USD);
-    if (n) found.push(n);
+  for (const re of ANCHORED_PUBLIC_USD_PATTERNS) {
+    for (const m of body.matchAll(re)) {
+      const n = parseUsdToken(m[1], MIN_ANCHORED_USD);
+      if (n) found.push(n);
+    }
   }
+  return [...new Set(found)];
+}
+
+function pickAnchoredPublicUsd(text) {
+  const found = collectAnchoredPublicUsd(text);
   return found.length ? Math.min(...found) : null;
+}
+
+function collectPublicUsdFromText(text, options = {}) {
+  const minUsd = options.minUsd ?? MIN_KEY_USD;
+  const perLine = [];
+  for (const line of String(text || "").split("\n")) {
+    if (!line.trim()) continue;
+    if (options.skipLine?.(line)) continue;
+    if (isSubscriptionBannerLine(line)) continue;
+    if (isPlusDiscountLine(line)) continue;
+    const prices = extractUsdPricesFromLine(line, minUsd);
+    if (!prices.length) continue;
+    const pub = publicUsdFromPriceGroup(prices, minUsd);
+    if (pub) perLine.push(pub);
+  }
+  return perLine;
 }
 
 function toArsFromUsd(amountUsd, rates) {
@@ -212,6 +235,14 @@ function pickPublicMinPrice(priceList) {
   return prices[0] ?? null;
 }
 
+/** Minimo USD publico sin redondear a entero (Driffle muestra centavos). */
+function pickPublicMinUsdExact(priceList) {
+  const prices = [...new Set(priceList.map((p) => Math.round(Number(p) * 100) / 100).filter((p) => p > 0))].sort(
+    (a, b) => a - b
+  );
+  return prices[0] ?? null;
+}
+
 function pickPublicMinUsd(text, options = {}) {
   const anchored = pickAnchoredPublicUsd(text);
   if (anchored != null) return anchored;
@@ -252,11 +283,21 @@ function minPlausibleCompraArs(rates, item) {
   return fromUsd;
 }
 
+function maxPlausibleCompraArs(item) {
+  const steam = Number(item?.precioSteamArs) || 0;
+  if (steam <= 0) return Infinity;
+  const t = `${item?.edition || ""} ${item?.variant || ""} ${item?.fullName || ""}`;
+  if (/\b(deluxe|premium|ultimate|gold|phantom|vault|complete|goty)\b/i.test(t)) {
+    return Math.round(steam * 1.4);
+  }
+  return Math.round(steam * 1.05);
+}
+
 function isPlausibleStoreCompraArs(priceArs, item, rates) {
   const n = Math.round(Number(priceArs) || 0);
   if (n < minPlausibleCompraArs(rates, item)) return false;
-  const steam = Number(item?.precioSteamArs) || 0;
-  if (steam > 0 && n > steam * 1.05) return false;
+  const max = maxPlausibleCompraArs(item);
+  if (max !== Infinity && n > max) return false;
   return true;
 }
 
@@ -288,14 +329,18 @@ module.exports = {
   kinguinInStock,
   isUsdDerivedSource,
   pickPublicMinPrice,
+  pickPublicMinUsdExact,
   pickPublicMinUsd,
   pickPublicMinUsdFromText,
+  collectPublicUsdFromText,
+  collectAnchoredPublicUsd,
   pickAnchoredPublicUsd,
   publicUsdFromPriceGroup,
   extractUsdPricesFromLine,
   parseUsdToken,
   minPlausibleCompraArs,
   isPlausibleStoreCompraArs,
+  maxPlausibleCompraArs,
   isAccountItem,
   usdParseOptions,
   MIN_GAME_USD,

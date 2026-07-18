@@ -1,7 +1,7 @@
 "use strict";
 
 const { buildSearchQueries, buildExpandedSearchQueries, filterCandidates, regionOk, stripSubscriptionSections, isSubscriptionListing } = require("./match-product.cjs");
-const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice, pickPublicMinUsd, pickAnchoredPublicUsd, usdParseOptions, MIN_JSON_USD, parseUsdToken } = require("./fx-ars.cjs");
+const { toArsFromUsd, driffleBestPublicArs, pickPublicMinPrice, pickPublicMinUsdExact, pickPublicMinUsd, pickAnchoredPublicUsd, collectAnchoredPublicUsd, collectPublicUsdFromText, usdParseOptions, MIN_JSON_USD, parseUsdToken } = require("./fx-ars.cjs");
 const { withPage, waitCloudflare } = require("./browser-supply.cjs");
 
 const SEARCH_API = "https://search.driffle.com/products/v3/list";
@@ -190,26 +190,70 @@ function parseDriffleMetaFromHtml(html) {
   return { title: productData.name || productData.title || title, regionText, pageProps, productData };
 }
 
-/** Precio publico USD del producto actual (no variaciones ni ARS de pagina). */
-function parseDriffleUsdFromNextData(pageProps) {
-  if (!pageProps) return null;
-  const prices = [];
-  const add = (raw) => {
-    const n = parseUsdAmount(raw, MIN_JSON_USD);
-    if (n) prices.push(n);
-  };
+/** Precios USD de otras variaciones (selector) para no mezclar ediciones en la misma pagina. */
+function driffleCrossVariantExcludedUsd(pageProps) {
+  const current = String(pageProps?.slug || pageProps?.product?.data?.slug || "").toLowerCase();
+  const data = pageProps?.product?.data || {};
+  const multiplier =
+    Number(data.countryData?.multiplier || pageProps?.mcPdpData?.multiplier || 0) || 1.1431;
+  const excluded = new Set();
+  for (const v of data.allVariations || []) {
+    const slug = String(v.slug || "").toLowerCase();
+    if (!slug || slug === current) continue;
+    const base = Number(v.offer?.price);
+    if (!base) continue;
+    excluded.add(Math.round(base * 100) / 100);
+    excluded.add(Math.round(base * multiplier * 100) / 100);
+  }
+  return excluded;
+}
 
-  add(pageProps.lowestOfferSeller?.price);
-  add(pageProps.mcPdpData?.lowestOfferValue);
+function matchesExcludedUsd(usd, excluded) {
+  if (usd == null || !excluded?.size) return false;
+  for (const ex of excluded) {
+    if (Math.abs(Number(usd) - Number(ex)) <= 0.06) return true;
+  }
+  return false;
+}
 
-  const offers = pageProps.product?.data?.offers || pageProps.mcPdpData?.offers || [];
-  for (const offer of offers) {
-    if (offer?.price == null) continue;
-    add(offer.price);
+function filterExcludedUsd(candidates, excluded) {
+  return [...new Set(candidates)].filter((u) => u != null && !matchesExcludedUsd(u, excluded));
+}
+
+/** Minimo USD publico visible en pagina (no API interna, no Plus, no otra variacion). */
+function parseDrifflePublicUsdFromPage(html, domBody, item, pageProps) {
+  const parseOpts = item ? usdParseOptions(item) : { minUsd: MIN_JSON_USD };
+  const excluded = driffleCrossVariantExcludedUsd(pageProps);
+
+  function keepUsd(usd) {
+    const n = Number(usd);
+    const min = parseOpts.minUsd ?? MIN_KEY_USD;
+    if (!n || Number.isNaN(n) || n < min || n > 120) return false;
+    return !matchesExcludedUsd(n, excluded);
   }
 
-  if (!prices.length) return null;
-  return pickPublicMinPrice(prices);
+  function collectFromText(text) {
+    const body = String(text || "").trim();
+    if (!body) return { anchored: [], lines: [] };
+    return {
+      anchored: collectAnchoredPublicUsd(body).filter(keepUsd),
+      lines: collectPublicUsdFromText(body, parseOpts).filter(keepUsd),
+    };
+  }
+
+  let { anchored, lines } = collectFromText(domBody);
+
+  if (!anchored.length && !lines.length && html) {
+    const htmlClean = String(html)
+      .replace(/<script id="__NEXT_DATA__"[\s\S]*?<\/script>/gi, "")
+      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<[^>]+>/g, "\n");
+    ({ anchored, lines } = collectFromText(htmlClean));
+  }
+
+  if (anchored.length) return pickPublicMinUsdExact(anchored);
+  if (lines.length) return pickPublicMinUsdExact(lines);
+  return null;
 }
 
 async function fetchDriffleHtml(linkOrSlug) {
@@ -251,10 +295,7 @@ async function verifyDriffleProductPage(linkOrSlug, rates, item) {
       });
     }, { cookies: DRIFFLE_USD_COOKIES });
     const metaFromBrowser = parseDriffleMetaFromHtml(html);
-    priceUsd = parseDriffleUsdFromNextData(metaFromBrowser.pageProps);
-    if (!priceUsd) {
-      priceUsd = parseDriffleUsdFromHtml([html, dom?.body || ""].join("\n"), item);
-    }
+    priceUsd = parseDrifflePublicUsdFromPage(html, dom?.body, item, metaFromBrowser.pageProps);
   } catch (_) {}
 
   if (!html) {
@@ -283,10 +324,7 @@ async function verifyDriffleProductPage(linkOrSlug, rates, item) {
 
   const meta = parseDriffleMetaFromHtml(html);
   if (!priceUsd) {
-    priceUsd = parseDriffleUsdFromNextData(meta.pageProps);
-  }
-  if (!priceUsd) {
-    priceUsd = parseDriffleUsdFromHtml(html, item);
+    priceUsd = parseDrifflePublicUsdFromPage(html, dom?.body, item, meta.pageProps);
   }
 
   let priceArs = null;

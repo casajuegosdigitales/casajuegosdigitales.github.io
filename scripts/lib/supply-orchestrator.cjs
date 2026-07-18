@@ -308,7 +308,50 @@ async function verifyKinguinQuote(candidate, item, rates) {
     } catch (_) {}
   }
   offers = offers.filter((o) => kinguinInStock(o) && !isSubscriptionListing(o.name, o.url));
-  if (!offers.length) return null;
+  const pageCheck = await verifyKinguinPageRegion(candidate.link || offerId, {
+    isAccount: deliveryTypeFromItem(item) === "account",
+    rates,
+    item,
+  });
+
+  if (!offers.length) {
+    const pagePriceArs = pageCheck?.page?.priceArs || candidate.priceArs;
+    const title = pageCheck?.page?.title || candidate.name || "";
+    if (
+      candidate.source === "page_usd" &&
+      pagePriceArs &&
+      isPlausibleStoreCompraArs(pagePriceArs, item, rates) &&
+      title &&
+      listingMatchesItem(item, title, candidate.link)
+    ) {
+      let regionCheck = pageCheck;
+      if (regionCheck.ok !== true) {
+        regionCheck = regionPass(item, pageCheck?.page?.activationText || title);
+      }
+      if (regionCheck.ok !== true) return null;
+      const link =
+        pickKinguinProductLink({
+          candidateLink: candidate.link,
+          pageUrl: pageCheck.pageUrl,
+          categoryLink: candidate.categoryLink || kinguinCategoryBaseUrl(candidate.link || pageCheck.pageUrl),
+        }) || candidate.link;
+      if (!link || isPlaceholderKinguinLink(link)) return null;
+      return attachRegion(
+        {
+          ...candidate,
+          store: "kinguin",
+          name: title,
+          priceArs: pagePriceArs,
+          link,
+          offerId: offerId || "",
+          source: "page_usd",
+        },
+        regionCheck
+      );
+    }
+    return null;
+  }
+
   let priceArs;
   let best;
   if (pinnedOffer && offers.length >= 1) {
@@ -317,22 +360,35 @@ async function verifyKinguinQuote(candidate, item, rates) {
   } else {
     const apiPrices = offers.map((o) => kinguinPublicPriceArs(o, rates)).filter((p) => p > 0);
     priceArs = pickPublicMinPrice(apiPrices);
-    if (!priceArs) return null;
-    best = offers
-      .map((o) => ({ o, priceArs: kinguinPublicPriceArs(o, rates) }))
-      .filter((x) => x.priceArs === priceArs)
-      .sort((a, b) => (b.o.buyableStock || 0) - (a.o.buyableStock || 0))[0]?.o;
+    if (priceArs) {
+      best = offers
+        .map((o) => ({ o, priceArs: kinguinPublicPriceArs(o, rates) }))
+        .filter((x) => x.priceArs === priceArs)
+        .sort((a, b) => (b.o.buyableStock || 0) - (a.o.buyableStock || 0))[0]?.o;
+    }
   }
-  if (!best || !priceArs) return null;
+
+  const pagePriceArs =
+    pageCheck?.page?.priceArs || (candidate.source === "page_usd" ? candidate.priceArs : null);
+  priceArs = mergeKinguinVerifiedPrice(priceArs, pagePriceArs) || priceArs || pagePriceArs;
+  if (!priceArs) return null;
+  if (!best) best = offers[0] || null;
+  if (!best) {
+    const title = pageCheck?.page?.title || candidate.name || "";
+    if (
+      candidate.source === "page_usd" &&
+      title &&
+      listingMatchesItem(item, title, candidate.link)
+    ) {
+      best = { name: title };
+    } else {
+      return null;
+    }
+  }
   const name = best.name || candidate.name;
   if (!listingMatchesItem(item, name, candidate.link)) return null;
   const regionText = [name, best.productName, best.description, candidate.regionHint].filter(Boolean).join("\n");
   let regionCheck = regionPass(item, regionText);
-  const pageCheck = await verifyKinguinPageRegion(candidate.link || offerId, {
-    isAccount: deliveryTypeFromItem(item) === "account",
-    rates,
-    item,
-  });
   if (
     pageCheck.page?.title &&
     !listingMatchesItem(item, pageCheck.page.title, candidate.link) &&

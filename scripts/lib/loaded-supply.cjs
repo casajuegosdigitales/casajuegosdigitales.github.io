@@ -204,11 +204,13 @@ function buildLoadedVerifyResult(dom, rates, item) {
   const priceArs = priced?.priceArs || null;
   const source = priced?.source || null;
   const plausible = priceArs && isPlausibleStoreCompraArs(priceArs, item || { precioSteamArs: 0 }, rates);
-  const usdOk = source === "page_usd" && dom.metaCur?.toUpperCase() === "USD";
+  const usdFromPage =
+    source === "page_usd" &&
+    (dom.metaCur?.toUpperCase() === "USD" || (priced?.usd != null && priced.usd >= 5 && priced.usd < 5000));
   const inStock =
     !dom.soldOut &&
     plausible &&
-    (usdOk || dom.btnOk || dom.available || !dom.hasAddBtn);
+    (usdFromPage || dom.btnOk || dom.available || !dom.hasAddBtn);
   return {
     inStock,
     priceArs: inStock ? priceArs : null,
