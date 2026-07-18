@@ -290,6 +290,19 @@ async function fetchDrifflePage(slug) {
 }
 
 async function verifyKinguinQuote(candidate, item, rates) {
+  if (candidate.linkVerified && candidate.priceArs && candidate.link) {
+    const name = candidate.name || item.fullName || "";
+    if (!listingMatchesItem(item, name, candidate.link)) return null;
+    if (!isPlausibleStoreCompraArs(candidate.priceArs, item, rates)) return null;
+    if (isPlaceholderKinguinLink(candidate.link)) return null;
+    const regionCheck = regionPass(item, candidate.activationText || name);
+    if (regionCheck.ok !== true) return null;
+    if (!filterCandidates(item, [{ ...candidate, name, priceArs: candidate.priceArs, link: candidate.link }]).length) {
+      return null;
+    }
+    return attachRegion({ ...candidate, name, priceArs: Math.round(candidate.priceArs) }, regionCheck);
+  }
+
   const offerId = candidate.offerId || parseKinguinOfferId(candidate.link);
   const pinnedOffer = Boolean(offerId && candidate.link);
   let offers = [];
@@ -479,6 +492,31 @@ async function verifyDriffleQuote(candidate, item, rates) {
 async function verifyEnebaQuote(candidate, item, rates) {
   const slug = candidate.slug || parseEnebaSlug(candidate.link || "");
   if (!slug) return null;
+
+  if (candidate.linkVerified && candidate.priceArs && candidate.link) {
+    const name = candidate.name || item.fullName || "";
+    if (!listingMatchesItem(item, name, candidate.link)) return null;
+    if (!isPlausibleStoreCompraArs(candidate.priceArs, item, rates)) return null;
+    const regionCheck = regionPass(item, candidate.activationText || name, {
+      trustStoreLocale: wantsLatam(item),
+      trustLabel: "eneba_AR",
+    });
+    if (regionCheck.ok !== true) return null;
+    if (!filterCandidates(item, [{ ...candidate, name, priceArs: candidate.priceArs, link: candidate.link }]).length) {
+      return null;
+    }
+    return attachRegion(
+      {
+        ...candidate,
+        store: "eneba",
+        name,
+        priceArs: Math.round(candidate.priceArs),
+        slug,
+        source: candidate.source || "page_usd",
+      },
+      regionCheck
+    );
+  }
 
   let page = null;
   try {
@@ -728,6 +766,34 @@ async function fetchItemSupply(item, rates, options) {
   return { ok: false, result: lastResult, attempts, item, pending: true };
 }
 
+function lightVerifyExcelLinkCandidate(candidate, item, rates) {
+  if (!candidate?.store || !candidate?.link || !candidate?.priceArs) return null;
+  if (!isUsdDerivedSource(candidate.source || "page_usd")) return null;
+  if (!isPlausibleStoreCompraArs(candidate.priceArs, item, rates)) return null;
+  const name = candidate.name || item.fullName || "";
+  if (!listingMatchesItem(item, name, candidate.link)) return null;
+  if (candidate.store === "kinguin" && isPlaceholderKinguinLink(candidate.link)) return null;
+  if (isSteamGiftOffer(item, name, candidate.link)) return null;
+  const regionExtra =
+    candidate.store === "eneba" && wantsLatam(item)
+      ? { trustStoreLocale: true, trustLabel: "eneba_AR" }
+      : undefined;
+  const regionCheck = regionPass(item, candidate.activationText || name, regionExtra);
+  if (regionCheck.ok !== true) return null;
+  if (!filterCandidates(item, [{ ...candidate, name, priceArs: candidate.priceArs, link: candidate.link }]).length) {
+    return null;
+  }
+  return attachRegion(
+    {
+      ...candidate,
+      name,
+      priceArs: Math.round(candidate.priceArs),
+      verified: true,
+    },
+    regionCheck
+  );
+}
+
 async function candidateFromExcelLink(store, link, item, rates) {
   const clean = String(link || "").trim();
   if (!clean) return null;
@@ -757,7 +823,9 @@ async function candidateFromExcelLink(store, link, item, rates) {
         priceArs: page.priceArs,
         link: page.link || clean,
         slug: parseEnebaSlug(clean),
+        activationText: page.activationText || page.name || item.fullName,
         source: page.source || "page_usd",
+        linkVerified: true,
       };
     }
     if (store === "loaded") {
@@ -789,7 +857,16 @@ async function getBestFromExcelLinks(item, rates) {
     const q = await candidateFromExcelLink(store, link, item, rates);
     if (q) candidates.push(q);
   }
-  const verified = await verifyQuotesPerStore(candidates, item, rates);
+  const verified = [];
+  for (const store of STORES) {
+    for (const candidate of candidates.filter((c) => c.store === store)) {
+      const v = lightVerifyExcelLinkCandidate(candidate, item, rates);
+      if (v) {
+        verified.push(v);
+        break;
+      }
+    }
+  }
   const picked = pickBestFromQuotes(item, verified, rates);
   const storeLink = {
     kinguin: item.linkKinguin,

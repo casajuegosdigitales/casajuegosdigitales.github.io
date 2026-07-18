@@ -352,6 +352,8 @@ async function quoteFromLink(item, rates) {
     offerId: offerId || "",
     source: hero?.priceArs ? "page_usd" : "api_usd",
     categoryLink: catBase || "",
+    activationText: hero?.activationText || hero?.title || item.fullName,
+    linkVerified: Boolean(hero?.priceArs && hero?.title),
   };
 }
 

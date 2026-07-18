@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 const STEAM_CURATOR =
   "https://store.steampowered.com/curator/45349538/ajaxgetfilteredrecommendations/?query&start=0&count=10";

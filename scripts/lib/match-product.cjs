@@ -181,6 +181,8 @@ function wrongGameListing(item, name) {
 
 function normalizeForSearch(text) {
   return String(text || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/™/g, "")
     .replace(/[''´`]/g, "")
     .replace(/[^\w\s]/g, " ")
