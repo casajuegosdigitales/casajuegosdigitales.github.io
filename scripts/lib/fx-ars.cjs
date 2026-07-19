@@ -2,8 +2,10 @@
 
 const MIN_GAME_USD = 20;
 const MIN_ANCHORED_USD = 2.5;
-const MIN_ACCOUNT_USD = 2.5;
-const MIN_KEY_USD = 15;
+const MIN_ACCOUNT_USD = 1.9;
+const MIN_KEY_USD = 10;
+const MIN_KEY_STEAM_RATIO = 0.06;
+const MIN_ACCOUNT_STEAM_RATIO = 0.006;
 const MIN_JSON_USD = 2.5;
 const MIN_COMPRA_ARS_FALLBACK = 35000;
 const PLUS_PAIR_RATIO_MIN = 0.8;
@@ -15,7 +17,10 @@ function isAccountItem(item) {
 }
 
 function usdParseOptions(item) {
-  return { minUsd: isAccountItem(item) ? MIN_ACCOUNT_USD : MIN_KEY_USD };
+  if (isAccountItem(item)) return { minUsd: MIN_ACCOUNT_USD };
+  const steam = Number(item?.precioSteamArs) || 0;
+  if (steam > 0) return { minUsd: MIN_ANCHORED_USD };
+  return { minUsd: MIN_KEY_USD };
 }
 
 function parseUsdToken(raw, minUsd = MIN_KEY_USD) {
@@ -273,11 +278,11 @@ function driffleBestPublicArs(offers, rates) {
 function minPlausibleCompraArs(rates, item) {
   const fx = Number(rates?.dolarDigitalVenta) || 0;
   const account = isAccountItem(item);
-  const minUsd = account ? MIN_ACCOUNT_USD : MIN_KEY_USD;
-  const fromUsd = fx ? Math.round(minUsd * fx) : account ? 4000 : MIN_COMPRA_ARS_FALLBACK;
   const steam = Number(item?.precioSteamArs) || 0;
+  const absMinUsd = account ? MIN_ACCOUNT_USD : steam > 0 ? MIN_ANCHORED_USD : MIN_KEY_USD;
+  const fromUsd = fx ? Math.round(absMinUsd * fx) : account ? 4000 : MIN_COMPRA_ARS_FALLBACK;
   if (steam > 0) {
-    const ratio = account ? 0.02 : 0.22;
+    const ratio = account ? MIN_ACCOUNT_STEAM_RATIO : MIN_KEY_STEAM_RATIO;
     return Math.max(fromUsd, Math.round(steam * ratio));
   }
   return fromUsd;
