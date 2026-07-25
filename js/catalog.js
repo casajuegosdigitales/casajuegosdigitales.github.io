@@ -8,10 +8,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:64817,priceTransfer:45012,steamPriceArs:60276},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:48875,priceTransfer:33941,steamPriceArs:60276},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:77967,priceTransfer:54144,steamPriceArs:73066},
-      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:63258,priceTransfer:43929,steamPriceArs:73066},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:65065,priceTransfer:45184,steamPriceArs:60675},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:49123,priceTransfer:34113,steamPriceArs:60675},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:78307,priceTransfer:54380,steamPriceArs:73550},
+      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:63598,priceTransfer:44165,steamPriceArs:73550},
     ]
   },
   { id:55,name:"Red Dead Redemption 2",icon:"game",steamId:"1174180",steamDetails:{description:"Arthur Morgan y la banda de Van der Linde se ven obligados a huir. Con agentes federales y cazarrecompensas pisándoles los talones, la banda deberá atracar, robar y luchar para sobrevivir en su camino por el escabroso territorio.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 - 64-bit Procesador: Intel® Core™ i5-2500K / AMD FX-6300 Memoria: 8 GB de RAM Gráficos: Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB Red: Conexión de banda ancha a Internet Almacenamiento: 150 GB de espacio disponible Tarjeta de sonido: Direct X Compatible",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 - 64-bit Procesador: Intel® Core™ i7-4770K / AMD Ryzen 5 1500X Memoria: 12 GB de RAM Gráficos: Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB Red: Conexión de banda ancha a Internet Almacenamiento: 150 GB de espacio disponible Tarjeta de sonido: Direct X Compatible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1174180/library_hero_2x.jpg",
@@ -24,8 +24,8 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key (Steam)",deliveryType:"code",basePrice:142366,priceTransfer:98865,steamPriceArs:108882},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:58157,priceTransfer:40387,steamPriceArs:109608},
-      {id:"v3",name:"Ultimate Edition - Cuenta Steam",deliveryType:"account",basePrice:66732,priceTransfer:46342,steamPriceArs:182692},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:58254,priceTransfer:40454,steamPriceArs:110334},
+      {id:"v3",name:"Ultimate Edition - Cuenta Steam",deliveryType:"account",basePrice:66918,priceTransfer:46471,steamPriceArs:183902},
     ]
   },
   { id:52,name:"NBA 2K26",icon:"game",steamId:"3472040",steamDetails:{description:"El derecho a presumir está en juego en Mi CARRERA, MyTEAM, Mi NBA, La W y Jugar ya. Exhibe tu colección de movimientos con hiperrealismo, gracias a la tecnología ProPLAY™, y desafía a tus amigos, o rivales, en los modos competitivos de NBA 2K26, y leave no doubt: tú eres el rey.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-Bit (latest update) Procesador: Intel® Core™ i3-9100 or AMD Ryzen™ 3 1200 Memoria: 8 GB de RAM Gráficos: NVIDIA® GeForce® GTX 1060 5 GB or AMD Radeon™ RX 5500 XT 4 GB or Intel® Arc™ A580 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 110 GB de espacio disponible Notas adicionales: SSD Required. Dual-analog Gamepad recommended. Initial installation requires one-time internet connection for Steam authentication; software installations required (included with the game) include DirectX and Visual C++ Redistributable 2019. In order to play NBA 2K26 on PC, you need a processor capable of supporting AVX2 and a graphics card capable of supporting DirectX feature level 12.0.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 11 64-Bit (latest update) Procesador: Intel® Core™ i5-10600 or AMD Ryzen™ 5 3600X Memoria: 16 GB de RAM Gráficos: NVIDIA® GeForce® RTX 2070 8 GB or AMD Radeon™ RX 5700 8 GB or Intel® Arc™ A770 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 110 GB de espacio disponible Notas adicionales: SSD Required. Dual-analog Gamepad recommended. Initial installation requires one-time internet connection for Steam authentication; software installations required (included with the game) include DirectX and Visual C++ Redistributable 2019. In order to play NBA 2K26 on PC, you need a processor capable of supporting AVX2 and a graphics card capable of supporting DirectX feature level 12.0."},img:"https://cdn2.steamgriddb.com/grid/f18403b352e777fe53f70caec9993a88.png",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3472040/library_hero_2x.jpg",
@@ -37,11 +37,11 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:65539,priceTransfer:45513,steamPriceArs:127879},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:54019,priceTransfer:37513,steamPriceArs:127879},
-      {id:"v3",name:"Slam Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:81865,priceTransfer:56851,steamPriceArs:146150},
-      {id:"v4",name:"Slam Edition - Cuenta Steam",deliveryType:"account",basePrice:71741,priceTransfer:49820,steamPriceArs:146150},
-      {id:"v5",name:"Superstar Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:89320,priceTransfer:62028,steamPriceArs:182692},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:65615,priceTransfer:45566,steamPriceArs:128726},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:54095,priceTransfer:37566,steamPriceArs:128726},
+      {id:"v3",name:"Slam Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:83012,priceTransfer:57647,steamPriceArs:147118},
+      {id:"v4",name:"Slam Edition - Cuenta Steam",deliveryType:"account",basePrice:71906,priceTransfer:49935,steamPriceArs:147118},
+      {id:"v5",name:"Superstar Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:77950,priceTransfer:54132,steamPriceArs:183902},
       {id:"v6",name:"Superstar Edition - Cuenta Steam",deliveryType:"account",basePrice:167960,priceTransfer:116639,steamPriceArs:182692},
     ]
   },
@@ -54,9 +54,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:108422,priceTransfer:75293,steamPriceArs:82220},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:96856,priceTransfer:67261,steamPriceArs:82220},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:128964,priceTransfer:89558,steamPriceArs:96836},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:112588,priceTransfer:78186,steamPriceArs:82764},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:95949,priceTransfer:66631,steamPriceArs:82764},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:158371,priceTransfer:109980,steamPriceArs:97478},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:143597,priceTransfer:99720,steamPriceArs:96836},
     ]
   },
@@ -69,10 +69,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56444,priceTransfer:39197,steamPriceArs:52986},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:44924,priceTransfer:31197,steamPriceArs:52986},
-      {id:"v3",name:"Gold Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:77784,priceTransfer:54017,steamPriceArs:71257},
-      {id:"v4",name:"Gold Edition - Cuenta Steam",deliveryType:"account",basePrice:62104,priceTransfer:43128,steamPriceArs:71257},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56540,priceTransfer:39264,steamPriceArs:53337},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:45020,priceTransfer:31264,steamPriceArs:53337},
+      {id:"v3",name:"Gold Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:77960,priceTransfer:54139,steamPriceArs:71729},
+      {id:"v4",name:"Gold Edition - Cuenta Steam",deliveryType:"account",basePrice:62280,priceTransfer:43250,steamPriceArs:71729},
     ]
   },
   { id:57,name:"Resident Evil 3",icon:"game",steamId:"952060",steamDetails:{description:"Jill Valentine es una de las pocas personas que quedan en Raccoon City que han sido testigos de las atrocidades de Umbrella. Para detenerla, Umbrella decide usar su arma secreta definitiva: ¡Nemesis! También incluye Resident Evil Resistance, un nuevo modo multijugador online 1 contra 4.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: WINDOWS® 10 (64-BIT Required) Procesador: Intel® Core™ i5-4460 or AMD FX™-6300 or better Memoria: 8 GB de RAM Gráficos: NVIDIA® GeForce® GTX 960 or AMD Radeon™ RX 460 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 45 GB de espacio disponible Notas adicionales: Anticipated performance at these specifications is 1080p/30FPS for Resident Evil 3 and 720p/30FPS for Resident Evil Resistance. If you don't have enough graphics memory to run the game at your selected texture quality, you must go to Options > Graphics and lower the texture quality or shadow quality, or decrease the resolution. An internet connection is required for product activation. In addition, an internet connection is required at all times when playing Resident Evil Resistance. (Network connectivity uses Steam® developed by Valve® Corporation.)",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: WINDOWS® 10 (64-BIT Required) Procesador: Intel® Core™ i7-3770 or AMD FX™-9590 or better Memoria: 8 GB de RAM Gráficos: NVIDIA® GeForce® GTX 1060 or AMD Radeon™ RX 480 with 3GB VRAM DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 45 GB de espacio disponible Notas adicionales: Anticipated performance at these specifications is 1080p/60FPS. An internet connection is required for product activation. In addition, an internet connection is required at all times when playing Resident Evil Resistance. (Network connectivity uses Steam® developed by Valve® Corporation.)"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/952060/library_600x900_2x.jpg",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/952060/header.jpg?t=1780362329",
@@ -84,8 +84,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:40163,priceTransfer:27891,steamPriceArs:52986},
-      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:51683,priceTransfer:35891,steamPriceArs:52986},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:40396,priceTransfer:28053,steamPriceArs:53337},
+      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:51916,priceTransfer:36053,steamPriceArs:53337},
     ]
   },
   { id:51,name:"Monster Hunter Wilds",icon:"game",steamId:"2246340",steamDetails:{description:"Siente la fuerza desbocada, salvaje e imparable de la naturaleza en entornos que se transforman drásticamente de un momento a otro. Esta es una historia de monstruos y humanos, y sus dificultades para coexistir en armonía en un mundo de dualidades.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: WINDOWS® 10 (requiere 64 bits)/WINDOWS® 11 (requiere 64 bits) Procesador: Intel® Core™ i5-10400 or Intel® Core™ i3-12100 or AMD Ryzen™ 5 3600 Memoria: 16 GB de RAM Gráficos: NVIDIA® GeForce® GTX 1660(VRAM 6GB) or AMD Radeon™ RX 5500 XT(VRAM 8GB) DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 75 GB de espacio disponible Notas adicionales: Es necesario el uso de SSD. Con estos requisitos podrás jugar a 1080p (reescalada desde 720p de resolución nativa) y a 30 fps en la configuración gráfica \"mínima\". Es compatible con DirectStorage.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: WINDOWS® 10 (requiere 64 bits)/WINDOWS® 11 (requiere 64 bits) Procesador: Intel® Core™ i5-10400 or Intel® Core™ i3-12100 or AMD Ryzen™ 5 3600 Memoria: 16 GB de RAM Gráficos: NVIDIA® GeForce® RTX 2060 Super(VRAM 8GB) or AMD Radeon™ RX 6600(VRAM 8GB) DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 75 GB de espacio disponible Notas adicionales: Es necesario el uso de SSD. Con estos requisitos podrás jugar a 1080p (con generación de fotogramas) y a 60 fps en la configuración gráfica \"media\". Es compatible con DirectStorage."},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2246340/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2246340/library_hero_2x.jpg",
@@ -97,11 +97,11 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:93345,priceTransfer:64823,steamPriceArs:95904},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:81343,priceTransfer:56488,steamPriceArs:95904},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:112782,priceTransfer:78321,steamPriceArs:123311},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:93561,priceTransfer:64973,steamPriceArs:96540},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:81647,priceTransfer:56699,steamPriceArs:96540},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:101117,priceTransfer:70220,steamPriceArs:124128},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:115675,priceTransfer:80330,steamPriceArs:123311},
-      {id:"v5",name:"Premium Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:73822,priceTransfer:51265,steamPriceArs:150900},
+      {id:"v5",name:"Premium Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:73997,priceTransfer:51387,steamPriceArs:151900},
     ]
   },
   { id:44,name:"Invincible VS",icon:"game",steamId:"2353060",steamDetails:{description:"Invincible VS es un brutal juego de lucha de 3 contra 3 con superhéroes ambientado en el universo de Invencible, donde puedes luchar hasta la muerte con un equipo formado por los personajes más aclamados en ubicaciones icónicas.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: Intel Core i5-9700F / Ryzen 5 2600 Memoria: 16 GB de RAM Gráficos: GeForce RTX 2070 (VRAM 8GB) / Radeon RX 7800 (VRAM 8GB) DirectX: Versión 12 Almacenamiento: 15 GB de espacio disponible",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 11 Procesador: Intel Core i7-12700K / Ryzen 7 7700 Memoria: 16 GB de RAM Gráficos: GeForce RTX 3070 (VRAM 8GB) / Radeon RX 6800 (VRAM 8GB) DirectX: Versión 12 Almacenamiento: 25 GB de espacio disponible"},img:"https://cdn2.steamgriddb.com/grid/65879e2839b4c288cb517596424968db.png",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2353060/library_hero_2x.jpg",
@@ -113,7 +113,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:59832,priceTransfer:41550,steamPriceArs:68516},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:60143,priceTransfer:41766,steamPriceArs:68970},
       {id:"v3",name:"Deluxe Edition - CD Key (Steam)",deliveryType:"code",basePrice:159749,priceTransfer:110937,steamPriceArs:103231},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:93525,priceTransfer:64948,steamPriceArs:103231},
       {id:"v5",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:120820,priceTransfer:83903,steamPriceArs:68516},
@@ -129,8 +129,8 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:116405,priceTransfer:80837,steamPriceArs:109608},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:101222,priceTransfer:70293,steamPriceArs:109608},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:156826,priceTransfer:108907,steamPriceArs:146150},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:101640,priceTransfer:70583,steamPriceArs:110334},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:156456,priceTransfer:108650,steamPriceArs:147118},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:136371,priceTransfer:94702,steamPriceArs:146150},
     ]
   },
@@ -143,9 +143,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:78912,priceTransfer:54800,steamPriceArs:73066},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:79435,priceTransfer:55163,steamPriceArs:73550},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:69918,priceTransfer:48554,steamPriceArs:73066},
-      {id:"v3",name:"Super Citizen Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:132447,priceTransfer:91977,steamPriceArs:73066},
+      {id:"v3",name:"Super Citizen Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:132860,priceTransfer:92264,steamPriceArs:73550},
       {id:"v4",name:"Super Citizen Edition - Cuenta Steam",deliveryType:"account",basePrice:127567,priceTransfer:88588,steamPriceArs:73066},
     ]
   },
@@ -158,10 +158,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:55827,priceTransfer:38769,steamPriceArs:54813},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:44307,priceTransfer:30769,steamPriceArs:54813},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:64280,priceTransfer:44639,steamPriceArs:73066},
-      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:52760,priceTransfer:36639,steamPriceArs:73066},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56111,priceTransfer:38966,steamPriceArs:55176},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:44591,priceTransfer:30966,steamPriceArs:55176},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:64351,priceTransfer:44688,steamPriceArs:73550},
+      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:52831,priceTransfer:36688,steamPriceArs:73550},
     ]
   },
   { id:48,name:"Marvel's Spider-Man: Miles Morales",icon:"game",steamId:"1817190",steamDetails:{description:"Tras lo ocurrido en Marvel’s Spider-Man Remasterizado, Miles Morales se adapta a su nuevo barrio mientras sigue las huellas de Peter Parker para convertirse en un nuevo Spider-Man. Cuando la lucha de poderes amenaza con destruir su hogar, Miles debe tomar el relevo de Spider-Man y estar a la altura.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit 1909 Procesador: Intel Core i3-4160, 3.6 GHz or AMD equivalent Memoria: 8 GB de RAM Gráficos: NVIDIA GTX 950 or AMD Radeon RX 470 DirectX: Versión 12 Almacenamiento: 75 GB de espacio disponible",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit 1909 Procesador: Intel Core i5-4670, 3.4 Ghz or AMD Ryzen 5 1600, 3.2 Ghz Memoria: 16 GB de RAM Gráficos: NVIDIA GTX 1060 6GB or AMD Radeon RX 580 8GB DirectX: Versión 12 Almacenamiento: 75 GB de espacio disponible Notas adicionales: 75 GB SSD space Recommended"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817190/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1817190/library_hero_2x.jpg",
@@ -172,7 +172,7 @@ const catalog = [
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:73318,priceTransfer:50915,steamPriceArs:91337},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:71951,priceTransfer:49966,steamPriceArs:91942},
     ]
   },
   { id:49,name:"Microsoft Flight Simulator 2024",icon:"game",steamId:"2537590",steamDetails:{description:"Explora el mundo con nuestra flota más grande de aviones y lleva la simulación a otras alturas mientras persigues tu carrera en la aviación dentro de Microsoft Flight Simulator 2024.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: AMD Ryzen 5 2600X or Intel Core i7-6800K Memoria: 16 GB de RAM Gráficos: Radeon RX 5700 or GeForce GTX 970 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible Notas adicionales: Network Speed of 10 Mbps Bandwidth",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: AMD Ryzen 7 2700X or Intel Core i7-10700K Memoria: 32 GB de RAM Gráficos: Radeon RX 5700 XT or GeForce RTX 2080 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible Notas adicionales: Network Speed of 50 Mbps Bandwidth"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2537590/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2537590/library_hero_2x.jpg",
@@ -184,12 +184,12 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:136256,priceTransfer:94622,steamPriceArs:127879},
-      {id:"v2",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:304399,priceTransfer:211388,steamPriceArs:182692},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:122700,priceTransfer:85208,steamPriceArs:128726},
+      {id:"v2",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:242967,priceTransfer:168727,steamPriceArs:183902},
       {id:"v3",name:"Edicion estandar - CD Key (Steam)",deliveryType:"code",basePrice:167927,priceTransfer:116616,steamPriceArs:127879},
       {id:"v4",name:"Deluxe Edition - CD Key (Steam)",deliveryType:"code",basePrice:231558,priceTransfer:160804,steamPriceArs:182692},
       {id:"v5",name:"Premium Deluxe - CD Key (Steam)",deliveryType:"code",basePrice:295983,priceTransfer:205544,steamPriceArs:237505},
-      {id:"v6",name:"Aviator Edition - CD Key (Steam)",deliveryType:"code",basePrice:443821,priceTransfer:308209,steamPriceArs:365402},
+      {id:"v6",name:"Aviator Edition - CD Key (Steam)",deliveryType:"code",basePrice:446751,priceTransfer:310244,steamPriceArs:367822},
       {id:"v7",name:"Aviator Edition - Cuenta Steam",deliveryType:"account",basePrice:466459,priceTransfer:323930,steamPriceArs:365402},
     ]
   },
@@ -202,7 +202,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:98644,priceTransfer:68503,steamPriceArs:91337},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:99298,priceTransfer:68957,steamPriceArs:91942},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:119700,priceTransfer:83125,steamPriceArs:91337},
       {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:120249,priceTransfer:83506,steamPriceArs:91337},
     ]
@@ -215,7 +215,7 @@ const catalog = [
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:75421,priceTransfer:52376,steamPriceArs:109608},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:78640,priceTransfer:54611,steamPriceArs:110334},
     ]
   },
   { id:73,name:"The Elder Scrolls V: Skyrim Special Edition",icon:"game",steamId:"489830",steamDetails:{description:"The Elder Scrolls V: Skyrim Special Edition, ganador de más de 200 premios al “Juego del año”, da vida a la fantasía épica con un nivel de detalle asombroso. La Special Edition incluye el juego aclamado por la crítica y complementos con nuevas funcionalidades.",min:"Mínimo: SO *: Windows 7/8.1/10 (requiere versión de 64 bits) Procesador: Intel Core i5-750/AMD Phenom II X4-945 Memoria: 8 GB de RAM Gráficos: NVIDIA GTX 470 de 1 GB/AMD HD 7870 de 2 GB Almacenamiento: 12 GB de espacio disponible",rec:"Recomendado: SO *: Windows 7/8.1/10 (requiere versión de 64 bits) Procesador: Intel Core i5-2400/AMD FX-8320 Memoria: 8 GB de RAM Gráficos: NVIDIA GTX 780 de 3 GB/AMD R9 290 de 4 GB Almacenamiento: 12 GB de espacio disponible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/489830/library_600x900_2x.jpg",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/489830/header.jpg?t=1753715778",
@@ -227,7 +227,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:47339,priceTransfer:32874,steamPriceArs:43832},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:47652,priceTransfer:33092,steamPriceArs:44122},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:71542,priceTransfer:49682,steamPriceArs:43832},
     ]
   },
@@ -241,7 +241,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:106096,priceTransfer:73678,steamPriceArs:109608},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:92258,priceTransfer:64068,steamPriceArs:109608},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:92778,priceTransfer:64429,steamPriceArs:110334},
     ]
   },
   { id:71,name:"Subnautica 2",icon:"game",steamId:"1962700",steamDetails:{description:"Subnautica 2 is an underwater survival adventure set on an all-new alien world, developed by Unknown Worlds. Play alone or with friends in 4-player co-op. Adapt to survive by building custom bases and crafting tools. Explore the unknown to uncover the mysteries hidden within the depths.",min:"Mínimo: SO: Windows 10/11 Procesador: Intel Core i5-8400 / AMD Ryzen 5 2600 Memoria: 12 GB de RAM Gráficos: GeForce GTX 1660 6GB / RX 5500 XT 6GB DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible Notas adicionales: Requires a 64-bit processor and operating system",rec:"Recomendado: SO: Windows 11 Procesador: Intel Core i7-13700 / AMD Ryzen 7 7700X Memoria: 16 GB de RAM Gráficos: Geforce RTX 3070 8GB / RX 6700 XT 8GB DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible Notas adicionales: Requires a 64-bit processor and operating system"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962700/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1962700/library_hero_2x.jpg",
@@ -264,7 +264,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:70485,priceTransfer:48948,steamPriceArs:58449},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:70674,priceTransfer:49079,steamPriceArs:58836},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:58965,priceTransfer:40948,steamPriceArs:58449},
     ]
   },
@@ -278,7 +278,7 @@ const catalog = [
     ],
     versions:[
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:87381,priceTransfer:60681,steamPriceArs:109608},
-      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:84838,priceTransfer:58915,steamPriceArs:109608},
+      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:84989,priceTransfer:59020,steamPriceArs:110334},
       {id:"v4",name:"Bloodline Edition - CD Key (Steam)",deliveryType:"code",basePrice:290107,priceTransfer:201463,steamPriceArs:237505},
       {id:"v5",name:"Bloodline Edition - Cuenta Steam",deliveryType:"account",basePrice:227542,priceTransfer:158015,steamPriceArs:237505},
     ]
@@ -292,8 +292,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:105149,priceTransfer:73020,steamPriceArs:127879},
-      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:127169,priceTransfer:88312,steamPriceArs:127879},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:105483,priceTransfer:73252,steamPriceArs:128726},
+      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:127871,priceTransfer:88799,steamPriceArs:128726},
       {id:"v4",name:"King of Kings Edition - Cuenta Steam",deliveryType:"account",basePrice:179613,priceTransfer:124731,steamPriceArs:182692},
       {id:"v5",name:"Attitude Era Edition - CD Key (Steam)",deliveryType:"code",basePrice:230185,priceTransfer:159851,steamPriceArs:237505},
       {id:"v6",name:"Attitude Era Edition - Cuenta Steam",deliveryType:"account",basePrice:236392,priceTransfer:164161,steamPriceArs:237505},
@@ -308,7 +308,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:129588,priceTransfer:89992,steamPriceArs:73066},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:129804,priceTransfer:90142,steamPriceArs:73550},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:115127,priceTransfer:79949,steamPriceArs:73066},
     ]
   },
@@ -321,9 +321,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:56724,priceTransfer:39392,steamPriceArs:54795},
-      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:59178,priceTransfer:41096,steamPriceArs:54795},
-      {id:"v4",name:"6 Years 1-2 Fighters Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:144864,priceTransfer:100600,steamPriceArs:82220},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:56556,priceTransfer:39275,steamPriceArs:55158},
+      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:59571,priceTransfer:41369,steamPriceArs:55158},
+      {id:"v4",name:"6 Years 1-2 Fighters Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:145570,priceTransfer:101090,steamPriceArs:82764},
       {id:"v5",name:"6 Years 1-2 Fighters Edition - Cuenta Steam",deliveryType:"account",basePrice:144465,priceTransfer:100323,steamPriceArs:82220},
     ]
   },
@@ -336,10 +336,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:49923,priceTransfer:34669,steamPriceArs:52986},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:46702,priceTransfer:32432,steamPriceArs:52986},
-      {id:"v3",name:"Gold Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:72408,priceTransfer:50283,steamPriceArs:71257},
-      {id:"v4",name:"Gold Edition - Cuenta Steam",deliveryType:"account",basePrice:60888,priceTransfer:42283,steamPriceArs:71257},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:57604,priceTransfer:40003,steamPriceArs:53337},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:46868,priceTransfer:32547,steamPriceArs:53337},
+      {id:"v3",name:"Gold Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:72734,priceTransfer:50510,steamPriceArs:71729},
+      {id:"v4",name:"Gold Edition - Cuenta Steam",deliveryType:"account",basePrice:61214,priceTransfer:42510,steamPriceArs:71729},
     ]
   },
   { id:60,name:"Resident Evil 7: Biohazard",icon:"game",steamId:"418370",steamDetails:{description:"El peligro y la soledad emanan de las decrépitas paredes de una granja abandonada en el sur de los EE. UU. «7» marca un nuevo inicio para el género del survival horror, con el cambio a la aterradora perspectiva de jugador «vista aislada». Con el RE Engine, el terror llega a nuevas cotas de fotorrealismo.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: WINDOWS® 10 (64-BIT Required) Procesador: Intel® Core™ i5-4460, 2.70GHz or AMD FX™-6300 or better Memoria: 8 GB de RAM Gráficos: NVIDIA® GeForce® GTX 960 or AMD Radeon™ RX 460 DirectX: Versión 12 Almacenamiento: 24 GB de espacio disponible Tarjeta de sonido: DirectSound compatible (must support DirectX® 9.0c or higher) Notas adicionales: Hardware specification target 1080P/30FPS. May require reduction in Texture Quality settings or turning Texture streaming to OFF due to high VRAM requirements. *Internet connection required for game activation.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: WINDOWS® 10 (64-BIT Required) / Windows 11 (64-BIT Required) Procesador: Intel® Core™ i7 3770 3.4GHz or AMD equivalent or better Memoria: 8 GB de RAM Gráficos: NVIDIA® GeForce® GTX 1060 with 3GB VRAM DirectX: Versión 12 Almacenamiento: 24 GB de espacio disponible Tarjeta de sonido: DirectSound compatible (must support DirectX® 9.0c or higher) Notas adicionales: Hardware specification target 1080P/60FPS. *Internet connection required for game activation."},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/418370/library_600x900_2x.jpg",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/418370/header.jpg?t=1778464947",
@@ -351,8 +351,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:35751,priceTransfer:24827,steamPriceArs:27407},
-      {id:"v2",name:"Gold Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56282,priceTransfer:39085,steamPriceArs:109608},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56700,priceTransfer:39375,steamPriceArs:27588},
+      {id:"v2",name:"Gold Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56393,priceTransfer:39162,steamPriceArs:110334},
       {id:"v3",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:45062,priceTransfer:31293,steamPriceArs:27407},
     ]
   },
@@ -366,9 +366,9 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:106894,priceTransfer:74232,steamPriceArs:96836},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:89777,priceTransfer:62345,steamPriceArs:96836},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:120770,priceTransfer:83868,steamPriceArs:109608},
-      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:131386,priceTransfer:91240,steamPriceArs:109608},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:90099,priceTransfer:62569,steamPriceArs:97478},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:149668,priceTransfer:103936,steamPriceArs:110334},
+      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:130146,priceTransfer:90379,steamPriceArs:110334},
     ]
   },
   { id:68,name:"SILENT HILL f",icon:"game",steamId:"2947440",steamDetails:{description:"La ciudad natal de Hinako está sumida en la niebla, lo que la obliga a luchar contra monstruos grotescos y a resolver rompecabezas espeluznantes. Descubre la belleza del terror en este thriller psicológico.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 11 x64 Procesador: Intel Core i5-8400 / AMD Ryzen 5 2600 Memoria: 16 GB de RAM Gráficos: NVIDIA® GeForce® GTX 1070 Ti or AMD Radeon™ RX 5700 DirectX: Versión 12 Almacenamiento: 50 GB de espacio disponible Tarjeta de sonido: Windows Compatible Audio Device. Notas adicionales: Playing on minimum requirements should enable to play on Performance quality settings in 30 at 720p. SSD is recommended.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 11 x64 Procesador: Intel Core i7-9700 / AMD Ryzen 5 5500 Memoria: 16 GB de RAM Gráficos: NVIDIA® GeForce® RTX 2080 or AMD Radeon™ RX 6800XT DirectX: Versión 12 Almacenamiento: 50 GB de espacio disponible Tarjeta de sonido: Windows Compatible Audio Device. Notas adicionales: Playing on recommended requirements should enable to play on Performance settings in 60 FPS or Quality settings in 30 FPS at FullHD (or 4k using DLSS or similar technology). SSD required."},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2947440/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2947440/library_hero_2x.jpg",
@@ -381,7 +381,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:72114,priceTransfer:50079,steamPriceArs:60276},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:55817,priceTransfer:38762,steamPriceArs:60276},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:55971,priceTransfer:38869,steamPriceArs:60675},
       {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:77757,priceTransfer:53998,steamPriceArs:66913},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:63904,priceTransfer:44378,steamPriceArs:67584},
     ]
@@ -394,7 +394,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"2026 Edition - Cuenta Steam",deliveryType:"account",basePrice:44614,priceTransfer:30982,steamPriceArs:51141},
+      {id:"v1",name:"2026 Edition - Cuenta Steam",deliveryType:"account",basePrice:44840,priceTransfer:31139,steamPriceArs:51479},
       {id:"v2",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:112154,priceTransfer:77885,steamPriceArs:63930},
       {id:"v3",name:"Premium Edition - Cuenta Steam",deliveryType:"account",basePrice:130516,priceTransfer:90636,steamPriceArs:73066},
     ]
@@ -408,8 +408,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:80346,priceTransfer:55796,steamPriceArs:60276},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:56449,priceTransfer:39201,steamPriceArs:60276},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:80343,priceTransfer:55794,steamPriceArs:60675},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:55705,priceTransfer:38684,steamPriceArs:60675},
     ]
   },
   { id:14,name:"Clair Obscur: Expedition 33",icon:"game",steamId:"1903340",steamDetails:{description:"Guía a la expedición 33 en su viaje para destruir a la Peintresse para que no pinte la muerte. Explora un mundo inspirado por la Francia de la Belle Époque y combate enemigos únicos en este juego de rol por turnos con mecánicas en tiempo real.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: Intel Core i7-8700K / AMD Ryzen 5 1600X Memoria: 8 GB de RAM Gráficos: NVIDIA GeForce GTX 1060 6 GB / AMD Radeon RX 5600 XT 6 GB / Intel Arc A380 6 GB DirectX: Versión 12 Almacenamiento: 55 GB de espacio disponible Notas adicionales: Se requiere SSD. Las especificaciones mínimas permiten un juego a 1080p 30FPS con configuraciones bajas.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 11 Procesador: Intel Core i7-12700K / AMD Ryzen 7 5800X Memoria: 16 GB de RAM Gráficos: NVIDIA GeForce RTX 3060 Ti 8 GB / AMD Radeon RX 6800 XT 16 GB DirectX: Versión 12 Almacenamiento: 55 GB de espacio disponible Notas adicionales: Se requiere SSD. Las especificaciones recomendadas permiten un juego a 1080p 60FPS con configuraciones altas."},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1903340/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1903340/library_hero_2x.jpg",
@@ -421,7 +421,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:80844,priceTransfer:56142,steamPriceArs:63930},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:85198,priceTransfer:59165,steamPriceArs:64354},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:69324,priceTransfer:48142,steamPriceArs:63930},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:102207,priceTransfer:70977,steamPriceArs:76720},
       {id:"v5",name:"Edición Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:93426,priceTransfer:64879,steamPriceArs:76720},
@@ -436,10 +436,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:121723,priceTransfer:84530,steamPriceArs:127879},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:110742,priceTransfer:76904,steamPriceArs:127879},
-      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:127132,priceTransfer:88286,steamPriceArs:146150},
-      {id:"v5",name:"Edición Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:116376,priceTransfer:80817,steamPriceArs:146150},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:122082,priceTransfer:84779,steamPriceArs:128726},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:111352,priceTransfer:77328,steamPriceArs:128726},
+      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:127859,priceTransfer:88791,steamPriceArs:147118},
+      {id:"v5",name:"Edición Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:116767,priceTransfer:81088,steamPriceArs:147118},
     ]
   },
   { id:13,name:"Call of Duty: Black Ops III",icon:"game",steamId:"311210",steamDetails:{description:"Call of Duty® Black Ops III: Zombies Chronicles Edition incluye el juego original completo y la expansión de contenido Zombies Chronicles.",min:"Mínimo: SO *: Windows 7 64-Bit / Windows 8 64-Bit / Windows 8.1 64-Bit Procesador: Intel® Core™ i3-530 @ 2.93 GHz / AMD Phenom™ II X4 810 @ 2.60 GHz Memoria: 6 GB de RAM Gráficos: NVIDIA® GeForce® GTX 470 @ 1GB / ATI® Radeon™ HD 6970 @ 1GB DirectX: Versión 11 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Tarjeta de sonido: DirectX Compatible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/311210/library_600x900_2x.jpg",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/311210/header.jpg?t=1780963650",
@@ -450,7 +450,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Zombies Chronicles Edition - Cuenta Steam",deliveryType:"account",basePrice:78372,priceTransfer:54425,steamPriceArs:109608},
+      {id:"v1",name:"Zombies Chronicles Edition - Cuenta Steam",deliveryType:"account",basePrice:80938,priceTransfer:56207,steamPriceArs:110334},
     ]
   },
   { id:19,name:"DayZ",icon:"game",steamId:"221100",steamDetails:{description:"¿Cuánto podrás sobrevivir en un mundo posapocalíptico? Una tierra plagada de zombis infectados donde compites con otros supervivientes por recursos escasos. ¿Colaborarás con desconocidos y permaneceréis juntos? ¿O irás de lobo solitario para evitar traiciones? Esto es DayZ. Esta es tu historia.",min:"Mínimo: SO: Windows 10 64-bit Procesador: Intel Core i5-4430 or AMD Ryzen 5 2600 Six-Core Memoria: 8 GB de RAM Gráficos: NVIDIA GeForce GTX 760 or AMD R9 270X DirectX: Versión 11 Almacenamiento: 25 GB de espacio disponible Tarjeta de sonido: DirectX®-compatible Notas adicionales: Internet connection",rec:"Recomendado: SO: Windows 10 / 11 64-bit Procesador: Intel Core i5-6600K or AMD R5 1600X Memoria: 12 GB de RAM Gráficos: NVIDIA GeForce GTX 1060 or AMD RX 580 DirectX: Versión 11 Almacenamiento: 30 GB de espacio disponible Tarjeta de sonido: DirectX®-compatible Notas adicionales: Internet connection"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/221100/library_hero_2x.jpg",
@@ -462,10 +462,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:90759,priceTransfer:63027,steamPriceArs:109608},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:89143,priceTransfer:61905,steamPriceArs:110334},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:78921,priceTransfer:54806,steamPriceArs:109608},
-      {id:"v5",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:77315,priceTransfer:53691,steamPriceArs:91337},
-      {id:"v6",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:65795,priceTransfer:45691,steamPriceArs:91337},
+      {id:"v5",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:77450,priceTransfer:53785,steamPriceArs:91942},
+      {id:"v6",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:65930,priceTransfer:45785,steamPriceArs:91942},
       {id:"v7",name:"Cool Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:177326,priceTransfer:123143,steamPriceArs:127879},
       {id:"v8",name:"Cool Edition - Cuenta Steam",deliveryType:"account",basePrice:109956,priceTransfer:76358,steamPriceArs:127879},
     ]
@@ -480,7 +480,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:48675,priceTransfer:33802,steamPriceArs:27388},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:30381,priceTransfer:21098,steamPriceArs:27388},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:30172,priceTransfer:20953,steamPriceArs:27570},
       {id:"v3",name:"Gold Edition - Cuenta Steam",deliveryType:"account",basePrice:123468,priceTransfer:85742,steamPriceArs:95904},
     ]
   },
@@ -493,9 +493,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:32610,priceTransfer:22646,steamPriceArs:36524},
-      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:55266,priceTransfer:38379,steamPriceArs:36524},
-      {id:"v4",name:"& The Delicious Last Course - CD Key LATAM (Steam)",deliveryType:"code",basePrice:59579,priceTransfer:41374,steamPriceArs:49313},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:32763,priceTransfer:22752,steamPriceArs:36766},
+      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:55418,priceTransfer:38485,steamPriceArs:36766},
+      {id:"v4",name:"& The Delicious Last Course - CD Key LATAM (Steam)",deliveryType:"code",basePrice:59842,priceTransfer:41557,steamPriceArs:49640},
       {id:"v5",name:"& The Delicious Last Course - Cuenta Steam",deliveryType:"account",basePrice:57868,priceTransfer:40186,steamPriceArs:49313},
     ]
   },
@@ -507,8 +507,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:57540,priceTransfer:39958,steamPriceArs:82201},
-      {id:"v2",name:"Ultimate Edition - Cuenta Steam",deliveryType:"account",basePrice:85163,priceTransfer:59141,steamPriceArs:123293},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:57633,priceTransfer:40023,steamPriceArs:82746},
+      {id:"v2",name:"Ultimate Edition - Cuenta Steam",deliveryType:"account",basePrice:85121,priceTransfer:59112,steamPriceArs:124109},
     ]
   },
   { id:11,name:"Borderlands 4",icon:"game",steamId:"1285190",steamDetails:{description:"Borderlands 4 es un shooter de botín cargado de caos, repleto de miles de millones de armas, enemigos letales y una intensa acción cooperativa. Juega como uno de nuestros cuatro nuevos buscacámaras más chungos y escápate de un misterioso planeta oculto.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 / Windows 11 Procesador: Intel Core i7-9700 / AMD Ryzen 7 2700X Memoria: 16 GB de RAM Gráficos: NVIDIA GeForce RTX 2070 / AMD Radeon RX 5700 XT / Intel Arc A580 Almacenamiento: 100 GB de espacio disponible Notas adicionales: Requires a 64-bit processor and operating system. Requires 8 CPU Cores for processor. Requires 8 GB VRAM for graphics. SSD storage required",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 / Windows 11 Procesador: Intel Core i7-12700 / AMD Ryzen 7 5800X Memoria: 32 GB de RAM Gráficos: NVIDIA GeForce RTX 3080 / AMD Radeon RX 6800 XT / Intel Arc B580 Almacenamiento: 100 GB de espacio disponible Notas adicionales: Requires a 64-bit processor and operating system. SSD storage required"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1285190/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1285190/library_hero_2x.jpg",
@@ -520,11 +520,11 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:104064,priceTransfer:72267,steamPriceArs:127879},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:101140,priceTransfer:70236,steamPriceArs:128726},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:90491,priceTransfer:62841,steamPriceArs:127879},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:210254,priceTransfer:146010,steamPriceArs:182692},
-      {id:"v5",name:"Edición Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:133573,priceTransfer:92759,steamPriceArs:182692},
-      {id:"v6",name:"Edición Super Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:158475,priceTransfer:110052,steamPriceArs:237505},
+      {id:"v5",name:"Edición Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:129522,priceTransfer:89946,steamPriceArs:183902},
+      {id:"v6",name:"Edición Super Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:164111,priceTransfer:113966,steamPriceArs:239078},
     ]
   },
   { id:3,name:"ARK: Survival Ascended",icon:"game",steamId:"2399830",steamDetails:{description:"¡Ark se reinventa desde cero en esta próxima generación de tecnología de videojuegos con Unreal Engine 5! Forma una tribu, domestica y cría cientos de dinosaurios únicos y criaturas primitivas, exploran, cree, construyen y luchan hasta la cima de la cadena alimentaria. ¡Tu nuevo mundo te espera!",min:"Mínimo: SO: Windows 10/11 with updates Procesador: AMD Ryzen 5 2600X, Intel Core i7-6800K Memoria: 16 GB de RAM Gráficos: AMD Radeon RX 5600 XT, NVIDIA GeForce 1080 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 180 GB de espacio disponible Notas adicionales: SSD Required",rec:"Recomendado: SO: Windows 10/11 with updates Procesador: AMD Ryzen 5 3600X, Intel i5-10600K Memoria: 32 GB de RAM Gráficos: AMD Radeon RX 6800, NVIDIA GeForce RTX 3080 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 180 GB de espacio disponible Notas adicionales: SSD Required"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2399830/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2399830/library_hero_2x.jpg",
@@ -536,8 +536,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:55894,priceTransfer:38815,steamPriceArs:82201},
-      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:139872,priceTransfer:97133,steamPriceArs:82201},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:55979,priceTransfer:38874,steamPriceArs:82746},
+      {id:"v3",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:139956,priceTransfer:97192,steamPriceArs:82746},
     ]
   },
   { id:1,name:"007 First Light",icon:"game",steamId:"3768760",steamDetails:{description:"Gánate el título. 007 First Light es una trepidante aventura de espías llena de acción creada por IO Interactive. Sigue a un joven e ingenioso a la par que temerario James Bond durante su etapa como recluta del programa de entrenamiento del MI6, vive los primeros pasos del espía más famoso del mundo",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: MICROSOFT WINDOWS 10/11, 64-BIT Procesador: INTEL CORE i5 9500, AMD RYZEN 5 3500 Memoria: 16 GB de RAM Gráficos: NVIDIA GFORCE GTX 1660, AMD RX 5700, INTEL DISCRETE GPU EQUIVALENT Almacenamiento: 80 GB de espacio disponible Notas adicionales: SSD required",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: MICROSOFT WINDOWS 10/11, 64-BIT Procesador: INTEL CORE i5 13500, AMD RYZEN 5 7600 Memoria: 16 GB de RAM Gráficos: NVIDIA GEFORCE RTX 3060 TI, AMD RX 6700 XT, INTEL DISCRETE GPU EQUIVALENT Almacenamiento: 80 GB de espacio disponible Notas adicionales: SSD required"},img:"https://cdn2.steamgriddb.com/thumb/9cd0f2a7c17876d6721916f09bce496c.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3768760/library_hero_2x.jpg",
@@ -564,10 +564,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:78912,priceTransfer:54800,steamPriceArs:73066},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:76599,priceTransfer:53194,steamPriceArs:73550},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:67556,priceTransfer:46914,steamPriceArs:73066},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:94019,priceTransfer:65291,steamPriceArs:109608},
-      {id:"v5",name:"Edición Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:110527,priceTransfer:76755,steamPriceArs:109608},
+      {id:"v5",name:"Edición Deluxe - CD Key LATAM (Steam)",deliveryType:"code",basePrice:111154,priceTransfer:77190,steamPriceArs:110334},
     ]
   },
   { id:10,name:"Black Myth: Wukong",icon:"game",steamId:"2358720",steamDetails:{description:"Black Myth: Wukong es un RPG de acción inspirado en la mitología china. Encarnarás al Predestinado, que ha de embarcarse en un viaje repleto de peligros y maravillas para descubrir la verdad oculta acerca de una gloriosa leyenda del pasado.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit Procesador: Intel Core i5-8400 / AMD Ryzen 5 1600 Memoria: 16 GB de RAM Gráficos: NVIDIA GeForce GTX 1060 6GB / AMD Radeon RX 580 8GB DirectX: Versión 11 Almacenamiento: 130 GB de espacio disponible Tarjeta de sonido: Windows Compatible Audio Device Notas adicionales: HDD Supported, SSD Recommended. The above specifications were tested with DLSS/FSR/XeSS enabled.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit Procesador: Intel Core i7-9700 / AMD Ryzen 5 5500 Memoria: 16 GB de RAM Gráficos: NVIDIA GeForce RTX 2060 / AMD Radeon RX 5700 XT / INTEL Arc A750 DirectX: Versión 12 Almacenamiento: 130 GB de espacio disponible Tarjeta de sonido: Windows Compatible Audio Device Notas adicionales: SSD Required. The above specifications were tested with DLSS/FSR/XeSS enabled."},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_hero_2x.jpg",
@@ -580,7 +580,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:141058,priceTransfer:97957,steamPriceArs:109608},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:97746,priceTransfer:67879,steamPriceArs:109608},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:98293,priceTransfer:68259,steamPriceArs:110334},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:138177,priceTransfer:95956,steamPriceArs:127879},
     ]
   },
@@ -592,7 +592,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:87440,priceTransfer:60722,steamPriceArs:102299},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:87919,priceTransfer:61055,steamPriceArs:102977},
       {id:"v2",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:112977,priceTransfer:78456,steamPriceArs:131533},
     ]
   },
@@ -604,7 +604,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:56215,priceTransfer:39038,steamPriceArs:63930},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:56503,priceTransfer:39238,steamPriceArs:64354},
     ]
   },
   { id:35,name:"Forza Horizon 5",icon:"game",steamId:"1551360",steamDetails:{description:"Explora los coloridos paisajes del mundo abierto de México con una acción de conducción ilimitada y divertida en los mejores coches del mundo.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 version 18362.0 or higher Procesador: Intel i5-4460 or AMD Ryzen 3 1200 Memoria: 8 GB de RAM Gráficos: NVidia GTX 970, AMD RX 470, OR Intel Arc A380 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 110 GB de espacio disponible",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 version 18362.0 or higher Procesador: Intel i5-8400 or AMD Ryzen 5 1500X Memoria: 16 GB de RAM Gráficos: NVidia GTX 1070, AMD RX 590, OR Intel Arc A750 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 110 GB de espacio disponible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/library_hero_2x.jpg",
@@ -615,9 +615,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:53983,priceTransfer:37488,steamPriceArs:59892},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:54248,priceTransfer:37672,steamPriceArs:60289},
       {id:"v2",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:67851,priceTransfer:47119,steamPriceArs:74619},
-      {id:"v3",name:"Premium Edition - Cuenta Steam",deliveryType:"account",basePrice:80700,priceTransfer:56042,steamPriceArs:93931},
+      {id:"v3",name:"Premium Edition - Cuenta Steam",deliveryType:"account",basePrice:81128,priceTransfer:56339,steamPriceArs:94553},
     ]
   },
   { id:36,name:"Forza Horizon 6",icon:"game",steamId:"2483190",steamDetails:{description:"Descubre los asombrosos paisajes de Japón con más de 550 coches reales y conviértete en una leyenda del automovilismo en la mayor aventura de conducción en mundo abierto de Forza Horizon.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 22H2 (version 19045) or higher Procesador: Intel i5-8400 OR AMD Ryzen 5 1600 Memoria: 16 GB de RAM Gráficos: Nvidia GTX 1650 OR AMD RX 6500 XT OR Intel Arc A380 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 167 GB de espacio disponible Notas adicionales: SSD Required",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 22H2 (version 19045) or higher Procesador: Intel i5-12400F OR AMD Ryzen 5 5600X Memoria: 16 GB de RAM Gráficos: NVIDIA RTX 3060 Ti OR AMD RX 6700 XT OR Intel Arc A580 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 167 GB de espacio disponible Notas adicionales: SSD Required"},img:"https://cdn2.steamgriddb.com/grid/c7030ec82b86291dbb98e4d382ac8dda-fakepng.png",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2483190/library_hero_2x.jpg",
@@ -642,8 +642,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:47339,priceTransfer:32874,steamPriceArs:43832},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:37536,priceTransfer:26067,steamPriceArs:43832},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:47652,priceTransfer:33092,steamPriceArs:44122},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:39000,priceTransfer:27083,steamPriceArs:44122},
     ]
   },
   { id:34,name:"FINAL FANTASY VII REMAKE INTERGRADE",icon:"game",steamId:"1462040",steamDetails:{description:"Cloud Strife, exmiembro de Soldado, se adentra en la ciudad del mako, Midgar. El mundo del clásico juego FINAL FANTASY VII renace con gráficos de última generación, un nuevo sistema de combates y una aventura adicional con Yuffie Kirasagi como protagonista.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows® 10 64-bit (ver. 2004 or later) Procesador: AMD FX-8350 / Intel® Core™ i5-3330 Memoria: 8 GB de RAM Gráficos: AMD Radeon™ RX 480 / NVIDIA® GeForce® GTX 780 / 3GB VRAM required DirectX: Versión 12 Almacenamiento: 100 GB de espacio disponible Notas adicionales: Assuming a Resolution of 1920 x 1080",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows® 10 64-bit (ver. 2004 or later) Procesador: AMD Ryzen™ 3 3100 / Intel® Core™ i7-3770 Memoria: 12 GB de RAM Gráficos: AMD Radeon™ RX 5700 / NVIDIA® GeForce® GTX 1080 / 8GB VRAM required DirectX: Versión 12 Almacenamiento: 100 GB de espacio disponible Notas adicionales: Assuming a Resolution of 2560 x 1440 (This title supports max resolution of 3840 x 2160)"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1462040/library_hero_2x.jpg",
@@ -654,7 +654,7 @@ const catalog = [
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:60775,priceTransfer:42205,steamPriceArs:58449},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:62302,priceTransfer:43265,steamPriceArs:58836},
     ]
   },
   { id:39,name:"God Of War Ragnarök",icon:"game",steamId:"2322010",steamDetails:{description:"Kratos y Atreus se embarcan en una mítica aventura en busca de respuestas y aliados antes de la llegada del Ragnarök. Ahora también en PC.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 20H1 Procesador: Intel i5-4670k or AMD Ryzen 3 1200 Memoria: 8 GB de RAM Gráficos: NVIDIA GTX 1060 (6GB) or AMD RX 5500 XT (8GB) or Intel Arc A750 DirectX: Versión 12 Almacenamiento: 190 GB de espacio disponible",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 20H1 Procesador: Intel i5-8600 or AMD Ryzen 5 3600 Memoria: 16 GB de RAM Gráficos: NVIDIA RTX 2060 Super or AMD RX 5700 or Intel Arc A770 DirectX: Versión 12 Almacenamiento: 190 GB de espacio disponible"},img:"https://cdn2.steamgriddb.com/grid/3bfd448cba63b65c50807ed223049c7f-fakepng.png",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2322010/library_hero_2x.jpg",
@@ -666,7 +666,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:98644,priceTransfer:68503,steamPriceArs:91337},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:99298,priceTransfer:68957,steamPriceArs:91942},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:115835,priceTransfer:80441,steamPriceArs:91337},
       {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:108564,priceTransfer:75392,steamPriceArs:91337},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:157595,priceTransfer:109441,steamPriceArs:90732},
@@ -680,7 +680,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Enhanced - Cuenta Steam",deliveryType:"account",basePrice:48030,priceTransfer:33354,steamPriceArs:54795},
+      {id:"v1",name:"Enhanced - Cuenta Steam",deliveryType:"account",basePrice:48276,priceTransfer:33525,steamPriceArs:55158},
     ]
   },
   { id:37,name:"Ghost of Tsushima",icon:"game",steamId:"2215430",steamDetails:{description:"Una tormenta se avecina. Adéntrate en el DIRECTOR'S CUT completo de Ghost of Tsushima para PC; forja tu propio camino a través de esta aventura de acción en mundo abierto y descubre sus maravillas ocultas. De la mano de Sucker Punch Productions, Nixxes Software y PlayStation Studios.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: Intel Core i3-7100 or AMD Ryzen 3 1200 Memoria: 8 GB de RAM Gráficos: NVIDIA GeForce GTX 960 or AMD Radeon RX 5500 XT Almacenamiento: 75 GB de espacio disponible Notas adicionales: SSD Recommended",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: Intel Core i5-8600 or AMD Ryzen 5 3600 Memoria: 16 GB de RAM Gráficos: NVIDIA GeForce RTX 2060 or AMD Radeon RX 5600 XT Almacenamiento: 75 GB de espacio disponible Notas adicionales: SSD Required"},img:"https://cdn2.steamgriddb.com/grid/ddfa98ad575446b8d3b38e533f019076-fakepng.png",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/library_hero_2x.jpg",
@@ -691,7 +691,7 @@ const catalog = [
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},
     ],
     versions:[
-      {id:"v1",name:"Director's Cut - CD Key LATAM (Steam)",deliveryType:"code",basePrice:89423,priceTransfer:62099,steamPriceArs:91337},
+      {id:"v1",name:"Director's Cut - CD Key LATAM (Steam)",deliveryType:"code",basePrice:89905,priceTransfer:62434,steamPriceArs:91942},
     ]
   },
   { id:38,name:"God of War",icon:"game",steamId:"1593500",steamDetails:{description:"Kratos ha dejado atrás su venganza contra los dioses del Olimpo y vive ahora como un hombre en los dominios de los dioses y monstruos nórdicos. En este mundo cruel e implacable debe luchar para sobrevivir… y enseñar a su hijo a hacerlo también.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: Intel i5-2500k (4 core 3.3 GHz) or AMD Ryzen 3 1200 (4 core 3.1 GHz) Memoria: 8 GB de RAM Gráficos: NVIDIA GTX 960 (4 GB) or AMD R9 290X (4 GB) DirectX: Versión 11 Almacenamiento: 70 GB de espacio disponible Notas adicionales: DirectX feature level 11_1 required",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: Intel i5-6600k (4 core 3.5 GHz) or AMD Ryzen 5 2400 G (4 core 3.6 GHz) Memoria: 8 GB de RAM Gráficos: NVIDIA GTX 1060 (6 GB) or AMD RX 570 (4 GB) DirectX: Versión 11 Almacenamiento: 70 GB de espacio disponible Notas adicionales: DirectX feature level 11_1 required"},img:"https://cdn2.steamgriddb.com/grid/0793520c195b0793d682cbeca803f967-fakepng.png",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1593500/library_hero_2x.jpg",
@@ -703,8 +703,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:64423,priceTransfer:44738,steamPriceArs:91337},
-      {id:"v2",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:75943,priceTransfer:52738,steamPriceArs:91337},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:64551,priceTransfer:44827,steamPriceArs:91942},
+      {id:"v2",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:76071,priceTransfer:52827,steamPriceArs:91942},
     ]
   },
   { id:31,name:"F1 25",icon:"game",steamId:"3059520",steamDetails:{description:"Reescribe la parrilla de carreras con su evolución definitiva: EA SPORTS™ F1® 25: 2026 Season Edition. Consigue F1® 25 y el pack de temporada 2026 en un solo paquete para la experiencia Formula One® más completa.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit Version 21H1 or newer Procesador: Intel Core i5-6400 | Core i5-9600k (VR) or AMD Ryzen 3 1200 | Ryzen 5 2600X (VR) Memoria: 8 GB de RAM Gráficos: NVIDIA GTX 1060 (6GB) | GTX 1660Ti (VR) | RTX 2060 (RT) // AMD RX 570 (8GB) | RX 590 (VR) | 6700XT (RT) // Intel Arc A380 (VR/RT) DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Tarjeta de sonido: DirectX Compatible Compatibilidad con RV: Meta Quest 3 + Link // Meta Quest 2 + Link // Oculus Rift S // HTC Cosmos // HTC Vive Pro // Valve Index // HP Reverb G2 Notas adicionales: CPU: AVX2, 4 cores @ 2.2Ghz or greater // GPU: Shader Model 6.6 or newer // Network: 1Mbps up with < 60ms ping",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit Version 21H1 or newer Procesador: Intel Core i5-9600k or AMD Ryzen 5 2600X Memoria: 16 GB de RAM Gráficos: NVIDIA RTX 2070 (+VR) | RTX 3070 (RT) // AMD RX 6600XT | RX 6700XT (VR) | RX 6800 (RT) // Intel Arc A580 (VR/RT) DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Tarjeta de sonido: DirectX Compatible Compatibilidad con RV: Meta Quest 3 + Link // Meta Quest 2 + Link // Oculus Rift S // HTC Cosmos // HTC Vive Pro // Valve Index // HP Reverb G2 Notas adicionales: CPU: AVX2, 4 cores @ 2.2Ghz or greater // GPU: Shader Model 6.6 or newer // Network: 3Mbps up with < 30ms ping"},img:"https://cdn2.steamgriddb.com/grid/fb9d97ffedbaa16cae0906034a254afd.png",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3059520/library_hero_2x.jpg",
@@ -729,9 +729,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:162266,priceTransfer:112685,steamPriceArs:102299},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:87513,priceTransfer:60773,steamPriceArs:102299},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:240756,priceTransfer:167192,steamPriceArs:146150},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:162755,priceTransfer:113024,steamPriceArs:102977},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:88001,priceTransfer:61112,steamPriceArs:102977},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:242093,priceTransfer:168120,steamPriceArs:147118},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:186769,priceTransfer:129701,steamPriceArs:146150},
       {id:"v5",name:"Ultimate Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:269366,priceTransfer:187060,steamPriceArs:160767},
       {id:"v6",name:"Ultimate Edition - Cuenta Steam",deliveryType:"account",basePrice:205361,priceTransfer:142612,steamPriceArs:160767},
@@ -747,7 +747,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:108243,priceTransfer:75169,steamPriceArs:82201},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:74269,priceTransfer:51576,steamPriceArs:82201},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:74673,priceTransfer:51856,steamPriceArs:82746},
       {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:135730,priceTransfer:94257,steamPriceArs:94991},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:116407,priceTransfer:80838,steamPriceArs:94991},
     ]
@@ -762,7 +762,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:137998,priceTransfer:95832,steamPriceArs:127879},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:107047,priceTransfer:74338,steamPriceArs:127879},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:107391,priceTransfer:74577,steamPriceArs:128726},
     ]
   },
   { id:22,name:"Diablo IV",icon:"game",steamId:"2344520",steamDetails:{description:"Únete a la lucha por Santuario en Diablo® IV, la aventura de rol y acción definitiva. Vive la campaña alabada por la crítica y nuevo contenido de temporada.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows® 10 de 64 bits versión 1909 o posterior Procesador: Intel® Core™ i5-2500K o AMD™ FX-8350 Memoria: 8 GB de RAM Gráficos: NVIDIA® GeForce® GTX 660 o Intel® Arc™ A380 o AMD Radeon™ R9 280 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 90 GB de espacio disponible Notas adicionales: *1080p como resolución nativa o 720p con resolución renderizada, con ajustes gráficos bajos, a 30 FPS y con SSD",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows® 10 de 64 bits versión 1909 o posterior Procesador: Intel® Core™ i5-4670K o AMD Ryzen™ 1300X Memoria: 16 GB de RAM Gráficos: NVIDIA® GeForce® GTX 970 o Intel® Arc™ A750 o AMD Radeon™ RX 470 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 90 GB de espacio disponible Notas adicionales: *1080p de resolución, con ajustes gráficos medios, a 60 FPS y con SSD"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2344520/library_hero_2x.jpg",
@@ -773,7 +773,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:81420,priceTransfer:56542,steamPriceArs:91337},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:81860,priceTransfer:56847,steamPriceArs:91942},
       {id:"v2",name:"Age of Hatred Collection - Cuenta Steam",deliveryType:"account",basePrice:144374,priceTransfer:100260,steamPriceArs:127879},
     ]
   },
@@ -788,10 +788,10 @@ const catalog = [
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:153498,priceTransfer:106596,steamPriceArs:87683},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:94729,priceTransfer:65784,steamPriceArs:87683},
-      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:186313,priceTransfer:129384,steamPriceArs:146150},
+      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:183120,priceTransfer:127167,steamPriceArs:147118},
       {id:"v5",name:"Shadow of the Erdtree Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:212666,priceTransfer:147685,steamPriceArs:116916},
       {id:"v6",name:"Shadow of the Erdtree Edition - Cuenta Steam",deliveryType:"account",basePrice:145243,priceTransfer:100863,steamPriceArs:116916},
-      {id:"v7",name:"Shadow of the Erdtree Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:237036,priceTransfer:164608,steamPriceArs:146150},
+      {id:"v7",name:"Shadow of the Erdtree Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:241955,priceTransfer:168024,steamPriceArs:147118},
     ]
   },
   { id:25,name:"Dynasty Warriors: Origins",icon:"game",steamId:"2384580",steamDetails:{description:"Vive emocionantes batallas como un héroe sin nombre en los Tres Reinos.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows® 10/11 64-bit Procesador: Intel Core i5-8400 or higher, AMD Ryzen 5 2600 or higher Memoria: 12 GB de RAM Gráficos: NVIDIA GeForce GTX 1060 (VRAM 6GB) or better, AMD Radeon RX 590 (VRAM 8GB) or better DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible Tarjeta de sonido: 16-bit stereo with 48KHz playback Notas adicionales: Based on a display resolution of 1920x1080 and a frame rate of 30FPS, with the Graphics Quality set to \"Low\" and the Texture Quality set to \"Low.\" Note: Windows® 11 system requirements apply when using that OS.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows® 10/11 64-bit Procesador: Intel Core i7-7700K or higher, AMD Ryzen 7 5700X or higher Memoria: 16 GB de RAM Gráficos: NVIDIA GeForce RTX 2070 (VRAM 8GB) or better, AMD Radeon RX 5700 XT (VRAM 8GB) or better DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible Tarjeta de sonido: 16-bit stereo with 48KHz playback Notas adicionales: Based on a display resolution of 1920x1080 and a frame rate of 60FPS, with the Graphics Quality set to \"High\" and the Texture Quality set to \"High.\" Note: - If you are using a widescreen monitor or a monitor with a resolution higher than Full HD, additional VRAM capacity may be required depending on your settings. - Windows® 11 system requirements apply when using that OS."},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2384580/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2384580/library_hero_2x.jpg",
@@ -803,7 +803,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:75554,priceTransfer:52468,steamPriceArs:106502},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:75681,priceTransfer:52556,steamPriceArs:107207},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:110759,priceTransfer:76916,steamPriceArs:106502},
     ]
   },
@@ -815,8 +815,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:43636,priceTransfer:30303,steamPriceArs:164421},
-      {id:"v2",name:"The World's Game Edition - Cuenta Steam",deliveryType:"account",basePrice:59301,priceTransfer:41181,steamPriceArs:164421},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:44143,priceTransfer:30655,steamPriceArs:165510},
+      {id:"v2",name:"The World's Game Edition - Cuenta Steam",deliveryType:"account",basePrice:59403,priceTransfer:41252,steamPriceArs:165510},
     ]
   },
   { id:81,name:"A way out",icon:"game",steamId:"1222700",steamDetails:{description:"A Way Out es una aventura exclusivamente cooperativa en la que te metes en la piel de uno de los dos reclusos protagonistas en su intrépida fuga de la cárcel.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO *: Windows 7 64-bit, 8.1 64-bit or Windows 10 64-bit Procesador: Intel core i3-2100T @ 2.5GHz/AMD FX 6100, or better Memoria: 8 GB de RAM Gráficos: NVIDIA GeForce GTX 650Ti 2GB, AMD Radeon HD 7750 2GB Almacenamiento: 25 GB de espacio disponible",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO *: Windows 7 64-bit, 8.1 64-bit or Windows 10 64-bit Procesador: Intel Core i5 3570K; AMD Ryzen 3 1300x or equivalent Memoria: 16 GB de RAM Gráficos: Nvidia GTX 960; AMD R9 290 or equivalent Almacenamiento: 25 GB de espacio disponible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222700/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222700/library_hero_2x.jpg",
@@ -827,7 +827,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:43337,priceTransfer:30095,steamPriceArs:54795},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:43662,priceTransfer:30321,steamPriceArs:55158},
     ]
   },
   { id:82,name:"Detroit: Become Human",icon:"game",steamId:"1222140",steamDetails:{description:"Detroit: Become Human pone el destino de la humanidad y los androides en tus manos. Cada decisión que tomes afectará al resultado del juego, en una de las tramas narrativas con ramificaciones más intrincadas que jamás se ha visto.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 (64 bit) Procesador: Intel Core i5-2300 @ 2.8 GHz or AMD Ryzen 3 1200 @ 3.1GHz or AMD FX-8350 @ 4.2GHz Memoria: 8 GB de RAM Gráficos: Nvidia GeForce GTX 780 or AMD HD 7950 with 3GB VRAM minimum (Support of Vulkan 1.1 required) Almacenamiento: 55 GB de espacio disponible",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 (64 bit) Procesador: Intel Core i5-6600 @ 3.3 GHz or AMD Ryzen 3 1300 X @ 3.4 GHz Memoria: 12 GB de RAM Gráficos: Nvidia GeForce GTX 1060 or AMD Radeon RX 580 with 4GB VRAM minimum (Support of Vulkan 1.1 required) Almacenamiento: 55 GB de espacio disponible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222140/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222140/library_hero_2x.jpg",
@@ -839,8 +839,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:55463,priceTransfer:38516,steamPriceArs:58449},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:43943,priceTransfer:30516,steamPriceArs:58449},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:55693,priceTransfer:38676,steamPriceArs:58836},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:44173,priceTransfer:30676,steamPriceArs:58836},
     ]
   },
   { id:83,name:"Dispatch",icon:"game",steamId:"2592160",steamDetails:{description:"Dispatch es una comedia de oficina sobre superhéroes donde las decisiones importan. Gestiona un equipo de héroes inadaptados y decide quién enviar a las emergencias por la ciudad todo mientras equilibras la política de oficina, las relaciones personales y tu propia misión de convertirte en un héroe.",min:"Mínimo: SO: Windows 10 (64 bits) o versiones posteriores Procesador: 2.0 Ghz Memoria: 2 GB de RAM Gráficos: Nvidia GTX 970 o similar DirectX: Versión 11 Almacenamiento: 15 GB de espacio disponible Tarjeta de sonido: Compatible con DirectX",rec:"Recomendado: SO: Windows 10 (64-bit) or later Procesador: Processor: Intel(R) Core(TM) i5-7400 CPU / AMD Ryzen 5 2600 or higher Memoria: 16 GB de RAM Gráficos: NVIDIA GTX 1050 / AMD Radeon RX 580 DirectX: Versión 11 Almacenamiento: 15 GB de espacio disponible Tarjeta de sonido: DirectX compatible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2592160/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2592160/library_hero_2x.jpg",
@@ -851,7 +851,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:38568,priceTransfer:26783,steamPriceArs:27388},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:37986,priceTransfer:26379,steamPriceArs:27570},
     ]
   },
   { id:84,name:"EA SPORTS™ College Football 27",icon:"game",steamId:"4032350",steamDetails:{description:"Adéntrate en la era moderna del fútbol universitario, donde la ambición personal se une al orgullo del programa. Equilibra las expectativas, la identidad y todo lo que exige el sábado mientras te sumerges en las tradiciones y el boato del día de partido.",min:"Mínimo: SO: Windows 11 Procesador: Intel Core i3-10300 (4 cores, 8 threads) / AMD Ryzen 5 2600 Memoria: 12 GB de RAM Gráficos: Nvidia GeForce RTX 2060 / AMD Radeon RX 5600 XT / Intel Arc A580 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible Compatibilidad con RV: not supported Notas adicionales: SSD recommended; 8 logical CPU cores minimum; Intel Arc GPUs require Resizable BAR (ReBAR) enabled to meet expected performance Estimated performance when set to &quot;Low&quot; preset: 1920x1080 @ 60 FPS",rec:"Recomendado: SO: Windows 11 Procesador: Intel Core i7-10700 / AMD Ryzen 7 3700X Memoria: 16 GB de RAM Gráficos: Nvidia RTX 3060Ti / AMD Radeon RX 6700 XT / Intel Arc B580 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible Compatibilidad con RV: not supported Notas adicionales: SSD recommended; 8 logical CPU cores minimum; Intel Arc GPUs require Resizable BAR (ReBAR) enabled to meet expected performance Estimated performance when set to &quot;High&quot; preset: 2560x1440 @ 60 FPS"},img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4032350/1c628b40d5aa8dcf26e0ac9d394f0fbe1b8dc879/header.jpg?t=1783633200",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4032350/1c628b40d5aa8dcf26e0ac9d394f0fbe1b8dc879/header.jpg?t=1783633200",
@@ -863,7 +863,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:126240,priceTransfer:87667,steamPriceArs:127879},
-      {id:"v2",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:169688,priceTransfer:117839,steamPriceArs:182692},
+      {id:"v2",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:170662,priceTransfer:118515,steamPriceArs:183902},
     ]
   },
   { id:85,name:"ELDEN RING NIGHTREIGN",icon:"game",steamId:"2622380",img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2622380/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2622380/library_hero_2x.jpg",
@@ -877,7 +877,7 @@ const catalog = [
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:86566,priceTransfer:60115,steamPriceArs:58449},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:68890,priceTransfer:47840,steamPriceArs:58449},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:114725,priceTransfer:79670,steamPriceArs:80374},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:110496,priceTransfer:76733,steamPriceArs:80906},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:99760,priceTransfer:69278,steamPriceArs:80374},
     ]
   },
@@ -890,7 +890,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:93030,priceTransfer:64604,steamPriceArs:62103},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:93319,priceTransfer:64805,steamPriceArs:62514},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:80895,priceTransfer:56177,steamPriceArs:62103},
     ]
   },
@@ -906,7 +906,7 @@ const catalog = [
       {id:"v1",name:"Edicion estandar - CD Key (Steam)",deliveryType:"code",basePrice:72494,priceTransfer:50343,steamPriceArs:59877},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:38979,priceTransfer:27069,steamPriceArs:27388},
       {id:"v3",name:"Deluxe Edition - CD Key (Steam)",deliveryType:"code",basePrice:145335,priceTransfer:100927,steamPriceArs:84028},
-      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:73336,priceTransfer:50928,steamPriceArs:84028},
+      {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:73738,priceTransfer:51207,steamPriceArs:84585},
     ]
   },
   { id:88,name:"It takes two",icon:"game",steamId:"1426210",steamDetails:{description:"Embárcate en la aventura de tu vida en It Takes Two. Invita a un amigo a acompañarte gratis con el Pase de amigo* para colaborar en una gran variedad de desafíos deliciosamente rompedores.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO *: Windows 8.1 64-bit or Windows 10 64-bit Procesador: Intel Core i3-2100T or AMD FX 6100 Memoria: 8 GB de RAM Gráficos: Nvidia GeForce GTX 660 or AMD R7 260x DirectX: Versión 11 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO *: Windows 8.1 64-bit or Windows 10 64-bit Procesador: Intel Core i5 3570K or AMD Ryzen 3 1300x Memoria: 16 GB de RAM Gráficos: Nvidia GeForce GTX 980 or AMD R9 290X DirectX: Versión 11 Red: Conexión de banda ancha a Internet Almacenamiento: 50 GB de espacio disponible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/library_hero_2x.jpg",
@@ -919,7 +919,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:123604,priceTransfer:85836,steamPriceArs:73066},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:51503,priceTransfer:35766,steamPriceArs:73066},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:51566,priceTransfer:35810,steamPriceArs:73550},
     ]
   },
   { id:89,name:"Mortal Kombat 1",icon:"game",steamId:"1971870",steamDetails:{description:"Descubre un nuevo universo de Mortal Kombat™creado por Liu Kang, Dios del Fuego. ¡Mortal Kombat™ 1 abre paso a una nueva era de esta icónica saga con un nuevo sistema de kombate, modos de juego y fatalities!",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit Procesador: Intel® Core™ i5-6600 | AMD Ryzen™ 3 3100 or Ryzen™ 5 2600 Memoria: 8 GB de RAM Gráficos: Nvidia GeForce® GTX 1660 or AMD Radeon™ RX 590 or Intel® Arc™ A750 DirectX: Versión 12 Almacenamiento: 140 GB de espacio disponible Notas adicionales: SSD (Preferred for full online cross-play capabilities), HDD (Supported), 1080p/Low",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10/11 64-bit Procesador: Intel® Core™ i5-8400 | AMD Ryzen™ 5 3600X Memoria: 8 GB de RAM Gráficos: Nvidia GeForce® GTX 2080 Ti or AMD Radeon™ RX 5700 XT or Intel® Arc™ A770 DirectX: Versión 12 Almacenamiento: 140 GB de espacio disponible Notas adicionales: SSD, 1440p/High"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1971870/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1971870/library_hero_2x.jpg",
@@ -931,9 +931,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:69738,priceTransfer:48429,steamPriceArs:73066},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:58218,priceTransfer:40429,steamPriceArs:73066},
-      {id:"v3",name:"Definitive Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:68973,priceTransfer:47898,steamPriceArs:109608},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:70053,priceTransfer:48648,steamPriceArs:73550},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:58533,priceTransfer:40648,steamPriceArs:73550},
+      {id:"v3",name:"Definitive Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:68344,priceTransfer:47461,steamPriceArs:110334},
       {id:"v4",name:"Definitive Edition - Cuenta Steam",deliveryType:"account",basePrice:90989,priceTransfer:63187,steamPriceArs:108519},
     ]
   },
@@ -946,8 +946,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"(Game of the YoRHa Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:60276,priceTransfer:41858,steamPriceArs:58449},
-      {id:"v2",name:"(Game of the YoRHa Edition - Cuenta Steam",deliveryType:"account",basePrice:48756,priceTransfer:33858,steamPriceArs:58449},
+      {id:"v1",name:"(Game of the YoRHa Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:60529,priceTransfer:42034,steamPriceArs:58836},
+      {id:"v2",name:"(Game of the YoRHa Edition - Cuenta Steam",deliveryType:"account",basePrice:49009,priceTransfer:34034,steamPriceArs:58836},
     ]
   },
   { id:91,name:"Path of Exile 2",icon:"game",steamId:"2694490",steamDetails:{description:"Path of Exile 2 es un RPG de acción de nueva generación creado por Grinding Gear Games, con un modo cooperativo de hasta seis jugadores. Años después de los acontecimientos de Path of Exile, regresarás al oscuro mundo de Wraeclast para acabar con la corrupción que se está extendiendo.",min:"Mínimo: SO: Windows 10 Procesador: 4 core 2.8GHz x64-compatible Memoria: 8 GB de RAM Gráficos: NVIDIA® GeForce® GTX 960 o ATI Radeon™ RX 470 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Notas adicionales: A GPU with at least 3GB of VRAM is required",rec:"Recomendado: SO: Windows 10 Procesador: Intel® Core™ i5-10500 or AMD™ Ryzen 5 3700X Memoria: 16 GB de RAM Gráficos: NVIDIA® GeForce® RTX 2060, Intel® Arc™ A770, or ATI Radeon™ RX 5600XT DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Notas adicionales: Solid State Storage is recommended"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2694490/library_hero_2x.jpg",
@@ -959,8 +959,8 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:58298,priceTransfer:40485,steamPriceArs:54795},
-      {id:"v2",name:"Lord of Ogham Supporter Pack - Cuenta Steam",deliveryType:"account",basePrice:93603,priceTransfer:65002,steamPriceArs:109608},
-      {id:"v3",name:"King of the Faridun Supporter Pack - Cuenta Steam",deliveryType:"account",basePrice:159682,priceTransfer:110890,steamPriceArs:182692},
+      {id:"v2",name:"Lord of Ogham Supporter Pack - Cuenta Steam",deliveryType:"account",basePrice:94128,priceTransfer:65367,steamPriceArs:110334},
+      {id:"v3",name:"King of the Faridun Supporter Pack - Cuenta Steam",deliveryType:"account",basePrice:160595,priceTransfer:111524,steamPriceArs:183902},
     ]
   },
   { id:92,name:"Persona 3 Reload",icon:"game",steamId:"2161700",steamDetails:{description:"Sumérgete en la Hora Oscura y despierta lo más profundo de tu corazón. Persona 3 Reload es la fascinante nueva versión del RPG que definió el género y que ahora renace para la era moderna con gráficos y una jugabilidad de última generación.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: Intel Core i5-2300, AMD FX-4350 Memoria: 8 GB de RAM Gráficos: NVIDIA GeForce GTX 650 Ti, 2 GB; AMD Radeon HD 7850, 2 GB DirectX: Versión 12 Almacenamiento: 30 GB de espacio disponible Notas adicionales: Performance Target: 720p, low graphics settings, @ 30 FPS. Microsoft no longer supports Windows 10 or older versions.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 Procesador: Intel Core i7-4790, AMD Ryzen 5 1400 Memoria: 8 GB de RAM Gráficos: NVIDIA GeForce GTX 1650, 4 GB, AMD Radeon R9 290X, 4 GB DirectX: Versión 12 Almacenamiento: 30 GB de espacio disponible Notas adicionales: Performance Target: 1080p, high graphics settings, @ 60 FPS. Microsoft no longer supports Windows 10 or older versions."},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2161700/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2161700/library_hero_2x.jpg",
@@ -972,11 +972,11 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:87523,priceTransfer:60780,steamPriceArs:87683},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:76003,priceTransfer:52780,steamPriceArs:87683},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:87939,priceTransfer:61069,steamPriceArs:88263},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:76419,priceTransfer:53069,steamPriceArs:88263},
       {id:"v4",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:150800,priceTransfer:104722,steamPriceArs:102299},
-      {id:"v5",name:"Premium Edition - Cuenta Steam",deliveryType:"account",basePrice:180981,priceTransfer:125681,steamPriceArs:131533},
-      {id:"v6",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:110483,priceTransfer:76724,steamPriceArs:102299},
+      {id:"v5",name:"Premium Edition - Cuenta Steam",deliveryType:"account",basePrice:181856,priceTransfer:126289,steamPriceArs:132404},
+      {id:"v6",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:111216,priceTransfer:77233,steamPriceArs:102977},
     ]
   },
   { id:93,name:"RESIDENT EVIL 2",icon:"game",steamId:"883710",img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/library_hero_2x.jpg",
@@ -988,9 +988,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:55706,priceTransfer:38685,steamPriceArs:52986},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:44186,priceTransfer:30685,steamPriceArs:52986},
-      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56236,priceTransfer:39053,steamPriceArs:71257},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:55934,priceTransfer:38843,steamPriceArs:53337},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:44414,priceTransfer:30843,steamPriceArs:53337},
+      {id:"v3",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56186,priceTransfer:39018,steamPriceArs:71729},
     ]
   },
   { id:94,name:"Resident Evil 7 Gold Edition & Village Gold Edition",icon:"game",steamId:"1196590",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv2kJExnz8smnDRlNea1505H1w7LqogvNsoGyg04FFiwhxakizMeIgdGQ&s=10",heroImg:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv2kJExnz8smnDRlNea1505H1w7LqogvNsoGyg04FFiwhxakizMeIgdGQ&s=10",
@@ -1002,7 +1002,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v3",name:"Gold Edition Bundle - CD Key LATAM (Steam)",deliveryType:"code",basePrice:76624,priceTransfer:53211,steamPriceArs:71257},
+      {id:"v3",name:"Gold Edition Bundle - CD Key LATAM (Steam)",deliveryType:"code",basePrice:74693,priceTransfer:51870,steamPriceArs:71729},
       {id:"v4",name:"Gold Edition Bundle - Cuenta Steam",deliveryType:"account",basePrice:65104,priceTransfer:45211,steamPriceArs:71257},
     ]
   },
@@ -1015,8 +1015,8 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:126651,priceTransfer:87952,steamPriceArs:91337},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:71762,priceTransfer:49835,steamPriceArs:91337},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:126816,priceTransfer:88067,steamPriceArs:91942},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:71928,priceTransfer:49950,steamPriceArs:91942},
     ]
   },
   { id:96,name:"STAR WARS Jedi: Survivor",icon:"game",steamId:"1774580",steamDetails:{description:"La historia de Cal Kestis continúa en STAR WARS Jedi: Survivor™, un juego de acción en tercera persona de proporciones galácticas.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit Procesador: 4 core / 8 threads | Intel Core i7-7700 | Ryzen 5 1400 Memoria: 8 GB de RAM Gráficos: 8GB VRAM | GTX 1070 | Radeon RX 580 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 155 GB de espacio disponible Notas adicionales: Internet required for non-optional patching, no online play.",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit Procesador: 4 core / 8 threads | Intel Core i5 11600K | Ryzen 5 5600X Memoria: 16 GB de RAM Gráficos: 8GB VRAM | RTX2070 | RX 6700 XT DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 155 GB de espacio disponible Notas adicionales: Internet required for non-optional patching, no online play."},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1774580/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1774580/library_hero_2x.jpg",
@@ -1028,10 +1028,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:55642,priceTransfer:38640,steamPriceArs:127879},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:55727,priceTransfer:38699,steamPriceArs:128726},
       {id:"v2",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:243137,priceTransfer:168845,steamPriceArs:164421},
       {id:"v3",name:"Deluxe Edition - Cuenta Steam",deliveryType:"account",basePrice:170191,priceTransfer:118188,steamPriceArs:164421},
-      {id:"v4",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:67162,priceTransfer:46640,steamPriceArs:127879},
+      {id:"v4",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:67247,priceTransfer:46699,steamPriceArs:128726},
     ]
   },
   { id:97,name:"UNCHARTED™: Legacy of Thieves Collection",icon:"game",steamId:"1659420",steamDetails:{description:"UNCHARTED: Colección Legado de los Ladrones ofrece la forma definitiva de disfrutar de dos de las aventuras más emocionantes del galardonado estudio Naughty Dog, remasterizadas con mejoras específicas para PC.",min:"Mínimo: SO: Windows 10 64-bit Procesador: Intel i5-4430, AMD Ryzen 3 1200 Memoria: 8 GB de RAM Gráficos: NVIDIA GTX 960 (4 GB), AMD R9 290X (4 GB) DirectX: Versión 12 Almacenamiento: 126 GB de espacio disponible",rec:"Recomendado: SO: Windows 10 64-bit Procesador: Intel i7-4770, AMD Ryzen 5 1500X Memoria: 16 GB de RAM Gráficos: NVIDIA GTX 1060 (6 GB), AMD RX 570 (4 GB) DirectX: Versión 12 Almacenamiento: 126 GB de espacio disponible"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659420/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1659420/library_hero_2x.jpg",
@@ -1042,7 +1042,7 @@ const catalog = [
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:64629,priceTransfer:44881,steamPriceArs:91337},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:64689,priceTransfer:44923,steamPriceArs:91942},
     ]
   },
   { id:98,name:"Until Dawn",icon:"game",steamId:"2172010",steamDetails:{description:"Recreado y mejorado para PC, Until Dawn te invita a revivir la pesadilla y sumergirte en un slasher atrapante y aterrador en el que cada decisión que tomes puede marcar la diferencia entre la vida y la muerte.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10, 11 Procesador: Intel Core i7 4790K / AMD Ryzen 5 1500x (or similar processor with AVX support) Memoria: 8 GB de RAM Gráficos: NVIDIA GeForce GTX 1660 / Radeon RX 470 (or equivalent card with minimum 6GB VRAM) DirectX: Versión 12 Almacenamiento: 70 GB de espacio disponible Notas adicionales: Storage 70 GB on SSD",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10, 11 Procesador: Intel Core i5 8600 / AMD Ryzen 7 2700X Memoria: 16 GB de RAM Gráficos: NVIDIA GeForce RTX 2060 / AMD Radeon RX 6600XT DirectX: Versión 12 Almacenamiento: 70 GB de espacio disponible Notas adicionales: Storage 70 GB on SSD"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2172010/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2172010/library_hero_2x.jpg",
@@ -1054,7 +1054,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:107202,priceTransfer:74446,steamPriceArs:109608},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:105879,priceTransfer:73527,steamPriceArs:110334},
       {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:149931,priceTransfer:104119,steamPriceArs:109608},
     ]
   },
@@ -1078,10 +1078,10 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:147141,priceTransfer:102181,steamPriceArs:127879},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:80726,priceTransfer:56060,steamPriceArs:127879},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:139025,priceTransfer:96545,steamPriceArs:128726},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:80410,priceTransfer:55840,steamPriceArs:128726},
       {id:"v3",name:"Phantom Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:210666,priceTransfer:146296,steamPriceArs:182692},
-      {id:"v4",name:"Phantom Edition - Cuenta Steam",deliveryType:"account",basePrice:139632,priceTransfer:96967,steamPriceArs:182692},
+      {id:"v4",name:"Phantom Edition - Cuenta Steam",deliveryType:"account",basePrice:150483,priceTransfer:104502,steamPriceArs:183902},
     ]
   },
   { id:101,name:"Call of Duty: Black Ops 7",icon:"game",steamId:"3606480",img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3606480/d7041a15f572f7702d5f4bc97e498cd3e1cc62e2/header.jpg?t=1781120245",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3606480/d7041a15f572f7702d5f4bc97e498cd3e1cc62e2/header.jpg?t=1781120245",
@@ -1092,7 +1092,7 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:101216,priceTransfer:70289,steamPriceArs:127879},
+      {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:101530,priceTransfer:70507,steamPriceArs:128726},
       {id:"v2",name:"Vault Edition - Cuenta Steam",deliveryType:"account",basePrice:164969,priceTransfer:114562,steamPriceArs:182692},
     ]
   },
@@ -1105,9 +1105,9 @@ const catalog = [
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
     ],
     versions:[
-      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:113439,priceTransfer:78777,steamPriceArs:109608},
-      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:98643,priceTransfer:68502,steamPriceArs:109608},
-      {id:"v3",name:"Complete Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:138050,priceTransfer:95868,steamPriceArs:127879},
+      {id:"v1",name:"Edicion estandar - CD Key LATAM (Steam)",deliveryType:"code",basePrice:114074,priceTransfer:79218,steamPriceArs:110334},
+      {id:"v2",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:99194,priceTransfer:68885,steamPriceArs:110334},
+      {id:"v3",name:"Complete Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:138492,priceTransfer:96175,steamPriceArs:128726},
       {id:"v4",name:"Complete Edition - Cuenta Steam",deliveryType:"account",basePrice:132918,priceTransfer:92304,steamPriceArs:127879},
     ]
   },
@@ -1120,7 +1120,7 @@ const catalog = [
     ],
     versions:[
       {id:"v1",name:"Edicion estandar - Cuenta Steam",deliveryType:"account",basePrice:41891,priceTransfer:29091,steamPriceArs:54795},
-      {id:"v2",name:"Complete Edition - Cuenta Steam",deliveryType:"account",basePrice:53970,priceTransfer:37479,steamPriceArs:69412},
+      {id:"v2",name:"Complete Edition - Cuenta Steam",deliveryType:"account",basePrice:54158,priceTransfer:37610,steamPriceArs:69871},
     ]
   },
 ];
