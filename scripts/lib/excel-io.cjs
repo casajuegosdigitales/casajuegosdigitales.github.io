@@ -81,12 +81,26 @@ function inferEditionFromLinks(linksText) {
   const t = String(linksText || "").toLowerCase();
   if (/icons-edition|icons_edition|\bicons\b/.test(t)) return "ICONS Edition";
   if (/toty-edition|toty_edition|\btoty\b/.test(t)) return "TOTY Edition";
+  if (/ultimate-edition-plus|ultimate_edition_plus|ultimate-plus-edition/.test(t)) return "Ultimate Plus Edition";
   if (/ultimate-edition|ultimate_edition/.test(t)) return "Ultimate Edition";
   if (/deluxe-edition|deluxe_edition|\bdeluxe\b/.test(t)) return "Deluxe Edition";
   if (/premium-edition|premium_edition|\bpremium\b/.test(t)) return "Premium Edition";
   if (/gold-edition|gold_edition|\bgold\b/.test(t)) return "Gold Edition";
   if (/standard-edition|standard_edition/.test(t)) return "Edicion estandar";
   return "";
+}
+
+/** Corrige columna version cuando el link de compra indica otra edicion. */
+function reconcileEditionFromSupplyLinks(edition, linksJoined) {
+  const href = String(linksJoined || "").toLowerCase();
+  let ed = String(edition || "").trim() || "Edicion estandar";
+  if (/ultimate-edition-plus|ultimate_edition_plus|ultimate-plus-edition/.test(href)) {
+    if (!/\bplus\b/i.test(ed)) return "Ultimate Plus Edition";
+  }
+  if (/\bultimate\b/i.test(ed) && /\bplus\b/i.test(href) && !/\bplus\b/i.test(ed)) {
+    return "Ultimate Plus Edition";
+  }
+  return ed;
 }
 
 function inferTipoFromLinks(linksText) {
@@ -173,6 +187,7 @@ function readExcelAutoRows(xlPath) {
     let tipo = String(row[3] || "").trim();
     if (!tipo || /^\d+$/.test(tipo)) tipo = inferTipoFromLinks(linksJoined);
     if (!tipo) continue;
+    edition = reconcileEditionFromSupplyLinks(edition, linksJoined);
 
     const linkSteamRaw = cleanLink(row[9]);
     if (linkSteamRaw) lastLinkSteam = linkSteamRaw;
@@ -276,7 +291,24 @@ function fullNameFromExcelRow(row) {
 }
 
 function excelRowKey(row) {
-  return `${row.game}|${row.edition || "Edicion estandar"}|${row.tipo || ""}`;
+  const variant =
+    row.variant ||
+    (row.game && row.tipo
+      ? variantFromExcelRow({
+          edition: row.edition || "Edicion estandar",
+          tipo: row.tipo,
+          linkKinguin: row.linkKinguin,
+          linkEneba: row.linkEneba,
+          linkDriffle: row.linkDriffle,
+          linkLoaded: row.linkLoaded,
+          linkSteam: row.linkSteam,
+        })
+      : "");
+  const linkTag = String(row.linkKinguin || row.linkDriffle || row.linkEneba || row.linkLoaded || "")
+    .replace(/^https?:\/\//i, "")
+    .slice(0, 48);
+  const base = `${row.game}|${row.edition || "Edicion estandar"}|${row.tipo || ""}|${variant}`;
+  return linkTag ? base + "|" + linkTag : base;
 }
 
 function enrichAutoExcelRow(row) {

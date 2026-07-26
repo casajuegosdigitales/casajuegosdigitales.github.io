@@ -139,12 +139,22 @@ function regionOkForArgentina(text, opts) {
   return check;
 }
 
+function itemWantsPlusEdition(item) {
+  const t = itemTargetText(item);
+  return (
+    /\bultimate\s+plus\b|\bplus\s+edition\b/i.test(t) || (/\bultimate\b/i.test(t) && /\bplus\b/i.test(t))
+  );
+}
+
 function editionMarkersInItem(item) {
   const t = itemTargetText(item);
   const markers = [];
   if (/\bgold\b/i.test(t) && !/gold edition\s*&/i.test(t)) markers.push("gold");
   if (/\bdeluxe\b/i.test(t)) markers.push("deluxe");
-  if (/\bultimate\b/i.test(t)) markers.push("ultimate");
+  if (itemWantsPlusEdition(item)) {
+    markers.push("ultimate");
+    markers.push("plus");
+  } else if (/\bultimate\b/i.test(t)) markers.push("ultimate");
   if (/\bphantom\b/i.test(t)) markers.push("phantom");
   if (/\bpremium\b/i.test(t)) markers.push("premium");
   if (/\bvault\b/i.test(t)) markers.push("vault");
@@ -168,6 +178,7 @@ function editionMarkersMatch(item, name) {
     }
     if (!new RegExp("\\b" + m + "\\b", "i").test(n)) return false;
   }
+  if (!itemWantsPlusEdition(item) && /\bplus\b/i.test(n) && /\bultimate\b/i.test(n)) return false;
   const game = String(item.game || item.fullName || "");
   for (const rule of WRONG_GAME_BLOCK) {
     if (rule.game.test(game) && rule.block.test(n)) return false;

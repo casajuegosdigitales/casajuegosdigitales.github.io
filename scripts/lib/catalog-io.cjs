@@ -190,15 +190,17 @@ function syncGameSteamAssets(game, linkSteam) {
   const assets = steamAssetsFromLink(linkSteam);
   if (!assets.steamId) return false;
   let changed = false;
-  if (!game.steamId) {
+  if (!game.steamId || game.steamId !== assets.steamId) {
     game.steamId = assets.steamId;
     changed = true;
   }
-  if (!game.img) {
+  const img = String(game.img || "");
+  if (!img || !img.includes(assets.steamId)) {
     game.img = assets.img;
     changed = true;
   }
-  if (!game.heroImg) {
+  const hero = String(game.heroImg || "");
+  if (!hero || !hero.includes(assets.steamId)) {
     game.heroImg = assets.heroImg;
     changed = true;
   }
