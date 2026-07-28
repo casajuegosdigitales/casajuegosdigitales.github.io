@@ -186,6 +186,14 @@ function propagateSteamLinks(items) {
   return filled;
 }
 
+function isUntrustedCoverUrl(url) {
+  const u = String(url || "").toLowerCase();
+  if (!u) return true;
+  if (/fakepng|encrypted-tbn0\.gstatic|gstatic\.com\/images\?q=tbn/i.test(u)) return true;
+  if (/\/thumb\//i.test(u) && !/steamstatic\.com/i.test(u) && !/steamgriddb\.com/i.test(u)) return true;
+  return false;
+}
+
 function syncGameSteamAssets(game, linkSteam) {
   const assets = steamAssetsFromLink(linkSteam);
   if (!assets.steamId) return false;
@@ -195,13 +203,13 @@ function syncGameSteamAssets(game, linkSteam) {
     changed = true;
   }
   const img = String(game.img || "");
-  if (!img || !img.includes(assets.steamId)) {
+  if (!img || isUntrustedCoverUrl(img)) {
     game.img = assets.img;
     changed = true;
   }
   const hero = String(game.heroImg || "");
-  if (!hero || !hero.includes(assets.steamId)) {
-    game.heroImg = assets.heroImg;
+  if (!hero || isUntrustedCoverUrl(hero)) {
+    game.heroImg = assets.heroImg || game.img;
     changed = true;
   }
   return changed;
