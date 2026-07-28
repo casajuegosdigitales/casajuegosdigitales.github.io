@@ -512,6 +512,8 @@ html{scroll-behavior:smooth;scroll-padding-top:var(--nav-stack-h,104px);backgrou
     <span class="filter-label">Filtrar:</span>
     <div class="filter-chips" id="filterChips">
       <span class="fc active" data-tag="all">🎮 Todos</span>
+      <span class="fc" data-tag="nuevos">✨ Nuevos</span>
+      <span class="fc" data-tag="ofertas">🔥 Ofertas</span>
       <span class="fc" data-tag="accion">⚔️ Acción</span>
       <span class="fc" data-tag="rpg">🧙 RPG</span>
       <span class="fc" data-tag="aventura">🌎 Aventura</span>
@@ -523,7 +525,8 @@ html{scroll-behavior:smooth;scroll-padding-top:var(--nav-stack-h,104px);backgrou
     <div style="font-size:11px;color:var(--muted)" id="resultsInfo"></div>
     <div style="display:flex;align-items:center;gap:6px">
       <span style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em">Ordenar:</span>
-      <button class="sort-btn active" data-sort="default" onclick="setSort('default')">Orden A-Z</button>
+      <button class="sort-btn active" data-sort="recent" onclick="setSort('recent')">Recientes</button>
+      <button class="sort-btn" data-sort="az" onclick="setSort('az')">A-Z</button>
       <button class="sort-btn" data-sort="price-asc" onclick="setSort('price-asc')">Precio ↑</button>
       <button class="sort-btn" data-sort="price-desc" onclick="setSort('price-desc')">Precio ↓</button>
     </div>
@@ -669,8 +672,8 @@ html{scroll-behavior:smooth;scroll-padding-top:var(--nav-stack-h,104px);backgrou
   <span class="cart-count cart-float-count">0</span>
 </button>
 <div class="notif" id="notif"></div>
-<script src="js/catalog.js"></script>
+<script src="js/catalog.js?v=2026072827"></script>
 <script>const WHATSAPP="541172376736";</script>
-<script src="js/app.js"></script>
+<script src="js/app.js?v=2026072827"></script>
 <script>document.addEventListener("DOMContentLoaded",initCatalogPage);</script>
 </body></html>

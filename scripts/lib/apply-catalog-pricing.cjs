@@ -1,6 +1,6 @@
 "use strict";
 
-const { applyGroupPricing, mergeExcelSteamPrices, isProfitableVenta, priceFloor } = require("./pricing.cjs");
+const { applyGroupPricing, mergeExcelSteamPrices, isProfitableVenta, priceFloor, cuotasFromVenta } = require("./pricing.cjs");
 const { findCatalogVersion, ensureCatalogVersion, finalizeCatalogGames } = require("./catalog-io.cjs");
 const { platformFromItem, isSteamItem, isPublishableAltPlatform, hasValidPublishedSupply } = require("./match-product.cjs");
 
@@ -11,15 +11,19 @@ function hasExcelSupplyLinks(item) {
 }
 
 function applyVentaToItem(item, result) {
-  item.ventaPublicada = result.venta;
-  item.cuotasPublicada = result.cuotas;
+  const compra = Number(item.compraArs) || 0;
+  const venta = Math.max(Number(result.venta) || 0, priceFloor(compra));
+  item.ventaPublicada = venta;
+  item.cuotasPublicada = cuotasFromVenta(venta);
   item.hidden = false;
 }
 
 function syncVersionPrices(version, item, result) {
+  const compra = Number(item.compraArs) || 0;
+  const venta = Math.max(Number(result.venta) || 0, priceFloor(compra));
   version.hidden = false;
-  version.priceTransfer = result.venta;
-  version.basePrice = result.cuotas;
+  version.priceTransfer = venta;
+  version.basePrice = cuotasFromVenta(venta);
   if (Number(item.precioSteamArs) > 0) {
     version.steamPriceArs = Number(item.precioSteamArs);
   }

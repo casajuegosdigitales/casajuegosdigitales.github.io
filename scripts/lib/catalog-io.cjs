@@ -125,7 +125,7 @@ function ensureCatalogGame(catalog, item) {
     heroImg: assets.heroImg || assets.img,
     badge: "",
     badgeType: "",
-    tags: [],
+    tags: ["nuevos", "ofertas"],
     platform: "Steam - PC",
     description:
       "Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",

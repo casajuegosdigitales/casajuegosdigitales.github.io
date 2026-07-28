@@ -1115,7 +1115,7 @@ const catalog = [
   },
   { id:104,name:"EA SPORTS FC™ 27",icon:"game",steamId:"4080220",steamDetails:{description:"Te damos la bienvenida a The World's Game en EA SPORTS FC™ 27. Adéntrate en The Grounds, un espacio de juego donde las calles se encuentran con el estadio, y siente un mayor control en cada modo, ya que las innovaciones impulsadas por la comunidad ofrecen una jugabilidad más fiel al fútbol.",min:"Mínimo: SO: Windows 10/11 - 64-Bit (Latest Update). Procesador: AMD Ryzen 5 1600 or Intel Core i5 6600k Memoria: 8 GB DDR4 Dual Channel GB de RAM Gráficos: AMD RX 570 or Nvidia GTX 1050 Ti DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Compatibilidad con RV: N/A",rec:"Recomendado: SO: Windows 10/11 - 64-Bit (Latest Update). Procesador: AMD Ryzen 7 2700X or Intel Core i7 6700 Memoria: 12 GB Dual Channel GB de RAM Gráficos: AMD RX 5600 XT or Nvidia GTX 1660 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Compatibilidad con RV: N/A"},img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4080220/05d419a45653a1299ce46d13dbff4533fa076c1c/header.jpg?t=1784839278",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4080220/05d419a45653a1299ce46d13dbff4533fa076c1c/header.jpg?t=1784839278",
     badge:"",badgeType:"",
-    tags:[],platform:"Steam - PC",
+    tags:["nuevos","masvendidos","ofertas","deportes"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
     delivery:[
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
@@ -1128,7 +1128,7 @@ const catalog = [
   },
   { id:105,name:"Gears of War: E-Day",icon:"game",steamId:"3010850",steamDetails:{description:"Experimenta el Día de la Emergencia, la brutal historia original de una de las franquicias de disparos en tercera persona más aclamadas del mundo de los videojuegos.",min:"Mínimo: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 10 64-bit 22H 19045.7291 Procesador: AMD Ryzen 5 2600X / Intel i7‑6850K / i5‑10400 Memoria: 12 GB de RAM Gráficos: NVIDIA GeForce RTX 5050 / NVIDIA GeForce RTX 2060 / AMD Radeon RX 6600 / Radeon RX 9060 / Intel A580 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 130 GB de espacio disponible Tarjeta de sonido: Windows compatible audio device Notas adicionales: Storage: SSD required (solid-state drive)",rec:"Recomendado: Requiere un procesador y un sistema operativo de 64 bits SO: Windows 11 64bit (25H2) or newer Procesador: AMD Ryzen 5 5600 / Intel i5-11600K Memoria: 16 GB de RAM Gráficos: NVIDIA GeForce RTX 5060 / NVIDIA GeForce RTX 3060ti / AMD Radeon RX 6700 XT / Radeon RX 9060 XT / Intel B580 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 130 GB de espacio disponible Tarjeta de sonido: Windows compatible audio device Notas adicionales: Storage: SSD required (solid-state drive)"},img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3010850/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3010850/library_hero_2x.jpg",
     badge:"",badgeType:"",
-    tags:[],platform:"Steam - PC",
+    tags:["nuevos","ofertas","accion","fps"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
     delivery:[
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
@@ -1140,7 +1140,7 @@ const catalog = [
   },
   { id:106,name:"Halo: Campaign Evolved",icon:"game",steamId:"2806050",img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2806050/30d8542d35d7919b34e5f5dbe955d04c3f99e6da/header.jpg?t=1784829117",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2806050/30d8542d35d7919b34e5f5dbe955d04c3f99e6da/header.jpg?t=1784829117",
     badge:"",badgeType:"",
-    tags:[],platform:"Steam - PC",
+    tags:["nuevos","ofertas","fps","accion"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
     delivery:[
       {id:"account",name:"Cuenta completa",desc:"Te entregamos una cuenta con el juego activado en la plataforma indicada en cada edicion."},
@@ -1152,7 +1152,7 @@ const catalog = [
   },
   { id:107,name:"MARVEL Tokon: Fighting Souls",icon:"game",steamId:"3787240",img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3787240/943fda32c11b3e3f451458ffa95a4adca1f316a4/header.jpg?t=1784908718",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3787240/943fda32c11b3e3f451458ffa95a4adca1f316a4/header.jpg?t=1784908718",
     badge:"",badgeType:"",
-    tags:[],platform:"Steam - PC",
+    tags:["nuevos","ofertas","accion"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
     delivery:[
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},
@@ -1164,7 +1164,7 @@ const catalog = [
   },
   { id:108,name:"Marvel vs. Capcom: Infinite",icon:"game",steamId:"493840",img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493840/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493840/library_hero_2x.jpg",
     badge:"",badgeType:"",
-    tags:[],platform:"Steam - PC",
+    tags:["nuevos","ofertas","accion"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
     delivery:[
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},
@@ -1176,7 +1176,7 @@ const catalog = [
   },
   { id:109,name:"SILENT HILL: Townfall",icon:"game",steamId:"1636440",img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/0ed1cb4bc30631f95b92f7f13bb06c15d49b4afa/header.jpg?t=1784635358",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/0ed1cb4bc30631f95b92f7f13bb06c15d49b4afa/header.jpg?t=1784635358",
     badge:"",badgeType:"",
-    tags:[],platform:"Steam - PC",
+    tags:["nuevos","ofertas","accion","aventura"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
     delivery:[
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},
@@ -1188,7 +1188,7 @@ const catalog = [
   },
   { id:110,name:"Resident Evil: Raccoon City Edition (Resident Evil 2, Resident Evil 3, RESIDENT EVIL RESISTANCE)",icon:"game",steamId:"883710",img:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/library_600x900_2x.jpg",heroImg:"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/883710/library_hero_2x.jpg",
     badge:"",badgeType:"",
-    tags:[],platform:"Steam - PC",
+    tags:["nuevos","ofertas","accion","aventura"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
     delivery:[
       {id:"code",name:"Codigo / CD Key",desc:"Recibis el codigo por email y lo activas en la plataforma indicada en cada edicion (Steam, EA App, Rockstar, Ubisoft, etc.)."},

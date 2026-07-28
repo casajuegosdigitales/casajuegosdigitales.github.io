@@ -25,14 +25,17 @@ function minGamePricing(g){let best=null;visibleVersions(g).forEach(v=>{const c=
 function priceCardHtml(cuotas,transfer){const c6=Math.round(cuotas/6);return`<span class="price-old">${fmt(priceLista(cuotas))}</span><span class="price-new">${fmt(cuotas)}</span><div class="transfer-shine"><span class="transfer-shine-text">Transferencia · 30% OFF</span><span class="transfer-shine-val">${fmt(transfer)}</span></div><div class="cuotas-shine"><span class="cuotas-shine-text">6 cuotas sin interés de</span><span class="cuotas-shine-val">${fmt(c6)}</span></div>`;}
 function versionsForDelivery(g,delId){return visibleVersions(g).filter(v=>!v.deliveryType||v.deliveryType===delId);}
 const RELEVANCE_PRIORITY=[48,39,7,12,37,5,6,41,25,18,16,14,13,11,10,9,8,4,3,2,1];
-function relevanceScore(g){const pi=RELEVANCE_PRIORITY.indexOf(g.id);let s=pi>=0?10000-pi:0;if(g.tags.includes("masvendidos"))s+=500;if(g.tags.includes("nuevos"))s+=200;if(g.tags.includes("ofertas"))s+=50;return s;}
+function relevanceScore(g){const pi=RELEVANCE_PRIORITY.indexOf(g.id);let s=pi>=0?10000-pi:0;const tags=g.tags||[];if(tags.includes("masvendidos"))s+=500;if(tags.includes("nuevos"))s+=200;if(tags.includes("ofertas"))s+=50;return s;}
 function sortByRelevance(list){return list.sort((a,b)=>{const d=relevanceScore(b)-relevanceScore(a);return d||a._order-b._order;});}
-function normalizeCatalog(){catalog.forEach((g,i)=>{g._order=i;g.delivery.forEach(d=>{if(d.id==="code"){d.name="CD Key";d.desc="Activás en la plataforma indicada en cada edición (Steam, Rockstar, EA, Ubisoft…).";}if(d.id==="account"){d.name="Cuenta";d.desc="Cuenta lista con el juego en la plataforma de esa edición.";}});if(!g.icon||g.icon==="game")g.icon="🎮";if(/Red Dead Redemption 2/i.test(g.name)){g.platform="Rockstar / Steam - PC";g.description="Clave Ultimate: activación en Rockstar Games Launcher (no Steam). Cuentas: Steam.";const cd=g.delivery.find(x=>x.id==="code");if(cd)cd.desc="Clave para Rockstar Games Launcher / Social Club. No es código de Steam.";}});}
+function normalizeCatalog(){catalog.forEach((g,i)=>{g._order=i;if(!Array.isArray(g.tags))g.tags=[];if(g.steamId&&isUntrustedCoverUrl(g.img))g.img=steamLibraryCover(g.steamId);if(g.steamId&&g.img&&!String(g.img).includes("/apps/"+g.steamId+"/"))g.img=steamLibraryCover(g.steamId);(g.delivery||[]).forEach(d=>{if(d.id==="code"){d.name="CD Key";d.desc="Activás en la plataforma indicada en cada edición (Steam, Rockstar, EA, Ubisoft…).";}if(d.id==="account"){d.name="Cuenta";d.desc="Cuenta lista con el juego en la plataforma de esa edición.";}});if(!g.icon||g.icon==="game")g.icon="🎮";if(/Red Dead Redemption 2/i.test(g.name)){g.platform="Rockstar / Steam - PC";g.description="Clave Ultimate: activación en Rockstar Games Launcher (no Steam). Cuentas: Steam.";const cd=g.delivery.find(x=>x.id==="code");if(cd)cd.desc="Clave para Rockstar Games Launcher / Social Club. No es código de Steam.";}});}
 function deliveryOptionsForGame(g){return g.delivery.filter(d=>versionsForDelivery(g,d.id).length>0);}
 function gameIcon(g){return(!g.icon||g.icon==="game")?"🎮":g.icon;}
-function gameCardCover(g){return g.img||(g.steamId?"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/"+g.steamId+"/library_600x900_2x.jpg":"");}
-function gameHeroCover(g){return g.heroImg||g.img||(g.steamId?"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/"+g.steamId+"/library_hero_2x.jpg":"");}
-function coverImgMarkup(g){const src=gameCardCover(g);const icon=gameIcon(g);if(!src)return `<span class="cover-fallback-icon">${icon}</span>`;const alt=g.name.replace(/"/g,"&quot;");const parts=[];if(g.heroImg&&g.heroImg!==src)parts.push(g.heroImg);if(g.steamId){const sid=g.steamId;parts.push("https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/"+sid+"/library_600x900_2x.jpg");parts.push("https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/"+sid+"/library_600x900_2x.jpg");}const fb=parts.filter((u,i,a)=>u!==src&&a.indexOf(u)===i).join("|");return `<img class="cover-img" src="${src}"${fb?` data-fb="${fb.replace(/"/g,"&quot;")}"`:""} data-icon="${icon}" alt="${alt}" width="600" height="900" loading="lazy" decoding="async" onerror="coverImgFallback(this)">`;}
+function isUntrustedCoverUrl(u){const s=String(u||"").toLowerCase();if(!s)return true;return /steamgriddb\.com|fakepng|encrypted-tbn0\.gstatic|gstatic\.com\/images\?q=tbn/.test(s)||(/\/thumb\//.test(s)&&!/steamstatic\.com/.test(s));}
+function steamLibraryCover(sid){return sid?"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/"+sid+"/library_600x900_2x.jpg":"";}
+function steamHeaderCover(sid){return sid?"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/"+sid+"/header.jpg":"";}
+function gameCardCover(g){const sid=g.steamId?String(g.steamId):"";let custom=g.img||"";if(sid&&(isUntrustedCoverUrl(custom)||custom&&!custom.includes("/apps/"+sid+"/")))custom="";return custom||steamLibraryCover(sid)||"";}
+function gameHeroCover(g){const sid=g.steamId?String(g.steamId):"";const custom=g.heroImg||g.img||"";if(sid&&isUntrustedCoverUrl(custom))return "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/"+sid+"/library_hero_2x.jpg";return custom||(sid?"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/"+sid+"/library_hero_2x.jpg":"");}
+function coverImgMarkup(g){const src=gameCardCover(g);const icon=gameIcon(g);if(!src)return `<span class="cover-fallback-icon">${icon}</span>`;const alt=g.name.replace(/"/g,"&quot;");const parts=[];if(g.steamId){const sid=g.steamId;parts.push(steamLibraryCover(sid));parts.push("https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/"+sid+"/library_600x900_2x.jpg");parts.push(steamHeaderCover(sid));}const fb=parts.filter((u,i,a)=>u&&u!==src&&a.indexOf(u)===i).join("|");return `<img class="cover-img" src="${src}"${fb?` data-fb="${fb.replace(/"/g,"&quot;")}"`:""} data-icon="${icon}" alt="${alt}" width="600" height="900" loading="lazy" decoding="async" onerror="coverImgFallback(this)">`;}
 
 function calcPrice(base,payId,transferPrice){if((payId==="transfer"||payId==="cripto")&&transferPrice!=null)return transferPrice;const m=payMethods.find(p=>p.id===payId);return base*(1+(m?m.pct/100:0));}
 function stripHtml(h){const d=document.createElement("div");d.innerHTML=h||"";return(d.textContent||"").replace(/\s+/g," ").trim();}
@@ -185,13 +188,14 @@ function renderCatalogPage(){
   if(ri)ri.textContent=filteredCatalog.length+" de "+catalog.length+" juegos";
 }
 
-let activeTag="all",sortMode="default";
+let activeTag="all",sortMode="recent";
 function setSort(s){sortMode=s;document.querySelectorAll(".sort-btn").forEach(b=>b.classList.toggle("active",b.dataset.sort===s));applyFilters();}
 function applyFilters(){
-  let r=publishedGames().filter(g=>activeTag==="all"||g.tags.includes(activeTag));
+  let r=publishedGames().filter(g=>activeTag==="all"||(g.tags||[]).includes(activeTag));
   if(sortMode==="price-asc")r.sort((a,b)=>minGamePricing(a).cuotas-minGamePricing(b).cuotas);
   else if(sortMode==="price-desc")r.sort((a,b)=>minGamePricing(b).cuotas-minGamePricing(a).cuotas);
-  else r.sort((a,b)=>a.name.localeCompare(b.name,"es",{sensitivity:"base"}));
+  else if(sortMode==="az")r.sort((a,b)=>a.name.localeCompare(b.name,"es",{sensitivity:"base"}));
+  else r.sort((a,b)=>b.id-a.id);
   filteredCatalog=r;catalogPage=1;renderCatalogPage();
 }
 
@@ -200,9 +204,9 @@ function preloadSteamCaches(){const run=()=>ensureSteamAboutCache().catch(()=>{}
 function syncCatalogSticky(){const nav=document.querySelector("nav");const fw=document.querySelector(".filters-wrap");if(nav)document.documentElement.style.setProperty("--nav-stack-h",nav.offsetHeight+"px");if(fw)document.documentElement.style.setProperty("--filters-h",fw.offsetHeight+"px");}
 
 const HERO_SPOTLIGHT_COUNT=4;
-const HERO_NUEVOS_PRIORITY=[102,101,100,62,53,15,78,52,36,26,11];
+const HERO_NUEVOS_PRIORITY=[110,109,108,107,106,105,104,102,101,100,62,53,15,78,52,36,26,11];
 function pickHeroSpotlightGames(){
-  const pub=publishedGames().filter(g=>g.tags.includes("nuevos"));
+  const pub=publishedGames().filter(g=>(g.tags||[]).includes("nuevos"));
   const byId=new Map(pub.map(g=>[g.id,g]));
   const picked=[];
   for(const id of HERO_NUEVOS_PRIORITY){
@@ -227,12 +231,12 @@ function initHeroSpotlight(){
   }).join("");
 }
 function initHomeGrids(){
-  const pick=(tag,n)=>publishedGames().filter(g=>g.tags.includes(tag)).slice(0,n);
+  const pick=(tag,n)=>publishedGames().filter(g=>(g.tags||[]).includes(tag)).slice(0,n);
   const mas=document.getElementById("masGrid");if(mas)mas.innerHTML=pick("masvendidos",8).map(makeCard).filter(Boolean).join("")||"<p style='color:var(--muted);grid-column:1/-1'>Proximamente mas juegos.</p>";
   const nuev=document.getElementById("nuevGrid");if(nuev)nuev.innerHTML=pick("nuevos",8).map(makeCard).filter(Boolean).join("");
   const of=document.getElementById("ofGrid");if(of)of.innerHTML=pick("ofertas",8).map(makeCard).filter(Boolean).join("");
 }
 function toggleFaq(el){const item=el.parentElement;const isOpen=item.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(i=>i.classList.remove("open"));if(!isOpen)item.classList.add("open");}
 function initIndexPage(){normalizeCatalog();preloadSteamCaches();initHeroSpotlight();initHomeGrids();updateTrustStats();scrollToHash();setNavCats("inicio");updateCartUI();if(typeof syncNavHeight==="function")syncNavHeight();document.querySelectorAll("a[href^='#']").forEach(a=>{a.addEventListener("click",e=>{const t=document.querySelector(a.getAttribute("href"));if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth",block:"start"});}});});}
-function initCatalogPage(){normalizeCatalog();preloadSteamCaches();setNavCats("catalogo");updateCartUI();updateTrustStats();const urlTag=new URLSearchParams(window.location.search).get("filter");const tags=["all","accion","rpg","aventura","fps","deportes"];const startTag=urlTag&&tags.indexOf(urlTag)>=0?urlTag:"all";const chip=document.querySelector('[data-tag="'+startTag+'"]');if(chip){document.querySelectorAll(".fc").forEach(c=>c.classList.remove("active"));chip.classList.add("active");activeTag=startTag;}document.querySelectorAll(".fc").forEach(chip=>{if(!chip._bound){chip._bound=true;chip.addEventListener("click",function(){document.querySelectorAll(".fc").forEach(c=>c.classList.remove("active"));chip.classList.add("active");activeTag=chip.dataset.tag;applyFilters();});}});applyFilters();syncCatalogSticky();scrollToHash();window.addEventListener("resize",syncCatalogSticky,{passive:true});}
+function initCatalogPage(){normalizeCatalog();preloadSteamCaches();setNavCats("catalogo");updateCartUI();updateTrustStats();const urlTag=new URLSearchParams(window.location.search).get("filter");const tags=["all","nuevos","ofertas","accion","rpg","aventura","fps","deportes"];const startTag=urlTag&&tags.indexOf(urlTag)>=0?urlTag:"all";const chip=document.querySelector('[data-tag="'+startTag+'"]');if(chip){document.querySelectorAll(".fc").forEach(c=>c.classList.remove("active"));chip.classList.add("active");activeTag=startTag;}document.querySelectorAll(".fc").forEach(chip=>{if(!chip._bound){chip._bound=true;chip.addEventListener("click",function(){document.querySelectorAll(".fc").forEach(c=>c.classList.remove("active"));chip.classList.add("active");activeTag=chip.dataset.tag;applyFilters();});}});applyFilters();syncCatalogSticky();scrollToHash();window.addEventListener("resize",syncCatalogSticky,{passive:true});}
 function initPreguntasPage(){normalizeCatalog();preloadSteamCaches();setNavCats("preguntas");updateCartUI();updateTrustStats();}
