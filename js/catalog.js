@@ -1113,7 +1113,7 @@ const catalog = [
       {id:"v2",name:"Complete Edition - Cuenta Steam",deliveryType:"account",basePrice:53411,priceTransfer:37091,steamPriceArs:69412},
     ]
   },
-  { id:104,name:"EA SPORTS FC™ 27",icon:"game",steamId:"4080220",steamDetails:{description:"Te damos la bienvenida a The World's Game en EA SPORTS FC™ 27. Adéntrate en The Grounds, un espacio de juego donde las calles se encuentran con el estadio, y siente un mayor control en cada modo, ya que las innovaciones impulsadas por la comunidad ofrecen una jugabilidad más fiel al fútbol.",min:"Mínimo: SO: Windows 10/11 - 64-Bit (Latest Update). Procesador: AMD Ryzen 5 1600 or Intel Core i5 6600k Memoria: 8 GB DDR4 Dual Channel GB de RAM Gráficos: AMD RX 570 or Nvidia GTX 1050 Ti DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Compatibilidad con RV: N/A",rec:"Recomendado: SO: Windows 10/11 - 64-Bit (Latest Update). Procesador: AMD Ryzen 7 2700X or Intel Core i7 6700 Memoria: 12 GB Dual Channel GB de RAM Gráficos: AMD RX 5600 XT or Nvidia GTX 1660 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Compatibilidad con RV: N/A"},img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4080220/05d419a45653a1299ce46d13dbff4533fa076c1c/header.jpg?t=1784839278",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4080220/05d419a45653a1299ce46d13dbff4533fa076c1c/header.jpg?t=1784839278",
+  { id:104,name:"EA SPORTS FC™ 27",icon:"game",steamId:"4080220",steamDetails:{description:"Te damos la bienvenida a The World's Game en EA SPORTS FC™ 27. Adéntrate en The Grounds, un espacio de juego donde las calles se encuentran con el estadio, y siente un mayor control en cada modo, ya que las innovaciones impulsadas por la comunidad ofrecen una jugabilidad más fiel al fútbol.",min:"Mínimo: SO: Windows 10/11 - 64-Bit (Latest Update). Procesador: AMD Ryzen 5 1600 or Intel Core i5 6600k Memoria: 8 GB DDR4 Dual Channel GB de RAM Gráficos: AMD RX 570 or Nvidia GTX 1050 Ti DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Compatibilidad con RV: N/A",rec:"Recomendado: SO: Windows 10/11 - 64-Bit (Latest Update). Procesador: AMD Ryzen 7 2700X or Intel Core i7 6700 Memoria: 12 GB Dual Channel GB de RAM Gráficos: AMD RX 5600 XT or Nvidia GTX 1660 DirectX: Versión 12 Red: Conexión de banda ancha a Internet Almacenamiento: 100 GB de espacio disponible Compatibilidad con RV: N/A"},img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgKyi9uiUOlAx0rCqPA7l-2yqGgaYIZ67BsErPq-clxw",heroImg:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgKyi9uiUOlAx0rCqPA7l-2yqGgaYIZ67BsErPq-clxw",
     badge:"",badgeType:"",
     tags:["nuevos","masvendidos","ofertas","deportes"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
@@ -1150,7 +1150,7 @@ const catalog = [
       {id:"v2",name:"Premium Edition - Cuenta Steam",deliveryType:"account",basePrice:127400,priceTransfer:88472,steamPriceArs:110334},
     ]
   },
-  { id:107,name:"MARVEL Tokon: Fighting Souls",icon:"game",steamId:"3787240",img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3787240/943fda32c11b3e3f451458ffa95a4adca1f316a4/header.jpg?t=1784908718",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3787240/943fda32c11b3e3f451458ffa95a4adca1f316a4/header.jpg?t=1784908718",
+  { id:107,name:"MARVEL Tokon: Fighting Souls",icon:"game",steamId:"3787240",img:"https://cdn2.steamgriddb.com/thumb/fd9c8247a18afa6330888b6235f490a0.jpg",heroImg:"https://cdn2.steamgriddb.com/thumb/fd9c8247a18afa6330888b6235f490a0.jpg",
     badge:"",badgeType:"",
     tags:["nuevos","ofertas","accion"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
@@ -1174,7 +1174,7 @@ const catalog = [
       {id:"v2",name:"Deluxe Edition - CD Key LATAM (Steam)",deliveryType:"code",basePrice:56137,priceTransfer:38984,steamPriceArs:82764},
     ]
   },
-  { id:109,name:"SILENT HILL: Townfall",icon:"game",steamId:"1636440",img:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/0ed1cb4bc30631f95b92f7f13bb06c15d49b4afa/header.jpg?t=1784635358",heroImg:"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1636440/0ed1cb4bc30631f95b92f7f13bb06c15d49b4afa/header.jpg?t=1784635358",
+  { id:109,name:"SILENT HILL: Townfall",icon:"game",steamId:"1636440",img:"https://cdn2.steamgriddb.com/thumb/49e830db0b18619b94d3c6e899096dc7.jpg",heroImg:"https://cdn2.steamgriddb.com/thumb/49e830db0b18619b94d3c6e899096dc7.jpg",
     badge:"",badgeType:"",
     tags:["nuevos","ofertas","accion","aventura"],platform:"Steam - PC",
     description:"Juego original para PC. Elegi edicion, entrega (cuenta o CD Key) y metodo de pago. Entrega coordinada por WhatsApp.",
