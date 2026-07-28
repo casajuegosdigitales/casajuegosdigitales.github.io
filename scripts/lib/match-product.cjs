@@ -263,7 +263,7 @@ function tokenPresent(token, nameTokens, fullText) {
 }
 
 function requiredGameTokens(item) {
-  return tokenize(item.game || item.fullName || "");
+  return tokenize(primaryGameTitle(item.game || "") || item.game || item.fullName || "");
 }
 
 function variantAnchorTokens(item) {
@@ -293,7 +293,7 @@ function slugMatchesGame(item, link) {
   const href = String(link || "").toLowerCase();
   if (!href || !/driffle\.com|kinguin\.net|loaded\.com|eneba\.com/.test(href)) return true;
   if (/kinguin\.net\/(?:[a-z]{2}\/)?category\/0\/product(?:\?|$)/i.test(href)) return true;
-  const gameSlug = normalizeGameSlug(item.game || "");
+  const gameSlug = normalizeGameSlug(primaryGameTitle(item.game || "") || item.game || "");
   if (gameSlug && href.includes(gameSlug)) return true;
   const edition = editionFromVariant(item);
   if (edition) {
@@ -325,7 +325,7 @@ function gameNumberMatch(item, name, link) {
 
 function gameIdentityMatch(item, name, link) {
   const fullText = `${name || ""} ${link || ""}`;
-  const game = String(item.game || "").trim();
+  const game = primaryGameTitle(item.game || "") || String(item.game || "").trim();
   if (!game) return true;
   const gameNorm = normalizeForSearch(game).toLowerCase();
   const parts = gameNorm.split(/\s+/).filter(Boolean);
@@ -394,8 +394,16 @@ function listingMatchesItem(item, name, link) {
   return true;
 }
 
+function primaryGameTitle(game) {
+  const g = String(game || "").trim();
+  if (!g) return "";
+  const paren = g.indexOf("(");
+  if (paren > 0) return g.slice(0, paren).trim();
+  return g;
+}
+
 function gameTokens(item) {
-  const base = item.game || item.fullName || "";
+  const base = primaryGameTitle(item.game || "") || item.game || item.fullName || "";
   return tokenize(base);
 }
 
