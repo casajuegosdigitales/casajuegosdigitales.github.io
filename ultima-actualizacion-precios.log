@@ -1,8 +1,8 @@
 === Actualizacion precios multi-tienda ===
-Fecha: 2026-08-07T16:36:41.367Z
+Fecha: 2026-08-08T03:45:03.843Z
 Excel origen (solo Steam): GAMES LIST - AUTO.xlsx
-Compras actualizadas: 207 | Sin cambio: 79 | Recheck rapido: 0 | Sin link (reservado): 56 | Errores: 0
-Opciones visibles: 187 | Ocultas: 75
+Compras actualizadas: 203 | Sin cambio: 83 | Recheck rapido: 0 | Sin link (reservado): 56 | Errores: 0
+Opciones visibles: 142 | Ocultas: 120
 
 --- Pendientes (buscar de nuevo) ---
 A way out | Edicion estandar | CD Key
@@ -63,359 +63,360 @@ UNCHARTED™: Legacy of Thieves Collection | Edicion estandar | Cuenta
 WWE 2K26 | King of Kings Edition | CD Key
 
 --- Fetch tiendas ---
-007 First Light | Edicion estandar | CD Key | links | driffle | compra 70536 -> 70509 (2 cotiz.)
-007 First Light | Edicion estandar | Cuenta | links | driffle | compra 46924 -> 46912 (1 cotiz.)
-007 First Light | Edición Deluxe | CD Key | links | eneba | compra 82310 -> 82142 (2 cotiz.)
-007 First Light | Deluxe Edition | Cuenta | links | kinguin | compra 85171 -> 71765 (2 cotiz.)
+007 First Light | Edicion estandar | CD Key | links | driffle | compra 70509 -> 70726 (2 cotiz.)
+007 First Light | Edicion estandar | Cuenta | links | driffle | compra 46912 -> 47051 (2 cotiz.)
+007 First Light | Edición Deluxe | CD Key | links | eneba | compra 82142 -> 82320 (3 cotiz.)
+007 First Light | Deluxe Edition | Cuenta | links | kinguin | compra 71765 -> 71810 (2 cotiz.)
 A way out | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-A way out | Edicion estandar | Cuenta | links | driffle | compra 8426 -> 7772 (1 cotiz.)
-ARC Raiders | Edicion estandar | CD Key | links | driffle | compra 35134 -> 35121 (2 cotiz.)
+A way out | Edicion estandar | Cuenta | links | driffle | compra 7772 -> 8515 (1 cotiz.)
+ARC Raiders | Edicion estandar | CD Key | links | driffle | compra 35121 -> 35238 (3 cotiz.)
 ARC Raiders | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-ARC Raiders | Edición Deluxe | CD Key | links | driffle | compra 47679 -> 48968 (2 cotiz.)
-ARC Raiders | Deluxe Edition | Cuenta | links | kinguin | compra 0 -> 42123 (1 cotiz.)
-ARK: Survival Ascended | Edicion estandar | CD Key | links | driffle | compra 81241 -> 81216 (2 cotiz.)
-ARK: Survival Ascended | Edicion estandar | Cuenta | links | driffle | compra 13362 -> 13361 (1 cotiz.)
+ARC Raiders | Edición Deluxe | CD Key | links | driffle | compra 48968 -> 49109 (3 cotiz.)
+ARC Raiders | Deluxe Edition | Cuenta | links | ninguna | compra 42123 -> 0 (0 cotiz.)
+ARK: Survival Ascended | Edicion estandar | CD Key | links | driffle | compra 81216 -> 81456 (2 cotiz.)
+ARK: Survival Ascended | Edicion estandar | Cuenta | links | driffle | compra 13361 -> 13401 (1 cotiz.)
 Assassin's Creed Mirage | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Assassin's Creed Mirage | Edicion estandar | Cuenta | links | driffle | compra 43937 -> 43929 (1 cotiz.)
+Assassin's Creed Mirage | Edicion estandar | Cuenta | links | driffle | compra 43929 -> 44067 (1 cotiz.)
 Assassin's Creed Mirage | Edición Deluxe | CD Key | sin_links_excel | reservado (sin publicar)
 Assassin's Creed Mirage | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Assassin's Creed Mirage | Master Assassin Edition | CD Key | sin_links_excel | reservado (sin publicar)
 Assassin's Creed Mirage | Master Assassin Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Assassin's Creed Shadows | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-Assassin's Creed Shadows | Edicion estandar | Cuenta | links | driffle | compra 37146 -> 37131 (1 cotiz.)
+Assassin's Creed Shadows | Edicion estandar | Cuenta | links | driffle | compra 37131 -> 37248 (1 cotiz.)
 Assassin's Creed Shadows | Edición Deluxe | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 Assassin's Creed Shadows | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Assassin's Creed Shadows | Premium Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 Assassin's Creed Shadows | Premium Edition | Cuenta | sin_links_excel | reservado (sin publicar)
 Baldur's Gate 3 | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Baldur's Gate 3 | Edicion estandar | Cuenta | links | driffle | compra 20310 -> 20300 (1 cotiz.)
-Battlefield 6 | Edicion estandar | CD Key | links | driffle | compra 75126 -> 74889 (1 cotiz.)
-Battlefield 6 | Edicion estandar | Cuenta | links | driffle | compra 26378 -> 26360 (1 cotiz.)
-Battlefield 6 | Phantom Edition | CD Key | links | driffle | compra 117303 -> 117263 (1 cotiz.)
-Battlefield 6 | Phantom Edition | Cuenta | links | driffle | compra 73790 -> 73774 (1 cotiz.)
-Black Myth: Wukong | Edicion estandar | CD Key | links | eneba | compra 82278 -> 85612 (1 cotiz.)
-Black Myth: Wukong | Edicion estandar | Cuenta | links | driffle | compra 47930 -> 47916 (1 cotiz.)
+Baldur's Gate 3 | Edicion estandar | Cuenta | links | driffle | compra 20300 -> 20360 (1 cotiz.)
+Battlefield 6 | Edicion estandar | CD Key | links | driffle | compra 74889 -> 74858 (1 cotiz.)
+Battlefield 6 | Edicion estandar | Cuenta | links | driffle | compra 26360 -> 26440 (2 cotiz.)
+Battlefield 6 | Phantom Edition | CD Key | links | driffle | compra 117263 -> 117621 (1 cotiz.)
+Battlefield 6 | Phantom Edition | Cuenta | links | driffle | compra 73774 -> 73994 (1 cotiz.)
+Black Myth: Wukong | Edicion estandar | CD Key | links | loaded | compra 85612 -> 82305 (3 cotiz.)
+Black Myth: Wukong | Edicion estandar | Cuenta | links | driffle | compra 47916 -> 48057 (1 cotiz.)
 Black Myth: Wukong | Edición Deluxe | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 Black Myth: Wukong | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Borderlands 4 | Edicion estandar | CD Key | links | driffle | compra 39724 -> 39486 (4 cotiz.)
+Borderlands 4 | Edicion estandar | CD Key | links | driffle | compra 39486 -> 44396 (2 cotiz.)
 Borderlands 4 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Borderlands 4 | Edición Deluxe | CD Key | links | eneba | compra 61371 -> 63255 (3 cotiz.)
+Borderlands 4 | Edición Deluxe | CD Key | links | eneba | compra 63255 -> 61819 (2 cotiz.)
 Borderlands 4 | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Borderlands 4 | Edición Super Deluxe | CD Key | links | driffle | compra 92842 -> 92818 (3 cotiz.)
+Borderlands 4 | Edición Super Deluxe | CD Key | links | eneba | compra 92818 -> 86531 (2 cotiz.)
 Borderlands 4 | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Call of Duty: Black Ops 7 | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Call of Duty: Black Ops 7 | Edicion estandar | Cuenta | links | kinguin | compra 53275 -> 44039 (2 cotiz.)
+Call of Duty: Black Ops 7 | Edicion estandar | Cuenta | links | driffle | compra 44039 -> 52801 (1 cotiz.)
 Call of Duty: Black Ops 7 | Vault Edition | CD Key | sin_links_excel | reservado (sin publicar)
 Call of Duty: Black Ops 7 | Vault Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Call of Duty: Black Ops III | Zombies Chronicles Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Call of Duty: Black Ops III | Zombies Chronicles Edition | Cuenta | links | driffle | compra 31613 -> 31604 (1 cotiz.)
+Call of Duty: Black Ops III | Zombies Chronicles Edition | Cuenta | links | driffle | compra 31604 -> 31687 (1 cotiz.)
 Call of Duty: Black Ops III | Zombies Deluxe | CD Key | sin_links_excel | reservado (sin publicar)
 Call of Duty: Black Ops III | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Clair Obscur: Expedition 33 | Edicion estandar | CD Key | links | eneba | compra 40809 -> 40490 (2 cotiz.)
-Clair Obscur: Expedition 33 | Edicion estandar | Cuenta | links | driffle | compra 36077 -> 36063 (1 cotiz.)
-Clair Obscur: Expedition 33 | Edición Deluxe | CD Key | links | eneba | compra 50430 -> 49989 (2 cotiz.)
-Clair Obscur: Expedition 33 | Deluxe Edition | Cuenta | links | driffle | compra 69341 -> 69316 (1 cotiz.)
-Crimson Desert | Edicion estandar | CD Key | links | eneba | compra 54375 -> 54275 (2 cotiz.)
-Crimson Desert | Edicion estandar | Cuenta | links | driffle | compra 52489 -> 52469 (1 cotiz.)
-Crimson Desert | Edición Deluxe | CD Key | links | driffle | compra 60475 -> 60461 (2 cotiz.)
-Crimson Desert | Deluxe Edition | Cuenta | links | driffle | compra 63352 -> 63334 (1 cotiz.)
-Cuphead | Edicion estandar | CD Key | links | driffle | compra 21977 -> 21964 (2 cotiz.)
-Cuphead | Edicion estandar | Cuenta | links | driffle | compra 6288 -> 6060 (1 cotiz.)
-Cuphead | & The Delicious Last Course | CD Key | links | driffle | compra 26488 -> 26470 (2 cotiz.)
+Clair Obscur: Expedition 33 | Edicion estandar | CD Key | links | loaded | compra 40490 -> 35960 (3 cotiz.)
+Clair Obscur: Expedition 33 | Edicion estandar | Cuenta | links | driffle | compra 36063 -> 36180 (1 cotiz.)
+Clair Obscur: Expedition 33 | Edición Deluxe | CD Key | links | loaded | compra 49989 -> 49628 (4 cotiz.)
+Clair Obscur: Expedition 33 | Deluxe Edition | Cuenta | links | driffle | compra 69316 -> 69532 (1 cotiz.)
+Crimson Desert | Edicion estandar | CD Key | links | loaded | compra 54275 -> 48528 (4 cotiz.)
+Crimson Desert | Edicion estandar | Cuenta | links | driffle | compra 52469 -> 52629 (1 cotiz.)
+Crimson Desert | Edición Deluxe | CD Key | links | loaded | compra 60461 -> 48528 (3 cotiz.)
+Crimson Desert | Deluxe Edition | Cuenta | links | driffle | compra 63334 -> 63531 (1 cotiz.)
+Cuphead | Edicion estandar | CD Key | links | driffle | compra 21964 -> 22025 (2 cotiz.)
+Cuphead | Edicion estandar | Cuenta | links | driffle | compra 6060 -> 6300 (1 cotiz.)
+Cuphead | & The Delicious Last Course | CD Key | links | driffle | compra 26470 -> 26550 (2 cotiz.)
 Cuphead | & The Delicious Last Course | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Cyberpunk 2077 | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Cyberpunk 2077 | Edicion estandar | Cuenta | links | driffle | compra 13928 -> 13926 (2 cotiz.)
+Cyberpunk 2077 | Edicion estandar | Cuenta | links | driffle | compra 13926 -> 13966 (1 cotiz.)
 Cyberpunk 2077 | Ultimate Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Cyberpunk 2077 | Ultimate Edition | Cuenta | links | driffle | compra 29129 -> 28747 (1 cotiz.)
-DayZ | Edicion estandar | CD Key | links | eneba | compra 24225 -> 24084 (3 cotiz.)
-DayZ | Edicion estandar | Cuenta | links | driffle | compra 19068 -> 19060 (1 cotiz.)
-DayZ | Deluxe Edition | CD Key | links | driffle | compra 60946 -> 60696 (2 cotiz.)
-DayZ | Deluxe Edition | Cuenta | links | ninguna | compra 27919 -> 0 (0 cotiz.)
-DayZ | Cool Edition | CD Key | links | eneba | compra 17292 -> 17270 (2 cotiz.)
-DayZ | Cool Edition | Cuenta | links | kinguin | compra 51420 -> 51543 (1 cotiz.)
-Dead by Daylight | Edicion estandar | CD Key | links | kinguin | compra 0 -> 8305 (1 cotiz.)
-Dead by Daylight | Edicion estandar | Cuenta | links | driffle | compra 6665 -> 6657 (1 cotiz.)
+Cyberpunk 2077 | Ultimate Edition | Cuenta | links | driffle | compra 28747 -> 28482 (1 cotiz.)
+DayZ | Edicion estandar | CD Key | links | eneba | compra 24084 -> 24083 (2 cotiz.)
+DayZ | Edicion estandar | Cuenta | links | driffle | compra 19060 -> 19119 (2 cotiz.)
+DayZ | Deluxe Edition | CD Key | links | loaded | compra 60696 -> 59211 (3 cotiz.)
+DayZ | Deluxe Edition | Cuenta | links | kinguin | compra 0 -> 28011 (1 cotiz.)
+DayZ | Cool Edition | CD Key | links | eneba | compra 17270 -> 108509 (2 cotiz.)
+DayZ | Cool Edition | Cuenta | links | ninguna | compra 51543 -> 0 (0 cotiz.)
+Dead by Daylight | Edicion estandar | CD Key | links | ninguna | compra 8305 -> 0 (0 cotiz.)
+Dead by Daylight | Edicion estandar | Cuenta | links | driffle | compra 6657 -> 6677 (1 cotiz.)
 Dead by Daylight | Gold Edition | CD Key | sin_links_excel | reservado (sin publicar)
 Dead by Daylight | Gold Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Death Stranding 2: On the Beach | Edicion estandar | CD Key | links | eneba | compra 87513 -> 87355 (2 cotiz.)
-Death Stranding 2: On the Beach | Edicion estandar | Cuenta | links | driffle | compra 47443 -> 47414 (1 cotiz.)
+Death Stranding 2: On the Beach | Edicion estandar | CD Key | links | eneba | compra 87355 -> 87536 (2 cotiz.)
+Death Stranding 2: On the Beach | Edicion estandar | Cuenta | links | driffle | compra 47414 -> 47570 (1 cotiz.)
 Death Stranding 2: On the Beach | Deluxe Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 Death Stranding 2: On the Beach | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Diablo IV | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Diablo IV | Edicion estandar | Cuenta | links | driffle | compra 37225 -> 37209 (2 cotiz.)
+Diablo IV | Edicion estandar | Cuenta | links | driffle | compra 37209 -> 37327 (1 cotiz.)
 Diablo IV | Age of Hatred Collection | CD Key | sin_links_excel | reservado (sin publicar)
-Diablo IV | Age of Hatred Collection | Cuenta | links | driffle | compra 85438 -> 85408 (1 cotiz.)
+Diablo IV | Age of Hatred Collection | Cuenta | links | driffle | compra 85408 -> 85667 (1 cotiz.)
 DRAGON BALL: Sparking! ZERO | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-DRAGON BALL: Sparking! ZERO | Edicion estandar | Cuenta | links | driffle | compra 47694 -> 47681 (1 cotiz.)
-DRAGON BALL: Sparking! ZERO | Deluxe Edition | CD Key | links | eneba | compra 76148 -> 75988 (1 cotiz.)
+DRAGON BALL: Sparking! ZERO | Edicion estandar | Cuenta | links | driffle | compra 47681 -> 47821 (2 cotiz.)
+DRAGON BALL: Sparking! ZERO | Deluxe Edition | CD Key | links | ninguna | compra 75988 -> 0 (0 cotiz.)
 DRAGON BALL: Sparking! ZERO | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-DRAGON BALL: Sparking! ZERO | Ultimate Edition | CD Key | links | eneba | compra 83206 -> 83037 (1 cotiz.)
+DRAGON BALL: Sparking! ZERO | Ultimate Edition | CD Key | links | eneba | compra 83037 -> 83232 (1 cotiz.)
 DRAGON BALL: Sparking! ZERO | Ultimate Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Detroit: Become Human | Edicion estandar | CD Key | links | eneba | compra 8049 -> 8038 (2 cotiz.)
-Detroit: Become Human | Edicion estandar | Cuenta | links | kinguin | compra 8332 -> 5840 (2 cotiz.)
+Detroit: Become Human | Edicion estandar | CD Key | links | eneba | compra 8038 -> 8059 (3 cotiz.)
+Detroit: Become Human | Edicion estandar | Cuenta | links | driffle | compra 5840 -> 10384 (1 cotiz.)
 Dispatch | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Dispatch | Edicion estandar | Cuenta | links | driffle | compra 11020 -> 11006 (1 cotiz.)
+Dispatch | Edicion estandar | Cuenta | links | driffle | compra 11006 -> 11044 (2 cotiz.)
 Dispatch | Deluxe Edition | CD Key | sin_links_excel | reservado (sin publicar)
 Dispatch | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Dying Light: The Beast | Edicion estandar | CD Key | links | driffle | compra 59249 -> 57368 (3 cotiz.)
-Dying Light: The Beast | Edicion estandar | Cuenta | links | driffle | compra 33845 -> 33818 (1 cotiz.)
-Dying Light: The Beast | Deluxe Edition | CD Key | links | driffle | compra 79166 -> 78406 (2 cotiz.)
-Dying Light: The Beast | Deluxe Edition | Cuenta | links | driffle | compra 54816 -> 54683 (1 cotiz.)
-Dynasty Warriors: Origins | Edicion estandar | CD Key | links | driffle | compra 59767 -> 59754 (2 cotiz.)
+Dying Light: The Beast | Edicion estandar | CD Key | links | loaded | compra 57368 -> 59211 (4 cotiz.)
+Dying Light: The Beast | Edicion estandar | Cuenta | links | driffle | compra 33818 -> 33886 (1 cotiz.)
+Dying Light: The Beast | Deluxe Edition | CD Key | links | driffle | compra 78406 -> 77874 (2 cotiz.)
+Dying Light: The Beast | Deluxe Edition | Cuenta | links | driffle | compra 54683 -> 54844 (1 cotiz.)
+Dynasty Warriors: Origins | Edicion estandar | CD Key | links | driffle | compra 59754 -> 59934 (3 cotiz.)
 Dynasty Warriors: Origins | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Dynasty Warriors: Origins | Deluxe Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 Dynasty Warriors: Origins | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 EA SPORTS™ College Football 27 | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-EA SPORTS™ College Football 27 | Edicion estandar | Cuenta | links | ninguna | compra 70048 -> 0 (0 cotiz.)
+EA SPORTS™ College Football 27 | Edicion estandar | Cuenta | links | kinguin | compra 0 -> 70271 (1 cotiz.)
 EA SPORTS™ College Football 27 | Deluxe Edition | CD Key | sin_links_excel | reservado (sin publicar)
-EA SPORTS™ College Football 27 | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+EA SPORTS™ College Football 27 | Deluxe Edition | Cuenta | links | kinguin | compra 0 -> 73727 (1 cotiz.)
 EA SPORTS FC 26 | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-EA SPORTS FC 26 | Edicion estandar | Cuenta | links | kinguin | compra 6068 -> 5950 (2 cotiz.)
+EA SPORTS FC 26 | Edicion estandar | Cuenta | links | driffle | compra 5950 -> 6520 (1 cotiz.)
 EA SPORTS FC 26 | The World's Game Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-EA SPORTS FC 26 | The World's Game Edition | Cuenta | links | driffle | compra 14211 -> 14209 (1 cotiz.)
+EA SPORTS FC 26 | The World's Game Edition | Cuenta | links | driffle | compra 14209 -> 14265 (2 cotiz.)
 EA SPORTS FC™ 27 | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-EA SPORTS FC™ 27 | Edicion estandar | Cuenta | links | driffle | compra 48292 -> 48278 (1 cotiz.)
+EA SPORTS FC™ 27 | Edicion estandar | Cuenta | links | driffle | compra 48278 -> 48418 (1 cotiz.)
 EA SPORTS FC™ 27 | Ultimate Edition | CD Key | sin_links_excel | reservado (sin publicar)
-EA SPORTS FC™ 27 | Ultimate Edition | Cuenta | links | ninguna | compra 85564 -> 0 (0 cotiz.)
+EA SPORTS FC™ 27 | Ultimate Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 EA SPORTS FC™ 27 | Ultimate Plus Edition | CD Key | sin_links_excel | reservado (sin publicar)
-EA SPORTS FC™ 27 | Ultimate Plus Edition | Cuenta | links | kinguin | compra 0 -> 127924 (1 cotiz.)
-ELDEN RING | Edicion estandar | CD Key | links | eneba | compra 90123 -> 89930 (1 cotiz.)
-ELDEN RING | Edicion estandar | Cuenta | links | kinguin | compra 63870 -> 52956 (2 cotiz.)
-ELDEN RING | Shadow of the Erdtree Edition | CD Key | links | eneba | compra 116391 -> 121000 (1 cotiz.)
-ELDEN RING | Shadow of the Erdtree Edition | Cuenta | links | kinguin | compra 97621 -> 86350 (2 cotiz.)
-ELDEN RING | Shadow of the Erdtree Deluxe Edition | CD Key | links | eneba | compra 143571 -> 149244 (1 cotiz.)
-ELDEN RING | Deluxe Edition | Cuenta | links | kinguin | compra 0 -> 117216 (1 cotiz.)
-ELDEN RING NIGHTREIGN | Edicion estandar | CD Key | links | eneba | compra 45085 -> 45075 (2 cotiz.)
-ELDEN RING NIGHTREIGN | Edicion estandar | Cuenta | links | driffle | compra 33436 -> 33425 (2 cotiz.)
-ELDEN RING NIGHTREIGN | Deluxe Edition | CD Key | links | eneba | compra 62534 -> 62408 (3 cotiz.)
-ELDEN RING NIGHTREIGN | Deluxe Edition | Cuenta | links | kinguin | compra 0 -> 54636 (1 cotiz.)
-F1 25 | 2026 Season Edition | CD Key | links | kinguin | compra 46185 -> 46299 (1 cotiz.)
-F1 25 | 2026 Season Edition | Cuenta | links | driffle | compra 47679 -> 47650 (1 cotiz.)
-Fallout 76 | Edicion estandar | CD Key | links | eneba | compra 13283 -> 13266 (3 cotiz.)
-Fallout 76 | Edicion estandar | Cuenta | links | kinguin | compra 6382 -> 5652 (2 cotiz.)
-FINAL FANTASY VII REMAKE INTERGRADE | Edicion estandar | CD Key | links | eneba | compra 26174 -> 26062 (2 cotiz.)
+EA SPORTS FC™ 27 | Ultimate Plus Edition | Cuenta | links | kinguin | compra 127924 -> 128099 (1 cotiz.)
+ELDEN RING | Edicion estandar | CD Key | links | eneba | compra 89930 -> 90144 (1 cotiz.)
+ELDEN RING | Edicion estandar | Cuenta | links | kinguin | compra 52956 -> 51120 (2 cotiz.)
+ELDEN RING | Shadow of the Erdtree Edition | CD Key | links | eneba | compra 121000 -> 121281 (1 cotiz.)
+ELDEN RING | Shadow of the Erdtree Edition | Cuenta | links | driffle | compra 86350 -> 97308 (1 cotiz.)
+ELDEN RING | Shadow of the Erdtree Deluxe Edition | CD Key | links | eneba | compra 149244 -> 149591 (1 cotiz.)
+ELDEN RING | Deluxe Edition | Cuenta | links | kinguin | compra 117216 -> 114840 (1 cotiz.)
+ELDEN RING NIGHTREIGN | Edicion estandar | CD Key | links | eneba | compra 45075 -> 45056 (2 cotiz.)
+ELDEN RING NIGHTREIGN | Edicion estandar | Cuenta | links | driffle | compra 33425 -> 33525 (1 cotiz.)
+ELDEN RING NIGHTREIGN | Deluxe Edition | CD Key | links | eneba | compra 62408 -> 62557 (3 cotiz.)
+ELDEN RING NIGHTREIGN | Deluxe Edition | Cuenta | links | ninguna | compra 54636 -> 0 (0 cotiz.)
+F1 25 | 2026 Season Edition | CD Key | links | kinguin | compra 46299 -> 46329 (1 cotiz.)
+F1 25 | 2026 Season Edition | Cuenta | links | kinguin | compra 47650 -> 45166 (2 cotiz.)
+Fallout 76 | Edicion estandar | CD Key | links | eneba | compra 13266 -> 13291 (3 cotiz.)
+Fallout 76 | Edicion estandar | Cuenta | links | driffle | compra 5652 -> 6394 (1 cotiz.)
+FINAL FANTASY VII REMAKE INTERGRADE | Edicion estandar | CD Key | links | driffle | compra 26062 -> 26880 (1 cotiz.)
 FINAL FANTASY VII REMAKE INTERGRADE | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Forza Horizon 5 | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-Forza Horizon 5 | Edicion estandar | Cuenta | links | driffle | compra 20012 -> 20002 (2 cotiz.)
+Forza Horizon 5 | Edicion estandar | Cuenta | links | driffle | compra 20002 -> 20062 (2 cotiz.)
 Forza Horizon 5 | Deluxe Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Forza Horizon 5 | Deluxe Edition | Cuenta | links | kinguin | compra 37272 -> 30301 (2 cotiz.)
+Forza Horizon 5 | Deluxe Edition | Cuenta | links | kinguin | compra 30301 -> 30320 (2 cotiz.)
 Forza Horizon 5 | Premium Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-Forza Horizon 5 | Premium Edition | Cuenta | links | kinguin | compra 42145 -> 33755 (2 cotiz.)
+Forza Horizon 5 | Premium Edition | Cuenta | links | driffle | compra 33755 -> 42260 (1 cotiz.)
 Forza Horizon 6 | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Forza Horizon 6 | Edicion estandar | Cuenta | links | driffle | compra 53872 -> 53851 (1 cotiz.)
+Forza Horizon 6 | Edicion estandar | Cuenta | links | driffle | compra 53851 -> 54011 (2 cotiz.)
 Forza Horizon 6 | Deluxe Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Forza Horizon 6 | Deluxe Edition | Cuenta | links | driffle | compra 72516 -> 72503 (2 cotiz.)
+Forza Horizon 6 | Deluxe Edition | Cuenta | links | driffle | compra 72503 -> 72722 (1 cotiz.)
 Forza Horizon 6 | Premium Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Forza Horizon 6 | Premium Edition | Cuenta | links | driffle | compra 90720 -> 90699 (1 cotiz.)
+Forza Horizon 6 | Premium Edition | Cuenta | links | driffle | compra 90699 -> 90977 (2 cotiz.)
 Gears of War: E-Day | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Gears of War: E-Day | Edicion estandar | Cuenta | links | driffle | compra 84385 -> 89396 (1 cotiz.)
+Gears of War: E-Day | Edicion estandar | Cuenta | links | driffle | compra 89396 -> 89673 (1 cotiz.)
 Gears of War: E-Day | Premium Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Gears of War: E-Day | Premium Edition | Cuenta | links | driffle | compra 126892 -> 126856 (1 cotiz.)
-Ghost of Tsushima | Director's Cut | CD Key | links | driffle | compra 37571 -> 37554 (3 cotiz.)
+Gears of War: E-Day | Premium Edition | Cuenta | links | kinguin | compra 126856 -> 120119 (2 cotiz.)
+Ghost of Tsushima | Director's Cut | CD Key | links | driffle | compra 37554 -> 37673 (4 cotiz.)
 Ghost of Tsushima | Director's Cut | Cuenta | sin_links_excel | reservado (sin publicar)
-God of War | Edicion estandar | CD Key | links | eneba | compra 22385 -> 22137 (2 cotiz.)
-God of War | Edicion estandar | Cuenta | links | driffle | compra 29082 -> 29076 (1 cotiz.)
-God Of War Ragnarök | Edicion estandar | CD Key | links | eneba | compra 42680 -> 43144 (2 cotiz.)
-God Of War Ragnarök | Edicion estandar | Cuenta | links | driffle | compra 64955 -> 64935 (1 cotiz.)
-God Of War Ragnarök | Deluxe Edition | CD Key | links | driffle | compra 64358 -> 60476 (1 cotiz.)
+God of War | Edicion estandar | CD Key | links | eneba | compra 22137 -> 22340 (2 cotiz.)
+God of War | Edicion estandar | Cuenta | links | driffle | compra 29076 -> 29173 (1 cotiz.)
+God Of War Ragnarök | Edicion estandar | CD Key | links | driffle | compra 43144 -> 43312 (2 cotiz.)
+God Of War Ragnarök | Edicion estandar | Cuenta | links | driffle | compra 64935 -> 64678 (1 cotiz.)
+God Of War Ragnarök | Deluxe Edition | CD Key | links | driffle | compra 60476 -> 60656 (1 cotiz.)
 God Of War Ragnarök | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Gothic 1 Remake | Edicion estandar | CD Key | links | eneba | compra 37508 -> 37178 (3 cotiz.)
-Gothic 1 Remake | Edicion estandar | Cuenta | links | driffle | compra 37209 -> 37193 (1 cotiz.)
+Gothic 1 Remake | Edicion estandar | CD Key | links | eneba | compra 37178 -> 37154 (3 cotiz.)
+Gothic 1 Remake | Edicion estandar | Cuenta | links | driffle | compra 37193 -> 37311 (1 cotiz.)
 Grand Theft Auto V | Enhanced | CD Key | sin_links_excel | reservado (sin publicar)
-Grand Theft Auto V | Enhanced | Cuenta | links | kinguin | compra 15799 -> 15700 (2 cotiz.)
+Grand Theft Auto V | Enhanced | Cuenta | links | kinguin | compra 15700 -> 15679 (2 cotiz.)
 Halo: Campaign Evolved | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
-Halo: Campaign Evolved | Edicion estandar | Cuenta | links | driffle | compra 53652 -> 53458 (1 cotiz.)
+Halo: Campaign Evolved | Edicion estandar | Cuenta | links | driffle | compra 53458 -> 53618 (1 cotiz.)
 Halo: Campaign Evolved | Premium Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Halo: Campaign Evolved | Premium Edition | Cuenta | links | kinguin | compra 78679 -> 78971 (2 cotiz.)
-HELLDIVERS 2 | Edicion estandar | CD Key | links | driffle | compra 37099 -> 37083 (3 cotiz.)
-HELLDIVERS 2 | Edicion estandar | Cuenta | links | kinguin | compra 35464 -> 33331 (2 cotiz.)
-HELLDIVERS 2 | Super Citizen Edition | CD Key | links | driffle | compra 56278 -> 56253 (3 cotiz.)
+Halo: Campaign Evolved | Premium Edition | Cuenta | links | driffle | compra 78971 -> 88447 (1 cotiz.)
+HELLDIVERS 2 | Edicion estandar | CD Key | links | driffle | compra 37083 -> 37201 (4 cotiz.)
+HELLDIVERS 2 | Edicion estandar | Cuenta | links | driffle | compra 33331 -> 32221 (1 cotiz.)
+HELLDIVERS 2 | Super Citizen Edition | CD Key | links | driffle | compra 56253 -> 56430 (3 cotiz.)
 HELLDIVERS 2 | Super Citizen Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 HITMAN World of Assassination | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-HITMAN World of Assassination | Edicion estandar | Cuenta | links | driffle | compra 12214 -> 12199 (1 cotiz.)
+HITMAN World of Assassination | Edicion estandar | Cuenta | links | driffle | compra 12199 -> 12238 (1 cotiz.)
 HITMAN World of Assassination | Deluxe Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-HITMAN World of Assassination | Deluxe Edition | Cuenta | links | driffle | compra 41139 -> 41008 (1 cotiz.)
-Hogwarts Legacy | Edicion estandar | CD Key | links | eneba | compra 7813 -> 7803 (3 cotiz.)
-Hogwarts Legacy | Edicion estandar | Cuenta | links | driffle | compra 10375 -> 10378 (1 cotiz.)
-Hogwarts Legacy | Deluxe Edition | CD Key | links | eneba | compra 11051 -> 11037 (3 cotiz.)
-Hogwarts Legacy | Deluxe Edition | Cuenta | links | driffle | compra 9699 -> 10205 (1 cotiz.)
-Invincible VS | Edicion estandar | CD Key | links | loaded | compra 0 -> 67494 (1 cotiz.)
-Invincible VS | Edicion estandar | Cuenta | links | driffle | compra 22118 -> 22106 (1 cotiz.)
-Invincible VS | Deluxe Edition | CD Key | links | loaded | compra 0 -> 90730 (1 cotiz.)
-Invincible VS | Deluxe Edition | Cuenta | links | driffle | compra 58290 -> 57807 (1 cotiz.)
-It takes two | Edicion estandar | CD Key | links | driffle | compra 68052 -> 68028 (2 cotiz.)
-It takes two | Edicion estandar | Cuenta | links | driffle | sin cambio | 11806 (1 cotiz.)
-LEGO Batman: Legacy of the Dark Knight | Edicion estandar | CD Key | links | loaded | compra 71180 -> 59173 (3 cotiz.)
-LEGO Batman: Legacy of the Dark Knight | Edicion estandar | Cuenta | links | kinguin | compra 50980 -> 51103 (1 cotiz.)
-LEGO Batman: Legacy of the Dark Knight | Deluxe Edition | CD Key | links | loaded | compra 87906 -> 78170 (3 cotiz.)
-LEGO Batman: Legacy of the Dark Knight | Deluxe Edition | Cuenta | links | ninguna | compra 79575 -> 0 (0 cotiz.)
+HITMAN World of Assassination | Deluxe Edition | Cuenta | links | driffle | compra 41008 -> 33635 (1 cotiz.)
+Hogwarts Legacy | Edicion estandar | CD Key | links | eneba | compra 7803 -> 7824 (3 cotiz.)
+Hogwarts Legacy | Edicion estandar | Cuenta | links | driffle | compra 10378 -> 10400 (1 cotiz.)
+Hogwarts Legacy | Deluxe Edition | CD Key | links | eneba | compra 11037 -> 12819 (3 cotiz.)
+Hogwarts Legacy | Deluxe Edition | Cuenta | links | driffle | compra 10205 -> 10243 (1 cotiz.)
+Invincible VS | Edicion estandar | CD Key | links | loaded | compra 67494 -> 67537 (1 cotiz.)
+Invincible VS | Edicion estandar | Cuenta | links | driffle | compra 22106 -> 22183 (1 cotiz.)
+Invincible VS | Deluxe Edition | CD Key | links | loaded | compra 90730 -> 90788 (1 cotiz.)
+Invincible VS | Deluxe Edition | Cuenta | links | driffle | compra 57807 -> 89673 (1 cotiz.)
+It takes two | Edicion estandar | CD Key | links | driffle | compra 68028 -> 68229 (2 cotiz.)
+It takes two | Edicion estandar | Cuenta | links | driffle | compra 11806 -> 11720 (1 cotiz.)
+LEGO Batman: Legacy of the Dark Knight | Edicion estandar | CD Key | links | loaded | compra 59173 -> 59211 (3 cotiz.)
+LEGO Batman: Legacy of the Dark Knight | Edicion estandar | Cuenta | links | ninguna | compra 51103 -> 0 (0 cotiz.)
+LEGO Batman: Legacy of the Dark Knight | Deluxe Edition | CD Key | links | loaded | compra 78170 -> 78220 (3 cotiz.)
+LEGO Batman: Legacy of the Dark Knight | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 MARVEL Tokon: Fighting Souls | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
 MARVEL Tokon: Fighting Souls | Edicion estandar | Cuenta | sin_links_excel | reservado (sin publicar)
-MARVEL Tokon: Fighting Souls | Deluxe Edition | CD Key | links | kinguin | compra 0 -> 144393 (1 cotiz.)
+MARVEL Tokon: Fighting Souls | Deluxe Edition | CD Key | links | ninguna | compra 144393 -> 0 (0 cotiz.)
 MARVEL Tokon: Fighting Souls | Deluxe Edition | Cuenta | sin_links_excel | reservado (sin publicar)
-MARVEL Tokon: Fighting Souls | Ultimate Edition | CD Key | links | kinguin | compra 0 -> 152667 (1 cotiz.)
+MARVEL Tokon: Fighting Souls | Ultimate Edition | CD Key | links | ninguna | compra 152667 -> 0 (0 cotiz.)
 MARVEL Tokon: Fighting Souls | Ultimate Edition | Cuenta | sin_links_excel | reservado (sin publicar)
-Marvel vs. Capcom: Infinite | Edicion estandar | CD Key | links | eneba | compra 7577 -> 6531 (2 cotiz.)
+Marvel vs. Capcom: Infinite | Edicion estandar | CD Key | links | eneba | compra 6531 -> 6473 (2 cotiz.)
 Marvel vs. Capcom: Infinite | Edicion estandar | Cuenta | sin_links_excel | reservado (sin publicar)
-Marvel vs. Capcom: Infinite | Deluxe Edition | CD Key | links | eneba | compra 11869 -> 11854 (3 cotiz.)
+Marvel vs. Capcom: Infinite | Deluxe Edition | CD Key | links | eneba | compra 11854 -> 11877 (3 cotiz.)
 Marvel vs. Capcom: Infinite | Deluxe Edition | Cuenta | sin_links_excel | reservado (sin publicar)
-Marvel's Spider-Man 2 | Edicion estandar | CD Key | links | eneba | compra 46453 -> 45247 (2 cotiz.)
-Marvel's Spider-Man 2 | Edicion estandar | Cuenta | links | driffle | compra 51609 -> 51998 (1 cotiz.)
-Marvel's Spider-Man 2 | Deluxe Edition | CD Key | links | driffle | compra 68649 -> 68625 (1 cotiz.)
+Marvel's Spider-Man 2 | Edicion estandar | CD Key | links | eneba | compra 45247 -> 49361 (2 cotiz.)
+Marvel's Spider-Man 2 | Edicion estandar | Cuenta | links | driffle | compra 51998 -> 69831 (1 cotiz.)
+Marvel's Spider-Man 2 | Deluxe Edition | CD Key | links | driffle | compra 68625 -> 68841 (1 cotiz.)
 Marvel's Spider-Man 2 | Deluxe Edition | Cuenta | sin_links_excel | reservado (sin publicar)
-Marvel's Spider-Man Remastered | Edicion estandar | CD Key | links | driffle | compra 26079 -> 26078 (2 cotiz.)
+Marvel's Spider-Man Remastered | Edicion estandar | CD Key | links | driffle | compra 26078 -> 26157 (2 cotiz.)
 Marvel's Spider-Man Remastered | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Marvel's Spider-Man: Miles Morales | Edicion estandar | CD Key | links | eneba | compra 24130 -> 25371 (2 cotiz.)
+Marvel's Spider-Man: Miles Morales | Edicion estandar | CD Key | links | eneba | compra 25371 -> 23942 (2 cotiz.)
 Marvel's Spider-Man: Miles Morales | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Microsoft Flight Simulator 2024 | Edicion estandar | CD Key | links | loaded | compra 0 -> 100464 (1 cotiz.)
-Microsoft Flight Simulator 2024 | Edicion estandar | Cuenta | links | driffle | compra 98313 -> 87826 (2 cotiz.)
-Microsoft Flight Simulator 2024 | Deluxe Edition | CD Key | links | loaded | compra 0 -> 144424 (1 cotiz.)
+Microsoft Flight Simulator 2024 | Edicion estandar | CD Key | links | loaded | compra 100464 -> 100528 (1 cotiz.)
+Microsoft Flight Simulator 2024 | Edicion estandar | Cuenta | links | driffle | compra 87826 -> 99020 (1 cotiz.)
+Microsoft Flight Simulator 2024 | Deluxe Edition | CD Key | links | loaded | compra 144424 -> 144516 (1 cotiz.)
 Microsoft Flight Simulator 2024 | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Microsoft Flight Simulator 2024 | Premium Deluxe | CD Key | links | loaded | compra 0 -> 188384 (1 cotiz.)
+Microsoft Flight Simulator 2024 | Premium Deluxe | CD Key | links | loaded | compra 188384 -> 188504 (1 cotiz.)
 Microsoft Flight Simulator 2024 | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Microsoft Flight Simulator 2024 | Aviator Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
+Microsoft Flight Simulator 2024 | Aviator Edition | CD Key | links | loaded | compra 0 -> 290619 (1 cotiz.)
 Microsoft Flight Simulator 2024 | Aviator Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Monster Hunter Wilds | Edicion estandar | CD Key | links | eneba | compra 31613 -> 31557 (1 cotiz.)
-Monster Hunter Wilds | Edicion estandar | Cuenta | links | driffle | compra 35826 -> 35812 (1 cotiz.)
-Monster Hunter Wilds | Deluxe Edition | CD Key | links | eneba | compra 41155 -> 41071 (1 cotiz.)
+Monster Hunter Wilds | Edicion estandar | CD Key | links | eneba | compra 31557 -> 30839 (2 cotiz.)
+Monster Hunter Wilds | Edicion estandar | Cuenta | links | driffle | compra 35812 -> 35929 (1 cotiz.)
+Monster Hunter Wilds | Deluxe Edition | CD Key | links | eneba | compra 41071 -> 44554 (1 cotiz.)
 Monster Hunter Wilds | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Monster Hunter Wilds | Premium Deluxe | CD Key | links | eneba | compra 66134 -> 66003 (1 cotiz.)
+Monster Hunter Wilds | Premium Deluxe | CD Key | links | eneba | compra 66003 -> 66155 (1 cotiz.)
 Monster Hunter Wilds | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Mortal Kombat 1 | Edicion estandar | CD Key | links | driffle | compra 14289 -> 14287 (2 cotiz.)
+Mortal Kombat 1 | Edicion estandar | CD Key | links | driffle | compra 14287 -> 14328 (2 cotiz.)
 Mortal Kombat 1 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Mortal Kombat 1 | Definitive Edition | CD Key | links | eneba | compra 21552 -> 21383 (2 cotiz.)
+Mortal Kombat 1 | Definitive Edition | CD Key | links | eneba | compra 21383 -> 21350 (3 cotiz.)
 Mortal Kombat 1 | Definitive Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-NBA 2K26 | Edicion estandar | CD Key | links | driffle | compra 13708 -> 14334 (2 cotiz.)
-NBA 2K26 | Edicion estandar | Cuenta | links | driffle | compra 10627 -> 10629 (1 cotiz.)
-NBA 2K26 | Slam Edition | CD Key | links | driffle | compra 22621 -> 22451 (2 cotiz.)
-NBA 2K26 | Slam Edition | Cuenta | links | driffle | compra 82326 -> 82299 (1 cotiz.)
-NBA 2K26 | Superstar Edition | CD Key | links | driffle | compra 26693 -> 25936 (2 cotiz.)
+NBA 2K26 | Edicion estandar | CD Key | links | loaded | compra 14334 -> 13652 (3 cotiz.)
+NBA 2K26 | Edicion estandar | Cuenta | links | driffle | compra 10629 -> 10667 (1 cotiz.)
+NBA 2K26 | Slam Edition | CD Key | links | loaded | compra 22451 -> 22135 (3 cotiz.)
+NBA 2K26 | Slam Edition | Cuenta | links | driffle | compra 82299 -> 82965 (1 cotiz.)
+NBA 2K26 | Superstar Edition | CD Key | links | driffle | compra 25936 -> 26016 (3 cotiz.)
 NBA 2K26 | Superstar Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-NieR: Automata | (Game of the YoRHa Edition | CD Key | links | eneba | compra 18440 -> 18181 (2 cotiz.)
-NieR: Automata | (Game of the YoRHa Edition | Cuenta | links | driffle | compra 12607 -> 12011 (1 cotiz.)
+NieR: Automata | (Game of the YoRHa Edition | CD Key | links | eneba | compra 18181 -> 18114 (3 cotiz.)
+NieR: Automata | (Game of the YoRHa Edition | Cuenta | links | driffle | compra 12011 -> 10604 (1 cotiz.)
 Path of Exile 2 | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-Path of Exile 2 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Path of Exile 2 | Edicion estandar | Cuenta | links | kinguin | compra 0 -> 21428 (1 cotiz.)
 Path of Exile 2 | Lord of Ogham Supporter Pack | CD Key | sin_links_excel | reservado (sin publicar)
-Path of Exile 2 | Lord of Ogham Supporter Pack | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Path of Exile 2 | Lord of Ogham Supporter Pack | Cuenta | links | kinguin | compra 0 -> 40925 (1 cotiz.)
 Path of Exile 2 | King of the Faridun Supporter Pack | CD Key | sin_links_excel | reservado (sin publicar)
 Path of Exile 2 | King of the Faridun Supporter Pack | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Persona 3 Reload | Edicion estandar | CD Key | links | loaded | compra 37162 -> 26360 (2 cotiz.)
+Persona 3 Reload | Edicion estandar | CD Key | links | loaded | compra 26360 -> 26377 (3 cotiz.)
 Persona 3 Reload | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Persona 3 Reload | Deluxe Edition | CD Key | links | driffle | compra 46122 -> 46095 (1 cotiz.)
-Persona 3 Reload | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Persona 3 Reload | Deluxe Edition | CD Key | links | driffle | compra 46095 -> 46235 (1 cotiz.)
+Persona 3 Reload | Deluxe Edition | Cuenta | links | kinguin | compra 0 -> 87206 (1 cotiz.)
 Persona 3 Reload | Premium Deluxe | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-Persona 3 Reload | Premium Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-PRAGMATA | Edicion estandar | CD Key | links | eneba | compra 63037 -> 62941 (2 cotiz.)
+Persona 3 Reload | Premium Edition | Cuenta | links | kinguin | compra 0 -> 111525 (1 cotiz.)
+PRAGMATA | Edicion estandar | CD Key | links | eneba | compra 62941 -> 63076 (4 cotiz.)
 PRAGMATA | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-PRAGMATA | Deluxe Edition | CD Key | links | eneba | compra 74025 -> 74716 (2 cotiz.)
-PRAGMATA | Deluxe Edition | Cuenta | links | ninguna | compra 85061 -> 0 (0 cotiz.)
-Ready Or Not | Edicion estandar | CD Key | links | eneba | compra 17811 -> 17788 (2 cotiz.)
-Ready Or Not | Edicion estandar | Cuenta | links | driffle | compra 10910 -> 10896 (1 cotiz.)
+PRAGMATA | Deluxe Edition | CD Key | links | loaded | compra 74716 -> 73978 (3 cotiz.)
+PRAGMATA | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Ready Or Not | Edicion estandar | CD Key | links | eneba | compra 17788 -> 17831 (3 cotiz.)
+Ready Or Not | Edicion estandar | Cuenta | links | driffle | compra 10896 -> 10934 (1 cotiz.)
 Ready Or Not | Deluxe Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-Ready Or Not | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Ready Or Not | Deluxe Edition | Cuenta | links | kinguin | compra 0 -> 23738 (1 cotiz.)
 Red Dead Redemption 2 | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 Red Dead Redemption 2 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Red Dead Redemption 2 | Ultimate Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Red Dead Redemption 2 | Ultimate Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-RESIDENT EVIL 2 | Edicion estandar | CD Key | links | eneba | compra 10941 -> 9436 (2 cotiz.)
+Red Dead Redemption 2 | Ultimate Edition | Cuenta | links | kinguin | compra 0 -> 20015 (1 cotiz.)
+RESIDENT EVIL 2 | Edicion estandar | CD Key | links | eneba | compra 9436 -> 9473 (3 cotiz.)
 RESIDENT EVIL 2 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-RESIDENT EVIL 2 | Deluxe Edition | CD Key | links | eneba | compra 12073 -> 11979 (2 cotiz.)
+RESIDENT EVIL 2 | Deluxe Edition | CD Key | links | eneba | compra 11979 -> 12002 (3 cotiz.)
 RESIDENT EVIL 2 | Deluxe Edition | Cuenta | sin_links_excel | reservado (sin publicar)
-Resident Evil 3 | Edicion estandar | CD Key | links | eneba | compra 9228 -> 9216 (2 cotiz.)
-Resident Evil 3 | Edicion estandar | Cuenta | links | driffle | compra 3097 -> 4883 (1 cotiz.)
-Resident Evil 4 (2023) | Edicion estandar | CD Key | links | eneba | compra 23486 -> 12733 (2 cotiz.)
-Resident Evil 4 (2023) | Edicion estandar | Cuenta | links | ninguna | compra 10595 -> 0 (0 cotiz.)
-Resident Evil 4 (2023) | Gold Edition | CD Key | links | eneba | compra 20798 -> 20755 (1 cotiz.)
-Resident Evil 4 (2023) | Gold Edition | Cuenta | links | ninguna | compra 70819 -> 0 (0 cotiz.)
-Resident Evil 7 Gold Edition & Village Gold Edition | Gold Edition Bundle | CD Key | links | eneba | compra 0 -> 32091 (1 cotiz.)
+Resident Evil 3 | Edicion estandar | CD Key | links | eneba | compra 9216 -> 9237 (2 cotiz.)
+Resident Evil 3 | Edicion estandar | Cuenta | links | driffle | compra 4883 -> 4902 (1 cotiz.)
+Resident Evil 4 (2023) | Edicion estandar | CD Key | links | eneba | compra 12733 -> 12992 (3 cotiz.)
+Resident Evil 4 (2023) | Edicion estandar | Cuenta | links | kinguin | compra 0 -> 11123 (1 cotiz.)
+Resident Evil 4 (2023) | Gold Edition | CD Key | links | eneba | compra 20755 -> 21601 (2 cotiz.)
+Resident Evil 4 (2023) | Gold Edition | Cuenta | links | kinguin | compra 0 -> 71983 (1 cotiz.)
+Resident Evil 7 Gold Edition & Village Gold Edition | Gold Edition Bundle | CD Key | links | eneba | compra 32091 -> 32158 (1 cotiz.)
 Resident Evil 7 Gold Edition & Village Gold Edition | Gold Edition Bundle | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Resident Evil 7: Biohazard | Edicion estandar | CD Key | links | eneba | compra 10705 -> 10550 (2 cotiz.)
+Resident Evil 7: Biohazard | Edicion estandar | CD Key | links | eneba | compra 10550 -> 10243 (3 cotiz.)
 Resident Evil 7: Biohazard | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Resident Evil 7: Biohazard | Gold Edition | CD Key | links | eneba | compra 17119 -> 12105 (2 cotiz.)
+Resident Evil 7: Biohazard | Gold Edition | CD Key | links | eneba | compra 12105 -> 11971 (2 cotiz.)
 Resident Evil 7: Biohazard | Gold Edition | Cuenta | sin_links_excel | reservado (sin publicar)
-Resident Evil Requiem | Edicion estandar | CD Key | links | eneba | compra 61119 -> 60900 (2 cotiz.)
+Resident Evil Requiem | Edicion estandar | CD Key | links | eneba | compra 60900 -> 60923 (2 cotiz.)
 Resident Evil Requiem | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Resident Evil Requiem | Deluxe Edition | CD Key | links | eneba | compra 81791 -> 73382 (2 cotiz.)
-Resident Evil Requiem | Deluxe Edition | Cuenta | links | ninguna | compra 76226 -> 0 (0 cotiz.)
-Resident Evil Village | Edicion estandar | CD Key | links | eneba | compra 15201 -> 12827 (1 cotiz.)
+Resident Evil Requiem | Deluxe Edition | CD Key | links | driffle | compra 73382 -> 82163 (1 cotiz.)
+Resident Evil Requiem | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Resident Evil Village | Edicion estandar | CD Key | links | eneba | compra 12827 -> 13008 (1 cotiz.)
 Resident Evil Village | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-Resident Evil Village | Gold Edition | CD Key | links | eneba | compra 17496 -> 17458 (2 cotiz.)
-Resident Evil Village | Gold Edition | Cuenta | links | ninguna | compra 69027 -> 0 (0 cotiz.)
-Resident Evil: Raccoon City Edition (Resident Evil 2, Resident Evil 3, RESIDENT EVIL RESISTANCE) | Edicion estandar | CD Key | links | driffle | compra 11507 -> 11492 (2 cotiz.)
+Resident Evil Village | Gold Edition | CD Key | links | eneba | compra 17458 -> 17470 (2 cotiz.)
+Resident Evil Village | Gold Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Resident Evil: Raccoon City Edition (Resident Evil 2, Resident Evil 3, RESIDENT EVIL RESISTANCE) | Edicion estandar | CD Key | links | driffle | compra 11492 -> 11531 (2 cotiz.)
 Resident Evil: Raccoon City Edition (Resident Evil 2, Resident Evil 3, RESIDENT EVIL RESISTANCE) | Edicion estandar | Cuenta | sin_links_excel | reservado (sin publicar)
 Sea of Thieves | 2026 Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Sea of Thieves | 2026 Edition | Cuenta | links | driffle | sin cambio | 12623 (1 cotiz.)
+Sea of Thieves | 2026 Edition | Cuenta | links | driffle | compra 12623 -> 12662 (1 cotiz.)
 Sea of Thieves | 2026 Deluxe Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Sea of Thieves | Deluxe Edition | Cuenta | links | driffle | compra 22134 -> 22121 (1 cotiz.)
+Sea of Thieves | Deluxe Edition | Cuenta | links | driffle | compra 22121 -> 22198 (2 cotiz.)
 Sea of Thieves | 2026 Premium Edition | CD Key | sin_links_excel | reservado (sin publicar)
-Sea of Thieves | Premium Edition | Cuenta | links | driffle | compra 26394 -> 26376 (1 cotiz.)
-SILENT HILL 2 | Edicion estandar | CD Key | links | eneba | compra 40070 -> 41950 (2 cotiz.)
-SILENT HILL 2 | Edicion estandar | Cuenta | links | driffle | compra 53935 -> 54055 (1 cotiz.)
+Sea of Thieves | Premium Edition | Cuenta | links | driffle | compra 26376 -> 26456 (1 cotiz.)
+SILENT HILL 2 | Edicion estandar | CD Key | links | loaded | compra 41950 -> 40045 (4 cotiz.)
+SILENT HILL 2 | Edicion estandar | Cuenta | links | driffle | compra 54055 -> 54215 (1 cotiz.)
 SILENT HILL 2 | Deluxe Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 SILENT HILL 2 | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-SILENT HILL f | Edicion estandar | CD Key | links | eneba | compra 35181 -> 35121 (2 cotiz.)
-SILENT HILL f | Edicion estandar | Cuenta | links | driffle | compra 22322 -> 22310 (1 cotiz.)
+SILENT HILL f | Edicion estandar | CD Key | links | eneba | compra 35121 -> 35206 (3 cotiz.)
+SILENT HILL f | Edicion estandar | Cuenta | links | driffle | compra 22310 -> 22371 (1 cotiz.)
 SILENT HILL f | Deluxe Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-SILENT HILL f | Deluxe Edition | Cuenta | links | ninguna | compra 29491 -> 0 (0 cotiz.)
-SILENT HILL: Townfall | Edicion estandar | CD Key | links | eneba | compra 63336 -> 76004 (1 cotiz.)
+SILENT HILL f | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+SILENT HILL: Townfall | Edicion estandar | CD Key | links | eneba | compra 76004 -> 76178 (1 cotiz.)
 SILENT HILL: Townfall | Edicion estandar | Cuenta | sin_links_excel | reservado (sin publicar)
-SILENT HILL: Townfall | Deluxe Edition | CD Key | links | eneba | compra 74025 -> 90479 (1 cotiz.)
+SILENT HILL: Townfall | Deluxe Edition | CD Key | links | loaded | compra 90479 -> 73978 (2 cotiz.)
 SILENT HILL: Townfall | Deluxe Edition | Cuenta | sin_links_excel | reservado (sin publicar)
-Split Fiction | Edicion estandar | CD Key | links | eneba | compra 63446 -> 63350 (2 cotiz.)
-Split Fiction | Edicion estandar | Cuenta | links | driffle | compra 28673 -> 28668 (1 cotiz.)
-STAR WARS Jedi: Survivor | Edicion estandar | CD Key | links | eneba | compra 17292 -> 17270 (1 cotiz.)
-STAR WARS Jedi: Survivor | Edicion estandar | Cuenta | links | driffle | compra 11900 -> 11901 (1 cotiz.)
-STAR WARS Jedi: Survivor | Deluxe Edition | CD Key | links | eneba | compra 152358 -> 152133 (1 cotiz.)
-STAR WARS Jedi: Survivor | Deluxe Edition | Cuenta | links | ninguna | compra 27180 -> 0 (0 cotiz.)
-Stellar Blade | Edicion estandar | CD Key | links | eneba | compra 47490 -> 47414 (2 cotiz.)
-Stellar Blade | Edicion estandar | Cuenta | links | driffle | compra 49487 -> 49471 (1 cotiz.)
-Stellar Blade | Complete Edition | CD Key | links | driffle | compra 64405 -> 64386 (2 cotiz.)
-Stellar Blade | Complete Edition | Cuenta | links | driffle | compra 77059 -> 96429 (1 cotiz.)
-Street Fighter 6 | Edicion estandar | CD Key | links | eneba | compra 23344 -> 23315 (1 cotiz.)
-Street Fighter 6 | Edicion estandar | Cuenta | links | ninguna | compra 23454 -> 0 (0 cotiz.)
-Street Fighter 6 | 6 Years 1-2 Fighters Edition | CD Key | links | driffle | compra 65207 -> 65186 (1 cotiz.)
+Split Fiction | Edicion estandar | CD Key | links | eneba | compra 63350 -> 63484 (2 cotiz.)
+Split Fiction | Edicion estandar | Cuenta | links | driffle | compra 28668 -> 28749 (1 cotiz.)
+STAR WARS Jedi: Survivor | Edicion estandar | CD Key | links | eneba | compra 17270 -> 17281 (1 cotiz.)
+STAR WARS Jedi: Survivor | Edicion estandar | Cuenta | links | driffle | compra 11901 -> 11940 (1 cotiz.)
+STAR WARS Jedi: Survivor | Deluxe Edition | CD Key | links | eneba | compra 152133 -> 152560 (1 cotiz.)
+STAR WARS Jedi: Survivor | Deluxe Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Stellar Blade | Edicion estandar | CD Key | links | eneba | compra 47414 -> 46784 (3 cotiz.)
+Stellar Blade | Edicion estandar | Cuenta | links | driffle | compra 49471 -> 49612 (1 cotiz.)
+Stellar Blade | Complete Edition | CD Key | links | eneba | compra 64386 -> 68024 (3 cotiz.)
+Stellar Blade | Complete Edition | Cuenta | links | driffle | compra 96429 -> 96726 (1 cotiz.)
+Street Fighter 6 | Edicion estandar | CD Key | links | eneba | compra 23315 -> 23314 (1 cotiz.)
+Street Fighter 6 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+Street Fighter 6 | 6 Years 1-2 Fighters Edition | CD Key | links | driffle | compra 65186 -> 49832 (1 cotiz.)
 Street Fighter 6 | 6 Years 1-2 Fighters Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 Subnautica 2 | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-Subnautica 2 | Edicion estandar | Cuenta | links | driffle | compra 20546 -> 20536 (1 cotiz.)
-TEKKEN 8 | Edicion estandar | CD Key | links | eneba | compra 34002 -> 33802 (2 cotiz.)
-TEKKEN 8 | Edicion estandar | Cuenta | links | ninguna | compra 51860 -> 0 (0 cotiz.)
-The Elder Scrolls V: Skyrim Special Edition | Edicion estandar | CD Key | links | driffle | compra 10422 -> 10409 (2 cotiz.)
-The Elder Scrolls V: Skyrim Special Edition | Edicion estandar | Cuenta | links | driffle | compra 13315 -> 17647 (1 cotiz.)
-The Last of Us Part 1 | Edicion estandar | CD Key | links | ninguna | compra 38577 -> 0 (0 cotiz.)
+Subnautica 2 | Edicion estandar | Cuenta | links | driffle | compra 20536 -> 20596 (1 cotiz.)
+TEKKEN 8 | Edicion estandar | CD Key | links | eneba | compra 33802 -> 33824 (2 cotiz.)
+TEKKEN 8 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+The Elder Scrolls V: Skyrim Special Edition | Edicion estandar | CD Key | links | driffle | compra 10409 -> 10447 (4 cotiz.)
+The Elder Scrolls V: Skyrim Special Edition | Edicion estandar | Cuenta | links | kinguin | compra 17647 -> 11233 (2 cotiz.)
+The Last of Us Part 1 | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 The Last of Us Part 1 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 The Last of Us Part 1 | Deluxe Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 The Last of Us Part 1 | Deluxe Edition | Cuenta | sin_links_excel | reservado (sin publicar)
 The Last of Us Part 2 Remastered | Edicion estandar | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
-The Last of Us Part 2 Remastered | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+The Last of Us Part 2 Remastered | Edicion estandar | Cuenta | links | kinguin | compra 0 -> 64537 (1 cotiz.)
 The Witcher 3: Wild Hunt | Edicion estandar | CD Key | sin_links_excel | reservado (sin publicar)
 The Witcher 3: Wild Hunt | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 The Witcher 3: Wild Hunt | Complete Edition | CD Key | sin_links_excel | reservado (sin publicar)
-The Witcher 3: Wild Hunt | Complete Edition | Cuenta | links | ninguna | compra 13095 -> 0 (0 cotiz.)
-UNCHARTED™: Legacy of Thieves Collection | Edicion estandar | CD Key | links | eneba | compra 17732 -> 17694 (2 cotiz.)
+The Witcher 3: Wild Hunt | Complete Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+UNCHARTED™: Legacy of Thieves Collection | Edicion estandar | CD Key | links | eneba | compra 17694 -> 17579 (2 cotiz.)
 UNCHARTED™: Legacy of Thieves Collection | Edicion estandar | Cuenta | sin_links_excel | reservado (sin publicar)
-Until Dawn | Edicion estandar | CD Key | links | eneba | compra 39787 -> 38858 (2 cotiz.)
-Until Dawn | Edicion estandar | Cuenta | links | ninguna | compra 83740 -> 0 (0 cotiz.)
-WWE 2K25 | Edicion estandar | CD Key | links | driffle | compra 23706 -> 23707 (2 cotiz.)
-WWE 2K25 | Edicion estandar | Cuenta | links | ninguna | compra 48339 -> 0 (0 cotiz.)
-WWE 2K25 | Bloodline Edition | CD Key | links | driffle | compra 186628 -> 186579 (1 cotiz.)
-WWE 2K25 | Bloodline Edition | Cuenta | links | ninguna | compra 143586 -> 0 (0 cotiz.)
-WWE 2K26 | Edicion estandar | CD Key | links | eneba | compra 62188 -> 62093 (1 cotiz.)
+Until Dawn | Edicion estandar | CD Key | links | eneba | compra 38858 -> 38050 (2 cotiz.)
+Until Dawn | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+WWE 2K25 | Edicion estandar | CD Key | links | driffle | compra 23707 -> 23769 (2 cotiz.)
+WWE 2K25 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+WWE 2K25 | Bloodline Edition | CD Key | links | driffle | compra 186579 -> 186776 (1 cotiz.)
+WWE 2K25 | Bloodline Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
+WWE 2K26 | Edicion estandar | CD Key | links | eneba | compra 62093 -> 61567 (1 cotiz.)
 WWE 2K26 | Edicion estandar | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 WWE 2K26 | King of Kings Edition | CD Key | sin_links_excel | reservado (sin publicar)
 WWE 2K26 | King of Kings Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
-WWE 2K26 | Attitude Era Edition | CD Key | links | ninguna | compra 114457 -> 0 (0 cotiz.)
+WWE 2K26 | Attitude Era Edition | CD Key | links | ninguna | sin cambio | 0 (0 cotiz.)
 WWE 2K26 | Attitude Era Edition | Cuenta | links | ninguna | sin cambio | 0 (0 cotiz.)
 
 --- Precios / visibilidad ---
-007 First Light | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 85509
-007 First Light | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 61912
-007 First Light | Edición Deluxe | CD Key | PUBLICADO compra_alta | venta 97142
-007 First Light | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 86765
+007 First Light | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
+007 First Light | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+007 First Light | Edición Deluxe | CD Key | OCULTO sin compra verificada | Steam
+007 First Light | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 A way out | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
 ARC Raiders | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-ARK: Survival Ascended | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 97391
+ARC Raiders | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
+ARK: Survival Ascended | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 97431
 Assassin's Creed Mirage | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
-Assassin's Creed Mirage | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 58929
+Assassin's Creed Mirage | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Assassin's Creed Mirage | Edición Deluxe | CD Key | OCULTO sin link Excel (reservado)
 Assassin's Creed Mirage | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Assassin's Creed Mirage | Master Assassin Edition | CD Key | OCULTO sin link Excel (reservado)
@@ -426,7 +427,7 @@ Assassin's Creed Shadows | Deluxe Edition | Cuenta | OCULTO sin compra verificad
 Assassin's Creed Shadows | Premium Edition | CD Key | OCULTO sin compra verificada | Steam
 Assassin's Creed Shadows | Premium Edition | Cuenta | OCULTO sin link Excel (reservado)
 Baldur's Gate 3 | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
-Black Myth: Wukong | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 100612
+Black Myth: Wukong | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 100668
 Black Myth: Wukong | Edición Deluxe | CD Key | OCULTO sin compra verificada | Steam
 Black Myth: Wukong | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Borderlands 4 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
@@ -438,162 +439,158 @@ Call of Duty: Black Ops 7 | Vault Edition | Cuenta | OCULTO sin compra verificad
 Call of Duty: Black Ops III | Zombies Chronicles Edition | CD Key | OCULTO sin link Excel (reservado)
 Call of Duty: Black Ops III | Zombies Deluxe | CD Key | OCULTO sin link Excel (reservado)
 Call of Duty: Black Ops III | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-Clair Obscur: Expedition 33 | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 59063
-Clair Obscur: Expedition 33 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 51063
-Clair Obscur: Expedition 33 | Edición Deluxe | CD Key | PUBLICADO compra_alta | venta 64989
-Clair Obscur: Expedition 33 | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 84316
-Cuphead | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 38496
-Cuphead | & The Delicious Last Course | CD Key | PUBLICADO compra_alta | venta 41470
+Clair Obscur: Expedition 33 | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 59180
+Clair Obscur: Expedition 33 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+Clair Obscur: Expedition 33 | Edición Deluxe | CD Key | PUBLICADO compra_alta | venta 64628
+Clair Obscur: Expedition 33 | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
+Cuphead | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 38592
+Cuphead | & The Delicious Last Course | CD Key | OCULTO sin compra verificada | Steam
 Cuphead | & The Delicious Last Course | Cuenta | OCULTO sin compra verificada | Steam
 Cyberpunk 2077 | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
 Cyberpunk 2077 | Ultimate Edition | CD Key | OCULTO sin link Excel (reservado)
-DayZ | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-Dead by Daylight | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 29657
-Dead by Daylight | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 21657
+DayZ | Cool Edition | CD Key | OCULTO sin compra verificada | Steam
+DayZ | Cool Edition | Cuenta | OCULTO sin compra verificada | Steam
+Dead by Daylight | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
+Dead by Daylight | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Dead by Daylight | Gold Edition | CD Key | OCULTO sin link Excel (reservado)
 Dead by Daylight | Gold Edition | Cuenta | OCULTO sin compra verificada | Steam
-Death Stranding 2: On the Beach | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 112057
+Death Stranding 2: On the Beach | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 112213
 Death Stranding 2: On the Beach | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 Death Stranding 2: On the Beach | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Diablo IV | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
 Diablo IV | Age of Hatred Collection | CD Key | OCULTO sin link Excel (reservado)
-Diablo IV | Age of Hatred Collection | Cuenta | PUBLICADO compra_alta | venta 100408
+Diablo IV | Age of Hatred Collection | Cuenta | OCULTO sin compra verificada | Steam
 DRAGON BALL: Sparking! ZERO | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
-DRAGON BALL: Sparking! ZERO | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 62681
-DRAGON BALL: Sparking! ZERO | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 90988
+DRAGON BALL: Sparking! ZERO | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+DRAGON BALL: Sparking! ZERO | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 DRAGON BALL: Sparking! ZERO | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-DRAGON BALL: Sparking! ZERO | Ultimate Edition | CD Key | PUBLICADO compra_alta | venta 98037
+DRAGON BALL: Sparking! ZERO | Ultimate Edition | CD Key | OCULTO sin compra verificada | Steam
 DRAGON BALL: Sparking! ZERO | Ultimate Edition | Cuenta | OCULTO sin compra verificada | Steam
 Dispatch | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
-Dispatch | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 26006
+Dispatch | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Dispatch | Deluxe Edition | CD Key | OCULTO sin link Excel (reservado)
 Dispatch | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-Dying Light: The Beast | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 79240
-Dying Light: The Beast | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 93406
-Dying Light: The Beast | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 69683
+Dying Light: The Beast | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 79267
+Dying Light: The Beast | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 93567
+Dying Light: The Beast | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Dynasty Warriors: Origins | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Dynasty Warriors: Origins | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 Dynasty Warriors: Origins | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 EA SPORTS™ College Football 27 | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
-EA SPORTS™ College Football 27 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+EA SPORTS™ College Football 27 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 85271
 EA SPORTS™ College Football 27 | Deluxe Edition | CD Key | OCULTO sin link Excel (reservado)
-EA SPORTS™ College Football 27 | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 EA SPORTS FC 26 | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
 EA SPORTS FC 26 | The World's Game Edition | CD Key | OCULTO sin compra verificada | Steam
 EA SPORTS FC™ 27 | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
 EA SPORTS FC™ 27 | Ultimate Edition | CD Key | OCULTO sin link Excel (reservado)
 EA SPORTS FC™ 27 | Ultimate Edition | Cuenta | OCULTO sin compra verificada | Steam
 EA SPORTS FC™ 27 | Ultimate Plus Edition | CD Key | OCULTO sin link Excel (reservado)
-ELDEN RING | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 104930
-ELDEN RING | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 67956
-ELDEN RING | Shadow of the Erdtree Edition | CD Key | PUBLICADO compra_alta | venta 136000
-ELDEN RING | Shadow of the Erdtree Edition | Cuenta | PUBLICADO compra_alta | venta 101350
-ELDEN RING | Shadow of the Erdtree Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 164244
-ELDEN RING | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 132216
-ELDEN RING NIGHTREIGN | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 60075
-ELDEN RING NIGHTREIGN | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 48425
-ELDEN RING NIGHTREIGN | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 80081
-ELDEN RING NIGHTREIGN | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 69636
-F1 25 | 2026 Season Edition | Cuenta | PUBLICADO compra_alta | venta 62650
+ELDEN RING | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
+ELDEN RING | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 66120
+ELDEN RING | Shadow of the Erdtree Edition | CD Key | OCULTO sin compra verificada | Steam
+ELDEN RING | Shadow of the Erdtree Edition | Cuenta | OCULTO sin compra verificada | Steam
+ELDEN RING | Shadow of the Erdtree Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
+ELDEN RING | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 129840
+ELDEN RING NIGHTREIGN | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 60175
+ELDEN RING NIGHTREIGN | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+ELDEN RING NIGHTREIGN | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 77557
+ELDEN RING NIGHTREIGN | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
+F1 25 | 2026 Season Edition | Cuenta | PUBLICADO compra_alta | venta 60166
 FINAL FANTASY VII REMAKE INTERGRADE | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Forza Horizon 5 | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
 Forza Horizon 5 | Deluxe Edition | CD Key | OCULTO sin link Excel (reservado)
 Forza Horizon 5 | Premium Edition | CD Key | OCULTO sin compra verificada | Steam
+Forza Horizon 5 | Premium Edition | Cuenta | OCULTO sin compra verificada | Steam
 Forza Horizon 6 | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
-Forza Horizon 6 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 68851
+Forza Horizon 6 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Forza Horizon 6 | Deluxe Edition | CD Key | OCULTO sin link Excel (reservado)
-Forza Horizon 6 | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 87503
+Forza Horizon 6 | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Forza Horizon 6 | Premium Edition | CD Key | OCULTO sin link Excel (reservado)
-Forza Horizon 6 | Premium Edition | Cuenta | PUBLICADO compra_alta | venta 105699
+Forza Horizon 6 | Premium Edition | Cuenta | OCULTO sin compra verificada | Steam
 Gears of War: E-Day | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
-Gears of War: E-Day | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 104396
+Gears of War: E-Day | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Gears of War: E-Day | Premium Edition | CD Key | OCULTO sin link Excel (reservado)
-Gears of War: E-Day | Premium Edition | Cuenta | PUBLICADO compra_alta | venta 141856
+Gears of War: E-Day | Premium Edition | Cuenta | PUBLICADO compra_alta | venta 135119
 Ghost of Tsushima | Director's Cut | Cuenta | OCULTO sin link Excel (reservado)
-God Of War Ragnarök | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 79935
-God Of War Ragnarök | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 75476
+God Of War Ragnarök | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 79678
+God Of War Ragnarök | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 God Of War Ragnarök | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-Gothic 1 Remake | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 60626
-Gothic 1 Remake | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 52193
+Gothic 1 Remake | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 60744
+Gothic 1 Remake | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Grand Theft Auto V | Enhanced | CD Key | OCULTO sin link Excel (reservado)
 Halo: Campaign Evolved | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
-Halo: Campaign Evolved | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 68458
+Halo: Campaign Evolved | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Halo: Campaign Evolved | Premium Edition | CD Key | OCULTO sin link Excel (reservado)
-Halo: Campaign Evolved | Premium Edition | Cuenta | PUBLICADO compra_alta | venta 93971
-HELLDIVERS 2 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 48331
-HELLDIVERS 2 | Super Citizen Edition | CD Key | PUBLICADO compra_alta | venta 71253
+Halo: Campaign Evolved | Premium Edition | Cuenta | OCULTO sin compra verificada | Steam
+HELLDIVERS 2 | Super Citizen Edition | CD Key | OCULTO sin compra verificada | Steam
 HELLDIVERS 2 | Super Citizen Edition | Cuenta | OCULTO sin compra verificada | Steam
 HITMAN World of Assassination | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
-HITMAN World of Assassination | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 27199
+HITMAN World of Assassination | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 HITMAN World of Assassination | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
-HITMAN World of Assassination | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 56008
-Invincible VS | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 82494
-Invincible VS | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 105730
-Invincible VS | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 72807
-It takes two | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 88195
+Invincible VS | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
+Invincible VS | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
+Invincible VS | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
+It takes two | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 88109
+LEGO Batman: Legacy of the Dark Knight | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 LEGO Batman: Legacy of the Dark Knight | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 MARVEL Tokon: Fighting Souls | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
 MARVEL Tokon: Fighting Souls | Edicion estandar | Cuenta | OCULTO sin link Excel (reservado)
-MARVEL Tokon: Fighting Souls | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 159393
+MARVEL Tokon: Fighting Souls | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 MARVEL Tokon: Fighting Souls | Deluxe Edition | Cuenta | OCULTO sin link Excel (reservado)
-MARVEL Tokon: Fighting Souls | Ultimate Edition | CD Key | PUBLICADO compra_alta | venta 167667
+MARVEL Tokon: Fighting Souls | Ultimate Edition | CD Key | OCULTO sin compra verificada | Steam
 MARVEL Tokon: Fighting Souls | Ultimate Edition | Cuenta | OCULTO sin link Excel (reservado)
 Marvel vs. Capcom: Infinite | Edicion estandar | Cuenta | OCULTO sin link Excel (reservado)
 Marvel vs. Capcom: Infinite | Deluxe Edition | Cuenta | OCULTO sin link Excel (reservado)
-Marvel's Spider-Man 2 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 66998
-Marvel's Spider-Man 2 | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 83625
+Marvel's Spider-Man 2 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+Marvel's Spider-Man 2 | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 Marvel's Spider-Man 2 | Deluxe Edition | Cuenta | OCULTO sin link Excel (reservado)
 Marvel's Spider-Man Remastered | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Marvel's Spider-Man: Miles Morales | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-Microsoft Flight Simulator 2024 | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 118250
-Microsoft Flight Simulator 2024 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 102826
-Microsoft Flight Simulator 2024 | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 159424
+Microsoft Flight Simulator 2024 | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 131123
+Microsoft Flight Simulator 2024 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+Microsoft Flight Simulator 2024 | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 Microsoft Flight Simulator 2024 | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-Microsoft Flight Simulator 2024 | Premium Deluxe | CD Key | PUBLICADO compra_alta | venta 203384
+Microsoft Flight Simulator 2024 | Premium Deluxe | CD Key | OCULTO sin compra verificada | Steam
 Microsoft Flight Simulator 2024 | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-Microsoft Flight Simulator 2024 | Aviator Edition | CD Key | OCULTO sin compra verificada | Steam
+Microsoft Flight Simulator 2024 | Aviator Edition | CD Key | PUBLICADO compra_alta | venta 305619
 Microsoft Flight Simulator 2024 | Aviator Edition | Cuenta | OCULTO sin compra verificada | Steam
-Monster Hunter Wilds | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 58812
-Monster Hunter Wilds | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 50812
-Monster Hunter Wilds | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 56071
+Monster Hunter Wilds | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 58929
+Monster Hunter Wilds | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+Monster Hunter Wilds | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 Monster Hunter Wilds | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-Monster Hunter Wilds | Premium Deluxe | CD Key | PUBLICADO compra_alta | venta 81003
+Monster Hunter Wilds | Premium Deluxe | CD Key | OCULTO sin compra verificada | Steam
 Monster Hunter Wilds | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Mortal Kombat 1 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Mortal Kombat 1 | Definitive Edition | Cuenta | OCULTO sin compra verificada | Steam
-NBA 2K26 | Slam Edition | Cuenta | PUBLICADO compra_alta | venta 97299
+NBA 2K26 | Slam Edition | Cuenta | OCULTO sin compra verificada | Steam
 NBA 2K26 | Superstar Edition | Cuenta | OCULTO sin compra verificada | Steam
 Path of Exile 2 | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
-Path of Exile 2 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+Path of Exile 2 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 36428
 Path of Exile 2 | Lord of Ogham Supporter Pack | CD Key | OCULTO sin link Excel (reservado)
-Path of Exile 2 | Lord of Ogham Supporter Pack | Cuenta | OCULTO sin compra verificada | Steam
 Path of Exile 2 | King of the Faridun Supporter Pack | CD Key | OCULTO sin link Excel (reservado)
 Path of Exile 2 | King of the Faridun Supporter Pack | Cuenta | OCULTO sin compra verificada | Steam
 Persona 3 Reload | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-Persona 3 Reload | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
+Persona 3 Reload | Deluxe Edition | Cuenta | PUBLICADO compra_alta | venta 102206
 Persona 3 Reload | Premium Deluxe | CD Key | OCULTO sin compra verificada | Steam
-Persona 3 Reload | Premium Edition | Cuenta | OCULTO sin compra verificada | Steam
-PRAGMATA | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 77941
+Persona 3 Reload | Premium Edition | Cuenta | PUBLICADO compra_alta | venta 126525
+PRAGMATA | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
 PRAGMATA | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-PRAGMATA | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 89716
+PRAGMATA | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 88978
 PRAGMATA | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Ready Or Not | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
-Ready Or Not | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Red Dead Redemption 2 | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
 Red Dead Redemption 2 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Red Dead Redemption 2 | Ultimate Edition | CD Key | OCULTO sin link Excel (reservado)
-Red Dead Redemption 2 | Ultimate Edition | Cuenta | OCULTO sin compra verificada | Steam
 RESIDENT EVIL 2 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 RESIDENT EVIL 2 | Deluxe Edition | Cuenta | OCULTO sin link Excel (reservado)
-Resident Evil 4 (2023) | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-Resident Evil 4 (2023) | Gold Edition | Cuenta | OCULTO sin compra verificada | Steam
+Resident Evil 4 (2023) | Gold Edition | Cuenta | PUBLICADO compra_alta | venta 86983
 Resident Evil 7 Gold Edition & Village Gold Edition | Gold Edition Bundle | Cuenta | OCULTO sin compra verificada | Steam
-Resident Evil 7: Biohazard | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 25550
+Resident Evil 7: Biohazard | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 25243
 Resident Evil 7: Biohazard | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Resident Evil 7: Biohazard | Gold Edition | Cuenta | OCULTO sin link Excel (reservado)
-Resident Evil Requiem | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 75900
+Resident Evil Requiem | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
 Resident Evil Requiem | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-Resident Evil Requiem | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 88382
+Resident Evil Requiem | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 Resident Evil Requiem | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
 Resident Evil Village | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 Resident Evil Village | Gold Edition | Cuenta | OCULTO sin compra verificada | Steam
@@ -601,35 +598,34 @@ Resident Evil: Raccoon City Edition (Resident Evil 2, Resident Evil 3, RESIDENT 
 Sea of Thieves | 2026 Edition | CD Key | OCULTO sin link Excel (reservado)
 Sea of Thieves | 2026 Deluxe Edition | CD Key | OCULTO sin link Excel (reservado)
 Sea of Thieves | 2026 Premium Edition | CD Key | OCULTO sin link Excel (reservado)
-SILENT HILL 2 | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 76950
-SILENT HILL 2 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 69055
+SILENT HILL 2 | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 75045
+SILENT HILL 2 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 SILENT HILL 2 | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 SILENT HILL 2 | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-SILENT HILL f | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 50121
+SILENT HILL f | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
 SILENT HILL f | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 SILENT HILL f | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-SILENT HILL: Townfall | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
+SILENT HILL: Townfall | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 91178
 SILENT HILL: Townfall | Edicion estandar | Cuenta | OCULTO sin link Excel (reservado)
-SILENT HILL: Townfall | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
+SILENT HILL: Townfall | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 88978
 SILENT HILL: Townfall | Deluxe Edition | Cuenta | OCULTO sin link Excel (reservado)
-Split Fiction | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 91441
-STAR WARS Jedi: Survivor | Deluxe Edition | CD Key | PUBLICADO compra_alta | venta 167133
+Split Fiction | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 91474
+STAR WARS Jedi: Survivor | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 STAR WARS Jedi: Survivor | Deluxe Edition | Cuenta | OCULTO sin compra verificada | Steam
-Stellar Blade | Complete Edition | Cuenta | PUBLICADO compra_alta | venta 111429
+Stellar Blade | Complete Edition | Cuenta | OCULTO sin compra verificada | Steam
 Street Fighter 6 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-Street Fighter 6 | 6 Years 1-2 Fighters Edition | CD Key | PUBLICADO compra_alta | venta 80186
+Street Fighter 6 | 6 Years 1-2 Fighters Edition | CD Key | PUBLICADO compra_alta | venta 64832
 Street Fighter 6 | 6 Years 1-2 Fighters Edition | Cuenta | OCULTO sin compra verificada | Steam
 Subnautica 2 | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
-Subnautica 2 | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 35536
-TEKKEN 8 | Edicion estandar | CD Key | PUBLICADO compra_alta | venta 48802
+Subnautica 2 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+TEKKEN 8 | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
 TEKKEN 8 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-The Elder Scrolls V: Skyrim Special Edition | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 The Last of Us Part 1 | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
 The Last of Us Part 1 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 The Last of Us Part 1 | Deluxe Edition | CD Key | OCULTO sin compra verificada | Steam
 The Last of Us Part 1 | Deluxe Edition | Cuenta | OCULTO sin link Excel (reservado)
 The Last of Us Part 2 Remastered | Edicion estandar | CD Key | OCULTO sin compra verificada | Steam
-The Last of Us Part 2 Remastered | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
+The Last of Us Part 2 Remastered | Edicion estandar | Cuenta | PUBLICADO compra_alta | venta 79537
 The Witcher 3: Wild Hunt | Edicion estandar | CD Key | OCULTO sin link Excel (reservado)
 The Witcher 3: Wild Hunt | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 The Witcher 3: Wild Hunt | Complete Edition | CD Key | OCULTO sin link Excel (reservado)
@@ -637,7 +633,7 @@ The Witcher 3: Wild Hunt | Complete Edition | Cuenta | OCULTO sin compra verific
 UNCHARTED™: Legacy of Thieves Collection | Edicion estandar | Cuenta | OCULTO sin link Excel (reservado)
 Until Dawn | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 WWE 2K25 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
-WWE 2K25 | Bloodline Edition | CD Key | PUBLICADO compra_alta | venta 201579
+WWE 2K25 | Bloodline Edition | CD Key | OCULTO sin compra verificada | Steam
 WWE 2K25 | Bloodline Edition | Cuenta | OCULTO sin compra verificada | Steam
 WWE 2K26 | Edicion estandar | Cuenta | OCULTO sin compra verificada | Steam
 WWE 2K26 | King of Kings Edition | CD Key | OCULTO sin link Excel (reservado)
